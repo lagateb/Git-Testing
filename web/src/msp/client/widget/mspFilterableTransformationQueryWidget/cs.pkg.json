@@ -1,0 +1,46 @@
+{
+  "name": "mspFilterableTransformationQueryWidget",
+  "since": "5.2.0",
+  "version": "0.0.1",
+  "filename": "msp-filterable-transformation-query-widget.module",
+  "implementations": [
+    {
+      "type": "csWidget",
+      "name": "mspFilterableTransformationQueryWidget",
+      "properties": {
+        "contentControllerName": "mspFilterableTransformationQueryWidgetController",
+        "contentTemplateName": "mspFilterableTransformationQueryWidgetTemplate.html",
+        "headComponentName": "csTransformationQueryWidgetHead",
+        "configControllerName": "mspFilterableTransformationQueryWidgetConfigController",
+        "configTemplateName": "mspFilterableTransformationQueryWidgetConfig.html",
+        "headlessDataManager": "mspFilterableTransformationQueryWidgetHeadless",
+        "defaultFooterTemplate": "toggle",
+        "listWidget": {
+          "rowHeightConfig": true,
+          "rowHeightDefault": "3"
+        },
+        "widgetInfo": {
+          "icon": "cs-icon-list",
+          "title": "mspFilterableTransformationQueryWidget.title",
+          "description": "mspFilterableTransformationQueryWidget.description"
+        },
+        "allowHideTitle": false
+      }
+    },
+    {
+      "type": "csHeadlessWidgetDataManager",
+      "name": "mspFilterableTransformationQueryWidgetHeadless",
+      "constructor": "mspFilterableTransformationQueryWidgetHeadless"
+    }
+  ],
+  "java": {
+    "sourcepath": "src/java"
+  },
+  "assets": {
+    "path": "assets"
+  },
+  "translations": [
+    "translation"
+  ]
+}
+

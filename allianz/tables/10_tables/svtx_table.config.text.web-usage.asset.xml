@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset id_org="12340" name="svtx:table.config.text.web-usage" type="module.table." application="default" domain="root.common-resources." domain2="root.">
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="svtx:table.config.text.web-usage"/>
+  <asset_feature feature="censhare:resource-meta">
+    <xmldata>
+      <selection needed="false"/>
+    </xmldata>
+  </asset_feature>
+  <asset_feature feature="censhare:table.column" value_string2="censhare:resource-key" sorting="1" value_asset_key_ref="svtx:allianz-table-column.outputchannel"/>
+  <asset_feature feature="censhare:table.column" value_string2="censhare:resource-key" sorting="2" value_asset_key_ref="svtx:allianz.table-column.asset.item.2"/>
+  <asset_feature feature="censhare:table.column" value_string2="censhare:resource-key" sorting="4" value_asset_key_ref="allianz:table-column.asset.text.variant.type"/>
+  <asset_feature feature="censhare:table.column" value_string2="censhare:resource-key" sorting="5" value_asset_key_ref="svtx:allianz-table-column.valid.from"/>
+  <asset_feature feature="censhare:table.column" value_string2="censhare:resource-key" sorting="6" value_asset_key_ref="svtx:allianz-table-column.valid.until"/>
+</asset>

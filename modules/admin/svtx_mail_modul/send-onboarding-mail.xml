@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmd xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.censhare.com/xml/3.0.0/command.xsd" xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct" xmlns:xe="http://www.censhare.com/xml/3.0.0/xmleditor">
+  <xml-info title="${send-onboarding-mail-title}" description="${send-onboarding-mail-desc}" knowledge-level="2" special-licence="false" feature-help="" localize="true">
+    <property-resources>
+      <base url="file:module"/>
+      <base url="file:../../../common/global"/>
+    </property-resources>
+    <history>
+      <entry user="censhare Defaultuser" timestamp="2021-04-19T14:51:55.112Z" comment=""/>
+      <entry user="censhare Defaultuser" timestamp="2021-04-19T14:52:12.225Z" comment=""/>
+      <entry user="censhare Defaultuser" timestamp="2021-04-19T15:15:02.547Z" comment=""/>
+      <entry user="censhare Defaultuser" timestamp="2021-04-19T15:20:03.837Z" comment=""/>
+      <entry user="censhare Defaultuser" timestamp="2021-04-20T07:44:45.163Z" comment=""/>
+      <entry user="censhare Defaultuser" timestamp="2021-04-20T07:45:24.063Z" comment=""/>
+      <entry user="censhare Defaultuser" timestamp="2021-04-20T07:46:12.867Z" comment=""/>
+      <entry user="censhare Defaultuser" timestamp="2021-04-20T07:46:51.367Z" comment=""/>
+    </history>
+  </xml-info>
+  <cmd-info name="admin.user_administration.javaadmin.send-onboarding-mail-svtx" type="server-action" enabled="false">
+    <server-action>
+      <clients>
+        <client type="javaadmin"/>
+      </clients>
+      <filter multi-selection="true">
+        <party isgroup="0"/>
+      </filter>
+    </server-action>
+  </cmd-info>
+  <admin-info is-template="true" dialog-id="user-administration-config-send-mail" dialog-url="file:config-dialog.xml"/>
+  <commands currentstep="0">
+    <command target="ScriptletManager" method="checkEmailAddress" scriptlet="modules.admin.svtx_mail_modul.SvtxPasswordAdministration"/>
+    <command target="client" method="showdialog" key="confirm"/>
+    <command target="ScriptletManager" method="sendNewPassword" scriptlet="modules.admin.svtx_mail_modul.SvtxPasswordAdministration"/>
+  </commands>
+  <!-- selected parties are placed here -->
+  <parties/>
+  <options pw-length="10" account="corpus" subject="Custom Password Reset Savotex" content="Hallo lieber Benutzer!&#xa;&#xa;Hier ist dein neues Password #password#"/>
+  <!-- confirm dialog -->
+  <xe:part id="confirm" transactional="false">
+    <xe:group align="down">
+      <xe:xe-table source="selection.party" weight-x="1" weight-y="1" prefheight="150">
+        <xe:columns>
+          <xe:column label="ID" source="@id" width="80"/>
+          <xe:column label="Name" source="@display_name" width="300"/>
+          <xe:column label="Login" source="@login" width="150"/>
+        </xe:columns>
+      </xe:xe-table>
+    </xe:group>
+  </xe:part>
+  <no-mail title="${error}" content="${no-mail-found}"/>
+  <invalid-mail title="${error}" content="${invalid-mail-found}"/>
+</cmd>

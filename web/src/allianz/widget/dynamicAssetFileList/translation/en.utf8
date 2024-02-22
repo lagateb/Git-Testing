@@ -1,0 +1,16 @@
+title = Files
+description = List of files of the currently displayed asset
+
+dropNew = Drop file here
+dropNew2 = or click to select a file
+get = Download file
+replace = Replace file
+replaceMaster = Replace master file
+delete = Delete file
+checkout = Open file
+getcheckout = Download and edit
+deleteConfirm = Should this file be deleted immediately?
+getTransformation = Generate transformation
+dynamicallyGenerated = Dynamically generated
+NoFiles = No file attached
+AddFileBtn = File

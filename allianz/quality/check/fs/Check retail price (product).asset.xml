@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset id_org="235402" name="Check retail price (product)" type="module.completeness-check." application="default" domain="root.common-resources." domain2="root." description="No retail price is defined. Please define it in the product property widget.">
+  <asset_feature feature="censhare:asset-type-filter" value_string="product1."/>
+  <asset_feature feature="censhare:completeness-check.expression.xpath" value_string="exists(asset_feature[@feature=&apos;censhare:product.price.retail&apos;])"/>
+  <asset_feature feature="censhare:description" language="de" value_string="Es ist kein Endverbraucherpreis definiert. Bitte im Produkt-Eigenschaften-Widget definieren"/>
+  <asset_feature feature="censhare:description" language="en" value_string="No Retail price defined. Please add it in the Product metadata widget."/>
+  <asset_feature feature="censhare:description" language="fr" value_string="Il n&apos;a pas été défini de prix consommateur final. Définir dans le widget des métadonnées du produit"/>
+  <asset_feature feature="censhare:description" language="it" value_string="Non è stato definito un prezzo al dettaglio. Definire nel widget dei metadati del prodotto"/>
+    <asset_feature feature="censhare:name" language="de" value_string="Endverbraucherpreis"/>
+  <asset_feature feature="censhare:name" language="en" value_string="Retail price"/>
+  <asset_feature feature="censhare:name" language="fr" value_string="Prix consommateur final"/>
+  <asset_feature feature="censhare:name" language="it" value_string="Prezzo al dettaglio"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="0"/>
+  <asset_feature feature="censhare:resource-key" value_string="censhare:completeness-check.product.retail-price"/>
+  <asset_feature feature="censhare:resource-meta">
+    <xmldata>
+      <selection needed="false"/>
+    </xmldata>
+  </asset_feature>
+</asset>

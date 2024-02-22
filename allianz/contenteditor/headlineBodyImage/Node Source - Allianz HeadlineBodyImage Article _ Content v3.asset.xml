@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset name="Node Source - Standard Article / Content v3" type="module.content.node-source.storage-item."
+       application="default" domain="root." domain2="root." description="censhare Standard Content Structure 3.0">
+
+    <!-- Standard ? -->
+    <asset_feature feature="censhare:content.storage-key" value_string="master"/>
+
+    <!--  Savotex ResourceKey -->
+    <asset_feature feature="censhare:resource-key" value_string="svtx:content-editor-allianz-headline-body-image-content-node-source-v3"/>
+
+
+    <!-- Verweis auf unser Schema -->
+    <asset_feature feature="censhare:content-editor.content-schema" value_string2="censhare:resource-key"
+                   value_asset_key_ref="svtx:content-editor-allianz-headline-body-image-content-schema-v3"/>
+
+    <!-- Verweis auf unser UI -->
+    <asset_feature feature="censhare:content-editor.content-ui-definitions" value_string2="censhare:resource-key"
+                   value_asset_key_ref="svtx:content-editor-allianz-article-headline-body-image-ui-definitions-v3"/>
+
+    <!-- wir nehmen erst einmal die die Standardübersetzung -->
+    <asset_feature feature="censhare:content-editor.localization" value_string2="censhare:resource-key"
+                   value_asset_key_ref="svtx:content-editor-scs-article-content-localization-v3"/>
+    <!--
+    value_asset_key_ref="censhare:content-editor-scs-article-content-localization-v3"/>
+    <asset_feature feature="censhare:uuid" value_string="eb925e51-c6a4-44cf-9b2b-38a95be7fd32"/>
+    -->
+</asset>

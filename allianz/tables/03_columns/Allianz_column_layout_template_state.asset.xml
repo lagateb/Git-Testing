@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset name="Status Layout Vorlage (asset)" type="module.table.column." application="metadata" domain="root.common-resources." domain2="root.">
+  <asset_feature feature="censhare:macro" value_string2="censhare:resource-key" sorting="1" value_asset_key_ref="allianz:macro.asset.layout-template-state"/>
+  <asset_feature feature="censhare:name" language="de" value_string="Status Layout Vorlage"/>
+  <asset_feature feature="censhare:name" language="en" value_string="Status Layout template"/>
+  <asset_feature feature="censhare:name" language="fr" value_string="Status Layout template"/>
+  <asset_feature feature="censhare:name" language="it" value_string="Status Layout template"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="allianz:table-column.asset-layout-template-state"/>
+  <asset_feature feature="censhare:table.column.align-horizontal" value_key="left"/>
+  <asset_feature feature="censhare:table.column.key" value_string="assetLayoutTemplateState"/>
+  <asset_feature feature="censhare:table.column.template" value_string="&lt;cs-item-renderer flavor=&quot;&apos;svtxLayoutStateRenderer&apos;&quot; item=&quot;cell.data&quot;&gt;&lt;/cs-item-renderer&gt;"/>
+  <asset_feature feature="censhare:table.column.type" value_key="template"/>
+  <asset_feature feature="censhare:table.column.width-max-pixels" value_long="300"/>
+  <asset_feature feature="censhare:table.column.width-min-pixels" value_long="100"/>
+  <asset_feature feature="censhare:table.column.width-pixels" value_long="210"/>
+</asset>
+

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset name="Check text block child" type="module.completeness-check." application="default" domain="root.common-resources." domain2="root." description="No text block assigned. Please assign it in the Text blocks widget.">
+  <asset_feature feature="censhare:asset-type-filter" value_string="product1."/>
+  <asset_feature feature="censhare:completeness-check.expression.xpath" value_string="exists(asset_feature[@feature=&apos;censhare:product.text-block&apos;])"/>
+  <asset_feature feature="censhare:description" language="de" value_string="Kein Textblock zugeordnet. Bitte im Textblöcke-Widget zuordnen."/>
+  <asset_feature feature="censhare:description" language="en" value_string="No Text block assigned. Please add the assignment in the Text block widget."/>
+  <asset_feature feature="censhare:description" language="fr" value_string="Aucun bloc de texte attribué. Ajouter dans widget blocs de texte. "/>
+  <asset_feature feature="censhare:description" language="it" value_string="Nessun blocco di testo assegnato. Assegnare nel widget dei blocchi testo."/>
+  <asset_feature feature="censhare:module-asset-source" value_string="required/web/completeness-checks"/>
+  <asset_feature feature="censhare:name" language="de" value_string="Textblock"/>
+  <asset_feature feature="censhare:name" language="en" value_string="Text block"/>
+  <asset_feature feature="censhare:name" language="fr" value_string="Bloc de texte"/>
+  <asset_feature feature="censhare:name" language="it" value_string="Blocco di testo"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="0"/>
+  <asset_feature feature="censhare:resource-key" value_string="censhare:completeness-check.text-block.child"/>
+</asset>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset id_org="12880" name="Promotion metadata" type="module.workspace.widget.config." application="metadata" domain="root." domain2="root.">
+  <asset_feature feature="censhare:description" language="de" value_string="Maßnahmen - Eigenschaften"/>
+  <asset_feature feature="censhare:description" language="en" value_string="Promotion properties"/>
+  <asset_feature feature="censhare:label" language="de" value_string="Maßnahmen - Eigenschaften"/>
+  <asset_feature feature="censhare:label" language="en" value_string="Promotion properties"/>
+  <asset_feature feature="censhare:name" language="de" value_string="Maßnahmen - Eigenschaften"/>
+  <asset_feature feature="censhare:name" language="en" value_string="Promotion properties"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="msp:workspace.widget.config.csAssetMetadataWidget.promotion"/>
+  <asset_feature feature="censhare:resource-meta">
+    <xmldata>
+      <selection needed="false"/>
+    </xmldata>
+  </asset_feature>
+  <asset_feature feature="censhare:workspace.configuration">
+    <xmldata>
+      <configuration editable="true" templateKey="msp:metadata.promotion"/>
+    </xmldata>
+  </asset_feature>
+  <asset_feature feature="censhare:workspace.widget" value_string2="censhare:resource-key" value_asset_key_ref="censhare:workspace.widget.csAssetMetadataWidget"/>
+  <parent_asset_rel parent_asset_ref_resource_key="censhare:workspace.widget.config.csAssetMetadataWidget.projectMetadata" key="user."/>
+</asset>

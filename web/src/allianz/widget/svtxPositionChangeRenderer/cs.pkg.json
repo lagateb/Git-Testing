@@ -1,0 +1,19 @@
+{
+    "name": "svtxPositionChangeRenderer",
+    "since": "5.0.0",
+    "version": "0.0.1",
+    "filename": "svtxPositionChangeRenderer.module",
+    "implementations": [
+        {
+            "type": "csItemRenderer",
+            "name": "svtxPositionChangeRenderer",
+            "properties": {
+                "controller": "svtxPositionChangeRendererController",
+                "template": "svtxPositionChangeRenderer.html"
+            }
+        }
+    ],
+    "translations": [
+        "translation"
+    ]
+}

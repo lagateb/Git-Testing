@@ -1,0 +1,92 @@
+{
+  "name": "allianzFlexiModuleWizard",
+  "since": "2019.3.1",
+  "version": "1.0",
+  "filename": "flexi-module-wizard.module",
+  "implementations": [
+    {
+      "type": "csBehavior",
+      "name": "allianzFlexiModuleWizardAssetCreateBehavior",
+      "constructor": "allianzFlexiModuleWizardAssetCreateBehavior",
+      "properties": {
+        "title": "allianzFlexiModuleWizard.title",
+        "icon": "cs-icon-add-content",
+        "priority": 600,
+        "filters": {
+          "context": "asset",
+          "csAssetTypePatterns": [
+            {
+              "assettype": "product.",
+              "mimetype": "*"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "csWizard",
+      "name": "allianzFlexiModuleWizard",
+      "properties": {
+        "title": "allianzFlexiModuleWizard.title",
+        "application": "com.allianz.flexi.module.wizard",
+        "controllerName": "allianzFlexiModuleWizardController",
+        "steps": [
+          "flexiModuleChooseProduct",
+          "flexiModuleChooseType",
+          "flexiModuleChooseModule",
+          "flexiModuleChooseSettings",
+          "flexiModuleOverview"
+        ]
+      }
+    },
+    {
+      "type": "csWizardStep",
+      "name": "flexiModuleChooseProduct",
+      "properties": {
+        "title": "allianzFlexiModuleWizard.chooseProduct",
+        "componentName": "flexiModuleChooseProduct"
+      }
+    },
+    {
+      "type": "csWizardStep",
+      "name": "flexiModuleChooseType",
+      "properties": {
+        "title": "allianzFlexiModuleWizard.chooseType",
+        "componentName": "flexiModuleChooseType"
+      }
+    },
+    {
+      "type": "csWizardStep",
+      "name": "flexiModuleChooseModule",
+      "properties": {
+        "title": "allianzFlexiModuleWizard.chooseModule",
+        "componentName": "flexiModuleChooseModule"
+      }
+    },
+    {
+      "type": "csWizardStep",
+      "name": "flexiModuleChooseSettings",
+      "properties": {
+        "title": "allianzFlexiModuleWizard.chooseSettings",
+        "componentName": "flexiModuleChooseSettings"
+      }
+    },
+    {
+      "type": "csWizardStep",
+      "name": "flexiModuleOverview",
+      "properties": {
+        "title": "allianzFlexiModuleWizard.overview",
+        "componentName": "flexiModuleOverview"
+      }
+    }
+  ],
+  "java": {
+    "sourcepath": "src/java"
+  },
+  "translations": [
+    "translation"
+  ],
+  "assets": {
+    "path": "assets"
+  }
+}

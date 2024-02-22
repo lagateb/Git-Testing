@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</head>
+<body>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:cs=&quot;http://www.censhare.com/xml/3.0.0/xpath-functions&quot;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msp=&quot;http://www.mspag.com&quot;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;xmlns:corpus=&quot;http://www.censhare.com&quot; version=&quot;2.0&quot;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;exclude-result-prefixes=&quot;cs msp corpus&quot;&gt;
+
+ &nbsp;&lt;xsl:variable name=&quot;debug&quot; select=&quot;false()&quot; as=&quot;xs:boolean&quot;/&gt;
+
+ &nbsp;&lt;xsl:variable name=&quot;query&quot; as=&quot;element(query)&quot;&gt;
+ &nbsp; &nbsp;&lt;query type=&quot;asset&quot; limit=&quot;1000&quot;&gt;
+ &nbsp; &nbsp; &nbsp;&lt;not&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;condition name=&quot;censhare:asset.name&quot; op=&quot;LIKE&quot; value=&quot;*.*&quot;/&gt;
+ &nbsp; &nbsp; &nbsp;&lt;/not&gt;
+ &nbsp; &nbsp; &nbsp;&lt;condition name=&quot;msp:alz.media.filename&quot; op=&quot;NOTNULL&quot;/&gt;
+ &nbsp; &nbsp; &nbsp;&lt;condition name=&quot;msp:alz.media.mmc-id&quot; op=&quot;NOTNULL&quot;/&gt;
+ &nbsp; &nbsp;&lt;/query&gt;
+ &nbsp;&lt;/xsl:variable&gt;
+
+ &nbsp;&lt;xsl:template match=&quot;/&quot;&gt;
+ &nbsp; &nbsp;&lt;xsl:for-each select=&quot;cs:asset($query)&quot;&gt;
+ &nbsp; &nbsp; &nbsp;&lt;xsl:variable name=&quot;current&quot; select=&quot;current()&quot; as=&quot;element(asset)&quot;/&gt;
+ &nbsp; &nbsp; &nbsp;&lt;xsl:variable name=&quot;updateAsset&quot; as=&quot;element(asset)&quot;&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;asset&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsl:copy-of select=&quot;$current/@*&quot;/&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsl:attribute name=&quot;name&quot; select=&quot;$current/asset_feature[@feature = 'msp:alz.media.filename']/@value_string&quot;/&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsl:copy-of select=&quot;$current/*&quot;/&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;/asset&gt;
+ &nbsp; &nbsp; &nbsp;&lt;/xsl:variable&gt;
+ &nbsp; &nbsp; &nbsp;&lt;xsl:copy-of select=&quot;if ($debug) then $updateAsset else msp:updateAsset($updateAsset)&quot;/&gt;
+ &nbsp; &nbsp;&lt;/xsl:for-each&gt;
+ &nbsp;&lt;/xsl:template&gt;
+
+ &nbsp;&lt;xsl:function name=&quot;msp:updateAsset&quot;&gt;
+ &nbsp; &nbsp;&lt;xsl:param name=&quot;asset&quot; as=&quot;element(asset)&quot;/&gt;
+ &nbsp; &nbsp;&lt;cs:command name=&quot;com.censhare.api.assetmanagement.Update&quot; returning=&quot;result&quot;&gt;
+ &nbsp; &nbsp; &nbsp;&lt;cs:param name=&quot;source&quot; select=&quot;$asset&quot;/&gt;
+ &nbsp; &nbsp;&lt;/cs:command&gt;
+ &nbsp; &nbsp;&lt;xsl:copy-of select=&quot;$result&quot; /&gt;
+ &nbsp;&lt;/xsl:function&gt;
+
+&lt;/xsl:stylesheet&gt;
+
+</pre>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset id_org="12853" name="Image Metadata Dialog Allianz" type="module.dialog." application="texteditor" domain="root." domain2="root.">
+  <asset_element idx="0" key="actual." isversioned="1"/>
+  <asset_feature feature="censhare:available-trait" value_string="allianz"/>
+  <asset_feature feature="censhare:available-trait" value_string="allianz"/>
+  <asset_feature feature="censhare:available-trait" value_string="display"/>
+  <asset_feature feature="censhare:available-trait" value_string="exif"/>
+  <asset_feature feature="censhare:available-trait" value_string="images"/>
+  <asset_feature feature="censhare:available-trait" value_string="iptc"/>
+  <asset_feature feature="censhare:available-trait" value_string="web2print"/>
+  <asset_feature feature="censhare:available-trait" value_string="xmp"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="66e1aba0-617b-11ec-bed6-3a9ca4fe93db"/>
+  <asset_feature feature="censhare:resource-usage" value_key="censhare:meta-data-dialog-definition"/>
+  <parent_asset_rel parent_asset_ref_resource_key="censhare:metadata.image.dialog" child_asset_org="12853" key="variant.resource.replace."/>
+  <storage_item element_idx="0" key="master" mimetype="text/html" relpath="file:Image Metadata Dialog Allianz.html"/>
+</asset>

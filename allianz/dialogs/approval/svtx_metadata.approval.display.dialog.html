@@ -1,0 +1,100 @@
+<h2>{{ 'csCommonTranslations.approvalTypesCurrentAssetType' | csTranslate }}</h2>
+<style>
+  li.csDialogForm__row {margin:0; min-height:1.5em;}
+  span.cs-value {font-weight: 400; font-size:1.2rem; color:black;}
+</style>
+
+<cs-progress class="cs-progress-01 cs-m-b-xs cs-p-h-w" number="number" progress="progress()"></cs-progress>
+<div ng-if="(dataModel.metadata.workflowID == WF_TEXT && dataModel.metadata.workflowStepID != 10) || (dataModel.metadata.workflowID == WF_MEDIA && dataModel.metadata.workflowStepID != 10)">
+  <div ng-repeat="approval in dataModel.approval" class="cs-dialog-group clearfix">
+    <div ng-if="approval.roleShowApproval">
+      <span class="cs-icon cs-icon-circle-info cs-iconsize-200 cs-color-05"
+        style="float:left;"
+        cs-tooltip="{{getApprovalDescription(approval)}}"
+        >&#160;</span>
+        <!-- cs-popover="{title: approval.name, content: approval.description, trigger:'hover focus', placement: 'top', type: 'info'}" -->
+        <h6 class="cs-line-01">{{approval.name}}</h6>
+
+        <div class="csDialogGroup_body clearfix">
+          <ul class="csAssetProperties__list csAssetListItemRendererWidget1xn">
+            <!-- Roles -->
+            <li class="csDialogForm__row">
+              <div class="csDialogForm__cell-label" style="padding-top: 0;">
+                <span class="cs-label">{{ 'csCommonTranslations.roles' | csTranslate }}</span>
+              </div>
+              <div class="csDialogForm__cell">
+                <span class="cs-value"><span ng-repeat="role in approval.roles"
+                ng-attr-title="{{role.description}} ({{role.type=='system-role' ? 'System role' : 'Team role' }})">{{role.name}}{{$last ? '' : ', '}}</span></span>
+              </div>
+            </li>
+            <li class="csDialogForm__row">
+              <div class="csDialogForm__cell-label" style="padding-top: 0;">
+                <span class="cs-label">{{ 'csCommonTranslations.status' | csTranslate }}</span>
+              </div>
+              <div class="csDialogForm__cell">
+                    <span class="cs-icon cs-iconsize-200 cs-m-r-xs" ng-class="statusCss(approval)" style="vertical-align: middle;"></span>
+                    <span class="cs-value">{{getStatusDisplayValue(approval)}}</span>
+              </div>
+              <div class="csDialogForm__cell">
+                <button class="cs-button cs-is-active cs-is-small" role="button" ng-if="showButton(approval, approvalStatusConfig.ignore)"
+                ng-click="approvalAction(approval,approvalStatusConfig.ignore)">{{ 'csCommonTranslations.ignore' | csTranslate }}</button>
+                &#160;
+                <button class="cs-button cs-is-active cs-is-small" role="button" ng-if="showButton(approval, approvalStatusConfig.start)"
+                ng-click="approvalAction(approval,approvalStatusConfig.start)">{{ 'csCommonTranslations.startApproval' | csTranslate }}</button>
+                &#160;
+                <button class="cs-button cs-is-active cs-is-small" role="button" ng-if="showButton(approval, approvalStatusConfig.delete)"
+                ng-click="approvalAction(approval,approvalStatusConfig.delete)">{{ 'csCommonTranslations.delete' | csTranslate }}</button>
+              </div>
+            </li>
+            <li class="csDialogForm__row">
+              <div class="csDialogForm__cell-label" style="padding-top: 0;">
+                <span class="cs-label">{{ 'csCommonTranslations.comment' | csTranslate }}</span>
+              </div>
+              <div class="csDialogForm__cell">
+                <div ng-if="formData.addComment==false">
+                  <span class="cs-value" ng-if="approval.assetApproval.comment.value[0].value">
+                  {{approval.assetApproval.comment.value[0].value}}
+                </span>
+                </div>
+                <div ng-if="formData.addComment==approval.key" style="width:50%; padding-top:4px">
+                  <cs-input ng-model="formData.comment" multilines="3" placeholder="{{ 'csCommonTranslations.writeComment' | csTranslate }}"></cs-input>
+                    <div class="cs-m-t-xs">
+                    <span style="float: right;">
+                      <button class="cs-button cs-is-active cs-is-small" role="button" ng-click="cancel()">{{ 'csCommonTranslations.cancel' | csTranslate }}</button>
+                      <button class="cs-button-cta cs-is-active cs-is-small" role="button" ng-click="approvalActionForm()">{{ 'csCommonTranslations.ok' | csTranslate }}</button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li class="csDialogForm__row" ng-if="formData.createTask==approval.key">
+              <div class="csDialogForm__cell-label" style="padding-top: 0;">
+                <span class="cs-label">{{ 'csCommonTranslations.createTask' | csTranslate }}</span>
+              </div>
+              <div class="csDialogForm__cell">
+                <div style="width:50%; padding-top:4px">
+                  <div>TODO Create task...</div>
+                    <div class="cs-m-t-xs">
+                    <span style="float: right;">
+                      <button class="cs-button cs-is-active cs-is-small" role="button" ng-click="cancel()">{{ 'csCommonTranslations.cancel' | csTranslate }}</button>
+                      <button class="cs-button-cta cs-is-active cs-is-small" role="button" ng-click="approvalActionForm()">{{ 'csCommonTranslations.ok' | csTranslate }}</button>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<div ng-if="dataModelLoaded && dataModel.metadata.workflowID == WF_TEXT && dataModel.metadata.workflowStepID == 10">
+  <cs-empty-state cs-empty-state-icon="'cs-icon-ban'" style="position: relative; padding-top: 30px">
+    <span class="cs-state-headline" >Dieser Text steht momentan nicht zur Freigabe</span>
+  </cs-empty-state>
+</div>
+<div ng-if="dataModelLoaded && dataModel.metadata.workflowID == WF_MEDIA && dataModel.metadata.workflowStepID == 10">
+  <cs-empty-state cs-empty-state-icon="'cs-icon-ban'" style="position: relative; padding-top: 30px">
+    <span class="cs-state-headline" >Dieses Medium steht momentan nicht zur Freigabe</span>
+  </cs-empty-state>
+</div>

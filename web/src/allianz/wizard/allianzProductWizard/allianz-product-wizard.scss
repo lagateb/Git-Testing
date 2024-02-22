@@ -1,0 +1,20 @@
+.csWizard {
+  .allianzProductWizard__container {
+    margin: 0 auto;
+    max-width: 100rem;
+    // 5 rem because we have only a single select in a big widget. So a little bit more space above looks better
+    padding: 5rem 1.5rem 2rem;
+  }
+  .product-choice {
+    margin-top: 10rem;
+  }
+  .allianzProductWizard__table_border {
+    border-bottom: 1px solid #f2f2f2 !important;
+  }
+  .allianzProductWizard__no_table_border {
+    border-bottom: none !important;
+  }
+  .allianzProductWizard__icon_spacing {
+    padding-right: 0.5rem;
+  }
+}

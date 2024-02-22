@@ -1,0 +1,46 @@
+<style type="text/css">
+    .csMediaAssignment.ng-scope {
+        width: 300px;
+
+    }
+
+
+    .csMediaAssignment .cs-label {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 250px;
+        display: inline-block;
+        height: 27px;
+        padding-top: 6px;
+    }
+</style>
+<div ng-if="webAssignsments && webAssignsments.length>0">
+<h2>Portale</h2>
+<hr/>
+<div   class="csMediaAssignment" ng-repeat="option in webAssignsments track by $index">
+    <cs-toggle ng-model="option.selected" label="{{ option.display_value }}" class="cs-input-value"></cs-toggle>
+</div>
+
+<br/>
+<br/>
+</div>
+<div ng-if="pptxMedias && pptxMedias.length>0">
+<h2>Powerpoint</h2>
+<hr/>
+
+<div class="csMediaAssignment" ng-repeat="option in pptxMedias track by $index">
+    <!--
+    <cs-checkbox class="cs-is-alt" label="{{ option.display_value }}" ng-model="option.selected" class="cs-is-small cs-no-p-r"></cs-checkbox>
+    -->
+    <cs-toggle ng-model="option.selected" label="{{ option.display_value }}" class="cs-input-value"></cs-toggle>
+</div>
+<br/>
+<br/>
+</div>
+<div class="cs-form-02" ng-if="hasChanged()">
+    <div>
+        <div class="cs-form-row">
+            <button class="cs-button-cta cs-is-small" role="button" ng-click="saveMediaAssignment()">Änderung Speichern</button>
+        </div>
+    </div>
+</div>

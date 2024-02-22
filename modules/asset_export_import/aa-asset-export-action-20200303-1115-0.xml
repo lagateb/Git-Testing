@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmd xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.censhare.com/xml/3.0.0/command.xsd" xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct" xmlns:xe="http://www.censhare.com/xml/3.0.0/xmleditor">
+  <xml-info title="${reg-title-aa-asset-export-action}" description="${reg-description-aa-asset-export}" knowledge-level="2" special-licence="false" feature-help="" localize="true" template-name="asset_export_import.aa-asset-export-action" template-url="file:modules/asset_export_import/aa-asset-export-action.xml">
+    <property-resources>
+      <base url="file:module"/>
+      <base url="file:../../common/global"/>
+    </property-resources>
+    <history>
+      <entry user="[Savotex] Peters, Jörg" timestamp="2020-03-03T10:14:58.457Z" comment=""/>
+    </history>
+  </xml-info>
+  <cmd-info name="asset_export_import.aa-asset-export-action-20200303-1115-0" type="server-action" enabled="true" long-term="true">
+    <error-log module="Asset Export" log-cancel="false"/>
+    <server-action>
+      <clients>
+        <client type="javaclient"/>
+        <client type="webclient"/>
+      </clients>
+      <filter multi-selection="true">
+        <asset/>
+      </filter>
+    </server-action>
+  </cmd-info>
+  <admin-info dialog-id="aa-asset-export-action-config" dialog-url="file:config-dialog.xml"/>
+  <commands currentstep="0">
+    <command target="ScriptletManager" scriptlet="modules.asset_export_import.AAAssetExport" method="serverActionSetup"/>
+    <command target="ScriptletManager" scriptlet="modules.asset_export_import.AAAssetExport" method="flush"/>
+    <command target="ScriptletManager" scriptlet="modules.asset_export_import.AAAssetExport" method="finish"/>
+    <command target="ScriptletManager" scriptlet="modules.asset_export_import.AAAssetExport" method="serverActionFinish"/>
+    <command target="client" method="download" key="download" select_folder="false" caption="${asset-export-file}"/>
+    <command target="client" method="showdialog" key="results"/>
+  </commands>
+  <config perform-checkout="false" perform-tree="true" temp-filesystem="temp" filesystem="temp" zip64-extension="false" add-jsonfiles="true">
+    <asset-tree is_subtractive_parent_relations="false" select_all_parent_relations="false" is_subtractive_child_relations="false" select_all_child_relations="false" is_subtractive_features="false" select_all_features="false" is_subtractive_references="false" select_all_references="false">
+      <asset-rel key="target.*"/>
+      <asset-rel key="actual.*"/>
+      <asset-rel key="variant.*"/>
+      <asset-rel key="user.*"/>
+      <asset-feature key="censhare:input-form"/>
+    </asset-tree>
+    <!-- update/checkin assets -->
+    <asset-update/>
+  </config>
+  <xe:part id="results" transactional="false">
+    <xe:group align="down">
+      <xe:html weight-x="1.0" weight-y="1.0" prefwidth="200" margin="0" css-key="asset-info">
+        <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
+          <xsl:template match="/">
+            <html>
+              <b>
+                ${result}
+              </b>
+              <xsl:value-of select="cmd/report/@assets"/>
+              assets exported successfully
+            </html>
+          </xsl:template>
+        </xsl:stylesheet>
+      </xe:html>
+    </xe:group>
+  </xe:part>
+</cmd>

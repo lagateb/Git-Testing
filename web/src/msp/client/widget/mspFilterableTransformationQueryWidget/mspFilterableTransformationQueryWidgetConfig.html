@@ -1,0 +1,32 @@
+<cs-dialog-group group-label="mspFilterableTransformationQueryWidget.configGroupTitle" ng-if="config">
+  <ul>
+    <cs-config-dialog-row row-label="mspFilterableTransformationQueryWidget.configTransformation" ng-if="transformations">
+      <cs-select-new required="true"
+                     model="config.transformationKey"
+                     values="transformations"
+                     value-key="resourceKey"
+                     display-key="name"
+                     order-by="name"
+                     placeholder="{{ 'mspFilterableTransformationQueryWidget.configTransformationPlaceholder' | csTranslate }}">
+      </cs-select-new>
+    </cs-config-dialog-row>
+    <li ng-if="!transformations" cs-translate="'mspFilterableTransformationQueryWidget.configTransformationLoading'"></li>
+
+    <cs-config-dialog-row row-label="mspFilterableTransformationQueryWidget.configToolbarTransformation">
+      <cs-select-new
+          model="config.toolbarTransformationKey"
+          values="toolbarTransformations"
+          value-key="resourceKey"
+          display-key="name"
+          order-by="name"
+          placeholder="{{ 'mspFilterableTransformationQueryWidget.configTransformationPlaceholder' | csTranslate }}">
+        >
+      </cs-select-new>
+    </cs-config-dialog-row>
+    <li ng-if="!toolbarTransformations" cs-translate="'mspFilterableTransformationQueryWidget.configTransformationLoading'"></li>
+
+    <cs-config-dialog-row row-label="mspFilterableTransformationQueryWidget.configCustomView">
+      <cs-input ng-model="config.customView"></cs-input>
+    </cs-config-dialog-row>
+  </ul>
+</cs-dialog-group>

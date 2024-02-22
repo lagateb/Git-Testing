@@ -1,0 +1,36 @@
+<div style="display: flex;height: 100%;flex-direction: column;">
+  <cs-empty-state ng-if="missingConfig" cs-empty-state-icon="'cs-icon-list'">
+    <span class="cs-state-headline" cs-translate="'mspFilterableTransformationQueryWidget.missingConfig'"></span>
+    <button class="cs-button-link-01" ng-disabled="readOnly" ng-click="widgetConfiguration()">
+      <i class="cs-icon cs-icon-circle-plus cs-iconsize-200"></i>&nbsp; <span
+        cs-translate="'mspFilterableTransformationQueryWidget.missingConfigBtn'"></span>
+    </button>
+  </cs-empty-state>
+
+  <cs-empty-state ng-if="assetOverflow" cs-empty-state-icon="'cs-icon-list'">
+    <span class="cs-state-headline" cs-tooltip="{{'mspFilterableTransformationQueryWidget.assetOverflow' | csTranslate}}"
+          ng-bind="'mspFilterableTransformationQueryWidget.assetOverflow' | csTranslate"></span>
+  </cs-empty-state>
+
+  <cs-empty-state ng-if="!missingConfig && dataSource.totalCountReader.getValue() === 0" cs-empty-state-icon="'cs-icon-list'">
+    <span class="cs-state-headline" cs-translate="'mspFilterableTransformationQueryWidget.noResult'"></span>
+  </cs-empty-state>
+
+  <cs-xslt-toolbar ng-if="toolbarTransformationKey"
+                   transformation-key="toolbarTransformationKey"
+                   on-change="toolbarOnChangeCallback()"
+                   on-loaded="toolbarOnChangeCallback()"
+                   widget-id="widgetId"
+                   toolbar-data="toolbarData"
+                   toolbar-state="toolbarState"
+                   style="flex: 0 0 auto;">
+  </cs-xslt-toolbar>
+
+  <cs-item-renderer
+      ng-if="!missingConfig && !assetOverflow && dataSource.totalCountReader.getValue() !== 0"
+      flavor="listFlavor"
+      class="cs-add-list-hor-widget-padding cs-widget-content-padding-top"
+      item="dataSource"
+      context="context">
+  </cs-item-renderer>
+</div>

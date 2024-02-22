@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset id_org="11397" name="Slot Description Asset List Promotions" type="module.workspace.view.slot." application="default" domain="root." domain2="root.">
+  <asset_feature feature="censhare:asset-type-filter" value_string="*"/>
+  <asset_feature feature="censhare:mime-type-filter" value_string="*"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="msp:workspace.view.slot.description.assetListPromotions"/>
+  <asset_feature feature="censhare:workspace.view.slot-name" value_string="description"/>
+  <asset_feature feature="censhare:workspace.view.snippet" value_string2="censhare:resource-key" sorting="1" value_asset_key_ref="msp:workspace.view.snippet.mspAllianzPromotionNumberSnippet"/>
+  <asset_feature feature="censhare:workspace.view.snippet" value_string2="censhare:resource-key" sorting="2" value_asset_key_ref="msp:workspace.view.snippet.mspAllianzPromotionNameSnippet"/>
+  <asset_feature feature="censhare:workspace.view.snippet" value_string2="censhare:resource-key" sorting="3" value_asset_key_ref="msp:workspace.view.snippet.mspAllianzPromotionArticleNumberAndVersionSnippet"/>
+  <asset_feature feature="censhare:workspace.view.snippet" value_string2="censhare:resource-key" sorting="4" value_asset_key_ref="msp:workspace.view.snippet.mspAllianzPromotionMediaProviderSnippet"/>
+  <parent_asset_rel parent_asset_ref_resource_key="censhare:workspace.view.slot.description.assetListLarge" key="user."/>
+</asset>

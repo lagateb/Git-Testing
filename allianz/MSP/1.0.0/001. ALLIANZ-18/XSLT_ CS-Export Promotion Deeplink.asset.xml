@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset name="XSLT: CS-Export Promotion Deeplink" type="module.transformation." application="texteditor" domain="root." domain2="root." non_owner_access="1">
+  <asset_element idx="0" key="actual." isversioned="1"/>
+  <asset_feature feature="censhare:owner" value_long="2"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="msp:contentexport2-cs-export-promotion-deeplink"/>
+  <asset_feature feature="censhare:resource-meta">
+    <xmldata>
+      <selection needed="false"/>
+    </xmldata>
+  </asset_feature>
+  <asset_feature feature="censhare:resource-usage" value_key="censhare:content-export-transformation"/>
+  <storage_item element_idx="0" key="master" mimetype="application/xslt+xml" relpath="file:XSLT_ CS-Export Promotion Deeplink.xsl"/>
+  <storage_item element_idx="0" key="text-preview" mimetype="application/xhtml+xml" relpath="file:XSLT_ CS-Export Promotion Deeplink.text-preview.xhtml"/>
+</asset>

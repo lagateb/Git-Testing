@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset name="Check main content child" type="module.completeness-check." application="default" domain="root.common-resources." domain2="root." description="No main content assigned. Please assign it in the Main content widget.">
+  <asset_feature feature="censhare:asset-type-filter" value_string="article."/>
+  <asset_feature feature="censhare:asset-type-filter" value_string="product1"/>
+  <asset_feature feature="censhare:completeness-check.expression.xpath" value_string="exists(child_asset_rel[@key=&apos;user.main-content.&apos;])"/>
+  <asset_feature feature="censhare:description" language="de" value_string="Kein Hauptinhalt zugeordnet. Bitte im Hauptinhalt-Widget zuordnen."/>
+  <asset_feature feature="censhare:description" language="en" value_string="No Main content assigned. Please add the assignment in the Main content widget."/>
+  <asset_feature feature="censhare:description" language="fr" value_string="Aucun contenu principal affecté. Affecter à widget de contenu principal"/>
+  <asset_feature feature="censhare:description" language="it" value_string="Nessun contenuto principale assegnato. Assegnare nel widget del contenuto principale."/>
+  <asset_feature feature="censhare:module-asset-source" value_string="required/web/completeness-checks"/>
+  <asset_feature feature="censhare:name" language="de" value_string="Hauptinhalt"/>
+  <asset_feature feature="censhare:name" language="en" value_string="Main content"/>
+  <asset_feature feature="censhare:name" language="fr" value_string="Contenu principal"/>
+  <asset_feature feature="censhare:name" language="it" value_string="Contenuto principale"/>
+  <asset_feature feature="censhare:name" language="ja" value_string="主なコンテンツ"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="0"/>
+  <asset_feature feature="censhare:resource-key" value_string="censhare:completeness-check.main-content"/>
+  <asset_feature feature="censhare:resource-meta">
+    <xmldata>
+      <selection needed="false"/>
+    </xmldata>
+  </asset_feature>
+</asset>

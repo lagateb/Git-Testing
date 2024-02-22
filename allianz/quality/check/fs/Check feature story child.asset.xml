@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset name="Check feature story child" type="module.completeness-check." application="default" domain="root.common-resources." domain2="root." description="No feature story assigned. Please assign it in the Feature stories widget.">
+  <asset_feature feature="censhare:asset-type-filter" value_string="product1."/>
+  <asset_feature feature="censhare:completeness-check.expression.xpath" value_string="exists(asset_feature[@feature=&apos;censhare:product.feature-story&apos;])"/>
+  <asset_feature feature="censhare:description" language="de" value_string="Keine Feature-Story zugeordnet. Bitte im Feature-Stories-Widget zuordnen."/>
+  <asset_feature feature="censhare:description" language="en" value_string="No Feature story assigned. Please add the assignment in the Feature story widget."/>
+  <asset_feature feature="censhare:description" language="fr" value_string="Aucun historique de fonctionnalité attribué. Ajouter dans historique fonctionnalité Widget. "/>
+  <asset_feature feature="censhare:description" language="it" value_string="Nessuna feature story assegnata. Assegnare nel widget delle feature story."/>
+  <asset_feature feature="censhare:module-asset-source" value_string="required/web/completeness-checks"/>
+  <asset_feature feature="censhare:name" language="de" value_string="Feature-Story"/>
+  <asset_feature feature="censhare:name" language="en" value_string="Feature story"/>
+  <asset_feature feature="censhare:name" language="fr" value_string="Historique fonctionnalité"/>
+  <asset_feature feature="censhare:name" language="it" value_string="Feature-Story"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="0"/>
+  <asset_feature feature="censhare:resource-key" value_string="censhare:completeness-check.feature-story.child"/>
+</asset>

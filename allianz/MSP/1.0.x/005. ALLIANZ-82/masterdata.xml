@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+  <features>
+    <feature key="msp:alz-mmc.promotion-creation-date" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Creation Date (Promotion)" name_de="Erstellungsdatum (Maßnahme)" description="Date of Creation (Promotion-Asset)" description_de="Erstellungsdatum (Maßnahme-Asset)" value_type="13" ui_control="0" ismultivalue="0" isassetinfo="2" assetinfo_sorting="0" issearchable="1" sorting="0" language_type="0" color_type="0" bdb_key="1156" enabled="1" has_relevance="0" target_object_type="asset" trait="product" trait_property="promotionCreationdate" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" label="Creation Date (Promotion)" asset_resource_key="msp:feature.alz-mmc.promotion-creation-date" tcn="1" rowid="1156"/>
+  </features>
+</data>

@@ -1,0 +1,15 @@
+title = ファイル
+description = 現在表示されているアセットのファイルの一覧
+dropNew = ここにファイルをドロップ
+dropNew2 = またはファイルを選択する]をクリックします
+get = ダウンロードファイル
+replace = ファイルを置き換えます
+replaceMaster = マスターファイルを置き換え
+delete = ファイルを削除する
+checkout = オープンファイル
+getcheckout = ダウンロードと編集
+deleteConfirm = ファイルはすぐに削除されるべきか？
+getTransformation = 変換を生成します
+dynamicallyGenerated = 動的に生成されます
+NoFiles = 添付なしのファイルはありません
+AddFileBtn = ファイル

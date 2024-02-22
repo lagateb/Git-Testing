@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<asset name="Column: Asset item (default table)" type="module.table.column." application="default" domain="root.common-resources." domain2="root.">
+  <asset_feature feature="censhare:name" language="de" value_string="Objekt"/>
+  <asset_feature feature="censhare:name" language="en" value_string="Asset"/>
+  <asset_feature feature="censhare:name" language="fr" value_string="Asset"/>
+  <asset_feature feature="censhare:name" language="it" value_string="Asset"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="0"/>
+  <asset_feature feature="censhare:resource-key" value_string="svtx:allianz-table-column.default.asset.item"/>
+  <asset_feature feature="censhare:table.column.align-horizontal" value_key="left"/>
+  <asset_feature feature="censhare:table.column.frozen" value_long="1"/>
+  <asset_feature feature="censhare:table.column.key" value_string="assetItem"/>
+  <asset_feature feature="censhare:table.column.sort-key" value_string="censhare:asset.name"/>
+  <asset_feature feature="censhare:table.column.type" value_key="template"/>
+  <asset_feature feature="censhare:table.column.width-max-pixels" value_long="400"/>
+  <asset_feature feature="censhare:table.column.width-min-pixels" value_long="200"/>
+  <asset_feature feature="censhare:table.column.width-pixels" value_long="300"/>
+  <asset_feature feature="censhare:table.column.template" value_string="&lt;cs-item-renderer flavor=&quot;'csAssetListItemRendererWidgetmxn_1rows'&quot; item=&quot;data&quot;&gt;&lt;/cs-item-renderer&gt;"/>
+</asset>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset name="Check main content child localized" type="module.completeness-check." application="default" domain="root.common-resources." domain2="root." description="Main content not available in German and English. Please translate.">
+    <asset_feature feature="censhare:asset-type-filter" value_string="product1."/>
+  <asset_feature feature="censhare:completeness-check.expression.xpath" value_string="count(child_asset_rel[@key=&apos;user.main-content.&apos;]) ge 2 and (for $x in child_asset_rel[@key=&apos;user.main-content.&apos;] return cs:get-asset($x/@child_asset)/@language) = (&apos;de&apos;, &apos;en&apos;)"/>
+  <asset_feature feature="censhare:description" language="de" value_string="Hauptinhalt nicht in deutsch und englisch vorhanden. Bitte übersetzen."/>
+  <asset_feature feature="censhare:description" language="en" value_string="Main content not available in German and English. Please localize."/>
+  <asset_feature feature="censhare:description" language="fr" value_string="Contenu principal pas encore disponible en allemand et en anglais. Traduire SVP."/>
+  <asset_feature feature="censhare:description" language="it" value_string="Contenuto principale non disponibile in tedesco e inglese. Tradurre prego."/>
+  <asset_feature feature="censhare:name" language="de" value_string="Hauptinhalt übersetzt"/>
+  <asset_feature feature="censhare:name" language="en" value_string="Main content localized"/>
+  <asset_feature feature="censhare:name" language="fr" value_string="Contenu principal traduit"/>
+  <asset_feature feature="censhare:name" language="it" value_string="Contenuto principale tradotto"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="0"/>
+  <asset_feature feature="censhare:resource-key" value_string="censhare:completeness-check.main-content-localized"/>
+  <asset_feature feature="censhare:resource-meta">
+    <xmldata>
+      <selection needed="false"/>
+    </xmldata>
+  </asset_feature>
+</asset>

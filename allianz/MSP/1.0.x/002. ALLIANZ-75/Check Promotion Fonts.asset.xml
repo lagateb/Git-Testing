@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset id_org="11625" name="Check Promotion Fonts" type="module.completeness-check." application="default" domain="root.common-resources." domain2="root." description="No Font is defined. Please add it to the promotion.">
+  <asset_feature feature="censhare:asset-type-filter" value_string="promotion."/>
+  <asset_feature feature="censhare:completeness-check.expression.xpath" value_string="exists(index-of(for $x in ((cs:child-rel()[@key=&apos;user.*&apos;]/cs:asset()[@censhare:asset.type=&apos;fontzipfile.&apos; and @censhare:storage_item.mimetype=&apos;application/zip&apos;])/@name) return matches($x, &apos;.*font.*&apos;,&apos;i&apos;), true()))"/>
+  <asset_feature feature="censhare:completeness-check.importance" value_key="required"/>
+  <asset_feature feature="censhare:description" language="de" value_string="Font ist nicht definiert. Bitte der Maßnahme zuordnen."/>
+  <asset_feature feature="censhare:description" language="en" value_string="No Font is defined. Please add it to the promotion."/>
+  <asset_feature feature="censhare:description" language="fr" value_string="No Font is defined. Please add it to the promotion."/>
+  <asset_feature feature="censhare:description" language="it" value_string="No Font is defined. Please add it to the promotion."/>
+  <asset_feature feature="censhare:name" language="de" value_string="Fonts vorhanden?"/>
+  <asset_feature feature="censhare:name" language="en" value_string="Fonts exists?"/>
+  <asset_feature feature="censhare:name" language="fr" value_string="Fonts exists?"/>
+  <asset_feature feature="censhare:name" language="it" value_string="Fonts exists?"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="msp:completeness-check.promotion.font"/>
+  <asset_feature feature="censhare:resource-meta">
+    <xmldata>
+      <selection needed="false"/>
+    </xmldata>
+  </asset_feature>
+</asset>

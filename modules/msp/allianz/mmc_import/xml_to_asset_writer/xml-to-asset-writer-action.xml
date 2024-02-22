@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<cmd xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.censhare.com/xml/3.0.0/command.xsd">
+
+  <xml-info title="${module-title}" description="${module-description}" localize="true" version="1">
+    <property-resources>
+      <base url="file:module"/>
+      <base url="file:../../../../client/javaadmin/module"/>
+      <base url="file:../../../../../common/global"/>
+    </property-resources>
+  </xml-info>
+
+  <cmd-info name="xml-to-asset-writer-action" type="server-action" enabled="false" ignore-error="false">
+    <error-log log-cancel="false"/>
+    <server-action>
+      <clients>
+        <client type="javaclient"/>
+        <client type="webclient"/>
+      </clients>
+      <filter multi-selection="false">
+        <asset type="text.xmlimport."/>
+      </filter>
+    </server-action>
+  </cmd-info>
+
+  <admin-info is-template="true" dialog-id="xml-to-asset-writer-config" dialog-url="file:config-dialog.xml"/>
+
+  <commands currentstep="0">
+    <command target="ScriptletManager" scriptlet="modules.msp.allianz.mmc_import.xml_to_asset_writer.XmlToAssetWriter" method="action"/>
+  </commands>
+
+  <config/>
+
+</cmd>

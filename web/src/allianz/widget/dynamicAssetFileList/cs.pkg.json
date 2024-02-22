@@ -1,0 +1,67 @@
+{
+  "name": "csDynamicAssetFileListWidget",
+  "since": "5.0.0",
+  "version": "1.0.1",
+  "filename": "dynamic-asset-file-list-widget.module",
+  "implementations": [
+    {
+      "type": "csWidget",
+      "name": "csDynamicAssetFileListWidget",
+      "properties": {
+        "contentControllerName": "csDynamicAssetFileListWidgetController",
+        "contentTemplateName": "csDynamicAssetFileListWidgetTemplate.html",
+        "headlessDataManager": "csDynamicAssetFileListWidgetHeadless",
+        "requiredApplications": [
+          "com.censhare.api.applications.asset.metadata.AssetInfoApplication"
+        ],
+        "listWidget": {
+          "rowHeightConfig": true,
+          "rowHeightDefault": "3"
+        },
+        "widgetInfo": {
+          "icon": "cs-icon-file",
+          "title": "csDynamicAssetFileListWidget.title",
+          "description": "csDynamicAssetFileListWidget.description"
+        }
+      }
+    },
+    {
+      "type": "csHeadlessWidgetDataManager",
+      "name": "csDynamicAssetFileListWidgetHeadless",
+      "constructor": "csDynamicAssetFileListWidgetManager"
+    },
+    {
+      "type": "csItemRenderer",
+      "name": "csDynamicAssetFileListWidgetItemRenderer",
+      "properties": {
+        "controller": "csDefaultItemRenderController",
+        "template": "csDynamicFileListItems.html",
+        "height": 50,
+        "contextHandling": "dynamic"
+      }
+    },
+    {
+      "type": "csItemRenderer",
+      "name": "csDynamicAssetFileListWidgetItemRenderer_1row",
+      "properties": {
+        "controller": "csDefaultItemRenderController",
+        "template": "csDynamicFileListItems_1row.html",
+        "height": 34,
+        "contextHandling": "dynamic"
+      }
+    },
+    {
+      "type": "csItemRenderer",
+      "name": "csDynamicAssetFileListWidgetItemRenderer_2rows",
+      "properties": {
+        "controller": "csDefaultItemRenderController",
+        "template": "csDynamicFileListItems_2rows.html",
+        "height": 40,
+        "contextHandling": "dynamic"
+      }
+    }
+  ],
+  "translations": [
+    "translation"
+  ]
+}

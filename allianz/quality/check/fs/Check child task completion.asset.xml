@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset name="Check child task completion" type="module.completeness-check." application="default" domain="root.common-resources." domain2="root." description="There are open tasks assigned. Please check tasks in the Tasks widget on the Details tab.">
+  <asset_feature feature="censhare:asset-filter.xpath.expression" value_string="exists(asset/child_asset_rel[@key=&apos;user.task.&apos;])"/>
+  <asset_feature feature="censhare:asset-type-filter" value_string="product1."/>
+  <asset_feature feature="censhare:completeness-check.expression.xpath" value_string="not(child_asset_rel[@key=&apos;user.task.&apos;]) or exists(asset_feature[@feature=&apos;censhare:calc-child-task-completion-percentage&apos; and @value_double=&apos;100.0&apos;])"/>
+  <asset_feature feature="censhare:description" language="de" value_string="Es sind offene Aufgaben zugeordnet. Bitte im Aufgaben-Widget auf dem Details-Tab prüfen."/>
+  <asset_feature feature="censhare:description" language="en" value_string="There are open tasks assigned. Please check tasks in the Tasks widget on the Details tab."/>
+  <asset_feature feature="censhare:description" language="fr" value_string="Des tâches ouvertes sont associées. Dans le widget de tâches, contrôler l&apos;onglet Détails"/>
+  <asset_feature feature="censhare:description" language="it" value_string="Ci sono processi aperti assegnati. Controllare nel widget dei processi sulla linguetta dei dettagli."/>
+  <asset_feature feature="censhare:module-asset-source" value_string="required/web/completeness-checks"/>
+  <asset_feature feature="censhare:name" language="de" value_string="Aufgaben erledigt"/>
+  <asset_feature feature="censhare:name" language="en" value_string="Tasks completed"/>
+  <asset_feature feature="censhare:name" language="fr" value_string="Tâches terminées"/>
+  <asset_feature feature="censhare:name" language="it" value_string="Processi completati"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="censhare:completeness-check.child-task-completion"/>
+</asset>

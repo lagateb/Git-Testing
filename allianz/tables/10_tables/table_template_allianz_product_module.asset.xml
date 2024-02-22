@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset name="table_template_allianz_product_module" type="module.table." application="default" domain="root." domain2="root.">
+    <asset_feature feature="censhare:module-asset-source" value_string="allianz/tables/10_tables"/>
+    <asset_feature feature="censhare:name" language="de" value_string="Tabellen Vorlage Allianz Module eines Produkts"/>
+    <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+    <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+    <asset_feature feature="censhare:resource-key" value_string="svtx:table_template_allianz_product_module"/>
+    <asset_feature feature="censhare:resource-meta">
+        <xmldata>
+            <selection needed="false"/>
+        </xmldata>
+    </asset_feature>
+    <asset_feature feature="censhare:table.column" value_string2="censhare:resource-key" sorting="1" value_asset_key_ref="svtx:allianz-table-column.default.modul.item"/>
+    <asset_feature feature="censhare:table.column" value_string2="censhare:resource-key" sorting="2" value_asset_key_ref="svtx:table-column.asset-type"/>
+    <asset_feature feature="censhare:table.column" value_string2="censhare:resource-key" sorting="3" value_asset_key_ref="svtx:allianz-table-column.variant.speech"/>
+    <asset_feature feature="censhare:table.column" value_string2="censhare:resource-key" sorting="4" value_asset_key_ref="allianz:table-column.asset.targetgroup"/>
+    <asset_feature feature="censhare:table.column" value_string2="censhare:resource-key" sorting="5" value_asset_key_ref="svtx:table-column.asset.wf-step.icon"/>
+    <asset_feature feature="censhare:table.column" value_string2="censhare:resource-key" sorting="6" value_asset_key_ref="svtx:table-column.default.asset.modified-at"/>
+    <asset_feature feature="censhare:table.column" value_string2="censhare:resource-key" sorting="7" value_asset_key_ref="allianz:table-column.asset.usage-in-media"/>
+    <asset_feature feature="censhare:table.column" value_string2="censhare:resource-key" sorting="8" value_asset_key_ref="svtx:table-column.default.asset.editable"/>
+    <!--<asset_feature feature="censhare:table.column" value_string2="censhare:resource-key" sorting="9" value_asset_key_ref="svtx:table-column.default.asset.owner"/>-->
+</asset>

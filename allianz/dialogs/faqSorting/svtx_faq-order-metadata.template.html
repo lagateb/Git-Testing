@@ -1,0 +1,242 @@
+<style type="text/css">
+    .csMediaAssignment.ng-scope {
+        width: 300px;
+
+    }
+
+
+    .changePosition__actions span {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 350px;
+        display: inline-block;
+        padding-bottom: 2px;
+        /*
+        height: 27px;
+        padding-top: 6px;
+        */
+    }
+
+    div.changePosition__actions {
+        padding-bottom: 2px;
+    }
+
+    div.csFAQSorting {
+        width: 100%;
+        /*padding-bottom: 5px;*/
+    }
+
+
+    div.csFAQSorting button {
+        background: white;
+        border-color: white;
+        /*float: right;*/
+
+    }
+
+    div.csFAQSorting button.bin {
+        background: white;
+        border-color: white;
+        float: right;
+        padding-right: 100px;
+    }
+
+    div.csFAQSorting span.cs-like-h2 {
+        /*display: unset;*/
+        display: inline-block;
+    }
+
+    div.csFAQSorting div.cell1 {
+        width: 300px;
+        height: 30px;
+        line-height: 30px;
+        border-right: 2px solid;
+        border-right-color: #fff;
+        padding-top: 3px;
+        /*transform: translate(0px, 0px);*/
+    }
+
+    div.csFAQSorting div.cell2 {
+        width: 130px;
+        height: 30px;
+        line-height: 30px;
+        border-right: 2px solid;
+        border-right-color: #fff;
+        padding-top: 3px;
+        /*transform: translate(0px, 0px);*/
+    }
+
+    div.csFAQSorting div.cell3 {
+        width: 145px;
+        height: 30px;
+        line-height: 30px;
+        border-right: 2px solid;
+        border-right-color: #fff;
+        padding-top: 3px;
+        /*transform: translate(0px, 0px);*/
+    }
+    div.csFAQSorting div.cell4 {
+        width: 145px;
+        height: 30px;
+        line-height: 30px;
+        border-right: 2px solid;
+        border-right-color: #fff;
+        padding-top: 3px;
+    }
+
+    div.csFAQSorting div.cell5 {
+        width: 345px;
+        height: 30px;
+        line-height: 30px;
+
+        border-right: 2px solid;
+        border-right-color: #fff;
+        padding-top: 3px;
+    }
+
+    div.csFAQSorting div.cell6 {
+        width: 58px;
+        height: 30px;
+        line-height: 30px;
+        border-right: 2px solid;
+        border-right-color: #fff;
+        padding-top: 3px;
+
+
+    }
+
+  div.widgetFAQ {
+      padding-left: 5px;
+  }
+
+    div.widgetFAQ cs-form-02 {
+        padding-top: 20px;
+    }
+    .dot {
+        height: 10px;
+        width: 10px;
+        margin-bottom: 10px;
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+
+    .csFAQSorting button:hover {
+        background: #fff;
+        border-color: #fff;
+    }
+
+    .csBorderTop {
+        /*border-top: 1px solid;*/
+        border-top-color:#b2b2b2; ;
+    }
+
+     .myButton {
+
+        padding-bottom: 1rem;
+        padding-left: 1rem;
+        padding-top: 2rem;
+    }
+
+ /* 1140 px */
+</style>
+<div  class="widgetFAQ">
+    <div class="csFAQSorting">
+        <span class="cs-like-h2">Fragen und Antworten</span>
+        <button ng-disabled="isWorking" class="cs-button cs-button-ctajp cs-is-small bin" role="button"
+                ng-click="createNewFAQPDF()"><i
+                class="cs-icon  cs-icon-add-layout cs-iconsize-400" style="color:black;"></i>Download PDF</button>
+        <span>&nbsp;</span>
+          <button ng-disabled="isWorking" class="cs-button cs-button-ctajp cs-is-small bin" role="button"
+                       ng-click="createNewFAQText()"><i
+                class="cs-icon  cs-icon-add-layout cs-iconsize-400" style="color:black;"></i>Neuer Text</button>
+    </div>
+
+    <div class="csTableControl__header csTableControl__row_header csFAQSorting " >
+        <div class="csTableControl__cell csTableControl__cell_frozen-x csTableControl__header_cell cell1">
+            <div class="csTableControl__cell_content csTableControl__header_void_cell">Frage</div>
+
+        </div>
+        <div class="csTableControl__cell csTableControl__cell_not-frozen csTableControl__header_cell cell2">
+            <div class="csTableControl__cell_content csTableControl__header_void_cell">Dachzeile</div>
+        </div>
+        <div class="csTableControl__cell csTableControl__cell_not-frozen csTableControl__header_cell cell3">
+            <div class="csTableControl__cell_content csTableControl__header_void_cell">Workflow-Schritt</div>
+        </div>
+        <div class="csTableControl__cell csTableControl__cell_not-frozen csTableControl__header_cell cell4">
+            <div class="csTableControl__cell_content csTableControl__header_void_cell">Sortierung</div>
+        </div>
+        <div class="csTableControl__cell csTableControl__cell_not-frozen csTableControl__header_cell cell5">
+            <div class="csTableControl__cell_content csTableControl__header_void_cell">Nutzung</div>
+        </div>
+
+        <div class="csTableControl__cell csTableControl__cell_not-frozen csTableControl__header_cell cell6">
+            <div class="csTableControl__cell_content csTableControl__header_void_cell"></div>
+        </div>
+
+    </div>
+
+
+    <div class="csFAQSorting" ng-repeat="option in faqTextOptions track by $index">
+        <!--
+    <cs-checkbox class="cs-is-alt" label="{{ option.display_value }}" ng-model="option.selected" class="cs-is-small cs-no-p-r"></cs-checkbox>
+     ng-if="canChangePosition"
+    -->
+        <div class="changePosition__actions csBorderTop">
+            <div  class="csTableControl__cell csTableControl__cell_content cell1" ng-click="editText(option)">{{ option.display_value }}</div>
+
+            <div class="csTableControl__cell csTableControl__cell_content cell2" >
+                <div class="cs-tooltip-indicatornix cs-is-successnix svtxIconTablePosition"
+                      cs-tooltip="{{ option.strapline }}">
+            {{option.strapline}}</div></div>
+
+            <div class="csTableControl__cell csTableControl__cell_content cell3" >
+                <div class="csWorkflow__color cs-ctrl-color dot" value="#ff00ff"
+                     ng-style="getColorStyle(option)"></div>
+                {{ option.wf_step_name }}</div>
+
+            <div class="csTableControl__cell csTableControl__cell_content cell4" >
+            <span ng-if="withSorting">
+            <button class="cs-button cs-button-cta cs-is-small" role="button"
+                    ng-click="updateFAQTextPosition(option,true)"><i class="cs-icon  cs-icon-up-arrow cs-iconsize-400"
+                                                                     style="color:black;"></i></button>
+
+            <button class="cs-button cs-button-cta cs-is-small" role="button"
+                    ng-click="updateFAQTextPosition(option,false)"><i
+                    class="cs-icon  cs-icon-down-arrow cs-iconsize-400" style="color:black;"></i></button>
+                </span>
+            </div>
+
+            <div class="csTableControl__cell csTableControl__cell_content cell5" >
+            <div class="cs-tooltip-indicatornix cs-is-successnix svtxIconTablePositionnix"
+                  cs-tooltip="{{ option.medias }}">
+            {{option.medias}}</div>
+            </div>
+
+            <div class=" csTableControl__cell csTableControl__cell_content cell6" >
+             <div ng-if="withSorting">
+            <button ng-disabled="isWorking" class="cs-button cs-button-cta cs-is-small" role="button"
+                    ng-click="deleteFAQText(option)"><i
+                    class="cs-icon  cs-icon-bin cs-iconsize-400" style="color:black;"></i></button>
+             </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="cs-form-02 " ng-if="positionChanged">
+        <div>
+            <div class="cs-form-row myButton">
+                <button ng-if="!isWorking" class="cs-button-cta cs-is-small" role="button" ng-click="saveNewSorting()">Änderung Speichern
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="cs-form-02 " ng-if="positionChanged && isWorking">
+        <span>
+            <i class="cs-icon cs-icon-content-update cs-iconsize-800"></i><h4>Folien werden aktualisiert... </h4>
+        </span>
+    </div>
+</div>

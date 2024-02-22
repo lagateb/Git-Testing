@@ -1,0 +1,18 @@
+title = Filterable asset list based on a transformation query (MSP)
+description = Displays an asset list based on the result of an asset query that is defined by a transformation.
+
+widgetTitle = Transformation asset list
+
+configGroupTitle = Transformation
+configTransformation = Search transformation
+configToolbarTransformation = Toolbar transformation
+configTransformationPlaceholder = Select a transformation
+configTransformationLoading = Loading list of transformation assets…
+configCustomView = List view
+
+showLabel = Transformation
+assetOverflow = Too many results, please choose a more restrictive transformation
+noResult = Transformation does not return any result
+
+missingConfig = No query transformation defined
+missingConfigBtn = Query transformation

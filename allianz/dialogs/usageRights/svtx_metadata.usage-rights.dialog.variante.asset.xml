@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset name="svtx:metadata.usage-rights.dialog.variante" type="module.dialog." application="texteditor" domain="root." domain2="root.">
+  <asset_element idx="0" key="actual." isversioned="1"/>
+  <asset_feature feature="censhare:available-trait" value_string="address"/>
+  <asset_feature feature="censhare:available-trait" value_string="display"/>
+  <asset_feature feature="censhare:available-trait" value_string="usage_rights"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="svtx:metadata.usage-rights.dialog.variante"/>
+  <asset_feature feature="censhare:resource-usage" value_key="censhare:meta-data-dialog-definition"/>
+  <child_asset_rel child_asset_ref_resource_key="censhare:metadata.usageRights.dialog.controller" key="user.javascript-controller."/>
+  <parent_asset_rel parent_asset_ref_resource_key="censhare:metadata.usage-rights.dialog" child_asset_org="20160" key="variant.resource.replace."/>
+  <storage_item element_idx="0" key="master" mimetype="text/html" relpath="file:svtx_metadata.usage-rights.dialog.variante.html"/>
+</asset>

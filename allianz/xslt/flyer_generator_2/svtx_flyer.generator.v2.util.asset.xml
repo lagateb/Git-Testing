@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset id_org="10166" name="svtx:flyer.generator.v2.util" type="module.transformation." application="texteditor" domain="root." domain2="root." description="Version 1.0 - Mai 14th 2013 &#xa;">
+  <asset_element idx="0" key="actual." isversioned="1"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="svtx:flyer.generator.v2.util"/>
+  <asset_feature feature="censhare:resource-meta" value_string="-">
+    <xmldata>
+      <selection needed="false"/>
+      <target-formats>
+        <format key="icml" mimetype="application/vnd.adobe.incopy-icml"/>
+      </target-formats>
+    </xmldata>
+  </asset_feature>
+  <asset_feature feature="censhare:resource-usage" value_key="censhare:indesign-content-transformation"/>
+  <storage_item element_idx="0" key="master" mimetype="application/xslt+xml" relpath="file:svtx_flyer.generator.v2.util.xsl"/>
+</asset>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmd xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="resources-iconset.xsd"
+  xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus"
+  xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val"
+  xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct"
+  xmlns:xe="http://www.censhare.com/xml/3.0.0/xmleditor">
+
+  <xml-info title="${reg-title-resources-iconset-customized}" description="${reg-description-resources-iconset-customized}" knowledge-level="3" special-licence="false" feature-help="" localize="true" version="2">
+    <property-resources>
+      <base url="file:module"/>
+      <base url="file:../client/javaadmin/module"/>
+    </property-resources>
+    <history>
+      <entry user="[MSP] Beckmann, Felix" timestamp="2022-02-04T13:20:14.963Z" comment=""/>
+      <entry user="[MSP] Beckmann, Felix" timestamp="2022-02-04T13:20:14.963Z" comment=""/>
+      <entry user="[MSP] Beckmann, Felix" timestamp="2022-02-04T13:20:14.963Z" comment=""/>
+    </history>
+  </xml-info>
+  <cmd-info name="urlservice.resources-iconset-customized" type="auto-execute" enabled="false"/>
+  <admin-info dialog-id="config-resources-iconset" dialog-url="file:config-dialog.xml" preserve-original-formatting="true"/>
+  
+  <commands currentstep="0">
+    <command target="ScriptletManager" scriptlet="modules.urlservice.ResourceService" method="setup"/>
+  </commands>
+  
+  <!-- Please enter customized icon sets here -->
+  
+  
+  <iconsets version="1">
+    <iconset name="default" version="1">
+      <icon key="assettype-promotion." asset-type="promotion.*">
+        <item path="asseticons/Asset-Type-Campaign-16.png" width="16" height="16"/>
+        <item path="asseticons/Asset-Type-Campaign-128.png" width="128" height="128"/>
+        <item path="asseticons/Asset-Type-Campaign-16-Bright.png" width="16" height="16" background="dark"/>
+        <item path="asseticons/Asset-Type-Campaign-128-Bright.png" width="128" height="128" background="dark"/>
+      </icon>
+    </iconset>
+  </iconsets>
+</cmd>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset id_org="234733" name="Type (asset) Savotex" type="module.table.column." application="default" domain="root.common-resources." domain2="root.">
+  <asset_feature feature="censhare:macro" value_string2="censhare:resource-key" sorting="1" value_asset_key_ref="censhare:macro.asset.type"/>
+  <asset_feature feature="censhare:name" language="de" value_string="Typ"/>
+  <asset_feature feature="censhare:name" language="en" value_string="Type"/>
+  <asset_feature feature="censhare:name" language="fr" value_string="Type"/>
+  <asset_feature feature="censhare:name" language="it" value_string="Tipo"/>
+  <asset_feature feature="censhare:name" language="ja" value_string="タイプ"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="svtx:table-column.asset-type"/>
+  <asset_feature feature="censhare:resource-meta">
+    <xmldata>
+      <selection needed="false"/>
+    </xmldata>
+  </asset_feature>
+  <asset_feature feature="censhare:table.column.align-horizontal" value_key="left"/>
+  <asset_feature feature="censhare:table.column.key" value_string="assetType"/>
+  <asset_feature feature="censhare:table.column.sort-key" value_string="censhare:asset.type"/>
+  <asset_feature feature="censhare:table.column.type" value_key="string"/>
+  <asset_feature feature="censhare:table.column.width-max-pixels" value_long="300"/>
+  <asset_feature feature="censhare:table.column.width-min-pixels" value_long="120"/>
+  <asset_feature feature="censhare:table.column.width-pixels" value_long="180"/>
+</asset>

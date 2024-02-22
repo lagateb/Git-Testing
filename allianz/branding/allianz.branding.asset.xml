@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset name="Allianz Branding" type="module.branding." application="default" domain="root." domain2="root.">
+  <asset_feature feature="censhare:branding.dark-color" value_string="#082954"/>
+  <asset_feature feature="censhare:branding.highlight-color" value_string="#05316b"/>
+  <asset_feature feature="censhare:branding.light-color" value_string="#005dd6"/>
+  <asset_feature feature="censhare:branding.main-color" value_string="#003781"/>
+  <asset_feature feature="censhare:branding.url-param" value_string="censhare5/client"/>
+  <asset_feature value_asset_id_ref_file="Allianz.svg.png.asset.xml" feature="censhare:login.logo" value_long="0" value_long2="0" sorting="1"/>
+  <asset_feature value_asset_id_ref_file="Allianz Login Page.zip.asset.xml" feature="censhare:login.web-page" value_long="0" value_long2="0" sorting="1"/>
+  <asset_feature value_asset_id_ref_file="AZ_Logo_negative_CMYK.png.asset.xml" feature="censhare:top-navigation.logo" value_long="0" value_long2="0" sorting="1"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="allianz:branding"/>
+  <asset_feature feature="censhare:resource-meta">
+    <xmldata>
+      <selection needed="false"/>
+    </xmldata>
+  </asset_feature>
+</asset>

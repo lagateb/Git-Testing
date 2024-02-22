@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset name="Schema - Allianz HeadlineBody / Article Content v3"
+       type="module.content.schema." application="default"
+       domain="root." domain2="root." has_master_file="1" description="Allianz Standard Content Structure 3.0">
+    <asset_element idx="0" key="actual." isversioned="1"/>
+    <asset_feature feature="censhare:resource-key"
+                   value_string="svtx:content-editor-allianz-headline-body-content-schema-v3"/>
+    <!--
+   <asset_feature feature="censhare:uuid" value_string="531a866b-214f-455b-bafe-2b03d5096d4e"/>
+   -->
+    <storage_item element_idx="0" key="master" mimetype="text/rng"
+                  relpath="file:Schema - Allianz HeadlineBody _ Article Content v3.rng"/>
+</asset>

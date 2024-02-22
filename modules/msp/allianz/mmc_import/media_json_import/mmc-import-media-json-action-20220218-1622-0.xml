@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmd xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.censhare.com/xml/3.0.0/command.xsd" xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct">
+  <xml-info title="${module-title}" description="${module-description}" localize="true" version="1" template-name="mmc-import-media-json-action" template-url="file:modules/msp/allianz/mmc_import/media_json_import/mmc-import-media-json-action.xml">
+    <property-resources>
+      <base url="file:module"/>
+      <base url="file:../../../../client/javaadmin/module"/>
+      <base url="file:../../../../../common/global"/>
+    </property-resources>
+    <history>
+      <entry user="[MSP] Gerdes, Uwe" timestamp="2022-02-18T15:22:28.808Z" comment=""/>
+      <entry user="[MSP] Gerdes, Uwe" timestamp="2022-02-18T16:58:01.434Z" comment=""/>
+      <entry user="[MSP] Woeltjen, Markus" timestamp="2022-03-22T10:07:46.901Z" comment=""/>
+      <entry user="[MSP] Woeltjen, Markus" timestamp="2022-03-30T07:03:31.290Z" comment=""/>
+      <entry user="[MSP] Woeltjen, Markus" timestamp="2022-03-30T07:05:04.565Z" comment=""/>
+      <entry user="[MSP] Woeltjen, Markus" timestamp="2022-03-30T07:05:04.565Z" comment=""/>
+    </history>
+  </xml-info>
+  <cmd-info name="mmc-import-media-json-action-20220218-1622-0" type="server-action" enabled="true" ignore-error="false">
+    <error-log log-cancel="false"/>
+    <server-action>
+      <clients>
+        <client type="javaclient"/>
+        <client type="webclient"/>
+      </clients>
+      <filter multi-selection="false">
+        <asset type="text.mmc-media-json-import."/>
+      </filter>
+    </server-action>
+    <roles>
+      <role name="admin"/>
+    </roles>
+  </cmd-info>
+  <admin-info dialog-id="mmc-import-media-json-config" dialog-url="file:config-dialog.xml"/>
+  <commands currentstep="0">
+    <command target="ScriptletManager" scriptlet="modules.msp.allianz.mmc_import.media_json_import.MmcImportMediaJson" method="action"/>
+  </commands>
+  <config/>
+</cmd>

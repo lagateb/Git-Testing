@@ -1,0 +1,70 @@
+{
+  "cs:asset.type": [
+    "text.",
+    "text.size-s.",
+    "text.size-m.",
+    "text.size-l.",
+    "text.size-xl."
+  ],
+  "title": "text",
+  "type": "object",
+  "cs:$xml": {
+    "article": {
+      "processor": "CenshareXLink",
+      "initial": "<article><content/></article>"
+    }
+  },
+  "properties": {
+    "name": {
+      "cs:feature.key": "censhare:asset.name",
+      "type": "string"
+    },
+    "id": {
+      "cs:feature.key": "censhare:asset.id",
+      "type": "string"
+    },
+    "type": {
+      "cs:feature.key": "censhare:asset.type",
+      "type": "string"
+    },
+    "storage": {
+      "type": "object",
+      "cs:storage.item": "master",
+      "cs:storage.$value_property": "content",
+      "cs:$string_type": "xml",
+      "properties": {
+        "content": {
+          "type": "string"
+        },
+        "mimeType": {
+          "type": "string",
+          "cs:storage.$attribute": "mimetype"
+        }
+      }
+    },
+    "article": {
+      "type": "array",
+      "items": {
+        "cs:relation.direction": "parent",
+        "cs:relation.key": "user.main-content.",
+        "type": "object",
+        "properties": {
+          "name": {
+            "cs:feature.key": "censhare:asset.name",
+            "type": "string"
+          },
+          "id": {
+            "minValue": 0,
+            "maxValue": 9007199254740991,
+            "cs:feature.key": "censhare:asset.id",
+            "type": "integer"
+          },
+          "type": {
+            "cs:feature.key": "censhare:asset.type",
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

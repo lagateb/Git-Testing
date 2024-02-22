@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<cmd
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://www.censhare.com/xml/3.0.0/dialogs-schema.xsd"
+    xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus"
+    xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val"
+    xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct">
+
+  <xml-info title="${javaclient-dialogs-def-title}" description="${javaclient-dialogs-def-description}" knowledge-level="2" special-licence="false" feature-help="" localize="true">
+    <property-resources>
+      <base url="file:module-custom"/>
+      <base url="file:module"/>
+      <base url="file:../common/module"/>
+      <base url="file:../../../common/global"/>
+    </property-resources>
+    <history>
+      <entry user="Roelofsen, Roel" timestamp="2019-12-10T16:05:52.172Z" comment=""/>
+    </history>
+  </xml-info>
+  <cmd-info name="client.javaclient.dialogs-def" enabled="true"/>
+  <admin-info dialog-id="dialog-config" dialog-url="file:config-dialog.xml" preserve-original-formatting="true"/>
+
+  <dialogs>
+    <dialog type="table-asset-local" title="${list}" key="table-asset-local"/> <!-- wird direkt verwendet -->
+    <dialog type="table-asset-version" title="${list}" key="table-asset-version"/>
+    <dialog type="table-asset-version" title="${preview-list}" key="table-asset-version-preview"/>
+    <dialog type="table-asset" title="${list}" key="table-asset" shortcut-mac="ctrl shift 1" shortcut-win="ctrl shift 1"/>
+    <dialog type="table-asset" title="${preview-list}" key="table-asset-preview"/>
+    <dialog type="table-asset" title="${text-preview-list}" key="table-asset-text-preview"/>
+    <dialog type="table-asset" title="${annotation-list}" key="table-asset-annotation"/>
+    <dialog type="table-asset" title="${web-list}" key="table-asset-web"/>
+    <dialog type="table-asset" title="${gallery-view}" key="table-asset-cell" shortcut-mac="ctrl shift 2" shortcut-win="ctrl shift 2"/>
+    <dialog type="table-asset" title="${columns}" key="table-asset-browser" shortcut-mac="ctrl shift 3" shortcut-win="ctrl shift 3"/>
+    <dialog type="table-asset" title="${detail-view}" key="table-asset-detail-preview" shortcut-mac="ctrl shift 4" shortcut-win="ctrl shift 4"/>
+    <dialog type="table-asset" title="${network-view}" key="table-asset-detail-network" shortcut-mac="ctrl shift 5" shortcut-win="ctrl shift 5"/>
+    <dialog type="table-asset-xpress" title="${list}" key="table-asset-layout"/>
+    <dialog type="table-asset-xpress" title="${preview-list}" key="table-asset-layout-preview"/>
+    <dialog type="table-asset-indesign" title="${list}" key="table-asset-layout"/>
+    <dialog type="table-asset-indesign" title="${preview-list}" key="table-asset-layout-preview"/>
+    <dialog type="table-asset-incopy" title="${list}" key="table-asset-layout"/>
+    <dialog type="table-asset-framemaker" title="${list}" key="table-asset-layout"/>
+    <dialog type="table-asset-framemaker" title="${preview-list}" key="table-asset-layout-preview"/>
+    <dialog type="table-asset-basket" title="${list}" key="table-asset"/>
+    <dialog type="table-asset-basket" title="${preview-list}" key="table-asset-preview"/>
+    <dialog type="table-asset-basket" title="${text-preview-list}" key="table-asset-text-preview"/>
+    <dialog type="table-asset-basket" title="${annotation-list}" key="table-asset-annotation"/>
+    <dialog type="table-asset-basket" title="${web-list}" key="table-asset-web"/>
+    <dialog type="table-asset-basket" title="${gallery-view}" key="table-asset-cell"/>
+    <dialog type="table-asset-basket" title="${detail-view}" key="table-asset-detail-preview"/>
+    <dialog type="table-asset-basket" title="${network-view}" key="table-asset-detail-network"/>
+    <dialog type="table-asset-collection" title="${list}" key="table-asset-collection" shortcut-mac="meta shift 1" shortcut-win="ctrl shift 1"/>
+    <dialog type="table-asset-collection" title="${preview-list}" key="table-asset-collection-preview"/>
+    <dialog type="table-asset-collection" title="${text-preview-list}" key="table-asset-text-preview"/>
+    <dialog type="table-asset-collection" title="${annotation-list}" key="table-asset-annotation"/>
+    <dialog type="table-asset-collection" title="${web-list}" key="table-asset-web"/>
+    <dialog type="table-asset-collection" title="${gallery-view}" key="table-asset-cell" shortcut-mac="meta shift 2" shortcut-win="ctrl shift 2"/>
+    <dialog type="table-asset-collection" title="${columns}" key="table-asset-browser" shortcut-mac="meta shift 3" shortcut-win="ctrl shift 3"/>
+    <dialog type="table-asset-collection" title="${detail-view}" key="table-asset-detail-preview" shortcut-mac="meta shift 4" shortcut-win="ctrl shift 4"/>
+    <dialog type="table-asset-collection" title="${network-view}" key="table-asset-detail-network" shortcut-mac="meta shift 5" shortcut-win="ctrl shift 5"/>
+    <dialog type="table-calendar" title="${calendar}" key="table-calendar"/>
+    <dialog type="table-calendarname" title="${calendar}" key="table-calendar-name"/>
+    <dialog type="table-basket" title="${list}" key="table-basket" shortcut-mac="meta shift 1" shortcut-win="ctrl shift 1"/>
+    <dialog type="table-basket" title="${preview-list}" key="table-basket-preview"/>
+    <dialog type="table-basket" title="${gallery-view}" key="table-asset-cell" shortcut-mac="meta shift 2" shortcut-win="ctrl shift 2"/>
+    <dialog type="table-asset-content-editor-checked-out-asset" title="${list}" key="table-asset-content-editor-checked-out-asset"/>
+    <dialog type="table-asset-content-editor-checked-out-asset" title="${preview-list}" key="table-asset-content-editor-checked-out-asset-preview"/>
+
+    <!-- normal search dialog (size is defined in "javaclient-app-def-windows.xml") -->
+    <dialog type="dialog-asset-search" title="${general}" key="dialog-asset-search"/>
+    <dialog type="dialog-asset-search" title="${advanced}" key="dialog-asset-search-flags"/>
+    <dialog type="dialog-asset-search" title="${map}" key="dialog-asset-search-map"/>
+    <dialog type="dialog-asset-search" title="${expert}" key="dialog-asset-search-expert"/>
+
+    <!-- dialog for search-assets (size is defined in "javaclient-app-def-windows.xml") -->
+    <dialog type="dialog-asset-search-asset" title="${general}" key="dialog-asset-search-asset"/>
+    <dialog type="dialog-asset-search-asset" title="${flags}" key="dialog-asset-search-flags"/>
+    <dialog type="dialog-asset-search-asset" title="${expert}" key="dialog-asset-search-expert"/>
+
+    <!-- dialog for asset filters (for asset automation commands)-->
+    <dialog type="dialog-asset-filter" title="${general}" window-title="${asset-filter}" key="dialog-asset-search-asset" width="600" height="610"/>
+    <dialog type="dialog-asset-filter" title="${flags}" key="dialog-asset-search-flags" width="600" height="610"/>
+    <dialog type="dialog-asset-filter" title="${expert}" key="dialog-asset-search-expert" width="600" height="610"/>
+    
+    <!-- query dialog for hierarchical queries (expand query) -->
+    <dialog type="dialog-asset-expand-filter" title="${general}" key="dialog-asset-search"/>
+    <dialog type="dialog-asset-expand-filter" title="${flags}" key="dialog-asset-search-flags"/>
+    <dialog type="dialog-asset-expand-filter" title="${expert}" key="dialog-asset-search-expert"/>
+
+    <!-- asset edit meta data (size is defined in "javaclient-app-def-windows.xml") -->
+    <dialog type="dialog-asset-edit-meta-data" title="${edit-meta-data}" key="dialog-asset-edit-meta-data"/>
+    <!--dialog type="dialog-asset-edit-meta-data" title="${general}" key="dialog-asset-edit-preview" window-title="${edit-meta-data}"/>
+    <dialog type="dialog-asset-edit-meta-data" title="${features}" key="dialog-asset-edit-features"/>
+    <dialog type="dialog-asset-edit-meta-data" title="${flags}" key="dialog-asset-edit-flags"/>
+    <dialog type="dialog-asset-edit-meta-data" title="${map}" key="dialog-asset-edit-map"/-->
+
+    <dialog type="dialog-output-features" title="${channels}" key="dialog-output-features" width="600" height="610"/>
+
+    <dialog type="dialog-schedule-filter" title="${title-schedule-edit}" key="dialog-schedule-filter"/>
+    <dialog type="dialog-asset-edit-address" title="${general}" key="dialog-asset-edit-address"/>
+    <dialog type="dialog-asset-edit-address" title="${title-address-expert}" key="dialog-asset-edit-address-expert"/>
+    <dialog type="dialog-asset-check-in-new" title="${general}" key="dialog-asset-check-in-new"/>
+    <dialog type="dialog-asset-check-in-new-with-elements" title="${new-asset}" key="dialog-asset-check-in-new-with-elements" width="600" height="610"/>
+    <!--dialog type="dialog-asset-check-in-new" title="${general}" window-title="${create-asset}" key="dialog-asset-check-in-new"/>
+    <dialog type="dialog-asset-check-in-new" title="${features}" key="dialog-asset-check-in-new-features"/>
+    <dialog type="dialog-asset-check-in-new" title="${flags}" key="dialog-asset-check-in-new-flags"/>
+    <dialog type="dialog-asset-check-in-new" title="${map}" key="dialog-asset-edit-map"/-->
+    <dialog type="dialog-asset-check-in-new-keep-open" title="${general}" key="dialog-asset-check-in-new-keep-open"/>
+    <!--dialog type="dialog-asset-check-in-new-keep-open" title="${general}" window-title="${create-asset}" key="dialog-asset-check-in-new-keep-open"/>
+    <dialog type="dialog-asset-check-in-new-keep-open" title="${features}" key="dialog-asset-check-in-new-keep-open-features"/>
+    <dialog type="dialog-asset-check-in-new-keep-open" title="${flags}" key="dialog-asset-check-in-new-keep-open-flags"/>
+    <dialog type="dialog-asset-check-in-new-keep-open" title="${map}" key="dialog-asset-edit-map"/-->
+    <dialog type="dialog-asset-check-in" title="${save-and-close}" key="dialog-asset-check-in"/>
+    <dialog type="dialog-asset-check-out" title="${edit}" key="dialog-asset-check-out"/>
+    <dialog type="dialog-asset-save-version" title="${save-version}" key="dialog-asset-check-in"/>
+    <dialog type="dialog-asset-edit-relation" title="${title-asset-rel-edit}" key="dialog-asset-edit-relation"/>
+    <dialog type="dialog-asset-problem" title="${problem-title}" key="dialog-asset-problem"/>
+    <dialog type="dialog-dictionary-email" title="${dictionary-email-title}" key="dialog-dictionary-email"/>
+    <dialog type="dialog-asset-detail" title="${title-asset-details}" key="dialog-asset-detail"/>
+    <dialog type="dialog-new-search" title="${title-new-search}" key="dialog-new-search" width="350" height="150"/>
+    <dialog type="dialog-edit-search" title="${title-edit-search}" key="dialog-edit-search" width="500" height="300"/>
+    <dialog type="dialog-change-password" title="${change-password}" key="dialog-change-password" width="400" height="200"/>
+    <dialog type="dialog-asset-edit-info" title="${asset-info}" key="dialog-asset-edit-info"/>
+    <dialog type="dialog-edit-filter" title="${title-edit-filter}" key="dialog-edit-filter" width="500" height="300"/>
+    <dialog type="dialog-asset-info" title="${asset-info}" key="dialog-asset-info"/>
+
+    <!-- schedule -->
+    <dialog type="dialog-asset-edit-schedule" title="${title-schedule-edit}" key="dialog-asset-edit-schedule"/>
+
+    <!-- planning (sizes of dialogs are defined in "javaclient-app-def-windows.xml") -->
+    <dialog type="table-planning-asset" title="${list}" key="table-planning-asset"/>
+    <dialog type="table-planning-element" title="${list}" key="table-planning-element"/>
+    <dialog type="table-planning-sheet" title="${sheet}" key="table-planning-sheet"/> <!-- wird direkt verwendet -->
+    <dialog type="dialog-planning-edit-paging" title="${title-setup-plan-paging}" key="dialog-planning-edit-paging"/>
+    <dialog type="dialog-planning-new-elements" title="${title-setup-plan-new-elements}" key="dialog-planning-new-elements"/>
+    <dialog type="dialog-planning-add-asset-elements" title="${title-setup-plan-new-elements}" key="dialog-planning-add-asset-elements"  width="600" height="610" />
+    <dialog type="dialog-planning-edit-insertion" title="${title-setup-plan-add-insertion}" key="dialog-planning-add-insertion"/>
+    <dialog type="dialog-planning-edit-sticker" title="${title-setup-plan-add-sticker}" key="dialog-planning-add-sticker"/>
+    <dialog type="dialog-planning-edit-sheetmarker" title="${title-setup-plan-add-sheetmarker}" key="dialog-planning-add-sheet-marker"/>
+    <dialog type="dialog-planning-edit-sheet" title="${sheet}" key="dialog-planning-edit-sheet"/>
+    <dialog type="dialog-planning-edit-annotation" title="${edit-meta-data}" key="dialog-planning-edit-annotation"/>
+    <dialog type="dialog-planning-edit-description" title="${edit-meta-data}" key="dialog-planning-edit-description"/>
+    <dialog type="dialog-planning-annotation-history" title="${annotation-history}" key="dialog-planning-annotation-history"/>
+    <dialog type="dialog-planning-description-history" title="${description-history}" key="dialog-planning-description-history"/>
+    <dialog type="dialog-planning-edit-asset-element" title="${title-asset-element-edit}" key="dialog-planning-edit-asset-element"/>
+    <dialog type="dialog-planning-edit-asset-element-relation" title="${title-asset-element-rel-edit}" key="dialog-planning-edit-asset-element-relation"/>
+
+    <!-- layout -->
+    <dialog type="dialog-layout-create-new-group" title="${new-group}" key="dialog-create-new-group"/>
+    <dialog type="dialog-layout-edit-group-box-attributes" title="${edit-group-attributes-of-boxes}" key="dialog-edit-group-box-attributes"/>
+    <dialog type="dialog-layout-add-boxes-to-group" title="${add-boxes-to-group}" key="dialog-add-boxes-to-group"/>
+    <dialog type="dialog-edit-dynamic-layout-constraints-xml" title="Edit constraints XML" key="dialog-edit-dynamic-layout-constraints-xml" width="1024" height="800"/>
+    <dialog type="dialog-layout-change-page-size" title="${change-document-format}" key="dialog-layout-change-page-size"/>
+
+    <!-- user/groups -->
+    <dialog type="dialog-user-admin-new-group" title="${new-group}" key="dialog-user-admin-new-group"/>
+
+    <!-- setup -->
+    <dialog type="dialog-setup-general" title="${setup-general}" key="dialog-setup-general" width="600" height="610"/>
+    <dialog type="dialog-setup-hosts" title="${setup-server}" key="dialog-setup-hosts" width="600" height="610"/>
+    <dialog type="dialog-setup-import" title="${setup-import}" key="dialog-setup-import" width="600" height="610"/>
+    <dialog type="dialog-setup-export" title="${setup-export}" key="dialog-setup-export" width="600" height="610"/>
+    <dialog type="dialog-setup-layout-editor" title="${setup-layout-editor}" key="dialog-setup-layout-editor" width="600" height="610"/>
+    <dialog type="dialog-setup-xpress" title="${setup-quark-xpress}" key="dialog-setup-xpress" width="600" height="610"/>
+    <dialog type="dialog-setup-indesign" title="${setup-adobe-indesign}" key="dialog-setup-indesign" width="600" height="610"/>
+    <dialog type="dialog-setup-framemaker" title="${setup-adobe-framemaker}" key="dialog-setup-framemaker" width="600" height="610"/>
+    <dialog type="dialog-setup-planning" title="${setup-planning}" key="dialog-setup-planning" width="600" height="610"/>
+    <dialog type="dialog-setup-incopy" title="${setup-adobe-incopy}" key="dialog-setup-incopy" width="600" height="610"/>
+    <dialog type="dialog-setup-schedule" title="${setup-schedule}" key="dialog-setup-schedule" width="600" height="610"/>
+    <dialog type="dialog-setup-content-editor" title="${setup-content-editor}" key="dialog-setup-content-editor" width="600" height="610"/>
+    <dialog type="dialog-setup-translation" title="${setup-translation}" key="dialog-setup-translation" width="600" height="610"/>
+    <dialog type="dialog-setup-oxygen" title="${setup-oxygen}" key="dialog-setup-oxygen" width="600" height="610"/>
+    <dialog type="dialog-setup-logging" title="${setup-logging}" key="dialog-setup-logging" width="600" height="610"/>
+    <dialog type="dialog-setup-logging-expert" title="${setup-logging-expert}" key="dialog-setup-logging-expert" width="600" height="610"/>
+    
+    <!-- translation memory -->
+    
+    <dialog type="dialog-edit-translationmemory-entry" title="" key="dialog-edit-translationmemory-entry" width="600" height="610"/>
+
+  </dialogs>
+
+</cmd>

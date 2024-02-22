@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+    <asset_rel_typedefs>
+        <asset_rel_typedef key="user.alternate-pptx-layout." kind="0" cardinality="2" isversioned="0"
+                           is_user_editable="1" name="Alternate PPTX layout" name_de="Alternative PPTX Vorlage"
+                           parent_name="Alternate PPTX layout of" parent_name_de="Alternative PPTX Vorlage zu"
+                           child_name="Alternate PPTX layout" child_name_de="Alternative PPTX Vorlage" parent_sort="1"
+                           child_sort="1" domain="root." domain2="root." enabled="1" >
+            <match_criteria>
+                <entry priority="0">
+                    <parent-query xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus"
+                                  xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val"
+                                  xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct">
+                        <condition name="censhare:asset.type" value="article.*"/>
+                    </parent-query>
+                    <child-query xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus"
+                                 xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val"
+                                 xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct">
+                        <condition name="censhare:asset.type" value="presentation.slide.*"/>
+                    </child-query>
+                </entry>
+            </match_criteria>
+        </asset_rel_typedef>
+    </asset_rel_typedefs>
+
+</data>

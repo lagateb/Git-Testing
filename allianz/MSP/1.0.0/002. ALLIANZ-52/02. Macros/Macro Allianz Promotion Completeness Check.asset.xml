@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset id_org="56436" name="Macro Allianz Promotion Completeness Check" type="module.macro." application="default" domain="root." domain2="root.">
+  <asset_element idx="0" key="actual." isversioned="1"/>
+  <asset_feature feature="censhare:macro.type" value_key="xslt"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="msp:macro.promotion.CompletenessCheck"/>
+  <asset_feature feature="censhare:resource-meta">
+    <xmldata>
+      <selection needed="false"/>
+      <target-formats>
+        <format mimetype="application/xhtml+xml" key="application/xhtml+xml"/>
+      </target-formats>
+    </xmldata>
+  </asset_feature>
+  <storage_item element_idx="0" key="master" mimetype="application/xslt+xml" relpath="file:Macro Allianz Promotion Completeness Check.xsl"/>
+  <storage_item element_idx="0" key="text-preview" mimetype="application/xhtml+xml" relpath="file:Macro Allianz Promotion Completeness Check.text-preview.xhtml"/>
+</asset>

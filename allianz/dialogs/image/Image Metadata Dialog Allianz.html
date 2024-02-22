@@ -1,0 +1,91 @@
+<cs-dialog-tabs>
+  <cs-dialog-tab name="{{ 'csCommonTranslations.general' | csTranslate }}">
+      <ul>
+          <cs-metadata-row property="asset.traits.display.name"></cs-metadata-row>
+          <cs-metadata-row multilines="10" property="asset.traits.display.description"></cs-metadata-row>
+          <cs-metadata-row property="asset.traits.type.category"></cs-metadata-row>
+          <cs-metadata-row property="asset.traits.content.language" validate-selected="true" load-options-by-domain="asset.traits.domain.domain.value[0].value" load-options-by-domain2="asset.traits.domain.domain2.value[0].value"></cs-metadata-row>
+          <cs-metadata-row property="asset.traits.content.additionalLanguage" validate-selected="true" load-options-by-domain="asset.traits.domain.domain.value[0].value" load-options-by-domain2="asset.traits.domain.domain2.value[0].value"></cs-metadata-row>
+          <cs-metadata-row property="asset.traits.allianz.localizedAltText" validate-selected="true"></cs-metadata-row>
+          <cs-metadata-row property="asset.traits.web2print.boxFittingOption" validate-selected="true"></cs-metadata-row>
+      </ul>
+  </cs-dialog-tab>
+  <cs-dialog-tab name="EXIF">
+    <ul>
+      <cs-metadata-row property="asset.traits.exif.exif.value[0].model"></cs-metadata-row>
+      <cs-metadata-row property="asset.traits.exif.exif.value[0].iso"></cs-metadata-row>
+      <cs-metadata-row property="asset.traits.exif.exif.value[0].aperture"></cs-metadata-row>
+      <cs-metadata-row property="asset.traits.exif.exif.value[0].creationDate"></cs-metadata-row>
+      <cs-metadata-row property="asset.traits.exif.exif.value[0].exposureCompensation"></cs-metadata-row>
+      <cs-metadata-row property="asset.traits.exif.exif.value[0].flash"></cs-metadata-row>
+      <cs-metadata-row property="asset.traits.exif.exif.value[0].focalLength"></cs-metadata-row>
+      <cs-metadata-row property="asset.traits.exif.exif.value[0].lens"></cs-metadata-row>
+      <cs-metadata-row property="asset.traits.exif.exif.value[0].meteringMode" validate-selected="true"></cs-metadata-row>
+      <cs-metadata-row property="asset.traits.exif.exif.value[0].shutterSpeed"></cs-metadata-row>
+      <cs-metadata-row property="asset.traits.exif.exif.value[0].whiteBalance" validate-selected="true"></cs-metadata-row>
+    </ul>
+  </cs-dialog-tab>
+  <cs-dialog-tab name="IPTC">
+    <cs-dialog-group group-label="{{asset.traits.iptc.iptc.value[0].image.label}}" ng-if="asset.traits.iptc.iptc.value[0].image">
+      <ul>
+				<cs-metadata-row property="asset.traits.iptc.iptc.value[0].image.value[0].genre"></cs-metadata-row>
+				<cs-metadata-row property="asset.traits.iptc.iptc.value[0].image.value[0].additional"></cs-metadata-row>
+				<cs-metadata-row property="asset.traits.iptc.iptc.value[0].image.value[0].dateCreated"></cs-metadata-row>
+				<cs-metadata-row property="asset.traits.iptc.iptc.value[0].image.value[0].sceneCode"></cs-metadata-row>
+				<cs-metadata-row property="asset.traits.iptc.iptc.value[0].image.value[0].city"></cs-metadata-row>
+				<cs-metadata-row property="asset.traits.iptc.iptc.value[0].image.value[0].region"></cs-metadata-row>
+				<cs-metadata-row property="asset.traits.iptc.iptc.value[0].image.value[0].country"></cs-metadata-row>
+				<cs-metadata-row property="asset.traits.iptc.iptc.value[0].image.value[0].countryCode"></cs-metadata-row>
+      </ul>
+    </cs-dialog-group>
+    <cs-dialog-group group-label="{{asset.traits.iptc.iptc.value[0].status.label}}" ng-if="asset.traits.iptc.iptc.value[0].image">
+      <ul>
+				<cs-metadata-row property="asset.traits.iptc.iptc.value[0].status.value[0].credit"></cs-metadata-row>
+				<cs-metadata-row property="asset.traits.iptc.iptc.value[0].status.value[0].source"></cs-metadata-row>
+				<cs-metadata-row property="asset.traits.iptc.iptc.value[0].status.value[0].jobId"></cs-metadata-row>
+				<cs-metadata-row property="asset.traits.iptc.iptc.value[0].status.value[0].instructions"></cs-metadata-row>
+				<cs-metadata-row property="asset.traits.iptc.iptc.value[0].status.value[0].usageTerms"></cs-metadata-row>
+				<cs-metadata-row property="asset.traits.iptc.iptc.value[0].status.value[0].title"></cs-metadata-row>
+				<cs-metadata-row property="asset.traits.iptc.iptc.value[0].status.value[0].copyrightNotice"></cs-metadata-row>
+      </ul>
+    </cs-dialog-group>
+    <cs-dialog-group group-label="{{asset.traits.iptc.iptc.value[0].contact.label}}" ng-if="asset.traits.iptc.iptc.value[0].image">
+      <ul>
+				<cs-metadata-row property="asset.traits.iptc.iptc.value[0].contact.value[0].creator"></cs-metadata-row>
+				<cs-metadata-row property="asset.traits.iptc.iptc.value[0].contact.value[0].function"></cs-metadata-row>
+				<cs-metadata-row property="asset.traits.iptc.iptc.value[0].contact.value[0].uriTel"></cs-metadata-row>
+				<cs-metadata-row property="asset.traits.iptc.iptc.value[0].contact.value[0].uriMailTo"></cs-metadata-row>
+				<cs-metadata-row property="asset.traits.iptc.iptc.value[0].contact.value[0].street"></cs-metadata-row>
+				<cs-metadata-row property="asset.traits.iptc.iptc.value[0].contact.value[0].zipCode"></cs-metadata-row>
+				<cs-metadata-row property="asset.traits.iptc.iptc.value[0].contact.value[0].city"></cs-metadata-row>
+				<cs-metadata-row property="asset.traits.iptc.iptc.value[0].contact.value[0].region"></cs-metadata-row>
+				<cs-metadata-row property="asset.traits.iptc.iptc.value[0].contact.value[0].country"></cs-metadata-row>
+      </ul>
+    </cs-dialog-group>
+    <cs-dialog-group group-label="{{asset.traits.iptc.iptc.value[0].content.label}}" ng-if="asset.traits.iptc.iptc.value[0].content">
+      <ul>
+				<cs-metadata-row property="asset.traits.iptc.iptc.value[0].content.value[0].subjectCode"></cs-metadata-row>
+				<cs-metadata-row multilines="5" property="asset.traits.iptc.iptc.value[0].content.value[0].description"></cs-metadata-row>
+				<cs-metadata-row property="asset.traits.iptc.iptc.value[0].content.value[0].keywords"></cs-metadata-row>
+				<cs-metadata-row property="asset.traits.iptc.iptc.value[0].content.value[0].headline"></cs-metadata-row>
+				<cs-metadata-row property="asset.traits.iptc.iptc.value[0].content.value[0].writerEditor"></cs-metadata-row>
+				<cs-metadata-row property="asset.traits.iptc.iptc.value[0].subCategory"></cs-metadata-row>
+				<cs-metadata-row property="asset.traits.iptc.iptc.value[0].fixtureId"></cs-metadata-row>
+				<cs-metadata-row property="asset.traits.iptc.iptc.value[0].urgency"></cs-metadata-row>
+      </ul>
+    </cs-dialog-group>
+  </cs-dialog-tab>
+  <cs-dialog-tab name="XMP">
+    <ul>
+      <cs-metadata-row property="asset.traits.xmp.xmp.value[0].colorMode" validate-selected="true"></cs-metadata-row>
+      <cs-metadata-row property="asset.traits.xmp.xmp.value[0].copyrightFlag"></cs-metadata-row>
+      <cs-metadata-row property="asset.traits.xmp.xmp.value[0].creatorTool"></cs-metadata-row>
+      <cs-metadata-row property="asset.traits.xmp.xmp.value[0].iccProfile"></cs-metadata-row>
+      <cs-metadata-row property="asset.traits.xmp.xmp.value[0].modifyDate"></cs-metadata-row>
+      <cs-metadata-row property="asset.traits.xmp.xmp.value[0].party"></cs-metadata-row>
+      <cs-metadata-row property="asset.traits.xmp.xmp.value[0].rating"></cs-metadata-row>
+      <cs-metadata-row property="asset.traits.xmp.xmp.value[0].self"></cs-metadata-row>
+      <cs-metadata-row property="asset.traits.xmp.xmp.value[0].timestamp"></cs-metadata-row>
+    </ul>
+  </cs-dialog-tab>
+</cs-dialog-tabs>

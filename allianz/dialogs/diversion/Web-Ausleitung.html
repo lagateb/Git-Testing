@@ -1,0 +1,53 @@
+<style>
+
+    .csMediaAssignment .cs-toggle-01 .cs-toggle-title-off  {
+        color :#1c1c1c;
+    }
+
+    .csMediaAssignment .cs-toggle-01 .cs-toggle-slider  {
+        background :#1c1c1c;
+    }
+
+</style>
+
+<div class="csMediaAssignment" ng-repeat="option in webAssignsments track by $index">
+
+    <ul class="csAssetProperties__list">
+        <li class="cs-meta-data-row csAssetProperties__list__item cs-m-b-xs" ng-click="containerShow = !containerShow">
+            <span class="csAssetProperties__list__label csAssetProperties__list__parent_label parent-as-header">
+                <i class="cs-icon cs-iconsize-150 cs-icon-arrow-down" ng-class="(containerShow) ? 'cs-icon-arrow-right' : 'cs-icon-arrow-down'"></i>
+                <span>{{option.display_value}}</span>
+            </span>
+            <span ng-if="outputChannelIds.includes(option.key)" style="margin-left: auto">
+                <span style="font-style: italic">Web-Ausgabe aktiv </span><i class="cs-icon cs-iconsize-150 cs-icon-circle cs-color-30"></i>
+            </span>
+            <span ng-if="!outputChannelIds.includes(option.key)" style="margin-left: auto">
+                <span style="font-style: italic">Web-Ausgabe inaktiv </span><i class="cs-icon cs-iconsize-150 cs-icon-circle cs-color-38"></i>
+            </span>
+            <hr class="cs-meta-data-row-hr hr-parent">
+        </li>
+        <div ng-show="!containerShow">
+            <dl class="cs-form-01">
+                <div class="cs-grid-wrapper">
+                    <div class="cs-grid-cell">
+                        <dl class="cs-form-01">
+                            <dt><label>Ins Web ausgeben</label></dt>
+                            <dd>
+                                <cs-checkbox ng-change="validateAssetChanged()" ng-model="option.selected" class="cs-is-alt cs-input-value"></cs-checkbox>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </dl>
+        </div>
+    </ul>
+</div>
+
+<!--style="float: right; padding-top: 1.5rem; padding-bottom: 1rem"-->
+<div class="btn-wrapper" style="float:right; position:relative; z-index: 99;padding-top: 1.5rem; padding-bottom: 1rem">
+    <p ng-if="asset.traits.workflow.workflowStep.value[0].value !== 30">Der Text ist derzeit nicht freigegeben und kann daher nicht in Web ausgeleitet werden.<br/>Bitte steuern Sie die Freigabe über den Tab "Abstimmung/Freigabe"</p>
+    <cs-button class="cs-button-cta " ng-class="{'cs-is-disabled' : asset.traits.workflow.workflowStep.value[0].value !== 30 || !hasSelectedAny()}" role="button" ng-click="saveTextAndNotify()">Web-Ausgabe anstoßen</cs-button>
+</div>
+
+
+

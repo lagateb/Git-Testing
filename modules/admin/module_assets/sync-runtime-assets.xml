@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmd xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.censhare.com/xml/3.0.0/command.xsd" xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct" xmlns:xe="http://www.censhare.com/xml/3.0.0/xmleditor">
+  <xml-info title="${sync-runtime-assets-title}" description="${sync-runtime-assets-description}" knowledge-level="2" special-licence="false" feature-help="" localize="true" version="1">
+    <property-resources>
+      <base url="file:module"/>
+      <base url="file:../../common/global"/>
+    </property-resources>
+    <history>
+      <entry user="censhare Defaultuser" timestamp="2019-11-26T13:10:49.990Z" comment=""/>
+      <entry user="[Savotex] Köppe, Maximilian" timestamp="2019-12-05T14:20:17.611Z" comment=""/>
+      <entry user="[Savotex] Köppe, Maximilian" timestamp="2019-12-05T15:00:17.871Z" comment=""/>
+      <entry user="[Savotex] Köppe, Maximilian" timestamp="2019-12-05T15:00:29.033Z" comment=""/>
+    </history>
+  </xml-info>
+  <cmd-info name="admin.module_assets.sync-runtime-assets" type="auto-execute" mode="loop" enabled="true" ignore-error="true" master-only="true">
+    <error-log module="import-module-assets"/>
+  </cmd-info>
+  <admin-info dialog-id="asset-import-auto-config" dialog-url="file:config-dialog.xml"/>
+  <listen-events>
+    <event target="config"/>
+  </listen-events>
+  <commands currentstep="">
+    <command target="EventManager" method="waitevent" key="listen-events"/>
+    <command target="ScriptletManager" method="configRefresh" scriptlet="modules.admin.module_assets.ModuleAssets"/>
+  </commands>
+  <config fs-name="modules-runtime" strict-mode="false">
+    <search-paths>
+      <search path="allianz" enabled="true"/>
+    </search-paths>
+  </config>
+</cmd>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset name="mspFilterableTransformationQueryWidget" type="module.workspace.widget." application="metadata" domain="root." domain2="root." description="Displays an asset list based on the result of an asset query that is defined by a transformation.">
+  <asset_feature feature="censhare:description" language="de" value_string="Darstellung einer Assetliste basierend auf dem Ergebnis einer Assetabfrage, dass über eine Transformation definiert wird, erweiterbar um Filtermöglichkeiten."/>
+  <asset_feature feature="censhare:name" language="de" value_string="Filterbare Assetliste basierend auf einer Transformation"/>
+  <asset_feature feature="censhare:name" language="en" value_string="Asset list with filter function based on a transformation query"/>
+  <asset_feature feature="censhare:name.localization-key.web" value_string="mspFilterableTransformationQueryWidget.title"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="msp:workspace.widget.mspFilterableTransformationQueryWidget"/>
+  <asset_feature feature="censhare:workspace.icon" value_string="cs-icon-list"/>
+  <asset_feature feature="censhare:workspace.widget.type" value_string="mspFilterableTransformationQueryWidget"/>
+</asset>

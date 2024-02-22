@@ -1,0 +1,26 @@
+{
+    "name": "svtxDomainSwitchWidget",
+    "since": "5.0.0",
+    "version": "0.0.1",
+    "styles": [
+        "svtx-domain-switch.component.less"
+    ],
+    "filename": "svtx-domain-switch.module",
+    "implementations": [
+        {
+            "type": "csWidget",
+            "name": "svtxDomainSwitchWidget",
+            "properties": {
+                "contentComponentName": "svtxDomainSwitchWidget",
+                "widgetInfo": {
+                    "icon": "cs-icon-search",
+                    "title": "svtxDomainSwitchWidget.title",
+                    "description": "svtxDomainSwitchWidget.description"
+                }
+            }
+        }
+    ],
+    "translations": [
+        "translation"
+    ]
+}

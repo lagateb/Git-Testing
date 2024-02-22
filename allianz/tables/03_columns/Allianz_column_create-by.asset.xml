@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<asset name="Column: Allianz Created by" type="module.table.column." application="default" domain="root.common-resources." domain2="root.">
+  <asset_feature feature="censhare:macro" value_string2="censhare:resource-key" value_asset_key_ref="censhare:macro.asset.created-by.name"/>
+  <asset_feature feature="censhare:name" language="de" value_string="Ersteller"/>
+  <asset_feature feature="censhare:name" language="en" value_string="Creator"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="0"/>
+  <asset_feature feature="censhare:resource-key" value_string="allianz:table-column.default.asset.created-by"/>
+  <asset_feature feature="censhare:table.column.align-horizontal" value_key="left"/>
+  <asset_feature feature="censhare:table.column.key" value_string="CreatedBy"/>
+  <asset_feature feature="censhare:table.column.sort-key" value_string="censhare:asset.created_by"/>
+  <asset_feature feature="censhare:table.column.type" value_key="string"/>
+  <asset_feature feature="censhare:table.column.width-max-pixels" value_long="450"/>
+  <asset_feature feature="censhare:table.column.width-min-pixels" value_long="150"/>
+  <asset_feature feature="censhare:table.column.width-pixels" value_long="200"/>
+</asset>

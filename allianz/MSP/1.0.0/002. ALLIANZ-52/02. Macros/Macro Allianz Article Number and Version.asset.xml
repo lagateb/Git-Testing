@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset name="Macro Allianz Article Number and Version" type="module.macro." application="texteditor" domain="root." domain2="root.">
+  <asset_element idx="0" key="actual." isversioned="1"/>
+  <asset_feature feature="censhare:macro.identifier" value_string="promoArticleNumberAndVersion"/>
+  <asset_feature feature="censhare:macro.type" value_key="xslt"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="msp:macro.promotion.ArticleNumberAndVersion"/>
+  <storage_item element_idx="0" key="text-preview" mimetype="application/xhtml+xml" relpath="file:Macro Allianz Article Number and Version.text-preview.xhtml"/>
+  <storage_item element_idx="0" key="master" mimetype="application/xslt+xml" relpath="file:Macro Allianz Article Number and Version.xsl"/>
+</asset>

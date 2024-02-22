@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset id_org="10955" name="XSLT: HTML Voransicht - Vertriebsportal - Funktionsgrafik (query)" type="module.transformation." application="texteditor" domain="root." domain2="root." description="Version 1.0 - Mai 14th 2013 &#xa;">
+  <asset_element idx="0" key="actual." isversioned="1"/>
+  <asset_feature feature="censhare:description" language="de" value_string="HTML Voransicht eines Artikels mit der Möglichkeit den Artikel in verschiedenen Geräten anzuzeigen (iPhone, iPad) "/>
+  <asset_feature feature="censhare:description" language="en" value_string="HTML Preview of an Article with an option to display the Article in a Device Frame (iPhone, iPad) "/>
+  <asset_feature feature="censhare:description" language="fr" value_string="Prévisualisation HTML d&apos;un article avec possibilité d&apos;afficher l&apos;article dans différents appareils (iPhone, iPad) "/>
+  <asset_feature feature="censhare:description" language="it" value_string="Anteprima HTML di un articolo con la possibilità di visualizzare l&apos;articolo su diversi dispositivi (iPhone, iPad) "/>
+  <asset_feature feature="censhare:name" language="de" value_string="HTML Voransicht: Vertriebsportal - Funktionsgrafik (query)"/>
+  <asset_feature feature="censhare:name" language="en" value_string="HTML Voransicht: Vertriebsportal - Funktionsgrafik (query)"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="svtx:html-preview.vertriebsportal.funktionsgrafik-quer"/>
+  <asset_feature feature="censhare:resource-meta" value_string="censhare:html-preview">
+    <xmldata>
+      <target-formats>
+        <format key="html" mimetype="text/html"/>
+      </target-formats>
+      <selection needed="false"/>
+    </xmldata>
+  </asset_feature>
+  <parent_asset_rel parent_asset_ref_resource_key="svtx:html-preview.vrtriebsportal" key="user."/>
+  <storage_item element_idx="0" key="master" mimetype="application/xslt+xml" relpath="file:XSLT_ HTML Voransicht - Vertriebsportal - Funktionsgrafik (query).xsl"/>
+</asset>

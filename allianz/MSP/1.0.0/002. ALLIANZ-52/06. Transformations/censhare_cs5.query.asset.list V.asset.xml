@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset id_org="12252" name="censhare:cs5.query.asset.list V" type="module.transformation." application="texteditor" domain="root." domain2="root." annotation="ViewModel-Transformation for asset-list query e.g. quicksearch">
+  <asset_element idx="0" key="actual." isversioned="1"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="9e1690f0-7f6b-11ec-bedd-00505690b042"/>
+  <asset_feature feature="censhare:resource-meta">
+    <xmldata>
+      <selection needed="false"/>
+    </xmldata>
+  </asset_feature>
+  <parent_asset_rel parent_asset_ref_resource_key="censhare:cs5.query.asset.list" child_asset_org="56433" key="variant.resource.replace."/>
+  <storage_item element_idx="0" key="master" mimetype="application/xslt+xml" relpath="file:censhare_cs5.query.asset.list V.xsl"/>
+  <storage_item element_idx="0" key="text-preview" mimetype="application/xhtml+xml" relpath="file:censhare_cs5.query.asset.list V.text-preview.xhtml"/>
+</asset>

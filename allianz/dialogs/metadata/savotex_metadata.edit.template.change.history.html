@@ -1,0 +1,21 @@
+<h4>{{templateLabel}}</h4>
+
+<div class="csAssetListItemRendererWidget2xn cs-add-list-hor-widget-padding cs-widget-content-padding-top" >
+    <ul class="csAssetListItem" ng-repeat="historyEntry in historyEntries">
+        <li class="csAssetListItem__title">
+            {{historyEntry.date}}
+        </li>
+        <li class="csAssetListItem__value">
+            {{historyEntry.note}}
+        </li>
+    </ul>
+</div>
+
+<div ng_show="addingAllowed">
+    <cs-input label="Neue Änderung" ng-model="changeDescription" multilines="3"></cs-input>
+    <cs-button type="cta" name="Hinzufügen" ng-click="addNewEntry(changeDescription)" style="margin-top: 1em;"></cs-button>
+</div>
+
+<cs-empty-state cs-empty-state-icon="'cs-icon-enumeration'" ng_if="historyEntries.length == 0 && !addingAllowed">
+    <span class="cs-state-headline">Keine Änderungen angegeben</span>
+</cs-empty-state>

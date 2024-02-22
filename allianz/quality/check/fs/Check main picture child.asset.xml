@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset name="Check main picture child" type="module.completeness-check." application="default" domain="root.common-resources." domain2="root." description="No main picture assigned. Please assign it in the Main picture widget.">
+  <asset_feature feature="censhare:completeness-check.expression.xpath" value_string="exists(child_asset_rel[@key=&apos;user.main-picture.&apos;])"/>
+    <asset_feature feature="censhare:asset-type-filter" value_string="product1."/>
+  <asset_feature feature="censhare:description" language="de" value_string="Kein Hauptbild zugeordnet. Bitte im Hauptbild-Widget zuordnen."/>
+  <asset_feature feature="censhare:description" language="en" value_string="No Main picture assigned. Please add the assignment in the Main picture widget."/>
+  <asset_feature feature="censhare:description" language="fr" value_string="Aucune image principale affectée. Affecter à widget d&apos;image principale"/>
+  <asset_feature feature="censhare:description" language="it" value_string="Nessuna immagine principale assegnata. Assegnare nel widget dell&apos;immagine principale."/>
+  <asset_feature feature="censhare:module-asset-source" value_string="required/web/completeness-checks"/>
+  <asset_feature feature="censhare:name" language="de" value_string="Hauptbild"/>
+  <asset_feature feature="censhare:name" language="en" value_string="Main picture"/>
+  <asset_feature feature="censhare:name" language="fr" value_string="Image principale"/>
+  <asset_feature feature="censhare:name" language="it" value_string="Immagine principale"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="0"/>
+  <asset_feature feature="censhare:resource-key" value_string="censhare:completeness-check.main-picture"/>
+  <asset_feature feature="censhare:resource-meta">
+    <xmldata>
+      <selection needed="false"/>
+    </xmldata>
+  </asset_feature>
+</asset>

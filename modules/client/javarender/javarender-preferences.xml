@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<cmd
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://www.censhare.com/xml/3.0.0/command.xsd"
+    xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus"
+    xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val"
+    xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct"
+    xmlns:xe="http://www.censhare.com/xml/3.0.0/xmleditor">
+
+  <xml-info title="RenderClient Preferences" description="RenderClient Preferences (which override local RenderClient Preferences)" knowledge-level="2" special-licence="true" feature-help="">
+    <history>
+      <entry user="Roelofsen, Roel" timestamp="2019-12-10T16:03:30.091Z" comment=""/>
+      <entry user="Roelofsen, Roel" timestamp="2019-12-10T16:04:02.414Z" comment=""/>
+    </history>
+  </xml-info>
+  <cmd-info name="client.javarender.preferences" enabled="true"/>
+  <admin-info dialog-id="dialog-config" dialog-url="file:config-dialog.xml" preserve-original-formatting="true"/>
+
+  <commands>
+    <command target="CommandManager" method="insert" template="client.common.styles"/>
+    <command target="CommandManager" method="insert" template="client.javarender.logging"/>
+  </commands>
+
+  <connection merge-policy="initial"
+    type="standard"
+    client-map-host-from=""
+    client-map-host-to=""
+    client-map-port-from="0"
+    client-map-port-to="0"
+    server-port-range-from="30543"
+    server-port-range-to="30545"
+    server-bind-addr=""
+    send-buffer-size="0"
+    receive-buffer-size="0"
+    socket-connect-timeout="15000"
+    socket-read-timeout="130000"
+    socket-accept-timeout="0"/>
+
+  <application
+      exclude-pattern-vfs=".*\.idlk$|.*~$|.*/~.*|^~.*|^\._*|\..*|.*/\.rsrc$|.*/CVS$"/>
+
+  <!-- Block based file cache for virtual filesystem -->
+  <filecache3 block-size-kb="1024" max-disk-cache-size-mb="50000"/>
+
+  <collection>
+    <!--  matching rules applied when placing collections -->
+    <!--  matching rules are defined at module asset since censhare 4.3 -->
+  </collection>
+
+  <asset
+    meta-data-mapper-check-in-new="true">
+  </asset>
+
+  <indesign
+    mimetype-text-preview=""
+    message-timeout-seconds="600"
+    page-area-frame-color=""
+    page-area-frame-shade=""
+    page-area-frame-border-color="Cyan"
+    page-area-frame-border-width="2"
+    placeholder-date-format="dd.MM.yyyy"
+    placeholder-time-format="HH:mm 'Uhr'"
+    place-picture-via-data-link="true"
+    auto-adjust-pagearea-bounding-box="false"
+    update-content-elements-in-server-mode="false" force-reset-content-update-flag="false"
+    dynamic-layout-solution="default"
+    dylation-script-file-path="dylation script file path"
+    dylation-jobworker-folder-path="dylation jobworker folder path"
+    inline-vfs-text-placements="false">
+
+    <xml-content-replace-chars>
+      <!-- paragraph separator -->
+      <map from="10" to="13"/>
+      <!-- line separator -->
+      <map from="0x2028" to="10"/>
+    </xml-content-replace-chars>
+
+    <create-preview resolution="72" use_existing_resolution="true"/>
+    
+    <pdf-unlink-image-links min-size-limit-mb="0.5" exclude-extension-list=".ai"/>
+
+  </indesign>
+
+  <incopy>
+  </incopy>
+
+  <xpress
+    mimetype-text-preview=""
+    message-timeout-seconds="600"
+    check-picture-file-path="true"
+    page-area-frame-color=""
+    page-area-frame-shade=""
+    page-area-frame-border-color="Cyan"
+    page-area-frame-border-width="2">
+    <create-text-preview>
+      <allow domain=""/>
+    </create-text-preview>
+    <create-preview>
+      <allow domain=""/>
+    </create-preview>
+    <create-eps>
+      <allow asset-type="ad"/>
+    </create-eps>
+    <create-pdf>
+    </create-pdf>
+  </xpress>
+
+</cmd>
+

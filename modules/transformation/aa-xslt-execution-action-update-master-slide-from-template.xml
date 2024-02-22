@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmd xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.censhare.com/xml/3.0.0/command.xsd" xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct" xmlns:xe="http://www.censhare.com/xml/3.0.0/xmleditor">
+  <xml-info title="PPTX - Update slide template" description="${xslt-execution-action-description} Holt die neuste Version aus der PPTX   Vorlage" knowledge-level="3" special-licence="true" feature-help="" localize="true" template-name="transformation.aa-xslt-execution-action" template-url="file:modules/transformation/aa-xslt-execution-action.xml">
+    <property-resources>
+      <base url="file:module"/>
+      <base url="file:../../common/global"/>
+    </property-resources>
+    <history>
+      <entry user="censhare Defaultuser" timestamp="2020-09-29T23:55:42.310Z" comment=""/>
+      <entry user="censhare Defaultuser" timestamp="2020-09-29T23:57:09.293Z" comment=""/>
+    </history>
+  </xml-info>
+  <cmd-info name="transformation.update-master-slide-from-template" type="server-action" enabled="true">
+    <error-log module="transformation"/>
+    <server-action>
+      <clients>
+        <client type="javaclient"/>
+        <client type="webclient"/>
+      </clients>
+      <filter multi-selection="false">
+        <asset type="presentation.slide."/>
+      </filter>
+    </server-action>
+  </cmd-info>
+  <admin-info dialog-id="xslt-execution-action-config" dialog-url="file:config-dialog.xml"/>
+  <commands currentstep="0">
+    <command target="ScriptletManager" scriptlet="modules.lib.XSLTAssetAutomationScriptlet" method="serverActionSetup"/>
+    <command target="ScriptletManager" scriptlet="modules.lib.XSLTAssetAutomationScriptlet" method="finish"/>
+    <command target="ScriptletManager" scriptlet="modules.lib.XSLTAssetAutomationScriptlet" method="serverActionFinish"/>
+  </commands>
+  <!-- stylesheet-url="file:modules/.../test.xsl" transformation-key="resource-key" -->
+  <config perform-checkout="false" transformation-way="asset" perform-update="false" transformation-key="svtx:update.slide.from.template"/>
+</cmd>

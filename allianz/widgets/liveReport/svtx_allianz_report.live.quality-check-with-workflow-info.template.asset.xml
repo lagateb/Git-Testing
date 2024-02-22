@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset name="svtx:allianz-report.live.quality-check-with-workflow-info.template" type="module.dialog." application="texteditor" domain="root." domain2="root.">
+  <asset_element idx="0" key="actual." isversioned="1"/>
+    <asset_feature feature="censhare:name" language="de" value_string="Allianz Qualitätsprüfung mit Workflow-Info"/>
+  <asset_feature feature="censhare:name" language="en" value_string="Allianz Quality check with workflow info – Template"/>
+  <asset_feature feature="censhare:name" language="fr" value_string="Allianz Contrôle qualité avec info Flux de travail"/>
+  <asset_feature feature="censhare:name" language="it" value_string="Allianz Controllo qualità con workflow info "/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="svtx:allianz.report.live.quality-check-with-workflow-info.template"/>
+  <asset_feature feature="censhare:resource-usage" value_key="censhare:live-report-template"/>
+  <child_asset_rel child_asset_ref_file="svtx_allianz__report.live.quality-check-with-workflow-info.template.controller.asset.xml" key="user.javascript-controller."/>
+  <storage_item element_idx="0" key="master" mimetype="text/html" relpath="file:svtx_allianz_report.live.quality-check-with-workflow-info.template.html"/>
+</asset>

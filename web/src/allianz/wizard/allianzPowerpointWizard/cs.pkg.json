@@ -1,0 +1,85 @@
+{
+  "name": "allianzPowerpointWizard",
+  "since": "2019.3.1",
+  "version": "1.0",
+  "filename": "allianz-powerpoint-wizard.module",
+  "implementations": [
+    {
+      "type": "csBehavior",
+      "name": "allianzPowerpointWizardCreateBehavior",
+      "constructor": "allianzPowerpointWizardCreateBehavior",
+      "properties": {
+        "title": "allianzPowerpointWizard.title",
+        "priority": 550,
+        "filters": {
+          "context": "global"
+        }
+      }
+    },
+    {
+      "type": "csWizard",
+      "name": "allianzPowerpointWizard",
+      "properties": {
+        "title": "allianzPowerpointWizard.title",
+        "application": "com.allianz.powerpoint.wizard",
+        "controllerName": "allianzPowerpointWizardController",
+        "steps": [
+          "allianzPowerpointWizardStep1",
+          "allianzPowerpointWizardStep2",
+          "allianzPowerpointWizardStep3",
+          "allianzPowerpointWizardStep4",
+          "allianzPowerpointWizardStep5"
+        ]
+      }
+    },
+    {
+      "type": "csWizardStep",
+      "name": "allianzPowerpointWizardStep1",
+      "properties": {
+        "title": "allianzPowerpointWizard.step1Title",
+        "componentName": "allianzPowerpointWizardStep1"
+      }
+    },
+    {
+      "type": "csWizardStep",
+      "name": "allianzPowerpointWizardStep2",
+      "properties": {
+        "title": "allianzPowerpointWizard.step2Title",
+        "componentName": "allianzPowerpointWizardStep2"
+      }
+    },
+    {
+      "type": "csWizardStep",
+      "name": "allianzPowerpointWizardStep3",
+      "properties": {
+        "title": "allianzPowerpointWizard.step3Title",
+        "componentName": "allianzPowerpointWizardStep3"
+      }
+    },
+    {
+      "type": "csWizardStep",
+      "name": "allianzPowerpointWizardStep4",
+      "properties": {
+        "title": "allianzPowerpointWizard.step4Title",
+        "componentName": "allianzPowerpointWizardStep4"
+      }
+    },
+    {
+      "type": "csWizardStep",
+      "name": "allianzPowerpointWizardStep5",
+      "properties": {
+        "title": "allianzPowerpointWizard.step5Title",
+        "componentName": "allianzPowerpointWizardStep5"
+      }
+    }
+  ],
+  "java": {
+    "sourcepath": "src/java"
+  },
+  "translations": [
+    "translation"
+  ],
+  "assets": {
+    "path": "assets"
+  }
+}

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmd xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.censhare.com/xml/3.0.0/command.xsd" xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct" xmlns:xe="http://www.censhare.com/xml/3.0.0/xmleditor">
+  <xml-info title="${xslt-execution-title} - Delete Snippet Layout" description="${xslt-execution-description} - Delete Snippet Layout" knowledge-level="3" special-licence="true" feature-help="" localize="true" template-name="transformation.aa-xslt-execution" template-url="file:modules/transformation/aa-xslt-execution.xml">
+    <property-resources>
+      <base url="file:module"/>
+      <base url="file:../../common/global"/>
+    </property-resources>
+    <history>
+      <entry user="censhare Defaultuser" timestamp="2020-07-01T12:26:18.899Z" comment=""/>
+      <entry user="censhare Defaultuser" timestamp="2020-10-21T10:27:15.960Z" comment=""/>
+      <entry user="censhare Dummy" timestamp="2023-05-01T19:41:29.814Z" comment=""/>
+    </history>
+  </xml-info>
+  <cmd-info name="transformation.aa-xslt-execution-20200701-1428-0" type="auto-execute" enabled="true" mode="loop" ignore-error="true">
+    <error-log module="transformation"/>
+  </cmd-info>
+  <admin-info dialog-id="xslt-execution-config" dialog-url="file:config-dialog.xml"/>
+  <listen-events xml-queue-size="8" fork-command="false" persistent-events="false" event-count-limit="50" retries-on-error="0">
+    <event target="AssetEvent" param2="0" method="del-child"/>
+  </listen-events>
+  <commands currentstep="0">
+    <command target="ScriptletManager" scriptlet="modules.lib.XSLTAssetAutomationScriptlet" method="register"/>
+    <command target="EventManager" method="waitevent" key="listen-events"/>
+    <command target="ScriptletManager" scriptlet="modules.lib.XSLTAssetAutomationScriptlet" method="setup"/>
+    <command target="ScriptletManager" scriptlet="modules.lib.XSLTAssetAutomationScriptlet" method="finish"/>
+  </commands>
+  <!-- stylesheet-url="file:modules/.../test.xsl" transformation-key="resource-key" -->
+  <config perform-checkout="false" transformation-way="asset" perform-update="false" transformation-key="svtx:layout.delete.snippet">
+    <!-- filter/query assets -->
+    <asset-filter>
+      <query type="asset" limit="8" xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct">
+        <condition name="censhare:asset.currversion" value="0"/>
+        <condition name="censhare:asset.deletion" value="0"/>
+        <condition name="censhare:asset.state" value="0"/>
+        <relation target="child" type="user.*">
+          <target>
+            <condition name="censhare:asset.type" partial-load-tree="true" value="layout.*" expanded-nodes="layout."/>
+          </target>
+        </relation>
+        <or>
+          <condition name="censhare:asset.type" partial-load-tree="true" value="product." expanded-nodes="product."/>
+          <condition name="censhare:asset.type" partial-load-tree="true" value="product.vsk." expanded-nodes="product.|product.vsk."/>
+          <condition name="censhare:asset.type" partial-load-tree="true" value="product.needs-and-advice." expanded-nodes="product.|product.needs-and-advice."/>
+        </or>
+      </query>
+    </asset-filter>
+    <asset-tree/>
+    <!-- update/checkin assets -->
+    <asset-update domain="root." domain2="root."/>
+  </config>
+  <process-events>
+    <processing in-batches="false"/>
+  </process-events>
+</cmd>

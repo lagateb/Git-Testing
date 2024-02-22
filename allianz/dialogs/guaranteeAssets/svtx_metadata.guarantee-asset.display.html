@@ -1,0 +1,40 @@
+<cs-dialog-group group-label="csCommonTranslations.properties">
+  <ul class="csAssetProperties__list">
+    <cs-metadata-row read property="asset.traits.display.name"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.guaranteeAsset.date"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.guaranteeAsset.totalVolume"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.guaranteeAsset.headline"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.guaranteeAsset.copy"></cs-metadata-row>
+  </ul>
+</cs-dialog-group>
+
+<cs-dialog-group group-label="Anlageklassen">
+  <div ng-repeat="investment in asset.traits.capitalInvestment.investmentClass.value">
+    <h6>{{investment.name.value[0].value}}</h6>
+    <ul class="csAssetProperties__list">
+      <cs-metadata-row read property="investment.percentage"></cs-metadata-row>
+      <cs-metadata-row read property="investment.description"></cs-metadata-row>
+      <cs-metadata-row read property="investment.color"></cs-metadata-row>
+    </ul>
+  </div>
+</cs-dialog-group>
+
+<cs-dialog-group group-label="Regionen" ng-if="asset.traits.type.type.value[0].value === 'product.capital-investment.portfolio.'">
+  <div ng-repeat="investment in asset.traits.capitalInvestment.regions.value">
+    <h6>{{investment.name.value[0].value}}</h6>
+    <ul class="csAssetProperties__list">
+      <cs-metadata-row read property="investment.percentage"></cs-metadata-row>
+      <cs-metadata-row read property="investment.description"></cs-metadata-row>
+      <cs-metadata-row read property="investment.color"></cs-metadata-row>
+    </ul>
+  </div>
+</cs-dialog-group>
+
+<cs-dialog-group group-label="Entwicklungen" ng-if="asset.traits.type.type.value[0].value === 'product.capital-investment.portfolio.'">
+  <div ng-repeat="investment in asset.traits.capitalInvestment.development.value">
+    <ul class="csAssetProperties__list">
+      <cs-metadata-row read property="investment.date"></cs-metadata-row>
+      <cs-metadata-row read property="investment.percentage"></cs-metadata-row>
+    </ul>
+  </div>
+</cs-dialog-group>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmd xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.censhare.com/xml/3.0.0/command.xsd" xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct">
+  <xml-info title="${module-title} /in - mit Event" description="${module-description}" localize="true" version="1" template-name="modules.msp.allianz.mmc_import.promotion.mmc_import_promotion" template-url="file:modules/msp/allianz/mmc_import/promotion/mmc-import-promotion.xml">
+    <property-resources>
+      <base url="file:module"/>
+      <base url="file:../../../../client/javaadmin/module"/>
+      <base url="file:../../../../../common/global"/>
+    </property-resources>
+    <history>
+      <entry user="[MSP] Gerdes, Uwe" timestamp="2021-10-19T09:44:10.576Z" comment=""/>
+      <entry user="[MSP] Raff, Jannes" timestamp="2021-11-08T10:54:26.755Z" comment=""/>
+      <entry user="[MSP] Raff, Jannes" timestamp="2021-11-08T10:54:26.755Z" comment=""/>
+      <entry user="[MSP] Raff, Jannes" timestamp="2021-11-08T10:54:26.755Z" comment=""/>
+      <entry user="[MSP] Raff, Jannes" timestamp="2021-11-08T10:54:26.755Z" comment=""/>
+      <entry user="[MSP] Raff, Jannes" timestamp="2021-11-08T10:54:26.755Z" comment=""/>
+      <entry user="[MSP] Gerdes, Uwe" timestamp="2021-11-09T14:00:44.029Z" comment=""/>
+      <entry user="[MSP] Gerdes, Uwe" timestamp="2021-11-10T07:57:26.591Z" comment=""/>
+      <entry user="[MSP] Gerdes, Uwe" timestamp="2021-11-10T07:57:26.591Z" comment=""/>
+      <entry user="[MSP] Gerdes, Uwe" timestamp="2021-11-10T07:57:26.591Z" comment=""/>
+      <entry user="[MSP] Woeltjen, Markus" timestamp="2022-02-07T14:05:15.565Z" comment=""/>
+      <entry user="[MSP] Woeltjen, Markus" timestamp="2022-03-31T09:37:36.763Z" comment=""/>
+      <entry user="[MSP] Woeltjen, Markus" timestamp="2022-03-31T09:38:37.970Z" comment=""/>
+      <entry user="[MSP] Woeltjen, Markus" timestamp="2022-03-31T09:39:06.271Z" comment=""/>
+      <entry user="[MSP] Woeltjen, Markus" timestamp="2022-03-31T09:40:50.114Z" comment=""/>
+      <entry user="[MSP] Gerdes, Uwe" timestamp="2022-04-01T08:46:00.850Z" comment=""/>
+    </history>
+  </xml-info>
+  <cmd-info name="modules.msp.allianz.mmc_import.promotion.mmc_import_promotion-20211019-1145-0" type="auto-execute" enabled="true" mode="loop" ignore-error="true">
+    <error-log module="hotfolder"/>
+  </cmd-info>
+  <admin-info dialog-id="config-xml-mmc-import-promotion-hotfolder" dialog-url="file:config-dialog.xml"/>
+  <listen-events>
+    <timer delta-sec="60"/>
+  </listen-events>
+  <commands currentstep="0">
+    <command target="EventManager" method="waitevent" key="listen-events"/>
+    <command target="ImportManager" method="scan" key="scan"/>
+    <command target="ImportManager" method="file-group-rollback-transaction" key="import-manager"/>
+    <command target="ScriptletManager" scriptlet="modules.msp.allianz.mmc_import.promotion.MmcImportPromotion" method="action"/>
+  </commands>
+  <scan group-result="true" group-export-key="file-export-group" add-data-node="true" scan-subdirectories="true" fork="true" scan-dir-filesystem="interfaces" scan-dir-relpath="file:MMC_TO_CENSHARE/promotion/in/" work-dir-filesystem="interfaces" work-dir-relpath="file:MMC_TO_CENSHARE/promotion/work/" out-filesystem-key="file@filesystem" out-relpath-key="file@url" max-files="200" max-queue-size="12" create-unique-url="false" last-modification-delay-sec="5" include-directory-regex-pattern=".*">
+    <match include-file-regex-pattern=".*\.[Xx][Mm][Ll]">
+      <data replace-files="true" checkout-checkin-options="outin"/>
+    </match>
+  </scan>
+  <import-manager group-export-key="file-export-group" completed-dir-filesystem="interfaces" completed-dir-relpath="file:MMC_TO_CENSHARE/promotion/completed/" error-dir-filesystem="interfaces" error-dir-relpath="file:MMC_TO_CENSHARE/promotion/error/" transaction-group-name="hotfolder-rollback-transaction-group"/>
+  <config repost-asset-source-finished="censhare.CustomAssetEvent.mmc-import-finished"/>
+</cmd>

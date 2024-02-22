@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmd xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.censhare.com/xml/3.0.0/command.xsd" xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct" xmlns:xe="http://www.censhare.com/xml/3.0.0/xmleditor">
+  <xml-info title="${reg-title-render-pdf-include}" description="${reg-description-render-pdf-include}" knowledge-level="2" special-licence="true" feature-help="" localize="true">
+    <property-resources>
+      <base url="file:module"/>
+      <base url="file:../../common/global"/>
+    </property-resources>
+    <history>
+      <entry user="[Savotex] Massenberg, Nico" timestamp="2019-12-18T16:41:14.668Z" comment=""/>
+    </history>
+  </xml-info>
+  <cmd-info name="renderer.render-pdf-include" enabled="true"/>
+  <admin-info dialog-id="config-render-pdf-include" dialog-url="file:config-dialog.xml"/>
+  <param>
+    <!-- Note: Please make sure you have at least one setting with pdf-mode="page" -->
+    <!-- sample settings -->
+    <!--
+    <setting pdf-mode="page" pdf-spreads="true" storage-key="pdf" id="pdf-x3" name="PDF/X-3" pdf-profile="[PDF/X-3:2002]"/>
+    <setting id="default"   name="Single pages" pdf-profile="censhare-print" pdf-mode="page"     pdf-spreads="false" storage-key="pdf"  print-scaled="false"/>
+    <setting id="double"    name="Double pages" pdf-profile="censhare-print" pdf-mode="document" pdf-spreads="true"  storage-key="pdf2" print-scaled="false"/>
+    <setting id="book"      name="Books"        pdf-profile="censhare-print" pdf-mode="page"     pdf-spreads="true"  storage-key="pdf"  print-scaled="false"/>
+    <setting id="archive"   name="Archive"      pdf-profile="censhare-print" pdf-mode="document" pdf-spreads="true"  storage-key="pdf"  print-scaled="false">
+      <non-printable-placements-filter condition="=:starts-with(asset/@type, 'ad.')"/>
+    </setting>
+    -->
+    <setting pdf-mode="document" pdf-spreads="true" storage-key="pdf" id="pdf-x3" name="PDF/X-3" pdf-profile="[PDF/X-3:2002]" assemble-as-zip="false"/>
+    <setting pdf-mode="document" pdf-spreads="true" storage-key="pdf-drbk-x4" assemble-as-zip="false" id="pdf-drbkx4" name="PDF (DRBK-x4)" pdf-profile="[DRBK-x4]"/>
+    <setting pdf-mode="document" pdf-spreads="true" storage-key="pdf-online" assemble-as-zip="false" id="pdf-online" name="Online-PDF" pdf-profile="[LAY_150_ohne]"/>
+  </param>
+</cmd>

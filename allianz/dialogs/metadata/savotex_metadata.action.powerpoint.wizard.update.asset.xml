@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset id_org="14627" name="savotex:metadata.action.powerpoint.wizard.update" type="module.dialog." application="default" domain="root." domain2="root.">
+  <asset_element idx="0" key="actual." isversioned="1"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="0"/>
+  <asset_feature feature="censhare:resource-key" value_string="savotex:metadata.action.powerpoint.wizard.update"/>
+  <asset_feature feature="censhare:resource-meta">
+    <xmldata>
+      <selection needed="false"/>
+    </xmldata>
+  </asset_feature>
+  <asset_feature feature="censhare:resource-usage" value_key="censhare:meta-data-view-definition"/>
+  <child_asset_rel child_asset_ref_file="savotex_metadata.action.powerpoint.wizard.update Controller.asset.xml" key="user.javascript-controller."/>
+  <storage_item element_idx="0" key="master" mimetype="text/html" relpath="file:savotex_metadata.action.powerpoint.wizard.update.html"/>
+</asset>

@@ -1,0 +1,33 @@
+<ul class="csAssetListItem" cs-hover>
+    <li class="csAssetListItem__preview">
+        <span class="cs-icon cs-icon-file cs-iconsize-200"></span>
+    </li>
+    <li class="csAssetListItem__title" title="{{item.value.name}}">
+        <div class="cs-snippet-renderer"><span>{{ item.value.name }}</span></div>
+    </li>
+    <li class="csAssetListItem__controls" ng-if="!readOnly">
+        <ul class="csControl__menu">
+            <li ng-if="item.value.key && context.permissions.edit && item.value.key == 'master'">
+                <a ng-click="context.downloadCheckout($event)" href="{{ item.value.downloadUrl }}" target="_blank" cs-translate="{title: 'csAssetFileListWidget.getcheckout'}">
+                    <cs-actions-icon icon="cs-icon-edit"></cs-actions-icon>
+                </a>
+            </li>
+            <li ng-if="context.permissions.export">
+                <a href="{{ item.value.downloadUrl }}" target="_blank" cs-translate="{title: 'csAssetFileListWidget.get'}">
+                    <cs-actions-icon icon="cs-icon-disk-save"></cs-actions-icon>
+                </a>
+            </li>
+            <li ng-if="item.value.key && context.permissions.edit && item.value.key == 'master'">
+                <a ng-click="context.replaceFile()" cs-translate="{title: 'csAssetFileListWidget.replace'}">
+                    <cs-actions-icon icon="cs-icon-refresh"></cs-actions-icon>
+                </a>
+            </li>
+            <li ng-if="item.value.key && context.permissions.edit" style="min-width: 2.4rem;">
+                <a ng-click="context.deleteFile(item.value.key)"
+                   cs-translate="{title: 'csAssetFileListWidget.delete'}">
+                    <cs-actions-icon icon="cs-icon-bin"></cs-actions-icon>
+                </a>
+            </li>
+        </ul>
+    </li>
+</ul>

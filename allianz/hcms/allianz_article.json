@@ -1,0 +1,53 @@
+{
+  "cs:asset.type": [
+    "article.fallbeispiel.",
+    "article.funktionsgrafik.",
+    "article.header.",
+    "article.nutzenversprechen.",
+    "article.productdetails.",
+    "article.produktbeschreibung.",
+    "article.staerken.",
+    "article.vorteile.",
+    "article.zielgruppenmodul."
+  ],
+  "title": "article",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "cs:feature.key": "censhare:asset.name"
+    },
+    "type": {
+      "type":"string",
+      "cs:feature.key": "censhare:asset.type"
+    },
+    "id": {
+      "type": "integer",
+      "cs:feature.key": "censhare:asset.id"
+    },
+    "text": {
+      "type": "array",
+      "items": {
+        "cs:relation.direction": "child",
+        "cs:relation.key": "user.main-content.",
+        "type": "object",
+        "properties": {
+          "name": {
+            "cs:feature.key": "censhare:asset.name",
+            "type": "string"
+          },
+          "id": {
+            "minValue": 0,
+            "maxValue": 9007199254740991,
+            "cs:feature.key": "censhare:asset.id",
+            "type": "integer"
+          },
+          "type": {
+            "cs:feature.key": "censhare:asset.type",
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

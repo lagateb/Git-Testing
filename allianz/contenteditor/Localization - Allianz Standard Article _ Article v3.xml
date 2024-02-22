@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<localization>
+  <!-- censhare Standard Content Structure 3.0 -->
+  <properties locale="">
+    <entry key="root">Article</entry>
+    <!-- section headers -->
+    <entry key="content">Content</entry>
+    <entry key="references">References</entry>
+    <entry key="online">Online</entry>
+    <entry key="print">Print</entry>
+    <entry key="general">General</entry>
+    <!-- subsection headers -->
+    <entry key="teaser">Teaser</entry>
+    <entry key="headline">Headline</entry>
+  </properties>
+  <properties locale="de">
+    <entry key="root">Baustein</entry>
+    <!-- section headers -->
+    <entry key="content">Inhalt Typ 1</entry>
+    <entry key="references">Referenzen</entry>
+    <entry key="online">Online</entry>
+    <entry key="print">Print</entry>
+    <entry key="general">Allgemein</entry>
+    <!-- subsection headers -->
+    <entry key="teaser">Teaser</entry>
+    <entry key="headline">Headline</entry>
+
+  </properties>
+</localization>

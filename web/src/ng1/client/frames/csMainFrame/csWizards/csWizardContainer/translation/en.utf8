@@ -1,0 +1,9 @@
+cancel_confirm_title = Cancel wizard
+cancel_confirm_msg = Cancel wizard and delete all data?
+error_store_title = Storing wizard failed
+
+messageTitle = Asset created
+messageContent = The asset has been created successfully 
+messageAction = Open
+
+interruptProcess = Stopping running process...

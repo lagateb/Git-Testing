@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset name="AZ_Logo_negative_CMYK.png" type="picture." application="default" domain="root." domain2="root.">
+  <asset_element idx="0" key="actual." isversioned="1" width_mm="141.05" height_mm="34.97"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="allianz:branding.navigation.logo"/>
+  <asset_feature feature="censhare:resource-meta">
+    <xmldata>
+      <selection needed="false"/>
+    </xmldata>
+  </asset_feature>
+  <storage_item element_idx="0" key="master" mimetype="image/png" relpath="file:AZ_Logo_negative_CMYK.png.png"/>
+</asset>

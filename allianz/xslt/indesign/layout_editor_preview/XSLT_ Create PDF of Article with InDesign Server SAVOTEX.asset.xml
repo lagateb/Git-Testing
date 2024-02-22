@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset id_org="10883" name="XSLT: Create PDF of Article with InDesign Server SAVOTEX" type="module.transformation." application="texteditor" domain="root." domain2="root.">
+  <asset_element idx="0" key="actual." isversioned="1"/>
+  <asset_feature feature="censhare:name" language="de" value_string="PDF aus Artikel mit InDesign-Server erstellen"/>
+  <asset_feature feature="censhare:name" language="en" value_string="Create PDF of Article with InDesign Server"/>
+  <asset_feature feature="censhare:name" language="fr" value_string="Créer PDF à partir de l&apos;article avec serveur InDesign"/>
+  <asset_feature feature="censhare:name" language="it" value_string="Creare PDF dall&apos;articolo con server InDesign"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="svtx:create-pdf-of-article-with-indesign-server"/>
+  <asset_feature feature="censhare:resource-meta">
+    <xmldata>
+      <selection needed="false"/>
+    </xmldata>
+  </asset_feature>
+  <parent_asset_rel parent_asset_ref_resource_key="censhare:create-pdf-of-article-with-indesign-server" child_asset_org="10883" key="variant.resource.replace."/>
+  <storage_item element_idx="0" key="master" mimetype="application/xslt+xml" relpath="file:XSLT_ Create PDF of Article with InDesign Server SAVOTEX.xsl"/>
+</asset>

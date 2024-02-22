@@ -1,0 +1,52 @@
+<censhare-scroll>
+	<div class="cs-p-h svtxDomainSwitch" >
+
+		<div class="message">
+			<p ng-if="$ctrl.mode === 'unit'">Agenturen haben auf dieses Produkt nur lesenden Zugriff</p>
+			<p ng-if="$ctrl.mode === 'agency'">Das Produkt kann durch Agentur <strong>{{$ctrl.data.currentDomain.name}}</strong> bearbeitet werden</p>
+			<p ng-if="$ctrl.mode === 'none'">Das Produkt befindet sich nicht in einer Referats-Domäne!</p>
+		</div>
+		<div ng-if="$ctrl.isEditable">
+			<div class="cs-form-02" ng-if="$ctrl.mode === 'unit'">
+				<div>
+					<label>Agentur</label>
+					<div class="cs-form-row">
+						<cs-select-new required="true"
+									   model="$ctrl.selectedDomain"
+									   values="$ctrl.data.subDomains.domain"
+									   value-key="key"
+									   display-key="name"
+									   order-by="name"
+									   placeholder="Bitte wählen">
+						</cs-select-new>
+					</div>
+				</div>
+				<div>
+					<div class="cs-form-row">
+						<button class="cs-button-cta cs-is-small" role="button" ng-click="$ctrl.switchToAgency()">Agentur zuweisen</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="cs-form-02" ng-if="$ctrl.mode === 'agency'">
+				<div>
+					<div class="cs-form-row">
+						<button class="cs-button-cta cs-is-small" role="button" ng-click="$ctrl.switchToUnit()">Agenturzuweisung zurücknehmen</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div ng-if="$ctrl.isProcessing">
+			<div class="cs-grid-wrapper">
+				<div class="cs-grid-cell">
+					<cs-busy-spinner class="cs-is-light" style="height: 40px;position: relative;margin-right: 2rem;"></cs-busy-spinner>
+				</div>
+			</div>
+			<div class="cs-grid-wrapper">
+				<div class="cs-grid-cell"  style="text-align: center;">
+					Bitte warten...
+				</div>
+			</div>
+		</div>
+	</div>
+</censhare-scroll>

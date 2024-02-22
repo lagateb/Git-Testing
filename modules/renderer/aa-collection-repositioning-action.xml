@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmd xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.censhare.com/xml/3.0.0/command.xsd" xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct">
+  <xml-info title="${reg-title-aa-collection-repositioning-action}" description="${reg-description-aa-collection-repositioning-action}" knowledge-level="2" special-licence="true" feature-help="" localize="true">
+    <property-resources>
+      <base url="file:module"/>
+      <base url="file:../../common/global"/>
+    </property-resources>
+    <history>
+      <entry user="[Savotex] Massenberg, Nico" timestamp="2020-04-02T13:56:06.368Z" comment=""/>
+    </history>
+  </xml-info>
+  <cmd-info name="renderer.aa-collection-repositioning-action" type="server-action" enabled="true">
+    <error-log module="Renderer" log-cancel="false"/>
+    <server-action>
+      <clients>
+        <client type="javaclient"/>
+        <client type="webclient"/>
+      </clients>
+      <filter multi-selection="true"/>
+    </server-action>
+  </cmd-info>
+  <admin-info dialog-id="aa-collection-repositioning-action-config" dialog-url="file:config-dialog.xml"/>
+  <commands currentstep="0">
+    <command target="ScriptletManager" scriptlet="modules.renderer.AACollectionRepositioning" method="serverActionSetup"/>
+    <command target="ScriptletManager" scriptlet="modules.renderer.AACollectionRepositioning" method="finish"/>
+    <command target="ScriptletManager" scriptlet="modules.renderer.AACollectionRepositioning" method="serverActionFinish"/>
+  </commands>
+  <config perform-checkout="true" picture-placement-rule="centered-proportional" subcmd-sync-timeout="1000" subcmd-max-subcmds="5" subcmd-limit-wait="60">
+    <scripts enabled="false">
+      <event key="open-done" enabled="true"/>
+      <event key="save" enabled="true"/>
+      <event key="placement-done" enabled="true"/>
+      <event key="update-content-done" enabled="true"/>
+    </scripts>
+  </config>
+</cmd>

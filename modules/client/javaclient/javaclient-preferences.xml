@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<cmd
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://www.censhare.com/xml/3.0.0/command.xsd"
+    xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus"
+    xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val"
+    xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct"
+    xmlns:xe="http://www.censhare.com/xml/3.0.0/xmleditor">
+
+  <xml-info title="JavaClient Preferences" description="JavaClient Preferences (which override local JavaClient Preferences)" knowledge-level="2" special-licence="false" feature-help="" localize="true">
+    <property-resources>
+      <base url="file:module-custom"/>
+      <base url="file:module"/>
+      <base url="file:../common/module"/>
+      <base url="file:../../../common/global"/>
+    </property-resources>
+    <history>
+      <entry user="Roelofsen, Roel" timestamp="2019-12-10T16:06:08.739Z" comment=""/>
+    </history>
+  </xml-info>
+  <cmd-info name="client.javaclient.preferences" enabled="true"/>
+  <admin-info dialog-id="dialog-config" dialog-url="file:config-dialog.xml" preserve-original-formatting="true"/>
+
+  <commands>
+    <command target="CommandManager" method="insert" template="client.common.styles"/>
+    <command target="CommandManager" method="insert" template="client.common.logging"/>
+  </commands>
+
+  <!--
+    max-image-mem-size-mb: specifies maximum amount of heap memory that
+    images (normally loaded by the file cache) can consume; subsampling
+    is applied if necessary to hold that limit.
+    Can be specified either as an absolute integer value in Megabytes where zero or
+    a negative value is interpreted as 'unlimited', or as a size relative
+    to the client's heap allocation in percent (e.g., 50%).
+  -->
+  <application
+      start-mode="restore-windows"
+      clear-filecache-on-logout="false"
+      max-image-memory-size="30%"
+      hide-message-statusbar-item="false"
+      image-cache-size-percent="20"
+      check-out-readonly-on-doubleclick-allowed="false"
+      exclude-pattern-vfs=".*\.idlk$|.*~$|.*/~.*|^~.*|^\._.*|^\..*|.*/\.rsrc$|.*/CVS$"
+      client-download-link=""/>
+
+  <!-- 
+     InDesign(&Server) requires a language dependend profile-name. 
+     Details see https://ecosphere.censhare.com/de/article/2377706 
+     Examples - an InDesign(&Server) with: 
+     english setup language requires profile-name="[Press Quality]" 
+     german setup language requires profile-name="[Druckausgabequalität]" 
+   -->
+  <pdf-export profile-name="[Press Quality]" replace-opi-with-raw="true"/>
+
+  <!-- Block based file cache for virtual filesystem -->
+  <!-- Available parameters for file cache configuration:
+       max-disk-cache-size-mb="1000" -->
+  <filecache3 block-size-kb="1024"/>
+   
+  <asset
+      autosave-interval-sec="300"
+      duplicate-extension=" D"
+      variant-extension=" V"
+      meta-data-mapper-check-in-new="true"
+      meta-data-mapper-check-in="false"
+      meta-data-mapper-replace-storage="true"
+      apply-template-show-root-asset-only="true"
+      cache-size="500"
+    >
+    <open-applications>
+      <open-application mimetype="image/jpeg" application-info="Adobe PhotoShop" application-bundle-identifier="com.adobe.Photoshop"/>
+      <!--
+      <open-application mimetype="text/xml" application-info="TextEdit" application-bundle-identifier="com.apple.TextEdit"/>
+      -->
+    </open-applications>
+    <overwrite-asset-applications>
+      <!-- possible options -->
+      <!--asset-application id="incopy" overwrite-id="contenteditor"/-->
+      <!--asset-application id="incopy" overwrite-id="translation2"/-->
+      <!--asset-application id="incopy" overwrite-id="incopyeditor"/-->
+      <!--asset-application id="indesign" overwrite-id="layout-editor"/-->
+      <!--asset-application id="indesign" overwrite-id="translation2"/-->
+    </overwrite-asset-applications>
+
+  </asset>
+
+  <!--
+  ++ [open-incopy-text-with]
+     Asset application to use when editing an InCopy text (e.g. double click on text box).
+     Allowed values are "incopyeditor" or "incopy". The default is "incopyeditor".
+  -->
+  <layout-editor
+    open-incopy-text-with="incopyeditor">
+    <allowed-storages>
+      <!--storage key="" mimetype=""/-->
+      <storage key="master"/>
+      <storage key="opi"/>
+      <storage key="eps"/>
+      <storage key="pdf"/>
+      <storage key="dummy"/>
+    </allowed-storages>
+  </layout-editor>
+
+  <collection>
+    <!--  matching rules applied when placing collections -->
+    <!--  matching rules are defined at module asset since censhare 4.3 -->
+  </collection>
+
+  <indesign
+    mimetype-text=""
+    mimetype-text-preview=""
+    message-timeout-seconds="600"
+    check-picture-file-path="true"
+    page-area-frame-color=""
+    page-area-frame-shade=""
+    page-area-frame-border-color="Cyan"
+    page-area-frame-border-width="2"
+    new-sub-text-enabled="false"
+    new-sub-incopy-text-enabled="true"
+    new-sub-incopy-text-top-enabled="true"
+    detach-option-enabled="true"
+    dissolve-option-enabled="true"
+    placeholder-date-format="dd.MM.yyyy"
+    placeholder-time-format="HH:mm 'Uhr'"
+    create-placeholder-elements="false"
+    auto-adjust-pagearea-bounding-box="false"
+    include-all-styles-in-icml="true"
+    dynamic-layout-solution="default"
+    dylation-script-file-path="dylation script file path"
+    dylation-jobworker-folder-path="dylation jobworker folder path"
+    inline-vfs-text-placements="true"
+    cancel-document-with-endnotes="true">
+
+    <xml-content-replace-chars>
+      <!-- paragraph separator -->
+      <map from="10" to="13"/>
+      <!-- line separator -->
+      <map from="0x2028" to="10"/>
+    </xml-content-replace-chars>
+
+    <allowed-storages>
+      <!--storage key="" mimetype=""/-->
+      <storage key="master"/>
+      <storage key="opi"/>
+      <storage key="eps"/>
+      <storage key="pdf"/>
+      <storage key="dummy"/>
+    </allowed-storages>
+
+    <create-text-preview>
+      <!-- options for every 'allow' element:
+        <allow
+          domain="[domain]"
+          domain2="[domain2]"
+          asset-type="[asset type]"
+          workflow-state-id-from="[id of workflow state]"
+          workflow-state-id-to="[id of workflow state]"/>
+      -->
+      <allow domain=""/>
+    </create-text-preview>
+    <!-- create previews with options
+      <create-preview
+        resolution="[value in dpi, '72'=default]"å
+        factor="[scale factor, default='1.0']"
+        jpeg-quality="['low', 'good', 'excellent', 'great', default='excellent']"
+        full-resolution-graphics="['true', 'false', default='false']"/>
+    -->
+    <create-preview factor="1.0" full-resolution-graphics="false" jpeg-quality="excellent" resolution="72">
+      <allow domain=""/>
+    </create-preview>
+    <!-- create eps with options
+      <create-eps
+        factor="[scale factor, default='1.0']"/>
+    -->
+    <create-eps scale="1.0">
+      <allow asset-type="ad"/>
+    </create-eps>
+    <!-- create pdf with options
+      <create-pdf
+        style-name="[name of pdf settings]"/>
+    -->
+    <create-pdf style-name="">
+      <!--
+      <allow domain=""/>
+      -->
+    </create-pdf>
+    <!-- create pdf preview (which is supposed to have a smaller size than the normal pdf item)
+      <create-pdf-preview
+        style-name="name of pdf settings for lower quality, e.g. [Smallest File Size]"/>
+    -->
+    <create-pdf-preview style-name="">
+      <!--
+      <allow domain=""/>
+      -->
+    </create-pdf-preview>
+    <!-- create xml -->
+    <create-xml>
+      <!--
+      <allow domain=""/>
+      -->
+    </create-xml>
+    <!-- create IDML -->
+    <create-idml>
+      <!--
+      <allow domain=""/>
+      -->
+    </create-idml>
+    
+    <censhare-tags>
+      <special-characters>
+        <!-- example for defining a special character (e.g. line separator: hard return) -->
+        <!-- <character-def character="&#x2028;"/> -->
+      </special-characters>
+    </censhare-tags>
+  </indesign>
+
+  <incopy
+    mimetype-text=""
+    check-picture-file-path="true"
+    placeholder-time-format="HH:mm 'Uhr'"
+    placeholder-date-format="dd.MM.yyyy">
+    <allowed-storages>
+      <!--storage key="" mimetype=""/-->
+      <storage key="master"/>
+      <storage key="opi"/>
+      <storage key="eps"/>
+      <storage key="pdf"/>
+      <storage key="dummy"/>
+    </allowed-storages>
+  </incopy>
+
+  <xpress
+    mimetype-text=""
+    mimetype-text-preview=""
+    check-picture-file-path="true"
+    message-timeout-seconds="600"
+    page-area-frame-color=""
+    page-area-frame-shade=""
+    page-area-frame-border-color="Cyan"
+    page-area-frame-border-width="2"
+    new-sub-text-enabled="true">
+    <allowed-storages>
+      <!--storage key="" mimetype=""/-->
+      <storage key="master"/>
+      <storage key="opi"/>
+      <storage key="eps"/>
+      <storage key="pdf"/>
+      <storage key="dummy"/>
+    </allowed-storages>
+    <create-text-preview>
+      <allow domain=""/>
+    </create-text-preview>
+    <create-preview>
+      <allow domain=""/>
+    </create-preview>
+    <create-eps>
+      <allow asset-type="ad"/>
+    </create-eps>
+    <create-pdf>
+    </create-pdf>
+  </xpress>
+
+  <framemaker
+    message-timeout-seconds="600">
+    <allowed-storages>
+      <!--storage key="" mimetype=""/-->
+      <storage key="master"/>
+      <storage key="opi"/>
+      <storage key="eps"/>
+      <storage key="pdf"/>
+      <storage key="dummy"/>
+    </allowed-storages>
+    <create-text-preview>
+      <allow domain=""/>
+    </create-text-preview>
+    <create-pdf>
+    </create-pdf>
+  </framemaker>
+
+  <!--
+    Planning settings
+    Available slots for formula attributes:
+    - Default slot = Asset
+    - "asset_element" = current target asset element
+    Example ":asset/@name" result name of asset
+  -->
+  <planning
+    pages-per-row-list="2,4,6,8,16"
+    view-scale-list="50,100,200"
+    element-text-formula=""
+    element-text-above-formula=""
+    element-text-below-formula=""
+    sheet-info-text-formula=""
+    tooltip-formula=""
+    annotation-versioning="true"
+    description-versioning="true"
+    max-thumbnail-scale-factor="200%"
+    show-element-info-in-unobscured-space="true"
+    >
+    <print-styles>
+      <print-style key="default" font-name="Arial" font-size="10"/>
+      <print-style key="table-body" font-name="Arial" font-size="10" bold="true"/>
+      <print-style key="table-header" font-name="Arial" font-size="10" bold="true"/>
+      <print-style key="element" font-name="Arial" font-size="8"
+                   horizontal-alignment="center" vertical-alignment="center"/>
+      <print-style key="element-small" font-name="Arial" font-size="6"
+                   horizontal-alignment="center" vertical-alignment="center"/>
+      <print-style key="title" font-name="Arial" font-size="24" bold="true"/>
+    </print-styles>
+    <layer-rules>
+      <layer-rule parent-asset-type="layout." child-asset-type="ad."/>
+      <layer-rule parent-asset-type="ad." child-asset-type="ad." is-same-layer="true"/>
+      <layer-rule parent-asset-type="layout." child-asset-type="layout." is-same-layer="true"/>
+    </layer-rules>
+
+    <!--  List of asset types, which will be excluded from the tree query result set. -->
+    <exclude-asset-types> 
+      <exclude-asset-type key="text."/> 
+      <exclude-asset-type key="product."/> 
+    </exclude-asset-types>
+     
+    <!--
+      Pagination settings
+    -->
+    <pagination>
+      <header-repetitions>
+        <header-repetition section="root.*" each-column="false" each-page="false"/>
+      </header-repetitions>
+      <spacings>
+        <spacing section="root.*" ad-ad-mm="1.0" ad-header-mm="2.0" header-header-mm="1.0" header-ad-mm="1.0"/>
+      </spacings>
+      <sortings>
+        <!--
+          Specification of zero or more sort criteria in decreasing order
+          of precedence. Available sort criteria:
+            type="area":       sort by area of elements (mm-width times mm-height)
+            type="columnspan": sort by column span (according to format of first target page)
+            type="attribute":  sort by property from XML
+                               attributes:
+                                 slot (required):     "asset" or "element"
+                                 source (required):   source path
+                                 datatype (optional): "string" (dflt), "number", or "date"
+           Sort order can be specified to be descending:
+             descending (optional); "false" (dflt) or "true"
+        -->
+        <!-- Example:
+        <sorting section="root.*">
+          <sort type="columnspan" descending="true"/>
+          <sort type="attribute" descending="true" slot="asset" source="@modified_date" datatype="date"/>
+        </sorting>
+        -->
+        <sorting section="root.*">
+          <sort type="columnspan" descending="true"/>
+          <sort type="area" descending="true"/>
+        </sorting>
+      </sortings>
+      <options>
+        <!--
+          Options:
+            Allow reordering of ads within spans of multiple columns in order to waste less space
+              allow-reordering: "no" (dflt):     no reordering, strict top to bottom/left to right layout
+                                "light":         allow slight reordering of ads
+        -->
+        <options section="root.*" allow-reordering="light"/>
+      </options>
+    </pagination>
+    
+    <!-- 
+    Range markers allow xpath expression. 
+    Ex. <marker position="0.5" label="50%" label-expression=":concat('P', asset/@name)" label-vertical="true"/> 
+    
+    If there is a valid expression label will be ignored
+     -->
+    <range-markers> 
+    	<marker position="0.25" label="25%"/> 
+    	<marker position="0.5" label="50%"/> 
+    	<marker position="0.75" label="75%"/> 
+    </range-markers>
+  </planning>
+
+  <translation search-layout-for-text="true" force-preview-on-checkin="true" check-no-overset-on-checkin="true">
+    <!-- renderer for indesign: if value is "fop" fop renderer is used, otherwise indesign renderer -->
+    <renderer application="indesign" value="indesign"/>
+    <!-- renderer for xpress: if value is "fop" fop renderer is used, otherwise xpress renderer -->
+    <renderer application="xpress" value="xpress"/>
+    <!-- configuration of autotranslated content
+      We recognize numbers optionally containing thin spaces (Unicode 2004-200A, used typically as group
+      separators). No dots or commas are supported as group separators.
+      A three-step process is applied:
+      1. find numbers with a decimal separator, followed by a dot and not preceded by a decimal separator;
+         this matches numbers at the end of a sentence.
+      2. find numbers with a decimal separator, but not preceded or followed by a decimal separator
+         (the additional condition avoids to falsely match dates or similar text containing decimal separators
+         and numbers)
+      3. find integer numbers (this will also find numbers contained in dates, for instance)
+    -->
+    <autotranslated-content>
+      <handler type="regexp"
+               id="number"
+               regexp="(?:[^.,\u2004-\u200A0-9]|^)((\u2212|\u2013|-)?[\u2004-\u200A]*[0-9]+([\u2004-\u200A0-9]+)*[.,][\u2004-\u200A0-9]+)(?:[.])(?:[^.,\u2004-\u200A0-9]|$)"
+               group="1"/>
+      <handler type="regexp"
+               id="number"
+               regexp="(?:[^.,\u2004-\u200A0-9]|^)((\u2212|\u2013|-)?[\u2004-\u200A]*[0-9]+([\u2004-\u200A0-9]+)*[.,][\u2004-\u200A0-9]+)(?:[^.,\u2004-\u200A0-9]|$)"
+               group="1"/>
+      <handler type="regexp"
+               id="number"
+               regexp="(\u2212|\u2013|-)?[\u2004-\u200A]*[0-9]+([\u2004-\u200A0-9]+)*"
+               group="0"/>
+    </autotranslated-content>
+    <!-- Domain of TM segments. If not set, domain of target asset is used. -->
+    <translation-memory domain="" domain2=""/>
+  </translation>
+
+  <!--
+    @tm-match-limit: specifies minimum match value of a translation memory hit to be applied automatically
+      (default is to apply only 100%-matches automatically); the value can be specified as factor between 0 and 1, or as
+      a percent value
+  -->
+  <translation3>
+    <!-- Domain used for access to TM and abbreviations table. If not set, root./root.. -->
+    <domain-access domain="root." domain2="root."/>
+    <!-- configuration of autotranslated content
+      We recognize numbers optionally containing thin spaces (Unicode 2004-200A, used typically as group
+      separators). No dots or commas are supported as group separators.
+      A three-step process is applied:
+      1. find numbers with a decimal separator, followed by a dot and not preceded by a decimal separator;
+         this matches numbers at the end of a sentence.
+      2. find numbers with a decimal separator, but not preceded or followed by a decimal separator
+         (the additional condition avoids to falsely match dates or similar text containing decimal separators
+         and numbers)
+      3. find integer numbers (this will also find numbers contained in dates, for instance)
+    -->
+    <autotranslated-content>
+      <handler type="regexp"
+               id="number"
+               regexp="(?:[^.,\u2004-\u200A0-9]|^)((\u2212|\u2013|-)?[\u2004-\u200A]*[0-9]+([\u2004-\u200A0-9]+)*[.,][\u2004-\u200A0-9]+)(?:[.])(?:[^.,\u2004-\u200A0-9]|$)"
+               group="1"/>
+      <handler type="regexp"
+               id="number"
+               regexp="(?:[^.,\u2004-\u200A0-9]|^)((\u2212|\u2013|-)?[\u2004-\u200A]*[0-9]+([\u2004-\u200A0-9]+)*[.,][\u2004-\u200A0-9]+)(?:[^.,\u2004-\u200A0-9]|$)"
+               group="1"/>
+      <handler type="regexp"
+               id="number"
+               regexp="(\u2212|\u2013|-)?[\u2004-\u200A]*[0-9]+([\u2004-\u200A0-9]+)*"
+               group="0"/>
+    </autotranslated-content>
+    <!--  metadata-translation /-->
+
+    <special-characters>
+      <character-def character="&#x2028;" display-character="&#xAC;" name="${hard-return}"/>
+    </special-characters>
+    <replace-chars>
+      <!-- paragraph separator -->
+      <map from="&#x2028;" to=" "/>
+    </replace-chars>
+  </translation3>
+
+  <calendar
+    custom-date-format=""
+    table-font-size="-1"
+    only-filter-mode="false"
+    print-description-formula=""
+    print-legend-formula=""
+    print-legend-max-width-mm=""
+  />
+
+  <schedule
+    only-filter-mode="false"
+    day-mode="false"
+    work-days-per-week="5"
+  />
+
+  <!--
+    Content Editor and Editor for InCopy Documents
+
+    @allow-get-invalid-content: if "true", allow to check in and create preview from content
+      that is not valid w.r.t. the DTD
+  -->
+  <content-editor allow-invalid-content="false" default-scale-factor="100">
+    <special-characters color="#808080"> <!-- color="#4F9FFF" -->
+      <!-- character-def:
+        @character:         the special character (Unicode)
+        @display-character: the replacement character shown in mode 'Show invisible characters'
+                            if not specified, the character is not affected by the 'Show invisibles' option and
+                            as such behaves like any other normal character, but appears in the 'Insert special character'
+                            menu
+                            Note: for technical reasons, ist is not possible to configure a replacement character for
+                            the newline character &#x0A; it is hard-coded to be &#xB6
+        @name:              the name appearing in 'Insert special character' context menu
+        @menu-path:         specifies sub menu for menu item;
+                            examples:
+                            - "/": item will appear in sub menu 'Show invisible characters'
+                            - "/a/b": item will appear in sub menu 'Show invisible characters' -> a -> b
+                            - "" or missing: item will not appear
+        @newline:           should be "true" if character represents a line break (e.g., hard return character #x2028)
+        @blank:             should be "true" if character represents a blank, i.e., is a good place to break a line at
+      -->
+      <!-- Built-in <character-def character="&#x0A;" display-character="&#xB6;" name="New paragraph" menu-path="" newline="true"/> -->
+
+      <!-- Spaces -->
+      <character-def character="&#x2001;" display-character="&#x2027;" name="${em-quad}" menu-path="/${spaces}" newline="false"/>
+      <character-def character="&#x2009;" display-character="&#x2027;" name="${thin-space}" menu-path="/${spaces}" newline="false"/>
+      <character-def character=" "        display-character="&#x2027;" name="Blank" menu-path="" newline="false" blank="true"/>
+      <!-- Dashes -->
+      <character-def character="&#xAD;" name="${discretionary-hyphen}" menu-path="/${dashes}" newline="false"/>
+      <!-- Others -->
+      <character-def character="&#x09;" display-character="&#x2023;" name="Tabulator" menu-path="/${others}" newline="false"/>
+      <character-def character="&#x2028;" display-character="&#xAC;" name="${hard-return}" menu-path="/${others}" newline="true"/>
+      <character-def character="&#x200B;" display-character="|" name="${discretionary-line-break}" menu-path="/${others}" newline="false"/>
+
+      <!--  Example for special character not affected by 'Show invisibles' option -->
+      <!-- <character-def character="&#x2122;" name="TradeMark Symbol" menu-path="/"/> -->
+    </special-characters>
+  </content-editor>
+
+  <!-- Printing -->
+  <printing>
+    <print-styles>
+      <print-style key="default" font-name="Arial" font-size="10"/>
+      <print-style key="table-body" font-name="Arial" font-size="10"/>
+      <print-style key="table-header" font-name="Arial" font-size="10" bold="true"/>
+      <print-style key="title" font-name="Arial" font-size="18" bold="true"/>
+    </print-styles>
+  </printing>
+
+  <!-- maps support  support
+      map-type: google : roadmap, satellite, hybrid, terrain;
+                osm: only 'road' available
+      max-auto-zoom-level: google: 1 - 19 (distant - augmented)
+                           osm: 1-18
+      map-control: small or large or default (google and openstreetmap)
+
+      Google specific: if Google Maps API for business is used urls have to be extended with clientId and signed with cryptoKey.
+                       In that case each geocoding/reverse geocoding request to Google must be signed. Signing is done by censhare server.
+                       ClientId and cryptoKey provided by Google must be inserted into Google Maps Configuration in modules section of admin client.
+                       Attribute sign-url-for-business-api must be set to true to enable URL signing.
+  -->
+  <maps type="openstreetmap" map-type="road" max-auto-zoom-level="14" map-control="default" default-position-latitude="48.1539" default-position-longitude="11.47875"
+      proxy-host="" proxy-port="">
+    <map type="google" impl-url="http://maps.google.com/maps/api/js?sensor=false"
+      reverse-geocoding-url-pattern="http://maps.google.com/maps/api/geocode/xml?sensor=false&amp;latlng={lat},{lng}&amp;language={locale}"
+      geocoding-url-pattern="http://maps.google.com/maps/api/geocode/xml?sensor=false&amp;address={addr}&amp;language={locale}"
+      sign-url-for-business-api="false"/>
+    <map type="openstreetmap" impl-url="https://openlayers.org/api/OpenLayers.js"
+      reverse-geocoding-url-pattern="https://nominatim.openstreetmap.org/reverse?format=xml&amp;addressdetails=1&amp;lat={lat}&amp;lon={lng}&amp;accept-language={locale}"
+      geocoding-url-pattern="https://nominatim.openstreetmap.org/search?format=xml&amp;addressdetails=1&amp;accept-language={locale}&amp;q={addr}"/>
+  </maps>
+
+  <!-- Online Channel preview -->
+  <onlinepreview-servers>
+    <!--<web-server key="default" name="Default Web Server" url="http://localhost:8080" />-->
+  </onlinepreview-servers>
+  
+  <!-- Old WebCMS
+  <webcms default-language="">
+    <language name="${german}" locale="de"/>
+    <language name="${english}" locale="en"/>
+    <web-channels>
+      <web-channel key="SiteFusion" name="SiteFusion" output-channel="root.web."
+			url="http://xxx.de/utils/tasks/censhare_preview/index.cfm/_?edit#;id=${collectionId}/&amp;r=${random}/" 
+			domain="root." domain2="root." 
+			is-external-webcms="true" update-event-method-name="vogel-webcms-preview" page-reload-delay-sec="6"/>
+    </web-channels>
+  </webcms>
+  -->
+
+  <xml-editor>
+    <edit-text-widgets>
+      <special-characters color="#808080"> <!-- color="#4F9FFF" -->
+        <!-- character-def:
+          @character:         the special character (Unicode)
+          @display-character: the replacement character shown in mode 'Show invisible characters'
+          if not specified, the character is not affected by the 'Show invisibles' option and
+          as such behaves like any other normal character, but appears in the 'Insert special character'
+          menu
+          Note: for technical reasons, ist is not possible to configure a replacement character for
+          the newline character &#x0A; it is hard-coded to be &#xB6
+          @name:              the name appearing in 'Insert special character' context menu
+          @menu-path:         specifies sub menu for menu item;
+          examples:
+          - "/": item will appear in sub menu 'Show invisible characters'
+          - "/a/b": item will appear in sub menu 'Show invisible characters' -> a -> b
+          - "" or missing: item will not appear
+          @newline:           should be "true" if character represents a line break (e.g., hard return character #x2028)
+          @blank:             should be "true" if character represents a blank, i.e., is a good place to break a line at
+        -->
+        <!-- Built-in <character-def character="&#x0A;" display-character="&#xB6;" name="New paragraph" menu-path="" newline="true"/> -->
+
+        <!-- Spaces -->
+        <character-def character="&#x2001;" display-character="&#x2027;" name="${em-quad}" menu-path="/${spaces}" newline="false"/>
+        <character-def character="&#x2009;" display-character="&#x2027;" name="${thin-space}" menu-path="/${spaces}" newline="false"/>
+        <character-def character=" "        display-character="&#x2027;" name="Blank" menu-path="" newline="false" blank="true"/>
+        <!-- Dashes -->
+        <character-def character="&#xAD;" name="${discretionary-hyphen}" menu-path="/${dashes}" newline="false"/>
+        <!-- Others -->
+        <character-def character="&#x09;" display-character="&#x2023;" name="Tabulator" menu-path="/${others}" newline="false"/>
+        <character-def character="&#x2028;" display-character="&#xAC;" name="${hard-return}" menu-path="/${others}" newline="true"/>
+        <character-def character="&#x200B;" display-character="|" name="${discretionary-line-break}" menu-path="/${others}" newline="false"/>
+
+        <!--  Example for special character not affected by 'Show invisibles' option -->
+        <!-- <character-def character="&#x2122;" name="TradeMark Symbol" menu-path="/"/> -->
+      </special-characters>
+    </edit-text-widgets>
+  </xml-editor>
+
+  <!-- Virtual filesystem -->
+  <vfs enable-short-url="true"/>
+</cmd>

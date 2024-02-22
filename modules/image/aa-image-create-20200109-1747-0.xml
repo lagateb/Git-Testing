@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmd xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.censhare.com/xml/3.0.0/command.xsd" xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct">
+  <xml-info title="${reg-aa-image-create-title} DIC" description="${reg-aa-image-create-description} DIC" knowledge-level="2" special-licence="false" feature-help="" localize="true" version="6" template-name="image.aa-image-create" template-url="file:modules/image/aa-image-create.xml">
+    <property-resources>
+      <base url="file:module"/>
+      <base url="file:../../common/global"/>
+    </property-resources>
+    <history>
+      <entry user="[Savotex] Köppe, Maximilian" timestamp="2020-01-09T16:44:02.466Z" comment=""/>
+      <entry user="[Savotex] Köppe, Maximilian" timestamp="2020-01-09T16:46:41.450Z" comment=""/>
+      <entry user="[Savotex] Köppe, Maximilian" timestamp="2020-01-09T16:46:54.012Z" comment=""/>
+      <entry user="[Savotex] Köppe, Maximilian" timestamp="2020-01-09T16:57:54.339Z" comment=""/>
+    </history>
+  </xml-info>
+  <cmd-info name="image.aa-image-create-20200109-1747-0" type="auto-execute" enabled="true" mode="loop" ignore-error="false" log-level="FINE">
+    <error-log module="Image" log-cancel="false"/>
+  </cmd-info>
+  <admin-info dialog-id="config-aa-image-create" dialog-url="file:config-dialog.xml"/>
+  <listen-events xml-queue-size="5" fork-command="sync" fork-sync-timeout="600" persistent-events="true" event-count-limit="4" retries-on-error="0">
+    <event target="AssetEvent" method="preview-done" param2="0"/>
+  </listen-events>
+  <commands currentstep="0">
+    <command target="ScriptletManager" scriptlet="modules.image.AAImageCreate" method="register"/>
+    <command target="EventManager" method="waitevent" key="listen-events"/>
+    <command target="ScriptletManager" scriptlet="modules.image.AAImageCreate" method="setup"/>
+    <command target="ScriptletManager" scriptlet="modules.image.AAImageCreate" method="finish"/>
+  </commands>
+  <form sync-timeout="1000" max-subcmds="5" limit-wait="1" enforced="false" enforce="true">
+    <setting id="dic_master-jpg"/>
+    <setting id="dic_master-jpg-layout"/>
+    <setting id="dic_master-jpg-pdf"/>
+    <setting id="dic_master-png-alpha-channel"/>
+    <setting id="dic_master-png-clipping-path"/>
+  </form>
+  <config perform-checkout="false" perform-update="false" perform-tree="false" local-filesystem="true" repost-asset-source-finished="censhare.CustomAssetEvent.dic-master-created">
+    <asset-update/>
+    <asset-filter>
+      <query xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" type="asset" sql="false" limit="50" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct">
+        <condition name="censhare:asset.currversion" op="=" value="0"/>
+        <condition name="censhare:asset.type" value="picture." partial-load-tree="true" expanded-nodes="picture."/>
+        <or>
+          <condition name="censhare:asset.type" partial-load-tree="true" value="layout." expanded-nodes="layout."/>
+          <condition name="censhare:asset.type" partial-load-tree="true" value="document." expanded-nodes="document."/>
+          <condition name="censhare:asset.type" partial-load-tree="true" value="article." expanded-nodes="article."/>
+          <and>
+            <condition name="censhare:asset.state" value="0"/>
+            <condition name="censhare:function.transformation-variant-flag" op="!=" value="1"/>
+          </and>
+        </or>
+      </query>
+    </asset-filter>
+    <asset-tree/>
+  </config>
+  <process-events>
+    <processing in-batches="false"/>
+  </process-events>
+</cmd>

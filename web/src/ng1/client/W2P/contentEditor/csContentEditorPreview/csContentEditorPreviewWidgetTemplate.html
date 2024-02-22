@@ -1,0 +1,145 @@
+<div class="cs-has-full-height csLayout_flex_container csLayout_flex__vertical">
+    <div class="cs-toolbar">
+        <div class="cs-toolbar-slot-1">
+            <div class="cs-toolbar-item">
+                <div class="csLayout_flex_hbox jp1">
+                    <label class="cs-label cs-is-small csLayout_flex_static_item">{{ root.name | csTranslate }}</label>
+                    <cs-select-new class="cs-is-small cs-is-alt"
+                                   model="level1.key"
+                                   label-translate="true"
+                                   values="root.options"
+                                   display-key="name"
+                                   value-key="key"
+                                   on-select="onLevelOptionSelected(option, 'level1')"
+                                   placeholder="{{ root.name | csTranslate }}"
+                                   unerasable="true"
+                                   disable-initial-unerasable="false"
+                    ></cs-select-new>
+                </div>
+            </div>
+            <!-- hier ist das DropDown Folie  Im Endefekt brauchen wir das  ja nur, wenn wir  Folien zur Auswahl haben -->
+            <!--   width="auto"cs-select-component__values -->
+            <div class="cs-toolbar-item" ng-if="level1.child.options.length > 0" >
+                <div class="csLayout_flex_hbox">
+                    <label class="cs-label cs-is-small csLayout_flex_static_item">{{ level1.child.name | csTranslate }}</label>
+                    <cs-select-new class="cs-is-small cs-is-alt" style="min-width: 240px"
+
+                                   order-by="position"
+                                   model="$parent.level2.key"
+                                   values="level1.child.options"
+                                   on-select="onLevelOptionSelected(option, 'level2')"
+                                   label-translate="true"
+                                   display-key="name"
+                                   value-key="key"
+                                   placeholder="{{ level1.child.name | csTranslate }}"
+                                   unerasable="true"
+                                   disable-initial-unerasable="false"
+                    ></cs-select-new>
+                </div>
+            </div>
+<!-- Button übernahme Layout -->
+            <div class="cs-toolbar-item" ng-show="showUpdatePPTXLayout && !showSpinner">
+                <div class="csLayout_flex_hbox">
+                    <button  cs-tooltip="Neues Layout zuweisen" ng-click="applyLayout()" style="margin-left:10px;" type="submit" class="cs-button-alt cs-is-small" role="button" aria-label="abc">Layout verwenden</button>
+                </div>
+            </div>
+
+
+
+            <div class="cs-toolbar-item" ng-if="level2.child.options">
+                <div class="csLayout_flex_hbox">
+                    <label class="cs-label cs-is-small csLayout_flex_static_item">{{ level2.child.name | csTranslate }}</label>
+                    <cs-select-new class="cs-is-small cs-is-alt device-width"
+                                   width="auto"
+                                   model="$parent.level3.key"
+                                   values="level2.child.options"
+                                   on-select="onLevelOptionSelected(option, 'level3')"
+                                   label-translate="true"
+                                   display-key="name"
+                                   value-key="key"
+                                   placeholder="{{ level2.child.name | csTranslate }}"
+                                   unerasable="true"
+                                   disable-initial-unerasable="false"
+                    ></cs-select-new>
+                </div>
+            </div>
+            <div class="cs-toolbar-item" ng-if="level3.child.options">
+                <div class="csLayout_flex_hbox">
+                    <label class="cs-label cs-is-small csLayout_flex_static_item">{{ level3.child.name | csTranslate }}</label>
+                    <cs-select-new class="cs-is-small cs-is-alt"
+                                   width="auto"
+                                   model="$parent.level4.key"
+                                   values="level3.child.options"
+                                   on-select="onLevelOptionSelected(option, 'level4')"
+                                   label-translate="true"
+                                   display-key="name"
+                                   value-key="key"
+                                   placeholder="{{ level3.child.name | csTranslate }}"
+                                   unerasable="true"
+                                   disable-initial-unerasable="false"
+                    ></cs-select-new>
+                </div>
+            </div>
+            <div class="cs-toolbar-item" ng-if="level4.child.options">
+                <div class="csLayout_flex_hbox">
+                    <label class="cs-label cs-is-small csLayout_flex_static_item">{{ level4.child.name | csTranslate }}</label>
+                    <cs-select-new class="cs-is-small cs-is-alt"
+                                   width="auto"
+                                   model="$parent.level5.key"
+                                   values="level4.child.options"
+                                   label-translate="true"
+                                   display-key="name"
+                                   value-key="key"
+                                   on-select="onLevelOptionSelected(option, 'level5')"
+                                   placeholder="{{ level4.child.name | csTranslate }}"
+                                   unerasable="true"
+                                   disable-initial-unerasable="false"
+                    ></cs-select-new>
+                </div>
+            </div>
+        </div>
+        <div class="cs-toolbar-slot-2">
+            <div class="cs-toolbar-item">
+                <button ng-click="refresh()" class="cs-button-alt cs-is-small cs-has-icon-only refreshBut" ng-class="{spin: false}"  title="{{ 'csContentEditorPreviewWidget.refresh' | csTranslate }}"><i class="cs-icon cs-icon-refresh cs-iconsize-200"></i></button>
+
+                <button  ng-if="level1.key == 'pptx'" cs-tooltip="{{'svtxCommonTranslations.downloadSlide' | csTranslate}}" ng-click="download()" style="margin-left:10px;" type="submit" class="cs-button-alt cs-is-small" role="button" aria-label="abc"><span class="cs-icon-alt cs-icon-download-alt"></span></button>
+            </div>
+            <div class="cs-toolbar-item" ng-if="previewTypeIsTypeOnline">
+                <button ng-click="openInNewWindow(viewUrl, false)" class="cs-button-alt cs-is-small cs-has-icon-only" cs-translate="{title: 'csContentEditorPreviewWidget.openInNewWindow'}"><i class="cs-icon cs-icon-new-window cs-iconsize-200"></i></button>
+                <button ng-click="openInNewWindow(viewUrl, true)" class="cs-button-alt cs-is-small cs-has-icon-only" cs-translate="{title: 'csContentEditorPreviewWidget.openInNewWindowAuth'}"><i class="cs-icon cs-icon-user-alt cs-iconsize-200"></i></button>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="csContentEditorPreviewContainer csLayout_relInitial" ng-if="!!viewUrl" ng-switch="viewType">
+        <pdf-js-preview-viewer ng-switch-when="application/pdf" class="csLayout_absExpand" url="viewUrl"></pdf-js-preview-viewer>
+        <iframe ng-switch-when="text/html" ng-src="{{viewUrl | csTrusted}}" class="frame"></iframe>
+
+        <div  ng-switch-when="application/pptx" style="margin-top: 25px; padding: 20px; background-color: #404448;overflow-y: auto" class="csLayout_absExpand">
+
+
+                <cs-busy-spinner ng-if="showSpinner" class="cs-has-light-bg"></cs-busy-spinner>
+
+
+
+                    <img ng-if="!showSpinner &&  pptxUrl"  src="{{pptxUrl}}" style="width: 100%"/>
+
+
+
+
+        </div>
+
+
+
+
+
+
+
+    </div>
+    <div ng-if="!viewUrl" class="csContentEditorPreviewContainer csLayout_relInitial">
+        <cs-empty-state cs-empty-state-icon="'cs-icon-visibility'">
+            <span class="cs-state-headline">{{'csContentEditorPreviewWidget.noPreview' | csTranslate}}</span>
+        </cs-empty-state>
+    </div>
+</div>

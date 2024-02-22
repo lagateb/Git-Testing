@@ -1,0 +1,102 @@
+{
+  "name": "allianzProductWizard",
+  "since": "2019.3.1",
+  "version": "1.0",
+  "filename": "allianz-product-wizard.module",
+  "implementations": [
+    {
+      "type": "csBehavior",
+      "name": "allianzProductWizardCreateBehavior",
+      "constructor": "allianzProductWizardCreateBehavior",
+      "properties": {
+        "title": "allianzProductWizard.title",
+        "priority": 600,
+        "filters": {
+          "context": "global",
+          "csPermissions": [
+            "product_creation_wizard_execution"
+          ]
+        }
+      }
+    },
+    {
+      "type": "csWizard",
+      "name": "allianzProductWizard",
+      "properties": {
+        "title": "allianzProductWizard.title",
+        "application": "com.allianz.product.wizard",
+        "controllerName": "allianzProductWizardController",
+        "steps": [
+          "allianzProductWizardStep1",
+          "allianzProductWizardStep2",
+          "allianzProductWizardStep3",
+          "allianzProductWizardStep4",
+          "allianzProductWizardRecurringModules",
+          "allianzProductWizardStep5"
+        ]
+      }
+    },
+    {
+      "type": "csWizardStep",
+      "name": "allianzProductWizardStep1",
+      "properties": {
+        "title": "allianzProductWizard.step1Title",
+        "componentName": "allianzProductWizardStep1"
+      }
+    },
+    {
+      "type": "csWizardStep",
+      "name": "allianzProductWizardStep2",
+      "properties": {
+        "title": "allianzProductWizard.step2Title",
+        "componentName": "allianzProductWizardStep2"
+      }
+    },
+    {
+      "type": "csWizardStep",
+      "name": "allianzProductWizardStep3",
+      "properties": {
+        "extend": "csAssetChooserWizardStep",
+        "title": "allianzProductWizard.step3Title",
+        "config": {
+          "required": true,
+          "singleSelect": false,
+          "filter": "{\"sortorders\": { \"order\": [{ \"by\": \"censhare:asset.name\" }]}, \"condition\":[{\"name\": \"censhare:asset-flag\", \"value\": \"is-template\", \"op\": \"=\"}, {\"name\": \"censhare:asset.type\", \"value\": \"channel.\"}], \"relation\":[{\"direction\":\"parent\",\"type\":\"user.\",\"target\":{\"condition\":[{\"name\":\"censhare:asset.type\", \"value\":\"{{$step[allianzProductWizardStep1].productType}}\"},{\"name\": \"censhare:asset-flag\", \"value\": \"is-template\", \"op\": \"=\"}]}}]}"
+        }
+      }
+    },
+    {
+      "type": "csWizardStep",
+      "name": "allianzProductWizardStep4",
+      "properties": {
+        "title": "allianzProductWizard.step4Title",
+        "componentName": "allianzProductWizardStep4"
+      }
+    },
+    {
+      "type": "csWizardStep",
+      "name": "allianzProductWizardRecurringModules",
+      "properties": {
+        "title": "allianzProductWizard.recurringModules",
+        "componentName": "allianzProductWizardRecurringModules"
+      }
+    },
+    {
+      "type": "csWizardStep",
+      "name": "allianzProductWizardStep5",
+      "properties": {
+        "title": "allianzProductWizard.step5Title",
+        "componentName": "allianzProductWizardStep5"
+      }
+    }
+  ],
+  "java": {
+    "sourcepath": "src/java"
+  },
+  "translations": [
+    "translation"
+  ],
+  "assets": {
+    "path": "assets"
+  }
+}

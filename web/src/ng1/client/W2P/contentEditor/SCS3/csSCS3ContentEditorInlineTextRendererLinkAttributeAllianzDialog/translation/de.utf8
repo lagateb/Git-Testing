@@ -1,0 +1,31 @@
+# You do not need to escape chars, e.g. just use ü directly.
+# You can continue in the next line by adding an \ at the end of the line.
+# Empty line are ignored, as line starting with #.
+# To encode an =, do the following:
+# key = this translation should contain an equal char \
+#       = here it does
+# The two lines above will contain as the right hand side the string:
+# 'this translation should contain an equal char = here it does'
+# To encode an \ at the end of a right hand side, use:
+# login = test \\
+#
+# The first \ is kept while the second is used to include the next line into the rhs,
+# so the string encoded is: 'test \'
+# To encode the \ anywhere else in the string, you do not need to quote it.
+
+linkDialogTitle = Link
+assetLink = Link auf Asset
+urlLink = Link auf URL
+urlLink1 = Vertriebsportal
+urlLink2 = Allianz.de
+urlLink3 = Beratungssuite
+asset = Asset
+link = URL
+urlFragment = URL-Fragment
+target = Öffnen in
+targetNew = Neues Fenster
+targetSame = Gleiches Fenster
+titleSeo = SEO Titel
+follow = SEO Folgen
+followYes = Folgen
+followNo = Nicht folgen

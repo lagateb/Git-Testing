@@ -1,0 +1,15 @@
+<cs-dialog-group group-label="csTransformationQueryWidget.configGroupTitle" ng-if="config">
+    <ul>
+        <cs-config-dialog-row row-label="csTransformationQueryWidget.configTransformation" ng-if="transformations">
+            <cs-select-new required="true"
+                           model="config.transformationKey"
+                           values="transformations"
+                           value-key="key"
+                           display-key="name"
+                           order-by="name"
+                           placeholder="{{ 'csTransformationQueryWidget.configTransformationPlaceholder' | csTranslate }}">
+            </cs-select-new>
+        </cs-config-dialog-row>
+        <li ng-if="!transformations" cs-translate="'csTransformationQueryWidget.configTransformationLoading'"></li>
+    </ul>
+</cs-dialog-group>

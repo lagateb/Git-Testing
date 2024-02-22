@@ -1,0 +1,65 @@
+<!-- empty state: no files defined or uploading -->
+<cs-empty-state ng-if="itemCount === 0 && !uploadProgress && !error.value" cs-empty-state-icon="'cs-icon-file'">
+    <span class="cs-state-headline" cs-translate="'csAssetFileListWidget.NoFiles'"></span>
+    <button class="cs-button-link-01" ng-click="uploadFile()" ng-if="context.permissions.edit">
+        <i class="cs-icon cs-icon-circle-plus cs-iconsize-200"></i>&nbsp;
+        <span cs-translate="'csAssetFileListWidget.AddFileBtn'"></span>
+    </button>
+</cs-empty-state>
+
+<!-- additional: show upload progress -->
+<ul ng-if="uploadProgress"
+    class="csVirtualListRenderer csAssetListItemRendererWidget1xn cs-add-list-hor-widget-padding">
+    <li>
+        <ul class="csAssetListItem upload">
+            <li class="csAssetListItem__preview">
+                <img ng-src="{{ uploadIcon }}"/>
+            </li>
+            <li class="csAssetListItem__title" cs-translate="'csCommonTranslations.storage_item_master'"></li>
+            <li class="csAssetListItem__value" cs-translate="'csCommonTranslations.upload'"></li>
+            <li class="csAssetListItem__value">
+                <cs-progress small progress="uploadProgressValue" number="true"></cs-progress>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<!-- show default file items list if nothing is uploading or an error occured -->
+<cs-item-renderer ng-if="itemCount > 0 && !uploadProgress && !error.value"
+                  flavor="'csVirtualListRenderer'"
+                  item="adm"
+                  class="cs-add-list-hor-widget-padding cs-widget-content-padding-top"
+                  context="context"></cs-item-renderer>
+
+<!-- exclusive: show error message -->
+<div ng-if="error.value && !uploadProgress" class="cs-p-h-w">
+    <pre>{{error.value.message}}</pre>
+    <cs-button ng-click="reset()">Reset</cs-button>
+</div>
+
+<!-- additional Overlay: Add Master if nothing is checked out, nothing uploading: Dropzone Overlay on D&D hover -->
+<div ng-if="context.permissions.edit && !uploadProgress && !hasMaster"
+     cs-droppable="dropIface"
+     class="csDropzone cs-is-overlay cs-add-widget-padding-frame cs-widget-content-padding-top"
+     ng-class="{ 'acceptDrop': dropIface.hovered, 'cs-is-visible': csDropzoneVisible }">
+    <div class="csDropzone__content">
+        <span class="csDropzone__icon cs-icon cs-icon-circle-plus"></span>
+            <span class="csDropzone__text_wrapper">
+                <span class="csDropzone__title" cs-translate="'csAssetFileListWidget.dropNew'"></span>
+                <span class="csDropzone__message" cs-translate="'csAssetFileListWidget.dropNew2'"></span>
+            </span>
+    </div>
+</div>
+
+<!-- additional Overlay: Replace Master if checked out: Dropzone Overlay on D&D hover -->
+<div ng-if="context.permissions.edit && !uploadProgress"
+     cs-droppable="dropIface"
+     class="csDropzone cs-is-overlay cs-add-widget-padding-frame cs-widget-content-padding-top"
+     ng-class="{ acceptDrop: dropIface.hovered, 'cs-is-visible': csDropzoneVisible }">
+    <div class="csDropzone__content">
+        <span class="csDropzone__icon cs-icon cs-icon-disk-open"></span>
+    <span class="csDropzone__text_wrapper">
+        <span class="csDropzone__title" cs-translate="'csAssetFileListWidget.replaceMaster'"></span>
+    </span>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+<main class="svtxPositionChangeRenderer ">
+    <div>
+        <div ng-if="canChangePosition" class="canChangePosition__actions">
+        <button class="cs-button cs-button-cta cs-is-small" role="button"  ng-click="updateTextAsset(currentAssetId,'true')"> <i class="cs-icon  cs-icon-up-arrow cs-iconsize-400"  style="color:darkred;"></i></button>
+            <span>{{ currentAssetId }}</span>
+        <button class="cs-button cs-button-cta cs-is-small" role="button" ng-click="updateTextAsset(currentAssetId,'false')"><i class="cs-icon  cs-icon-down-arrow cs-iconsize-400" style="color:darkred;"></i></button>
+       </div>
+    </div>
+</main>

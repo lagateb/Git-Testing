@@ -1,0 +1,19 @@
+{
+    "name": "svtxLayoutStateRenderer",
+    "since": "5.0.0",
+    "version": "0.0.1",
+    "filename": "svtxLayoutStateRenderer.module",
+    "implementations": [
+        {
+            "type": "csItemRenderer",
+            "name": "svtxLayoutStateRenderer",
+            "properties": {
+                "controller": "svtxLayoutStateRendererController",
+                "template": "svtxLayoutStateRenderer.html"
+            }
+        }
+    ],
+    "translations": [
+        "translation"
+    ]
+}

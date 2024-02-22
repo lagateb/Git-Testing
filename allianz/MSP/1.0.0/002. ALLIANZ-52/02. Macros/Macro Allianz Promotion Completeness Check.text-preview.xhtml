@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</head>
+<body>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;2.0&quot;
+ &nbsp;xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;
+ &nbsp;xmlns:cs=&quot;http://www.censhare.com/xml/3.0.0/xpath-functions&quot;
+ &nbsp;xmlns:censhare=&quot;http://www.censhare.com/xml/3.0.0/xpath-functions&quot;
+ &nbsp;xmlns:csc=&quot;http://www.censhare.com/censhare-custom&quot;
+ &nbsp;exclude-result-prefixes=&quot;cs csc&quot;&gt;
+
+ &nbsp;&lt;xsl:import href=&quot;censhare:///service/assets/asset;censhare:resource-key=censhare:transformation.include/storage/master/file&quot;/&gt;
+
+ &nbsp;&lt;xsl:output indent=&quot;no&quot; method=&quot;xhtml&quot; omit-xml-declaration=&quot;no&quot; encoding=&quot;UTF-8&quot;/&gt;
+
+ &nbsp;&lt;xsl:template match=&quot;/&quot;&gt;
+ &nbsp; &nbsp;&lt;!-- collect checks --&gt;
+ &nbsp; &nbsp;&lt;xsl:variable name=&quot;asset&quot; select=&quot;asset&quot;/&gt;
+ &nbsp; &nbsp;&lt;xsl:variable name=&quot;checkAssets&quot; select=&quot;csc:getResourceAssetsOfAssetType($asset, 'module.completeness-check.')&quot;/&gt;
+ &nbsp; &nbsp;&lt;xsl:variable name=&quot;checkResults&quot;&gt;
+ &nbsp; &nbsp; &nbsp;&lt;xsl:for-each select=&quot;$checkAssets&quot;&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsl:variable name=&quot;checkAsset&quot; select=&quot;.&quot;/&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsl:variable name=&quot;localizedAssetName&quot; select=&quot;csc:getLocalizedAssetName($checkAsset)&quot;/&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;check name=&quot;{$localizedAssetName}&quot; sortName=&quot;{csc:getSortingString($localizedAssetName)}&quot; id=&quot;{$checkAsset/@id}&quot; result=&quot;{csc:getCheckAssetResult($checkAsset, $asset)}&quot; description=&quot;{csc:getLocalizedAssetDescription($checkAsset)}&quot; importance=&quot;{if ($checkAsset/asset_feature[@feature='censhare:completeness-check.importance']) then $checkAsset/asset_feature[@feature='censhare:completeness-check.importance']/@value_key else 'optional'}&quot;/&gt;
+ &nbsp; &nbsp; &nbsp;&lt;/xsl:for-each&gt;
+ &nbsp; &nbsp;&lt;/xsl:variable&gt;
+ &nbsp; &nbsp;&lt;data&gt;
+ &nbsp; &nbsp; &nbsp;&lt;xsl:if test=&quot;asset/@type='promotion.'&quot;&gt;
+ &nbsp; &nbsp; &nbsp;&lt;xsl:choose&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsl:when test=&quot;exists($checkResults/check)&quot;&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsl:variable name=&quot;value&quot; select=&quot;if ($checkResults/check[@importance='required' and @result='true']) then (count($checkResults/check[@importance='required' and @result='true']) * 100) div count($checkResults/check[@importance='required']) else (count($checkResults/check[@result='true']) * 100) div count($checkResults/check)&quot;/&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsl:variable name=&quot;complete&quot; select=&quot;if ($checkResults/check[@importance='required' and @result='false']) then 'false' else 'true'&quot;/&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsl:choose&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsl:when test=&quot;$complete='true'&quot;&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsl:attribute name=&quot;color&quot; select=&quot;'#00CC00'&quot; /&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsl:attribute name=&quot;value&quot; select=&quot;'erfüllt'&quot; /&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsl:when&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsl:otherwise&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsl:attribute name=&quot;color&quot; select=&quot;'#CC0000'&quot; /&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsl:attribute name=&quot;value&quot; select=&quot;'nicht erfüllt'&quot; /&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsl:otherwise&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsl:choose&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsl:when&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsl:choose&gt;
+ &nbsp; &nbsp; &nbsp;&lt;/xsl:if&gt;
+ &nbsp; &nbsp;&lt;/data&gt;
+ &nbsp;&lt;/xsl:template&gt;
+
+ &nbsp;&lt;!-- get macro value of given asset with the definition of given macroAsset --&gt;
+ &nbsp;&lt;xsl:function name=&quot;csc:getCheckAssetResult&quot;&gt;
+ &nbsp; &nbsp;&lt;xsl:param name=&quot;checkAsset&quot; as=&quot;element(asset)&quot;/&gt;
+ &nbsp; &nbsp;&lt;xsl:param name=&quot;asset&quot; as=&quot;element(asset)&quot;/&gt;
+ &nbsp; &nbsp;&lt;xsl:variable name=&quot;xpathExpression&quot; select=&quot;$checkAsset/asset_feature[@feature='censhare:completeness-check.expression.xpath']/@value_string&quot;/&gt;
+ &nbsp; &nbsp;&lt;xsl:choose&gt;
+ &nbsp; &nbsp; &nbsp;&lt;!-- macro is defined by XPath expression --&gt;
+ &nbsp; &nbsp; &nbsp;&lt;xsl:when test=&quot;$xpathExpression&quot;&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsl:value-of select=&quot;$asset/cs:evaluate($xpathExpression)&quot;/&gt;
+ &nbsp; &nbsp; &nbsp;&lt;/xsl:when&gt;
+ &nbsp; &nbsp; &nbsp;&lt;!-- macro is defined by XSLT as master file --&gt;
+ &nbsp; &nbsp; &nbsp;&lt;xsl:when test=&quot;$checkAsset/storage_item[@key='master']&quot;&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsl:variable name=&quot;result&quot;&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;cs:command name=&quot;com.censhare.api.transformation.XslTransformation&quot;&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;cs:param name=&quot;stylesheet&quot; select=&quot;$checkAsset/storage_item[@key='master'][1]&quot;/&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;cs:param name=&quot;source&quot; select=&quot;$asset&quot;/&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/cs:command&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsl:variable&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsl:value-of select=&quot;$result&quot;/&gt;
+ &nbsp; &nbsp; &nbsp;&lt;/xsl:when&gt;
+ &nbsp; &nbsp; &nbsp;&lt;!-- XPath expression and XSLT do not exists --&gt;
+ &nbsp; &nbsp; &nbsp;&lt;xsl:otherwise&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsl:value-of select=&quot;'Definition (XPath or XSLT) does not exist'&quot;/&gt; &lt;!-- add localization --&gt;
+ &nbsp; &nbsp; &nbsp;&lt;/xsl:otherwise&gt;
+ &nbsp; &nbsp;&lt;/xsl:choose&gt;
+ &nbsp;&lt;/xsl:function&gt;
+
+&lt;/xsl:stylesheet&gt;
+
+</pre>
+</body>
+</html>

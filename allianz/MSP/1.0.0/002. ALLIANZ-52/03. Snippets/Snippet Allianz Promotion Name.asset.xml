@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset id_org="56431" name="Snippet Allianz Promotion Name" type="module.workspace.view.snippet." application="default" domain="root." domain2="root.">
+  <asset_element idx="0" key="actual." isversioned="1"/>
+  <asset_feature feature="censhare:asset-condition-filter" value_string="data.traits.product.promotionName.value"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="msp:workspace.view.snippet.mspAllianzPromotionNameSnippet"/>
+  <asset_feature feature="censhare:resource-meta">
+    <xmldata>
+      <selection needed="false"/>
+    </xmldata>
+  </asset_feature>
+  <asset_feature feature="censhare:workspace.view.snippet-name" value_string="mspAllianzPromotionNameSnippet"/>
+  <storage_item element_idx="0" key="text-preview" mimetype="application/xhtml+xml" relpath="file:Snippet Allianz Promotion Name.text-preview.xhtml"/>
+  <storage_item element_idx="0" key="master" mimetype="text/html" relpath="file:Snippet Allianz Promotion Name.html"/>
+</asset>

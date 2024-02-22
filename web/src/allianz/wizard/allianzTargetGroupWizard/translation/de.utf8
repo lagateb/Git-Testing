@@ -1,0 +1,12 @@
+title = Zielgruppen-medien verwalten
+step1Title = Zielgruppe wählen oder erstellen
+step1InputLabel = Bitte wählen Sie eine Methode aus, wie weitere Medien angelegt werden sollen.
+step1InputLabelTargetGroup = Bitte wählen Sie eine Zielgruppe aus, für die Sie weitere Medien anlegen möchten.
+step1EnrichLabel = Medien zur Basis-Version hinzufügen
+step1OverrideLabel = Zielgruppen-Medien hinzufügen
+step2Title = Medien wählen
+step3Title = Austauschmodule wählen
+step3InputLabel = Bitte wählen Sie aus, welche Inhalts-Module für die Zielgruppe ausgetauscht werden sollen
+step3InputLabelAlt = Folgende Inhalts-Module werden für das Objekt angelegt
+chooseTargetGroup = Zielgruppe auswählen
+targetGroup = Zielgruppe

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</head>
+<body>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;2.0&quot;
+ &nbsp;xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;
+ &nbsp;xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
+ &nbsp;xmlns:cs=&quot;http://www.censhare.com/xml/3.0.0/xpath-functions&quot;
+ &nbsp;xmlns:censhare=&quot;http://www.censhare.com/xml/3.0.0/xpath-functions&quot;
+ &nbsp;xmlns:csc=&quot;http://www.censhare.com/censhare-custom&quot;
+ &nbsp;exclude-result-prefixes=&quot;xs cs csc&quot;&gt;
+
+ &nbsp;&lt;!-- output --&gt;
+ &nbsp;&lt;xsl:output indent=&quot;yes&quot; method=&quot;xml&quot; omit-xml-declaration=&quot;no&quot; encoding=&quot;UTF-8&quot;/&gt;
+ &nbsp;
+ &nbsp;&lt;xsl:template match=&quot;/&quot;&gt;
+ &nbsp; &nbsp;&lt;data&gt;
+ &nbsp; &nbsp; &nbsp;&lt;xsl:attribute name=&quot;value&quot; select=&quot;concat(/asset/asset_feature[@feature='msp:alz-mmc.promotion-article-number']/@value_string, '_', /asset/asset_feature[@feature='msp:alz-mmc.promotion-version-number']/@value_string)&quot; /&gt;
+ &nbsp; &nbsp;&lt;/data&gt;
+ &nbsp;&lt;/xsl:template&gt;
+
+&lt;/xsl:stylesheet&gt;
+</pre>
+</body>
+</html>

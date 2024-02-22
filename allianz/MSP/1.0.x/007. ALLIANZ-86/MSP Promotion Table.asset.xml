@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset id_org="11538" name="MSP Promotion Table" type="module.table." application="default" domain="root." domain2="root." description="Test">
+  <asset_feature feature="censhare:name" language="de" value_string="Maßnahmentabelle"/>
+  <asset_feature feature="censhare:name" language="en" value_string="Promotion Table"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="msp:table.promotions"/>
+  <asset_feature feature="censhare:table.column" value_string2="censhare:resource-key" sorting="1" value_asset_key_ref="censhare:table-column.default.asset.item"/>
+  <asset_feature feature="censhare:table.column" value_string2="censhare:resource-key" sorting="2" value_asset_key_ref="msp:table-column.promotion-number"/>
+  <asset_feature feature="censhare:table.column" value_string2="censhare:resource-key" sorting="3" value_asset_key_ref="msp:table-column.promotion-articlenumber-and-version"/>
+  <asset_feature feature="censhare:table.column" value_string2="censhare:resource-key" sorting="4" value_asset_key_ref="msp:table-column.promotion-media"/>
+  <asset_feature feature="censhare:table.column" value_string2="censhare:resource-key" sorting="5" value_asset_key_ref="msp:table-column.promotion-qualitygate"/>
+  <asset_feature feature="censhare:table.column" value_string2="censhare:resource-key" sorting="6" value_asset_key_ref="msp:table-column.promotion-mediaprovider"/>
+  <asset_feature feature="censhare:table.column" value_string2="censhare:resource-key" sorting="7" value_asset_key_ref="msp:table-column.promotion-creation-date"/>
+</asset>

@@ -1,0 +1,719 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui-description>
+    <!-- censhare Standard Content Structure 3.0 -->
+
+    <special-characters>
+        <!-- <special-character character="&#x0A;" display-character="&#xB6;" name="new-paragraph"/> -->
+        <!-- Spaces
+        <special-character character="&#x2001;" display-character="&#x2027;" name="em-quad"     group="spaces"/>
+        -->
+        <special-character character="&#x2009;" display-character="&#x2027;" name="thin-space"  group="spaces"/>
+        <special-character character="&#xE000;"   display-character="&#xE000;" name="break-pptx" group="media-return"/>
+        <special-character character="&#xE001;"   display-character="&#xE001;" name="break-psb" group="media-return"/>
+        <special-character character="&#xE002;"   display-character="&#xE002;" name="break-f" group="media-return"/>
+
+        <!-- Dashes
+        <special-character character="&#x2014;" display-character="—" name="em-dash" group="dashes"/>
+        <special-character character="&#xAD;" display-character="-" name="discretionary-hyphen" group="dashes"/>
+        <special-character character="&#x2014;" display-character="―" name="horizontal-bar" group="dashes"/>
+
+
+        <special-character character="&#x09;"   display-character="&#x2023;" name="tabulator"                group="others"/>
+        <special-character character="&#x2028;" display-character="&#xAC;"   name="hard-return"              group="others"   newLine="true"/>
+        <special-character character="&#x200B;" display-character="|"        name="discretionary-line-break" group="others"/>
+         symbols -->
+        <!--<special-character character="&#x2122;" name="trademark-symbol" group="symbols"/>-->
+    </special-characters>
+
+    <style-elements>
+        <style-element name="bold" element="bold" />
+        <style-element name="italic" element="italic"/>
+        <style-element name="bold-italic" element="bold-italic" />
+        <style-element name="underline" element="underline" />
+        <style-element name="sub" element="sub" />
+        <style-element name="sup" element="sup" />
+    </style-elements>
+
+    <!-- define order of element groupings for insert menu -->
+    <groups>
+        <group name="text"/>
+        <group name="boxes"/>
+        <group name="structure"/>
+        <group name="placement"/>
+        <group name="document-structure"/>
+        <group name="content-in-content"/>
+        <group name="table"/>
+        <group name="misc"/>
+    </groups>
+
+    <elements>
+        <!-- text container cs-icon-paragraph -->
+        <element name="paragraph" icon="cs-icon-list-item" group="text">
+            <renderer>
+                <csSCS3ParagraphRenderer />
+            </renderer>
+            <templates>
+                <template><paragraph></paragraph></template>
+                <template on-key="return"><paragraph></paragraph></template>
+                <template on-key="return" when-parent="item" insertion-path="../"><item><paragraph xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"></paragraph></item></template>
+            </templates>
+            <inline group="default"/>
+        </element>
+        <element name="pre" icon="cs-icon-embed-close" group="text">
+            <renderer>
+                <csSCS3PreformattedTextRenderer />
+            </renderer>
+            <templates>
+                <template><pre code-type="text/plain"></pre></template>
+                <template on-key="return"><paragraph></paragraph></template>
+            </templates>
+            <inline group="default"/>
+        </element>
+        <element name="teaser-text" icon="cs-icon-tag" group="text">
+            <renderer>
+                <csContentEditorInlineTextRenderer style=""/>
+            </renderer>
+        </element>
+        <element name="teaser-link-label" icon="cs-icon-tag" group="text">
+            <renderer>
+                <csContentEditorInlineTextRenderer style=""/>
+            </renderer>
+        </element>
+        <element name="bullet-list" icon="cs-icon-list" group="text">
+            <renderer>
+                <csSCS3BulletlistRenderer/>
+            </renderer>
+            <templates>
+                <template><bullet-list><item><paragraph xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"></paragraph></item></bullet-list></template>
+            </templates>
+        </element>
+        <element name="enumeration" icon="cs-icon-enumeration" group="text">
+            <renderer>
+                <csSCS3NumberlistRenderer/>
+            </renderer>
+            <templates>
+                <template><enumeration><item><paragraph xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"></paragraph></item></enumeration></template>
+            </templates>
+        </element>
+        <element name="item" icon="cs-icon-list-item" group="text"/>
+        <element name="subheadline-1" icon="cs-icon-scs-subheadline-1" group="text">
+            <renderer>
+                <csSCS3HeadlineRenderer style="font-size: 180%;"/>
+            </renderer>
+            <templates>
+                <template on-key="return"><paragraph></paragraph></template>
+            </templates>
+            <inline group="default"/>
+        </element>
+        <element name="subheadline-2" icon="cs-icon-scs-subheadline-2" group="text">
+            <renderer>
+                <csSCS3HeadlineRenderer style="font-size: 150%;"/>
+            </renderer>
+            <templates>
+                <template on-key="return"><paragraph></paragraph></template>
+            </templates>
+            <inline group="default"/>
+        </element>
+        <element name="subheadline-3" icon="cs-icon-scs-subheadline-3" group="text">
+            <renderer>
+                <csSCS3HeadlineRenderer style="font-size: 130%;"/>
+            </renderer>
+            <templates>
+                <template on-key="return"><paragraph></paragraph></template>
+            </templates>
+            <inline group="default"/>
+        </element>
+
+        <!-- structuring elements -->
+        <element name="hdivider" icon="cs-icon-divide" group="structure">
+            <renderer>
+                <csSCS3HDividerRenderer />
+            </renderer>
+        </element>
+        <element name="callout" icon="cs-icon-unchecked" group="structure">
+            <renderer>
+                <csSCS3StyleRenderer/>
+            </renderer>
+            <templates>
+                <template><callout><paragraph xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"/></callout></template>
+            </templates>
+        </element>
+        <element name="group" icon="cs-icon-scs-group" group="structure">
+            <renderer>
+                <csSCS3StyleRenderer/>
+            </renderer>
+            <templates>
+                <template><group><paragraph xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"/></group></template>
+            </templates>
+        </element>
+        <element name="section" icon="cs-icon-cargo" group="structure">
+          <renderer>
+            <csSCS3SectionRenderer />
+          </renderer>
+          <templates>
+            <template><section><paragraph xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"/></section></template>
+          </templates>
+        </element>
+        <element name="teaser-list" icon="cs-icon-view-gallery" group="structure">
+            <templates>
+                <template><teaser-list><teaser-box target="self" follow="follow"><paragraph></paragraph></teaser-box></teaser-list></template>
+            </templates>
+        </element>
+        <element name="teaser-box" icon="cs-icon-teaser-text" group="structure">
+            <renderer>
+                <csSCS3TeaserBoxRenderer />
+            </renderer>
+            <templates>
+                <template><teaser-box target="self" follow="follow"><paragraph></paragraph></teaser-box></template>
+            </templates>
+        </element>
+        <element name="anchor" icon="cs-icon-anchor" group="structure">
+            <renderer>
+                <csSCS3AnchorRenderer />
+            </renderer>
+            <templates>
+                <template><anchor key=""/></template>
+            </templates>
+        </element>
+
+        <!-- misc-->
+        <element name="conversation" icon="cs-icon-conversation" group="misc">
+            <renderer>
+                <csSCS3ConversationRenderer />
+            </renderer>
+            <templates>
+                <template><conversation type="interview"><conversation-item><question><paragraph xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"/></question><answer><paragraph/></answer></conversation-item></conversation></template>
+                <template on-key="return"><conversation type="interview"><conversation-item><question><paragraph xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"/></question><answer><paragraph/></answer></conversation-item></conversation></template>
+            </templates>
+        </element>
+        <element name="conversation-item" icon="cs-icon-conversation-item" group="misc">
+            <templates>
+                <template><conversation-item><question><paragraph xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"/></question><answer><paragraph/></answer></conversation-item></template>
+                <template on-key="return"><conversation-item><question><paragraph xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"/></question><answer><paragraph/></answer></conversation-item></template>
+            </templates>
+        </element>
+        <element name="question" icon="cs-icon-question" group="misc">
+            <renderer>
+                <csSCS3StyleRenderer/>
+            </renderer>
+            <templates>
+                <template><question><paragraph xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"/></question></template>
+                <template on-key="return"><answer><paragraph xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"/></answer></template>
+            </templates>
+        </element>
+        <element name="answer" icon="cs-icon-answer" group="misc">
+            <renderer>
+                <csSCS3StyleRenderer/>
+            </renderer>
+            <templates>
+                <template><answer><paragraph xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"/></answer></template>
+                <template on-key="return" when-parent="conversation-item" insertion-path="../"><conversation-item><question><paragraph xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"/></question><answer><paragraph/></answer></conversation-item></template>
+            </templates>
+        </element>
+        <element name="person" icon="cs-icon-user" group="misc">
+          <renderer>
+            <csContentEditorInlineTextRenderer style=""/>
+          </renderer>
+        </element>
+        <element name="caption" icon="cs-icon-caption" group="misc">
+            <renderer>
+                <csSCS3StyleRenderer/>
+            </renderer>
+            <templates>
+                <template><caption><paragraph xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"/></caption></template>
+            </templates>
+        </element>
+        <element name="testimonial-box" icon="cs-icon-user-alt">
+          <templates>
+            <template><testimonial-box><paragraph xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"></paragraph></testimonial-box></template>
+          </templates>
+        </element>
+        <element name="call-to-action" icon="cs-icon-thumbs-up">
+          <renderer>
+            <csSCS3CallToActionBoxRenderer />
+          </renderer>
+          <templates>
+            <template><call-to-action url="" url-fragment="" target="self" follow="follow" seo-title=""><label xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"/><image alt-text="" seo-title="" aspect-ratio="16-9"/></call-to-action></template>
+          </templates>
+        </element>
+        <element name="label">
+          <renderer>
+            <csContentEditorInlineTextRenderer style=""/>
+          </renderer>
+        </element>
+
+        <!-- media box -->
+        <element name="callout-box" icon="cs-icon-callout-box" group="boxes">
+            <renderer>
+                <csSCS3CalloutBoxRenderer />
+            </renderer>
+            <templates>
+                <template><callout-box><image-box align="left" zoom="true" target="self" follow="follow" border="false"><image aspect-ratio="flexible" seo-title="" alt-text=""/><caption><paragraph xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"></paragraph></caption></image-box></callout-box></template>
+            </templates>
+        </element>
+        <element name="image-reveal-box" icon="cs-icon-image-reveal-box" group="boxes">
+            <renderer>
+                <csSCS3ImagerevealBoxRenderer/>
+            </renderer>
+            <templates>
+                <template><image-reveal-box align="left" display="fullscreen"><image-reveal aspect-ratio="16-9"/><poster aspect-ratio="16-9" alt-text="" seo-title=""/><caption><paragraph xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"/></caption></image-reveal-box></template>
+            </templates>
+        </element>
+        <element name="interactive-element-box" icon="cs-icon-cogwheels" group="boxes">
+            <renderer>
+                <csSCS3InteractiveelementBoxRenderer/>
+            </renderer>
+            <templates>
+                <template><interactive-element-box align="left" display="fullscreen"><interactive-element/><poster aspect-ratio="16-9" alt-text="" seo-title=""/><caption><paragraph xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"/></caption></interactive-element-box></template>
+            </templates>
+        </element>
+        <element name="slideshow-box" icon="cs-icon-slideshow-alt-box" group="boxes">
+            <renderer>
+                <csSCS3SlideshowBoxRenderer/>
+            </renderer>
+            <templates>
+                <template><slideshow-box align="left" display="inline"><slideshow aspect-ratio="16-9" autoplay="false"/><poster aspect-ratio="16-9" alt-text="" seo-title=""/><caption><paragraph xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"/></caption></slideshow-box></template>
+            </templates>
+        </element>
+        <element name="slideshow" icon="cs-icon-slideshow-alt" group="placement">
+            <renderer>
+                <csSCS3SlideshowRenderer />
+            </renderer>
+        </element>
+        <element name="turntable-box" icon="cs-icon-turntable-box" group="boxes">
+            <renderer>
+                <csSCS3TurntableBoxRenderer/>
+            </renderer>
+            <templates>
+                <template><turntable-box align="left" display="inline"><turntable/><poster alt-text="" seo-title=""/><caption><paragraph xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"/></caption></turntable-box></template>
+            </templates>
+        </element>
+        <element name="image-box" icon="cs-icon-image-box" group="boxes">
+            <renderer>
+                <csSCS3ImageBoxRenderer/>
+            </renderer>
+            <templates>
+                <template><image-box align="left" zoom="true" target="self" follow="follow" border="false"><image seo-title="" alt-text=""/><caption><paragraph xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"></paragraph></caption></image-box></template>
+            </templates>
+        </element>
+        <element name="video-box" icon="cs-icon-video-box" group="boxes">
+            <renderer>
+                <csSCS3VideoBoxRenderer/>
+            </renderer>
+            <templates>
+                <template><video-box align="left" display="inline"><video autoplay="false" aspect-ratio="16-9"/><poster alt-text="" seo-title="" aspect-ratio="16-9"/><caption><paragraph xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"/></caption></video-box></template>
+            </templates>
+        </element>
+        <element name="audio-box" icon="cs-icon-audio-box" group="boxes">
+            <renderer>
+                <csSCS3AudioBoxRenderer/>
+            </renderer>
+            <templates>
+                <template><audio-box align="left"><audio autoplay="false"/><poster alt-text="" seo-title=""/><caption><paragraph xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"></paragraph></caption></audio-box></template>
+            </templates>
+        </element>
+        <element name="game-box">
+          <renderer>
+            <csSCS3GameBoxRenderer />
+          </renderer>
+          <templates>
+            <template><game-box><game/><success><paragraph xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"></paragraph></success></game-box></template>
+          </templates>
+        </element>
+        <element name="game">
+          <renderer>
+            <csContentEditorAssetRenderer />
+          </renderer>
+        </element>
+        <element name="success">
+          <templates>
+            <template><success><paragraph xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"></paragraph></success></template>
+          </templates>
+        </element>
+
+        <!-- asset placement -->
+        <element name="interactive-element" icon="cs-icon-cogwheels" group="placement">
+            <renderer>
+                <csContentEditorAssetRenderer>
+                    <layout type="borderLessImage"/>
+                    <filter assettype="extended-media.html.*" />
+                </csContentEditorAssetRenderer>
+            </renderer>
+        </element>
+        <element name="turntable" icon="cs-icon-turntable" group="placement">
+            <renderer>
+                <csContentEditorAssetRenderer>
+                    <layout type="borderLessImage"/>
+                    <filter assettype="extended-media.turntable.*" />
+                </csContentEditorAssetRenderer>
+            </renderer>
+        </element>
+        <element name="image-range-box" icon="cs-icon-turntable" group="placement">
+            <renderer>
+                <csSCS3ImagerangeBoxRenderer />
+            </renderer>
+          <templates>
+            <template><image-range-box><image-range aspect-ratio="16-9" display-image-captions="false" link="none"/></image-range-box></template>
+          </templates>
+        </element>
+        <element name="picture" icon="cs-icon-image" group="placement">
+            <renderer>
+                <csSCS3ImageRenderer />
+            </renderer>
+        </element>
+        <element name="qr-code" icon="cs-icon-image" group="placement">
+            <renderer>
+                <csSCS3ImageRenderer />
+            </renderer>
+        </element>
+        <element name="image" icon="cs-icon-image" group="placement">
+            <renderer>
+              <csSCS3ImageRenderer />
+            </renderer>
+        </element>
+        <element name="formula" icon="cs-icon-picture" group="placement">
+            <renderer>
+                <csContentEditorAssetRenderer>
+                    <layout type="formulaImage"/>
+                    <filter assettype="*" />
+                </csContentEditorAssetRenderer>
+            </renderer>
+        </element>
+        <element name="poster" icon="cs-icon-picture" group="placement">
+            <renderer>
+                <csSCS3PosterRenderer />
+            </renderer>
+        </element>
+        <element name="video" icon="cs-icon-video" group="placement">
+            <renderer>
+                <csSCS3VideoRenderer />
+            </renderer>
+        </element>
+        <element name="audio" icon="music cs-icon-audio" group="placement">
+            <renderer>
+                <csSCS3AudioRenderer />
+            </renderer>
+        </element>
+
+        <!-- table    -->
+        <element  name="table" icon="cs-icon-table" group="table">
+            <renderer>
+                <csSCS3TableRenderer />
+            </renderer>
+            <templates>
+                <template><table><colspec><col/><col/></colspec><row><cell><paragraph xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"/></cell><cell><paragraph/></cell></row><row><cell><paragraph/></cell><cell><paragraph/></cell></row></table></template>
+            </templates>
+        </element>
+
+
+        <element name="table-caption" icon="cs-icon-table-caption" group="table">
+            <renderer>
+                <csSCS3StyleInlineRenderer />
+            </renderer>
+        </element>
+        <element name="colspec" icon="cs-icon-table-colspec" group="table">
+            <templates>
+                <template><colspec><col xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"></col></colspec></template>
+            </templates>
+        </element>
+        <element name="col" icon="cs-icon-table-col" group="table">
+            <templates>
+                <template><col></col></template>
+                <template on-key="return"><col></col></template>
+            </templates>
+        </element>
+        <element name="row" icon="cs-icon-table-row" group="table">
+            <templates>
+                <template><row xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"><cell><paragraph/></cell></row></template>
+                <template on-key="return"><row xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"><cell><paragraph/></cell></row></template>
+            </templates>
+        </element>
+        <element name="cell" icon="cs-icon-table-cell-element" group="table">
+            <element name="paragraph" icon="cs-icon-paragraph" group="text">
+                <renderer>
+                    <csSCS3ParagraphRenderer />
+                </renderer>
+            </element>
+            <templates>
+                <template><cell xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"><paragraph/></cell></template>
+                <template on-key="return"><cell xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"><paragraph/></cell></template>
+            </templates>
+        </element>
+
+        <!-- document-structure elements -->
+        <element name="table-of-contents" icon="cs-icon-toc" group="document-structure"/>
+        <element name="text" icon="cs-icon-edit" group="document-structure">
+            <templates>
+                <template><text><intro xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"/></text></template>
+            </templates>
+        </element>
+        <element name="new-page" icon="cs-icon-duplicate" group="document-structure" />
+        <element name="teaser" icon="cs-icon-teaser" group="document-structure">
+          <templates>
+            <template><teaser><title xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"></title><teaser-text></teaser-text><image alt-text="" seo-title="" aspect-ratio="16-9"/></teaser></template>
+          </templates>
+        </element>
+        <element     name="strapline"  icon="cs-icon-scs-strapline" group="document-structure">
+            <renderer>
+                <csContentEditorInlineTextRenderer style="font-size: 150%;"/>
+            </renderer>
+            <templates>
+                <template on-key="return"><title></title></template>
+            </templates>
+        </element>
+        <element    name="strapline1"  icon="cs-icon-scs-strapline" group="document-structure">
+            <renderer>
+                <csContentEditorInlineTextRenderer style="font-size: 150%;"/>
+            </renderer>
+            <templates>
+                <template on-key="return"><title></title></template>
+            </templates>
+        </element>
+
+
+
+
+     <element    name="calltoaction"  icon="cs-icon-scs-strapline" group="document-structure">
+        <renderer>
+            <csContentEditorInlineTextRenderer style="font-size: 150%;"/>
+        </renderer>
+        <templates>
+            <template on-key="return"><title></title></template>
+        </templates>
+    </element>
+
+        <element    name="subline"  icon="cs-icon-scs-strapline" group="document-structure">
+            <renderer>
+                <csContentEditorInlineTextRenderer style="font-size: 150%;"/>
+            </renderer>
+            <templates>
+                <template on-key="return"><title></title></template>
+            </templates>
+        </element>
+
+        <element     name="body"  icon="cs-icon-scs-strapline" group="document-structure">
+            <renderer>
+                <csContentEditorInlineTextRenderer style="font-size: 100%;"/>
+            </renderer>
+            <templates>
+                <template on-key="return"><title></title></template>
+            </templates>
+        </element>
+
+
+        <element  name="table" icon="cs-icon-table" group="document-structure">
+            <renderer>
+                <csSCS3TableRenderer />
+            </renderer>
+            <templates>
+                <template><table><colspec><col/><col/></colspec><row><cell><paragraph xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"/></cell><cell><paragraph/></cell></row><row><cell><paragraph/></cell><cell><paragraph/></cell></row></table></template>
+            </templates>
+        </element>
+
+        <element name="footnote"   icon="cs-icon-asterisk" group="document-structure">
+            <inline style="color:#00000;background-color:#E0E0E0"/>
+            <renderer>
+                <csContentEditorInlineTextRenderer style="font-size: 120%;"/>
+            </renderer>
+        </element>
+
+        <element name="title" icon="cs-icon-title" group="document-structure">
+            <renderer>
+                <csContentEditorInlineTextRenderer style="font-size: 220%;"/>
+            </renderer>
+            <templates>
+                <template on-key="return" when-parent="content"><subtitle></subtitle></template>
+                <template on-key="return"><paragraph/></template>
+            </templates>
+        </element>
+        <element name="subtitle" icon="cs-icon-scs-subtitle" group="document-structure">
+            <renderer>
+                <csContentEditorInlineTextRenderer style="font-size: 180%;"/>
+            </renderer>
+            <templates>
+                <template on-key="return"><text><intro xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"/></text></template>
+            </templates>
+        </element>
+        <element name="intro" icon="cs-icon-keynote" group="document-structure">
+            <renderer>
+                <csSCS3StyleInlineRenderer />
+            </renderer>
+            <templates>
+                <template on-key="return"><paragraph></paragraph></template>
+            </templates>
+        </element>
+
+        <element name="content" icon="cs-icon-content" group="document-structure">
+            <templates>
+                <template><content><strapline xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"></strapline><title></title><subtitle></subtitle><text><intro/></text></content></template>
+            </templates>
+        </element>
+
+        <element name="headline"      icon="cs-icon-header" group="document-structure">
+            <renderer>
+                <csContentEditorInlineTextRenderer style="font-size: 180%;"/>
+            </renderer>
+        </element>
+
+
+        <!--
+        <element name="subline" icon="cs-icon-header" group="document-structure"/>
+        -->
+
+        <element     name="calltoaction" icon="cs-icon-header" group="document-structure"/>
+
+        <element  name="calltoaction-link" icon="cs-icon-thumbs-up" group="document-structure">
+            <attribute name="url" icon="cs-icon-scs-url"/>
+        </element>
+
+
+        <element name="website" icon="cs-icon-global" group="document-structure"/>
+        <element name="print" icon="cs-icon-print" group="document-structure"/>
+        <element name="images" icon="cs-icon-picture" group="document-structure"/>
+        <element name="article" icon="cs-icon-article" group="document-structure"/>
+        <element name="key-visual" icon="cs-icon-picture" group="document-structure">
+          <renderer>
+            <csSCS3KeyVisualRenderer/>
+          </renderer>
+        </element>
+        <element name="additional-content" icon="cs-icon-content" group="document-structure">
+            <renderer>
+                <csSCS3AdditionalContentRenderer/>
+            </renderer>
+            <templates>
+                <template><additional-content align="left"><paragraph xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true" /></additional-content></template>
+            </templates>
+        </element>
+        <element name="reference-defs" icon="cs-icon-link">
+          <templates>
+            <template><reference-defs><reference-def><reference-description><paragraph xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"></paragraph></reference-description></reference-def></reference-defs></template>
+          </templates>
+        </element>
+        <element name="reference-def">
+          <renderer>
+            <csSCS3ReferenceDefRenderer />
+          </renderer>
+          <templates>
+            <template><reference-def><reference-description><paragraph xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"></paragraph></reference-description></reference-def></template>
+          </templates>
+        </element>
+        <element name="reference-description">
+          <renderer>
+            <csSCS3ReferenceDescriptionRenderer />
+          </renderer>
+          <templates>
+            <template><reference-description><paragraph xmlns:censhare="http://www.censhare.com/xml/3.0.0/censhare" censhare:focus="true"></paragraph></reference-description></template>
+          </templates>
+        </element>
+
+        <!-- content in content -->
+        <element name="include" icon="cs-icon-link-segments" group="content-in-content"/>
+
+        <!-- inline styles -->
+        <element name="link" icon="cs-icon-link">
+            <inline style="color:blue;text-decoration:underline;" dialog="csSCS3ContentEditorInlineTextRendererLinkAttributeAllianzDialog" link="true"/>
+
+            <attribute name="url1" icon="cs-icon-scs-url"/>
+            <attribute name="url2" icon="cs-icon-scs-url"/>
+            <attribute name="url3" icon="cs-icon-scs-url"/>
+
+            <attribute name="target1" icon="cs-icon-more-windows">
+                <renderer>
+                    <csContentEditorAttributeRadioRenderer/>
+                </renderer>
+            </attribute>
+            <attribute name="target2" icon="cs-icon-more-windows">
+                <renderer>
+                    <csContentEditorAttributeRadioRenderer/>
+                </renderer>
+            </attribute>
+            <attribute name="target3" icon="cs-icon-more-windows">
+                <renderer>
+                    <csContentEditorAttributeRadioRenderer/>
+                </renderer>
+            </attribute>
+        </element>
+
+        <element name="bold" icon="cs-icon-bold">
+            <inline style="font-weight:bold;" hotkey="mod+b"/>
+        </element>
+        <element name="italic" icon="cs-icon-italic">
+            <inline style="font-style:italic;" hotkey="mod+i"/>
+        </element>
+
+        <element name="bold-italic" icon="cs-icon-bold-italic">
+            <inline style="font-weight:bold;font-style:italic;"/>
+        </element>
+        <element name="underline" icon="cs-icon-text-underline">
+            <inline style="text-decoration: underline;" hotkey="mod+u"/>
+        </element>
+        <element name="sub" icon="cs-icon-sub">
+            <inline style="vertical-align:sub;font-size:smaller;"/>
+        </element>
+        <element name="sup" icon="cs-icon-sup">
+            <inline style="vertical-align:super;font-size:smaller;"/>
+        </element>
+        <element name="marker" icon="cs-icon-pushpin">
+            <inline style="color:#00000;background-color:#00D000"/>
+        </element>
+
+        <!-- common attributes-->
+        <attribute name="url"/>
+        <attribute name="style">
+            <renderer>
+                <csContentEditorAttributeRadioRenderer/>
+            </renderer>
+        </attribute>
+        <attribute name="aspect-ratio" icon="cs-icon-aspect-ratio">
+            <renderer>
+                <csContentEditorAttributeRadioRenderer/>
+            </renderer>
+        </attribute>
+        <attribute name="table-of-contents-exclude">
+            <renderer>
+                <csContentEditorAttributeRadioRenderer/>
+            </renderer>
+        </attribute>
+        <attribute name="display" icon="cs-icon-display">
+            <renderer>
+                <csContentEditorAttributeRadioRenderer/>
+            </renderer>
+        </attribute>
+        <attribute name="zoom" icon="cs-icon-zoom-in">
+            <renderer>
+                <csContentEditorAttributeRadioRenderer/>
+            </renderer>
+        </attribute>
+        <attribute name="seo-title" icon="cs-icon-seo-title"/>
+
+        <!-- attributes -->
+        <attribute name="key" icon="cs-icon-keys" />
+        <attribute name="label" icon="cs-icon-tag" />
+        <attribute name="width" icon="cs-icon-width" />
+        <attribute name="header-row-count" icon="cs-icon-table-header-row-count" />
+        <attribute name="footer-row-count" icon="cs-icon-table-footer-row-count" />
+        <attribute name="colspan" icon="cs-icon-table-colspan" />
+        <attribute name="rowspan" icon="cs-icon-table-rowspan" />
+        <attribute name="sorting" icon="cs-icon-sorting" />
+        <attribute name="border" icon="cs-icon-unchecked" />"
+
+        <!-- renderer to handle generic boolean is missing -->
+        <attribute name="autoplay" icon="cs-icon-play-button" />
+        <attribute name="display-image-captions" icon="cs-icon-scs-display-image-caption" />
+
+        <attribute name="start-slide" icon="cs-icon-slideshow-alt" />
+
+        <attribute name="height" icon="cs-icon-height" />
+        <attribute name="semantics" icon="cs-icon-semantics">
+            <renderer>
+                <csContentEditorAttributeRadioRenderer/>
+            </renderer>
+        </attribute>
+
+        <attribute name="align" icon="cs-icon-align">
+            <renderer>
+                <csContentEditorAttributeRadioRenderer/>
+            </renderer>
+        </attribute>
+    </elements>
+</ui-description>

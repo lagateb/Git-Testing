@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset id_org="24640" name="Schema - Allianz HeadlineBodyImageLink / Article Content v3 D" type="module.content.schema." application="default" domain="root." domain2="root." description="Allianz Standard Content Structure 3.0">
+  <asset_element idx="0" key="actual." isversioned="1"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="svtx:content-editor-allianz-headline-body-image-content-link-schema-v3"/>
+  <asset_feature feature="censhare:resource-meta">
+    <xmldata>
+      <selection needed="false"/>
+    </xmldata>
+  </asset_feature>
+  <storage_item element_idx="0" key="master" mimetype="text/rng" relpath="file:Schema - Allianz HeadlineBodyImageLink _ Article Content v3 D.rng"/>
+</asset>

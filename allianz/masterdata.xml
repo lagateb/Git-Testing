@@ -1,0 +1,863 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+
+    <permission_sets>
+        <permission_set permission_set="approver" name="Approver" name_de="Freigebender" enabled="1"  >
+            <permission_key permission_set="approver" key="terminology_readonly" permission="1"  />
+            <permission_key permission_set="approver" key="app_planning_element_ad" permission="1"  />
+            <permission_key permission_set="approver" key="userparam_party" permission="1"  />
+            <permission_key permission_set="approver" key="asset_preview_watermarked" permission="1"  />
+            <permission_key permission_set="approver" key="asset_version_view" permission="1"  />
+            <permission_key permission_set="approver" key="translation3_content_memory_readonly" permission="1"  />
+            <permission_key permission_set="approver" key="app_articleeditor_readonly" permission="1"  />
+            <permission_key permission_set="approver" key="translation3_content_readonly" permission="1"  />
+            <permission_key permission_set="approver" key="app_planning_readonly" permission="1"  />
+            <permission_key permission_set="approver" key="asset_preview" permission="1"  />
+            <permission_key permission_set="approver" key="app_layout_editor_readonly" permission="1"  />
+            <permission_key permission_set="approver" key="asset_history" permission="1"  />
+            <permission_key permission_set="approver" key="app_translation_memory_readonly" permission="1"  />
+            <permission_key permission_set="approver" key="asset_export_all" permission="1"  />
+            <permission_key permission_set="approver" key="app_incopyeditor_readonly" permission="1"  />
+            <permission_key permission_set="approver" key="app_contenteditor_readonly" permission="1"  />
+            <permission_key permission_set="approver" key="note_readonly" permission="1"  />
+        </permission_set>
+        <permission_set permission_set="basic_write" name="Basic Rights (write)" name_de="Basisrechte (schreibend)" enabled="1"  >
+            <permission_key permission_set="basic_write" key="app_indesign_all" permission="1"/>
+            <permission_key permission_set="basic_write" key="asset_rel_copy_template" permission="1"/>
+            <permission_key permission_set="basic_write" key="asset_rel_target" permission="1"/>
+            <permission_key permission_set="basic_write" key="asset_rel_actual" permission="1"/>
+            <permission_key permission_set="basic_write" key="asset_rel_user" permission="1"/>
+            <permission_key permission_set="basic_write" key="asset_export_all" permission="1"/>
+            <permission_key permission_set="basic_write" key="asset_history" permission="1"/>
+            <permission_key permission_set="basic_write" key="asset_rel_output_template" permission="1"/>
+            <permission_key permission_set="basic_write" key="asset_version_all" permission="1"/>
+            <permission_key permission_set="basic_write" key="asset_checkout" permission="1"/>
+            <permission_key permission_set="basic_write" key="asset_rel_variant" permission="1"/>
+            <permission_key permission_set="basic_write" key="asset_preview" permission="1"/>
+            <permission_key permission_set="basic_write" key="app_layout_editor_readonly" permission="1"/>
+            <permission_key permission_set="basic_write" key="app_texteditor_all" permission="1"/>
+            <permission_key permission_set="basic_write" key="asset_rel_input_template" permission="1"/>
+            <permission_key permission_set="basic_write" key="asset_edit_attributes" permission="1"/>
+            <permission_key permission_set="basic_write" key="asset_replace_storage" permission="1"/>
+            <permission_key permission_set="basic_write" key="app_articleeditor_all" permission="1"/>
+            <permission_key permission_set="basic_write" key="product_creation_wizard_execution" permission="1"/>
+            <permission_key permission_set="basic_write" key="product_delete" permission="1"/>
+            <permission_key permission_set="basic_write" key="layout_template_update" permission="1"/>
+            <permission_key permission_set="basic_write" key="asset_checkin_new" permission="1"/>
+            <permission_key permission_set="basic_write" key="asset_checkin" permission="1"/>
+            <permission_key permission_set="basic_write" key="app_layout_editor_all" permission="1"/>
+            <permission_key permission_set="basic_write" key="decouple_module" permission="1"/>
+        </permission_set>
+        <permission_set permission_set="extrended_write" name="Extrended Rights (write)" name_de="Erweiterte Rechte (schreibend)" enabled="1"  >
+            <permission_key permission_set="extrended_write" key="app_incopyeditor_all" permission="1"  />
+            <permission_key permission_set="extrended_write" key="asset_archive" permission="1"  />
+            <permission_key permission_set="extrended_write" key="asset_deletion_unmark" permission="1"  />
+            <permission_key permission_set="extrended_write" key="asset_deletion_storages" permission="1"  />
+            <permission_key permission_set="extrended_write" key="app_pictureeditor_all" permission="1"  />
+            <permission_key permission_set="extrended_write" key="asset_rearchive" permission="1"  />
+            <permission_key permission_set="extrended_write" key="asset_rel_target" permission="1"  />
+            <permission_key permission_set="extrended_write" key="asset_replace_storage" permission="1"  />
+            <permission_key permission_set="extrended_write" key="app_layout_editor_readonly" permission="1"  />
+            <permission_key permission_set="extrended_write" key="asset_rel_copy_template" permission="1"  />
+            <permission_key permission_set="extrended_write" key="asset_export_all" permission="1"  />
+            <permission_key permission_set="extrended_write" key="asset_rel_output_template" permission="1"  />
+            <permission_key permission_set="extrended_write" key="app_articleeditor_all" permission="1"  />
+            <permission_key permission_set="extrended_write" key="asset_rel_actual" permission="1"  />
+            <permission_key permission_set="extrended_write" key="asset_version_all" permission="1"  />
+            <permission_key permission_set="extrended_write" key="asset_history" permission="1"  />
+            <permission_key permission_set="extrended_write" key="asset_rel_variant" permission="1"  />
+            <permission_key permission_set="extrended_write" key="app_texteditor_all" permission="1"  />
+            <permission_key permission_set="extrended_write" key="asset_rel_input_template" permission="1"  />
+            <permission_key permission_set="extrended_write" key="asset_edit_attributes" permission="1"  />
+            <permission_key permission_set="extrended_write" key="app_indesign_all" permission="1"  />
+            <permission_key permission_set="extrended_write" key="asset_rel_user" permission="1"  />
+        </permission_set>
+        <permission_set permission_set="readonly" name="Read only" name_de="Leserechte" enabled="1"  >
+            <permission_key permission_set="readonly" key="app_contenteditor_readonly" permission="1"  />
+            <permission_key permission_set="readonly" key="asset_preview" permission="1"  />
+            <permission_key permission_set="readonly" key="app_articleeditor_readonly" permission="1"  />
+            <permission_key permission_set="readonly" key="note_readonly" permission="1"  />
+            <permission_key permission_set="readonly" key="translation3_content_memory_readonly" permission="1"  />
+            <permission_key permission_set="readonly" key="app_texteditor_readonly" permission="1"  />
+            <permission_key permission_set="readonly" key="translation3_metadata_memory_readonly" permission="1"  />
+            <permission_key permission_set="readonly" key="asset_checkout_abort_foreign" permission="0"  />
+            <permission_key permission_set="readonly" key="asset_checkout" permission="0"  />
+            <permission_key permission_set="readonly" key="asset_checkout_abort" permission="0"  />
+            <permission_key permission_set="readonly" key="terminology_readonly" permission="1"  />
+            <permission_key permission_set="readonly" key="app_translation_memory_readonly" permission="1"  />
+            <permission_key permission_set="readonly" key="app_schedule_readonly" permission="1"  />
+            <permission_key permission_set="readonly" key="app_planning_readonly" permission="1"  />
+            <permission_key permission_set="readonly" key="translation3_content_readonly" permission="1"  />
+            <permission_key permission_set="readonly" key="app_layout_editor_readonly" permission="1"  />
+            <permission_key permission_set="readonly" key="userparam_party" permission="1"  />
+            <permission_key permission_set="readonly" key="asset_version_view" permission="1"  />
+            <permission_key permission_set="readonly" key="app_address_all" permission="1"  />
+        </permission_set>
+        <permission_set permission_set="mm-rights" name="Marketing-Manager Aktionen" name_de="Marketing-Manager Aktionen" enabled="1">
+            <permission_key permission_set="mm-rights" key="product_delete" permission="1"/>
+            <permission_key permission_set="mm-rights" key="product_domain_switch" permission="1"/>
+            <permission_key permission_set="mm-rights" key="decouple_module" permission="1"/>
+            <permission_key permission_set="mm-rights" key="layout_template_update" permission="1"/>
+            <permission_key permission_set="mm-rights" key="approval_additional_comment" permission="1"/>
+            <permission_key permission_set="mm-rights" key="delete_makler_vertriebs_text_variant" permission="1"/>
+        </permission_set>
+    </permission_sets>
+
+
+    <roles>
+        <role role="read" name="Lesender Zugriff" name_de="Lesender Zugriff" description="Benutzerrolle für Agenturen, die an den Kommunikationsinhalten arbeiten dürfen" description_de="Benutzerrolle für Agenturen, die an den Kommunikationsinhalten arbeiten dürfen" enabled="1" >
+            <role_permission role="read" permission_set="readonly" enabled="1" />
+        </role>
+        <role role="power_user" name="Power User" name_de="Power User" description="Power User mit erweiterten Power-User Rechten" description_de="Power User mit erweiterten Power-User Rechten" enabled="1">
+            <role_permission role="power_user" permission_set="extrended_write"  enabled="1" />
+            <role_permission role="power_user" permission_set="basic_write"  enabled="1" />
+        </role>
+        <role role="marketing_manager" name="Marketing Manager" name_de="Marketing Manager" description="Marketing Manager bei der Allianz" description_de="Marketing Manager bei der Allianz" enabled="1">
+            <role_permission role="marketing_manager" permission_set="basic_write"  enabled="1" />
+            <role_permission role="marketing_manager" permission_set="mm-rights"  enabled="1" />
+        </role>
+        <role role="agency_write" name="Agency User (Bearbeitung)" name_de="Agentur-Benutzer (Bearbeitung)" description="Benutzerrolle für Agenturen, die an den Kommunikationsinhalten arbeiten dürfen" description_de="Benutzerrolle für Agenturen, die an den Kommunikationsinhalten arbeiten dürfen" enabled="1" >
+            <role_permission role="agency_write" permission_set="basic_write" enabled="1" />
+        </role>
+        <role role="approver_wettbewerbsrecht" name="Wettbewerbsrecht (Freigabe)" name_de="Wettbewerbsrecht (Freigabe)" enabled="1">
+            <role_permission role="approver_wettbewerbsrecht" permission_set="approver" enabled="1"/>
+        </role>
+        <role role="approver_vertrieb_mvzv" name="Vertrieb MVZB (Freigabe)" name_de="Vertrieb MVZB (Freigabe)" enabled="1">
+            <role_permission role="approver_vertrieb_mvzv" permission_set="approver" enabled="1"/>
+        </role>
+        <role role="approver_vertrieb_abv" name="Vertrieb ABV (Freigabe)" name_de="Vertrieb ABV (Freigabe)" enabled="1">
+            <role_permission role="approver_vertrieb_abv" permission_set="approver" enabled="1"/>
+        </role>
+        <role role="approver_versicherungsrecht" name="Versicherungsrecht (Freigabe)" name_de="Versicherungsrecht (Freigabe)" enabled="1">
+            <role_permission role="approver_versicherungsrecht" permission_set="approver" enabled="1"/>
+        </role>
+        <role role="approver_sozialversicherungsrecht" name="Sozialversicherungsrecht (Freigabe)" name_de="Sozialversicherungsrecht (Freigabe)" enabled="1">
+            <role_permission role="approver_sozialversicherungsrecht" permission_set="approver" enabled="1"/>
+        </role>
+        <role role="approver_fachstab" name="Fachstab (Freigabe)" name_de="Fachstab (Freigabe)" enabled="1">
+            <role_permission role="approver_fachstab" permission_set="approver" enabled="1"/>
+        </role>
+        <role role="approval_pmm" name="Produktmanagement (Freigabe)" name_de="Produktmanagement (Freigabe)" enabled="1">
+            <role_permission role="approval_pmm" permission_set="approver" enabled="1"/>
+        </role>
+    </roles>
+
+    <asset_typedefs>
+        <asset_typedef asset_type="article.fallbeispiel." name="Fallbeispiel" name_de="Fallbeispiel" def_application="default" hasfiles="1" color="12582847" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="article.nutzenversprechen." name="Nutzenversprechen" name_de="Nutzenversprechen" def_application="default" hasfiles="1" color="12582847" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="article.zielgruppenmodul." name="Zielgruppen-Modul" name_de="Zielgruppen-Modul" def_application="default" hasfiles="1" color="12582847" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="article.vorteile." name="Vorteile" name_de="Vorteile" def_application="default" hasfiles="1" color="12582847" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="article.produktbeschreibung." name="Produktbeschreibung" name_de="Produktbeschreibung" def_application="default" hasfiles="1" color="12582847" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="article.funktionsgrafik." name="Funktionsgrafik" name_de="Funktionsgrafik" def_application="default" hasfiles="1" color="12582847" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="article.productdetails." name="Produktdetails (Tabelle)" name_de="Produktdetails (Tabelle)" def_application="default" hasfiles="1" color="12582847" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="article.staerken." name="Stärken Allianz" name_de="Stärken Allianz" def_application="default" hasfiles="1" color="12582847" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="article.header." name="Product name &amp; claim" name_de="Produktname &amp; Claim" def_application="default" hasfiles="1" domain="root." domain2="root." enabled="1" />
+        <asset_typedef asset_type="article.eingeschlosseneleistungen." name="Eingeschlossene Leistungen" name_de="Eingeschlossene Leistungen" def_application="default" hasfiles="1" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="article.garantieniveaus." name="Garantieniveaus" name_de="Garantieniveaus" def_application="default" hasfiles="1" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="article.schichten." name="Zuordnung zu Schichten" name_de="Zuordnung zu Schichten" def_application="default" hasfiles="1" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="article.sicherungsvermoegen." name="Aufstellung Sicherungsvermögen" name_de="Aufstellung Sicherungsvermögen" def_application="default" hasfiles="1" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="article.steuervorteile." name="Steuerliche Vorteile" name_de="Steuerliche Vorteile" def_application="default" hasfiles="1" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="article.tools." name="Tools" name_de="Tools" def_application="default" hasfiles="1" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="article.wettbewerb." name="Wettbewerbsvergleich" name_de="Wettbewerbsvergleich" def_application="default" hasfiles="1" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="text.size-s." name="Größe S" name_de="Größe S" def_application="default" hasfiles="1" color="16760703" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="text.size-m." name="Größe M" name_de="Größe M" def_application="default" hasfiles="1" color="16760703" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="text.size-l." name="Größe L" name_de="Größe L" def_application="default" hasfiles="1" color="16760703" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="text.size-xl." name="Größe XL" name_de="Größe XL" def_application="default" hasfiles="1" color="16760703" domain="root." domain2="root." enabled="1"/>
+        <!-- ORTCONTENT-544 -->
+        <asset_typedef asset_type="text.public." name="freigegeben" name_de="freigegeben" def_application="default" hasfiles="1" color="16760703" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="text.public.size-s." name="Größe S" name_de="Größe S" def_application="default" hasfiles="1" color="16760703" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="text.public.size-m." name="Größe M" name_de="Größe M" def_application="default" hasfiles="1" color="16760703" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="text.public.size-l." name="Größe L" name_de="Größe L" def_application="default" hasfiles="1" color="16760703" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="text.public.size-xl." name="Größe XL" name_de="Größe XL" def_application="default" hasfiles="1" color="16760703" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="text.public.faq." name="FAQ" name_de="FAQ" def_application="default" hasfiles="1" color="16760703" domain="root." domain2="root." enabled="1"/>
+
+        <asset_typedef asset_type="text.faq." name="FAQ" name_de="FAQ" def_application="default" hasfiles="1" color="16760703" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="presentation.issue." name="Presentation Issue" name_de="Präsentations Ausgabe" def_application="default" hasfiles="1" domain="root." domain2="root." enabled="1" />
+        <asset_typedef asset_type="presentation.slide." name="Presentation Slide" name_de="Präsentations Slide" def_application="default" hasfiles="1" domain="root." domain2="root." enabled="1" />
+        <asset_typedef asset_type="co-branding." name="Co-Branding" name_de="Co-Branding" description="Co-Branding" description_de="Co-Branding" def_application="metadata" hasfiles="1" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="product.vsk." name="Vorsorgekonzept" name_de="Vorsorgekonzept" def_application="default" hasfiles="1" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="article.flexi-module." name="Flexi Module" name_de="Flexi Modul" def_application="default" hasfiles="1" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="article.optional-module." name="Optional Module" name_de="Optionales Modul " def_application="default" hasfiles="1" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="article.optional-module.faq." name="Optional Module for FAQ" name_de="Optionales Modul FAQ" def_application="default" hasfiles="1" domain="root." domain2="root." enabled="1"/>
+
+        <asset_typedef asset_type="article.free-module." name="Free Module" name_de="Freies Modul" def_application="default" hasfiles="1" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="profession." name="Profession" name_de="Beruf" def_application="default" hasfiles="1" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="spreadsheet.riskgroup." name="Risikogruppe" name_de="Risikogruppe" def_application="default" hasfiles="1" domain="root.flyer-generator." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="module.pptx-rebuild." name="Rebuild PPTX Files" name_de="Rebuild PPTX Files" def_application="default" hasfiles="0" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="article.baveinsatz." name="Einsatz in bAV" name_de="Einsatz in bAV" def_application="default" hasfiles="1" domain="root." domain2="root." enabled="1" />
+        <!-- brauchen wir nicht mehr, wir nehmen jetzt  article.optional-module.faq.
+       <asset_typedef asset_type="article.faq." name="FAQ" name_de="FAQ" def_application="default" hasfiles="1" domain="root." domain2="root." enabled="1" />
+       -->
+
+        <asset_typedef asset_type="module.history." name="Change History" name_de="Änderungshistorie" def_application="metadata" hasfiles="1" domain="root." domain2="root." enabled="1" />
+        <!-- ORTCONTENT-521 Archivierung freigegebener Medien-->
+        <asset_typedef asset_type="document.flyer." name="Flyer" name_de="Flyer" def_application="default" hasfiles="1" domain="root." domain2="root." enabled="1" />
+        <asset_typedef asset_type="document.psb." name="Produktsteckbrief" name_de="Produktsteckbrief" def_application="default" hasfiles="1" domain="root." domain2="root." enabled="1" />
+        <asset_typedef asset_type="article.optional-module.gesetzliche-rahmenbedingungen." name="Gesetzliche Rahmenbedingungen" name_de="Gesetzliche Rahmenbedingungen" def_application="default" hasfiles="1" domain="root." domain2="root." enabled="1" tcn="1" rowid="384"/>
+        <asset_typedef asset_type="article.optional-module.nachhaltigkeit." name="Nachhaltigkeit" name_de="Nachhaltigkeit" def_application="default" hasfiles="1" domain="root." domain2="root." enabled="1" tcn="1" rowid="382"/>
+        <asset_typedef asset_type="article.optional-module.tools." name="Tools" name_de="Tools" def_application="default" hasfiles="1" domain="root." domain2="root." enabled="1" tcn="1" rowid="381"/>
+        <asset_typedef asset_type="article.optional-module.vsk." name="Vorsorgekonzept" name_de="Modul Vorsorgekonzept" def_application="default" hasfiles="1" domain="root." domain2="root." enabled="1" tcn="1" rowid="383"/>
+        <asset_typedef asset_type="article.optional-module.zusatzbausteine-und-gestaltung." name="Zusatzbausteine und Gestaltungsmöglichkeiten" name_de="Zusatzbausteine und Gestaltungsmöglichkeiten" def_application="default" hasfiles="1" domain="root." domain2="root." enabled="1" tcn="0" rowid="385"/>
+        <asset_typedef asset_type="product.theme." name="Theme" name_de="Thema" def_application="default" hasfiles="1" domain="root." domain2="root." enabled="1" tcn="0" rowid="405"/>
+        <asset_typedef asset_type="picture.illustration." name="Illustration" name_de="Illustration" def_application="default" hasfiles="1" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="product.guarantee-asset." name="Product guarantee asset" name_de="Produkt Sicherungsvermögen" def_application="default" hasfiles="1" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="product.capital-investment." name="Capital investment" name_de="Kapitalanlage" def_application="default" hasfiles="1" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="product.capital-investment.guarantee-asset." name="Guarantee asset" name_de="Sicherungsvermögen" def_application="default" hasfiles="1" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="product.capital-investment.portfolio." name="Reference portfolio PFP" name_de="Referenzportfolio PFP" def_application="default" hasfiles="1" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="product.capital-investment.special-asset." name="Special asset" name_de="Sondervermögen" def_application="default" hasfiles="1" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="article.key-facts." name="Key Facts" name_de="Key Facts" def_application="default" hasfiles="1" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="article.reasons." name="Gründe" name_de="Gründe" def_application="default" hasfiles="1" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="article.solution-overview." name="Lösungsübersicht" name_de="Lösungsübersicht" def_application="default" hasfiles="1" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="article.what-is." name="Was ist ...?" name_de="Was ist ...?" def_application="default" hasfiles="1" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="article.requirement-field-title." name="Bedarfsfeld Titel" name_de="Bedarfsfeld Titel" def_application="default" hasfiles="1" domain="root." domain2="root." enabled="1"/>
+        <asset_typedef asset_type="product.needs-and-advice." name="Bedarf &amp; Beratungsthema" name_de="Bedarf &amp; Beratungsthema" def_application="default" hasfiles="1" domain="root." domain2="root." enabled="1"/>
+    </asset_typedefs>
+    <domains>
+        <domain pathid="root.allianz-leben-ag." parent="root." shortname="allianz-leben-ag" name="Allianz Lebensversicherungs-AG" name_de="Allianz Lebensversicherungs-AG" sorting="4" enabled="1"/>
+        <domain pathid="root.allianz-leben-ag.contenthub." parent="root.allianz-leben-ag." shortname="contenthub" name="Content-Hub" name_de="Content-Hub" sorting="1" enabled="1"/>
+        <domain pathid="root.allianz-leben-ag.contenthub.l-mm-av." parent="root.allianz-leben-ag.contenthub." shortname="l-mm-av" name="L-MM-AV (Altersvorsorge &amp; Vermögen)" name_de="L-MM-AV (Altersvorsorge &amp; Vermögen)" sorting="2"/>
+        <domain pathid="root.allianz-leben-ag.contenthub.l-mm-av.cmf." parent="root.allianz-leben-ag.contenthub.l-mm-av." shortname="cmf" name="CMF" name_de="CMF" sorting="1" enabled="1"/>
+        <domain pathid="root.allianz-leben-ag.contenthub.l-mm-av.port-neo." parent="root.allianz-leben-ag.contenthub.l-mm-av." shortname="port-neo" name="Port-Neo" name_de="Port-Neo" sorting="2" enabled="1"/>
+        <domain pathid="root.allianz-leben-ag.contenthub.l-mm-bb." parent="root.allianz-leben-ag.contenthub." shortname="l-mm-bb" name="L-MM-BB (Biometrie &amp; bAV)" name_de="L-MM-BB (Biometrie &amp; bAV)" sorting="1" enabled="1"/>
+        <domain pathid="root.allianz-leben-ag.contenthub.l-mm-bb.cmf." parent="root.allianz-leben-ag.contenthub.l-mm-bb." shortname="cmf" name="CMF" name_de="CMF" sorting="1" enabled="1"/>
+        <domain pathid="root.allianz-leben-ag.contenthub.l-mm-bb.port-neo." parent="root.allianz-leben-ag.contenthub.l-mm-bb." shortname="port-neo" name="Port-Neo" name_de="Port-Neo" sorting="2" enabled="1"/>
+        <domain pathid="root.allianz-leben-ag.contenthub.l-mm-kbml." parent="root.allianz-leben-ag.contenthub." shortname="l-mm-kbml" name="L-MM-KBML (Kundenbeziehungsmanagement Leben)" name_de="L-MM-KBML (Kundenbeziehungsmanagement Leben)" sorting="3" enabled="1"/>
+        <domain pathid="root.allianz-leben-ag.contenthub.l-mm-kbml.cmf." parent="root.allianz-leben-ag.contenthub.l-mm-kbml." shortname="cmf" name="CMF" name_de="CMF" sorting="1" enabled="1"/>
+        <domain pathid="root.allianz-leben-ag.contenthub.l-mm-kbml.port-neo." parent="root.allianz-leben-ag.contenthub.l-mm-kbml." shortname="port-neo" name="Port-Neo" name_de="Port-Neo" sorting="2" enabled="1"/>
+        <domain pathid="root.allianz-leben-ag.flyergenerator." parent="root.allianz-leben-ag." shortname="flyergenerator" name="Flyer-Generator" name_de="Flyer-Generator" sorting="2" enabled="1"/>
+        <domain pathid="root.allianz-leben-ag.imagepool." parent="root.allianz-leben-ag." shortname="imagepool" name="Image Pool" name_de="Bilder-Pool" sorting="3" enabled="1"/>
+        <domain pathid="root.allianz-leben-ag.templates." parent="root.allianz-leben-ag." shortname="templates" name="Templates" name_de="Vorlagen" sorting="4" enabled="1"/>
+        <domain pathid="root.allianz-mvp." parent="root." shortname="allianz-mvp" name="Allianz MVP " name_de="Allianz MVP" sorting="3" enabled="0"/>
+        <domain pathid="root.flyer-generator." parent="root." shortname="flyer-generator" name="Flyer-Generator" name_de="Flyer-Generator" sorting="5" enabled="1"/>
+        <domain pathid="root.flyer-generator.v2." parent="root.flyer-generator." shortname="v2" name="V2" name_de="V2" sorting="1" enabled="1"/>
+        <domain pathid="root.allianz-private-kranken-ag." parent="root." shortname="allianz-private-kranken-ag" name="Allianz Private Krankenversicherungs-AG" name_de="Allianz Private Krankenversicherungs-AG" sorting="6" enabled="1"/>
+        <domain pathid="root.allianz-sach." parent="root." shortname="allianz-sach" name="Allianz Sachversicherungen" name_de="Allianz Sachversicherungen" sorting="7" enabled="1"/>
+        <domain pathid="root.allianz-leben-ag.contenthub.l-mm-puk." parent="root.allianz-leben-ag.contenthub." shortname="l-mm-puk" name="L-MM PUK" name_de="L-MM PUK" sorting="4" enabled="1"/>
+        <domain pathid="root.allianz-leben-ag.contenthub.l-mm-puk.cmf." parent="root.allianz-leben-ag.contenthub.l-mm-puk." shortname="cmf" name="CMF" name_de="CMF" sorting="1" enabled="1"/>
+        <domain pathid="root.allianz-leben-ag.contenthub.l-mm-puk.port-neo." parent="root.allianz-leben-ag.contenthub.l-mm-puk." shortname="port-neo" name="Port-Neo" name_de="Port-Neo" sorting="2" enabled="1"/>
+        <domain pathid="root.allianz-leben-ag.contenthub.playground-sach." parent="root.allianz-leben-ag.contenthub." shortname="playground-sach" name="Playground (Sach)" name_de="Playground (Sach)" sorting="6" enabled="1"/>
+        <domain pathid="root.allianz-leben-ag.contenthub.playground-sach.cmf." parent="root.allianz-leben-ag.contenthub.playground-sach." shortname="cmf" name="CMF" name_de="CMF" sorting="1" enabled="1"/>
+        <domain pathid="root.allianz-leben-ag.contenthub.playground-sach.port-neo." parent="root.allianz-leben-ag.contenthub.playground-sach." shortname="port-neo" name="Port-Neo" name_de="Port-Neo" sorting="2" enabled="1"/>
+        <domain pathid="root.allianz-leben-ag.contenthub.playground." parent="root.allianz-leben-ag.contenthub." shortname="playground" name="Playground" name_de="Playground" sorting="5" enabled="1"/>
+        <domain pathid="root.allianz-leben-ag.contenthub.playground.cmf." parent="root.allianz-leben-ag.contenthub.playground." shortname="cmf" name="CMF" name_de="CMF" sorting="1" enabled="1"/>
+        <domain pathid="root.allianz-leben-ag.contenthub.playground.port-neo." parent="root.allianz-leben-ag.contenthub.playground." shortname="port-neo" name="Port-Neo" name_de="Port-Neo" sorting="2" enabled="1"/>
+        <!-- ORTCONTENT-521 Archivierung freigegebener Medien-->
+        <domain pathid="root.allianz-leben-ag.contenthub.public." parent="root.allianz-leben-ag.contenthub." shortname="public" name="aktuell zur Nutzung freigegeben" name_de="aktuell zur Nutzung freigegeben" sorting="7" enabled="1"/>
+
+        <domain pathid="root.allianz-leben-ag.archive." parent="root.allianz-leben-ag." shortname="archive" name="archive" name_de="Archiv" sorting="1" />
+    </domains>
+    <storage_keydefs>
+        <storage_keydef key="pdf-drbk-x4" name="Print-PDF" name_de="Druck-PDF" description="AZ Joboption DRBK-x4" description_de="AZ Joboption DRBK-x4" enabled="1"/>
+        <storage_keydef key="abstimmungsdokument" name="Abstimmungsdokument" name_de="Abstimmungsdokument" description="Abstimmungsdokument PDF" description_de="Abstimmungsdokument PDF" enabled="1" />
+        <storage_keydef key="abstimmungsdokument_short" name="Abstimmungsdokument kurz" name_de="Abstimmungsdokument kurz" description="Abstimmungsdokument PDF(kurz)" description_de="Abstimmungsdokument PDF(kurz)" enabled="1" />
+        <storage_keydef key="pdf-online" name="Online-PDF" name_de="Online-PDF" description="AZ LAY_150_ohne.joboptions" description_de="AZ LAY_150_ohne.joboptions" enabled="1"/>
+    </storage_keydefs>
+    <filesystem_defs>
+        <filesystem_def name="colorserver_ALL" description="colorserver_ALL" description_de="colorserver_ALL" domain="root." domain2="root." usage="other" enabled="1"/>
+        <filesystem_def name="compart" description="Compart" description_de="Compart" domain="root." domain2="root." usage="other" enabled="1" />
+    </filesystem_defs>
+    <features>
+        <feature key="svtx:aem-template" type="censhare:asset-feature" storage="0" domain="root." domain2="root."
+                 name="AEM Template" name_de="AEM Template" value_type="2" ui_control="4" ismultivalue="0"
+                 isassetinfo="1" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0"
+                 bdb_key="1076" enabled="1" has_relevance="0" target_object_type="asset" trait="savotex"
+                 trait_property="aemTemplate" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0"
+                 asset_resource_key="svtx:feature.aem-template"   >
+            <feature_value feature="svtx:aem-template" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="text_and_image" name="Text and Image" sorting="1" enabled="1"
+            />
+            <feature_value feature="svtx:aem-template" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="image_or_video" name="Image or Video" name_de="Image or Video" sorting="1"
+                           enabled="1" />
+            <feature_value feature="svtx:aem-template" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="two_column_icon" name="Two Column Icon Container"
+                           name_de="Two Column Icon Container" sorting="3" enabled="1" />
+        </feature>
+        <feature key="svtx:module-template-options" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Template Options" name_de="Template Optionen" value_type="0" ui_control="0" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1087" enabled="1" has_relevance="0" target_object_type="asset" trait="allianzTemplateOptions" trait_property="templateOptions" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.module-template-options"/>
+        <feature key="svtx:flyer.generator.risk.group" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Risk Group" name_de="Risk Group" value_type="4" ui_control="3" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1133" enabled="1" has_relevance="0" target_object_type="asset" trait="flyerGenerator" trait_property="riskGroup" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.flyer.generator.risk.group"/>
+        <feature key="svtx:protection-police" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Monthly pension" name_de="Monatliche Rente" value_type="3" ui_control="3" ismultivalue="1" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1097" enabled="1" has_relevance="0" target_object_type="asset" trait="allianzFlyerGenerator" trait_property="koerperSchutzPolice" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.protection-police">
+            <feature_rel parent_feature="svtx:protection-police" child_feature="svtx:age" type="hierarchy" sid="2320" enabled="1"/>
+        </feature>
+        <feature key="svtx:profession-pdf-rendering-pending" type="censhare:intern" storage="0" domain="root." domain2="root." name="PDF Generierung ausstehend" name_de="PDF Generierung ausstehend" value_type="6" ui_control="1" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1105" enabled="1" has_relevance="0" target_object_type="asset" trait="allianzFlyerGenerator" trait_property="pdfRenderingPending" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.profession-pdf-rendering-pending"/>
+        <feature key="svtx:net-contribution-with-capital-payment" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Net contribution (with capital payment)" name_de="Netto Beitrag (mit Kapitalzahlung)" value_type="7" ui_control="3" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1100" enabled="1" has_relevance="0" target_object_type="asset" trait="allianzFlyerGenerator" trait_property="netContributionWithCapitalPayment" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.net-contribution-with-capital-payment"/>
+        <feature key="svtx:net-contribution" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Net contribution (without capital payment)" name_de="Netto Beitrag (ohne Kapitalzahlung)" value_type="7" ui_control="3" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1099" enabled="1" has_relevance="0" target_object_type="asset" trait="allianzFlyerGenerator" trait_property="netContribution" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.net-contribution"/>
+        <feature key="svtx:net-contribution-difference" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Net contribution difference" name_de="Netto Beitrag Differenz" value_type="7" ui_control="3" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1103" enabled="1" has_relevance="0" target_object_type="asset" trait="allianzFlyerGenerator" trait_property="netContributionDifference" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.net-contribution-difference"/>
+        <feature key="svtx:capital-payment" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Capital payment" name_de="Kapitalzahlung" value_type="3" ui_control="3" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1101" enabled="1" has_relevance="0" target_object_type="asset" trait="allianzFlyerGenerator" trait_property="capitalPayment" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.capital-payment"/>
+        <feature key="svtx:age" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Age (Flyer-Generator)" name_de="Alter (Flyer-Generator)" value_type="3" ui_control="3" ismultivalue="1" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1098" enabled="1" has_relevance="0" target_object_type="asset" trait="allianzFlyerGenerator" trait_property="age" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.age">
+            <feature_rel parent_feature="svtx:age" child_feature="svtx:net-contribution-with-capital-payment" type="hierarchy" sid="2322" enabled="1"/>
+            <feature_rel parent_feature="svtx:age" child_feature="svtx:net-contribution" type="hierarchy" sid="2321" enabled="1"/>
+            <feature_rel parent_feature="svtx:age" child_feature="svtx:capital-payment" type="hierarchy" sid="2323" enabled="1"/>
+            <feature_rel parent_feature="svtx:age" child_feature="svtx:net-contribution-difference" type="hierarchy" sid="2330" enabled="1"/>
+        </feature>
+
+        <feature key="svtx:layout-print-number" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Print number" name_de="Druckstück Nr." value_type="4" ui_control="3" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1013" enabled="1" has_relevance="0" target_object_type="asset" trait="allianzLayout" trait_property="printNumber" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.layout-print-number" />
+        <feature key="svtx:media-valid-from" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Valid from" name_de="Gültig ab" value_type="13" ui_control="0" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1088" enabled="1" has_relevance="0" target_object_type="asset" trait="allianzMedia" trait_property="validFrom" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.media-valid-from" />
+        <feature key="svtx:media-valid-until" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Valid until" name_de="Gültig bis" value_type="13" ui_control="0" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1089" enabled="1" has_relevance="0" target_object_type="asset" trait="allianzMedia" trait_property="validUntil" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.media-valid-until"/>
+        <feature key="svtx:product-name" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Produkt" name_de="Produkt" value_type="4" ui_control="3" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0"  enabled="1" has_relevance="0" target_object_type="asset" trait="allianzProduct" trait_property="name" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.product-name" />
+
+
+        <feature key="censhare:template-hierarchy" type="censhare:intern" storage="0" domain="root." domain2="root." name="Template hierarchy" name_de="Vorlagen-Hierarchie" description="Template hierarchy" description_de="Vorlagen-Hierarchie" value_type="1" ui_control="0" ismultivalue="1" isassetinfo="0" assetinfo_sorting="0" issearchable="1" sorting="23" language_type="0" color_type="0" bdb_key="76" enabled="1" has_relevance="0" target_object_type="asset" trait="template" trait_property="templateHierarchy" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="censhare:feature.template-hierarchy">
+            <feature_value feature="censhare:template-hierarchy" domain="root." domain2="root." is_hierarchical="1" value_key="root.standard." parent_key="root." shortname="standard" name="Standard" name_de="Standard" sorting="1" enabled="1"/>
+            <feature_value feature="censhare:template-hierarchy" domain="root." domain2="root." is_hierarchical="1" value_key="root.standard.other." parent_key="root.standard." shortname="other" name="Other" name_de="Sonstiges" sorting="3" enabled="1"/>
+            <feature_value feature="censhare:template-hierarchy" domain="root." domain2="root." is_hierarchical="1" value_key="root.standard.extended-media." parent_key="root.standard." shortname="extended-media" name="Extended media" name_de="Erweiterte Medien" sorting="2" enabled="1"/>
+            <feature_value feature="censhare:template-hierarchy" domain="root." domain2="root." is_hierarchical="1" value_key="root.standard.epub." parent_key="root.standard." shortname="epub" name="EPUB" name_de="EPUB" sorting="1" enabled="1"/>
+            <feature_value feature="censhare:template-hierarchy" domain="root." domain2="root." is_hierarchical="1" value_key="root.standard.article." parent_key="root.standard." shortname="article" name="Article" name_de="Artikel" sorting="1" enabled="1"/>
+            <feature_value feature="censhare:template-hierarchy" domain="root." domain2="root." is_hierarchical="1" value_key="root." shortname="root" name="Template Hierarchy" name_de="Vorlagen-Hierarchie" sorting="1" enabled="1"/>
+            <feature_value feature="censhare:template-hierarchy" domain="root." domain2="root." is_hierarchical="1" value_key="root.standard.project." parent_key="root.standard." shortname="project" name="Project" name_de="Projekte" sorting="0" enabled="1"/>
+            <feature_value feature="censhare:template-hierarchy" domain="root." domain2="root." is_hierarchical="1" value_key="root.standard.product." parent_key="root.standard." shortname="product" name="Product" name_de="Product" sorting="0" enabled="1"/>
+            <feature_value feature="censhare:template-hierarchy" domain="root." domain2="root." is_hierarchical="1" value_key="root.standard.media." parent_key="root.standard." shortname="media" name="Media" name_de="Media" sorting="0" enabled="1"/>
+            <feature_value feature="censhare:template-hierarchy" domain="root." domain2="root." is_hierarchical="1" value_key="root.standard.content." parent_key="root.standard." shortname="content" name="Content" name_de="Content" sorting="0" enabled="1"/>
+            <feature_value feature="censhare:template-hierarchy" domain="root." domain2="root." is_hierarchical="1" value_key="root.standard.contact." parent_key="root.standard." shortname="contact" name="Contact" name_de="Contact" sorting="0" enabled="1"/>
+            <feature_value feature="censhare:template-hierarchy" domain="root." domain2="root." is_hierarchical="1" value_key="root.standard.content.print." parent_key="root.standard.content." shortname="print" name="Print" name_de="Print" sorting="1" enabled="1"/>
+            <feature_value feature="censhare:template-hierarchy" domain="root." domain2="root." is_hierarchical="1" value_key="root.content-building-block." parent_key="root." shortname="content-building-block" name="Content Building Block" name_de="Content Bausteine" sorting="1" enabled="1"/>
+            <feature_value feature="censhare:template-hierarchy" domain="root." domain2="root." is_hierarchical="1" value_key="root.print-templates." parent_key="root." shortname="print-templates" name="Print Templates" name_de="Print Vorlagen" sorting="2" enabled="1"/>
+            <feature_value feature="censhare:template-hierarchy" domain="root." domain2="root." is_hierarchical="1" value_key="root.channels." parent_key="root." shortname="channels" name="Channel" name_de="Kanäle" sorting="2" enabled="1"/>
+            <feature_value feature="censhare:template-hierarchy" domain="root." domain2="root." is_hierarchical="1" value_key="root.content-building-block.recurring-modules." parent_key="root.content-building-block." shortname="recurring-modules" name="Wiederkehrende Module" name_de="Wiederkehrende Module" sorting="2" enabled="1"/>
+            <feature_value feature="censhare:template-hierarchy" domain="root." domain2="root." is_hierarchical="1" value_key="root.content-building-block.optional-modules." parent_key="root.content-building-block." shortname="optional-modules" name="Optional modules" name_de="Optionale Module" sorting="3" enabled="1"/>
+            <feature_value feature="censhare:template-hierarchy" domain="root." domain2="root." is_hierarchical="1" value_key="root.content-building-block.basic-modules." parent_key="root.content-building-block." shortname="basic-modules" name="Basis modules" name_de="Basis-Module" sorting="1" enabled="1"/>
+            <feature_value feature="censhare:template-hierarchy" domain="root." domain2="root." is_hierarchical="1" value_key="root.content-building-block.flexi-modules." parent_key="root.content-building-block." shortname="flexi-modules" name="Flexi-Modules" name_de="Flexi-Module" sorting="2" enabled="1"/>
+            <feature_value feature="censhare:template-hierarchy" domain="root." domain2="root." is_hierarchical="1" value_key="root.content-building-block.free-modules." parent_key="root.content-building-block." shortname="free-modules" name="Free Modules" name_de="Freie Module" sorting="2" enabled="1"/>
+        </feature>
+        <feature key="svtx:text-size" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Text size" name_de="Textgröße" value_type="2" ui_control="4" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="999" enabled="1" has_relevance="0" target_object_type="asset" trait="allianzText" trait_property="size" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.text-size">
+            <feature_value feature="svtx:text-size" domain="root." domain2="root." is_hierarchical="0" value_key="size-xl" name="Size XL" name_de="Größe XL" sorting="5" enabled="1"/>
+            <feature_value feature="svtx:text-size" domain="root." domain2="root." is_hierarchical="0" value_key="size-m" name="Size M" name_de="Größe M" sorting="3" enabled="1"/>
+            <feature_value feature="svtx:text-size" domain="root." domain2="root." is_hierarchical="0" value_key="size-l" name="Size L" name_de="Größe L" sorting="4" enabled="1"/>
+            <feature_value feature="svtx:text-size" domain="root." domain2="root." is_hierarchical="0" value_key="size-s" name="Size S" name_de="Größe S" sorting="1" enabled="1"/>
+            <feature_value feature="svtx:text-size" domain="root." domain2="root." is_hierarchical="0" value_key="onesize" name="One Size" name_de="One Size" sorting="0" enabled="1"/>
+        </feature>
+        <feature key="savotex:pp.layout-name" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Layout name" name_de="Layout Name" value_type="4" ui_control="3" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="969" enabled="1" has_relevance="0" target_object_type="asset" trait="ppt" trait_property="layoutName" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" label="Layout name" label_de="Layout Name" asset_resource_key="savotex:feature.pp.layout-name" />
+        <feature key="savotex:pp.master.theme.name" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Theme name" name_de="Theme Name" value_type="4" ui_control="3" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="970" enabled="1" has_relevance="0" target_object_type="asset" trait="ppt" trait_property="masterThemeName" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" label="Them name" label_de="Them Name" asset_resource_key="savotex:feature.pp.master.theme.name" />
+        <feature key="savotex:pp.section-name" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Section name" name_de="Gliederung" value_type="4" ui_control="3" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="970" enabled="1" has_relevance="0" target_object_type="asset" trait="ppt" trait_property="sectionName" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" label="Section name" label_de="Gliederung" asset_resource_key="savotex:feature.pp.section-name" />
+        <feature key="savotex:pp.replacement-key" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Replacement Key" name_de="Replacement Key" value_type="4" ui_control="3" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="970" enabled="1" has_relevance="0" target_object_type="asset" trait="ppt" trait_property="replacementKey" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" label="Replacement Key" label_de="Replacement Key" asset_resource_key="savotex:feature.pp.replacement-key" />
+        <feature key="savotex:pp.slide-show" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Show Slide" name_de="Slide anzeigen" description="visibility of slide" description_de="Sichtbarkeit des Slides" value_type="6" ui_control="1" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="986" enabled="1" has_relevance="0" target_object_type="asset_rel" trait="ppt" trait_property="showSlide" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" label="Show slide" label_de="Zeige Slide" asset_resource_key="savotex:feature.pp.slide-show"/>
+        <feature key="savotex:pp.version" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Version" name_de="Command Version"
+                 description="Command version" description_de="Version mit der gearbeitet wurde" value_type="4" ui_control="3"
+                 ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0"
+                 color_type="0" bdb_key="986" enabled="1" has_relevance="0" target_object_type="asset_rel"
+                 trait="ppt" trait_property="version" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0"
+                 label="Version" label_de="Version" asset_resource_key="savotex:feature.pp.version"/>
+        <feature key="svtx:article-module-type" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Baustein Modul-Typ" name_de="Baustein Modul-Typ" value_type="2" ui_control="0" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1012" enabled="1" has_relevance="0" target_object_type="asset" trait="allianzArticle" trait_property="articleModuleType" trait_property_top_level="1" user_modifiable="1" is_xml_attr="1" asset_resource_key="svtx:feature.article-module-type">
+            <feature_value feature="svtx:article-module-type" domain="root." domain2="root." is_hierarchical="0" value_key="addition" name="Zusatzmodul" name_de="Zusatzmodul" sorting="2" enabled="1"/>
+            <feature_value feature="svtx:article-module-type" domain="root." domain2="root." is_hierarchical="0" value_key="core" name="Kernmodul" name_de="Kernmodul" sorting="1" enabled="1"/>
+        </feature>
+        <feature key="savotex:pp.static-slide" type="censhare:asset-feature" storage="1" domain="root." domain2="root." name="Static slide" name_de="Statische Folie" description="Static slide" description_de="Statische Folie" value_type="6" ui_control="0" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1014" enabled="1" has_relevance="0" target_object_type="asset" trait="pptx" trait_property="staticSlide" trait_property_top_level="0" user_modifiable="1" is_xml_attr="0" asset_resource_key="savotex:feature.pp.static-slide"/>
+        <feature key="svtx:optional-component" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Optional Component" name_de="Optionaler Baustein" value_type="6" ui_control="1" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1010" enabled="1" has_relevance="0" target_object_type="asset" trait="allianzBaustein" trait_property="optionalComponent" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.optional-component" tcn="9" rowid="1010">
+            <feature_rel parent_feature="svtx:optional-component" child_feature="svtx:optional-component-template" type="hierarchy" sid="2280" enabled="1" tcn="4" rowid="267"/>
+        </feature>
+        <feature key="svtx:optional-component-template" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Optional Component Template" name_de="Template optionaler Baustein" value_type="2" ui_control="4" ismultivalue="1" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1011" enabled="1" has_relevance="0" target_object_type="asset" trait="allianzBaustein" trait_property="optionalComponentTemplate" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.optional-component-template">
+            <feature_value feature="svtx:optional-component-template" domain="root." domain2="root." is_hierarchical="0" value_key="imagetext" name="Image/Text Combination" name_de="Bild/Text Kombination" sorting="1" enabled="0" />
+            <feature_value feature="svtx:optional-component-template" domain="root." domain2="root." is_hierarchical="0" value_key="infographic" name="Info Graphic" name_de="Infografik" sorting="2" enabled="0"/>
+            <feature_value feature="svtx:optional-component-template" domain="root." domain2="root." is_hierarchical="0" value_key="optional-template-tiles" name="Tile Template" name_de="Kachelansicht" sorting="2" enabled="1"/>
+            <feature_value feature="svtx:optional-component-template" domain="root." domain2="root." is_hierarchical="0" value_key="optional-template-column" name="Column Template" name_de="Spaltenansicht" sorting="1" enabled="1"/>
+        </feature>
+        <feature key="svtx:layout-template" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Layout von Template" name_de="Layout of Template" value_type="10" ui_control="12" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1090" enabled="1" has_relevance="0" target_object_type="asset" trait="allianz" trait_property="layoutTemplate" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.layout-template"/>
+        <feature key="svtx:leistungsbeschreibung" type="censhare:intern" storage="0" domain="root." domain2="root." name="Leistungsbeschreibung" name_de="Leistungsbeschreibung" value_type="4" ui_control="3" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1015" enabled="1" has_relevance="0" target_object_type="asset" trait="allianzFlyerGenerator" trait_property="leistungsbeschreibung" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.leistungsbeschreibung"/>
+        <feature key="svtx:sheet-index" type="censhare:intern" storage="0" domain="root." domain2="root." name="Sheet Index" name_de="Excel Sheet Index" value_type="3" ui_control="3" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1016" enabled="1" has_relevance="0" target_object_type="asset" trait="allianzFlyerGenerator" trait_property="sheetIndex" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.sheet-index"/>
+        <feature key="svtx:job-id" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Job ID" name_de="Berufe ID" value_type="3" ui_control="3" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1017" enabled="1" has_relevance="0" target_object_type="asset" trait="allianzFlyerGenerator" trait_property="jobId" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.job-id"/>
+        <feature key="svtx:riskgroup-ref" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Risk Group Reference" name_de="Risikogruppe (Referenz)" value_type="10" ui_control="12" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1018" enabled="1" has_relevance="0" target_object_type="asset" trait="allianzFlyerGenerator" trait_property="riskgroupRef" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.riskgroup-ref"/>
+        <feature key="svtx:riskgroup-category" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Risk group category" name_de="Riskogruppen-Kategorie" value_type="2" ui_control="4" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1019" enabled="1" has_relevance="0" target_object_type="asset" trait="allianzFlyerGenerator" trait_property="riskgroupCategory" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.riskgroup-category">
+            <feature_value feature="svtx:riskgroup-category" domain="root." domain2="root." is_hierarchical="0" value_key="a" name="A" name_de="A" sorting="1" enabled="1"/>
+            <feature_value feature="svtx:riskgroup-category" domain="root." domain2="root." is_hierarchical="0" value_key="c" name="C" name_de="C" sorting="3" enabled="1"/>
+            <feature_value feature="svtx:riskgroup-category" domain="root." domain2="root." is_hierarchical="0" value_key="b" name="B" name_de="B" sorting="2" enabled="1"/>
+            <feature_value feature="svtx:riskgroup-category" domain="root." domain2="root." is_hierarchical="0" value_key="e" name="E" name_de="E" sorting="5" enabled="1"/>
+            <feature_value feature="svtx:riskgroup-category" domain="root." domain2="root." is_hierarchical="0" value_key="d" name="D" name_de="D" sorting="4" enabled="1"/>
+        </feature>
+
+        <feature key="svtx:text-variant-type" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Text variant type" name_de="Text Variantentyp" value_type="2" ui_control="4" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1022" enabled="1" has_relevance="0" target_object_type="asset" trait="allianzTextVariantType" trait_property="textVariantType" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.text-variant-type" >
+            <feature_value feature="svtx:text-variant-type" domain="root." domain2="root." is_hierarchical="0" value_key="standard" name="Standard" name_de="Standard" sorting="2" enabled="1" />
+            <feature_value feature="svtx:text-variant-type" domain="root." domain2="root." is_hierarchical="0" value_key="sales" name="Sales" name_de="Vertrieb" sorting="2" enabled="1" />
+            <feature_value feature="svtx:text-variant-type" domain="root." domain2="root." is_hierarchical="0" value_key="agent" name="Agent" name_de="Makler" sorting="3" enabled="1" />
+        </feature>
+        <feature key="svtx:layout-template-resource-key" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Layout Resource Key von Template" name_de="Layout Resource Key von Template" value_type="29" ui_control="12" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1111" enabled="1" has_relevance="0" target_object_type="asset" trait="allianz" trait_property="layoutTemplateResourceKey" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.layout-template-resource-key"/>
+        <feature key="svtx:media-channel" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Media Channel" name_de="Medienkanal" description="Media Channel" description_de="Medienkanal" value_type="10" ui_control="0" ismultivalue="1" isassetinfo="2" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1112" enabled="1" has_relevance="0" target_object_type="asset" trait="allianz" trait_property="mediaChannel" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" label="Media Channel" label_de="Medien Kanal" child_name="Media Channel" child_name_de="Medien Kanäle" parent_name="Assigned to" parent_name_de="Zugeordnet an" value_list_resource_key="svtx:value-list.channel" asset_resource_key="svtx:feature.media-channel">
+            <match_criteria>
+                <entry priority="0">
+                    <child-query>
+                        <condition name="censhare:asset.type" value="channel.*" partial-load-tree="true" expanded-nodes="channel."/>
+                        <condition name="censhare:asset-flag" value="is-template"/>
+                    </child-query>
+                </entry>
+            </match_criteria>
+        </feature>
+        <feature key="svtx:layout-template-creation-date" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Layout Template Creation Date for update check" name_de="Layout Creation Date for update check" value_type="5" ui_control="0" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" enabled="1" has_relevance="0" target_object_type="asset" trait="allianz" trait_property="layoutTemplateCreationDate" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.layout-template-creation-date"/>
+        <feature key="svtx:layout-template-version" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Layout Template Version for update check" name_de="Layout Template Version for update check" value_type="3" ui_control="3" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" enabled="1" has_relevance="0" target_object_type="asset" trait="allianz" trait_property="layoutTemplateVersion" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.layout-template-version"/>
+
+        <feature key="svtx:change-history" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Change History for" name_de="Änderungshistorie für" value_type="4" ui_control="3" ismultivalue="1" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" enabled="1" has_relevance="0" target_object_type="asset" trait="savotex" trait_property="changeHistory" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.change-history">
+            <feature_rel parent_feature="svtx:change-history" child_feature="svtx:change-history-date" type="hierarchy" enabled="1" />
+        </feature>
+        <feature key="svtx:change-history-date" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Changed when" name_de="Geändert wann" value_type="5" ui_control="0" ismultivalue="1" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" enabled="1" has_relevance="0" target_object_type="asset" trait="savotex" trait_property="changeHistoryDate" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.change-history-date">
+            <feature_rel parent_feature="svtx:change-history-date" child_feature="svtx:change-history-note" type="hierarchy" enabled="1"/>
+        </feature>
+        <feature key="svtx:change-history-note" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Change description" name_de="Änderungsbeschreibung" value_type="4" ui_control="3" ismultivalue="1" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" enabled="1" has_relevance="0" target_object_type="asset" trait="savotex" trait_property="changeHistoryNote" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.change-history-note"/>
+        <feature key="svtx:approval.additional.comment" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Approval additional comment" name_de="Freigaben zusätzlicher Kommentar" value_type="4" ui_control="3" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1096" enabled="1" has_relevance="0" target_object_type="asset" trait="approval" trait_property="approvalAdditionalComment" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.approval.additional.comment"/>
+
+        <feature key="censhare:usage-rights" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Usage rights" name_de="Verwendungsrechte" description="Usage rights" description_de="Verwendungsrechte" value_type="2" ui_control="0" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="588" enabled="1" has_relevance="0" target_object_type="asset" trait="usage_rights" trait_property="usageRights" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="censhare:feature.usage-rights">
+            <feature_value feature="censhare:usage-rights" domain="root." domain2="root." is_hierarchical="0" value_key="all-rights" name="All rights" name_de="Alle Rechte" sorting="10" enabled="1"/>
+            <feature_value feature="censhare:usage-rights" domain="root." domain2="root." is_hierarchical="0" value_key="internal-use" name="Internal use" name_de="Interne Verwendung" sorting="20" enabled="1"/>
+            <feature_value feature="censhare:usage-rights" domain="root." domain2="root." is_hierarchical="0" value_key="channels" name="Channels" name_de="Kanäle" sorting="30" enabled="1"/>
+            <feature_value feature="censhare:usage-rights" domain="root." domain2="root." is_hierarchical="0" value_key="prohibited" name="Prohibited" name_de="Untersagt" sorting="40" enabled="1"/>
+            <feature_rel parent_feature="censhare:usage-rights" child_feature="censhare:editing" type="hierarchy" sid="2045" enabled="1"/>
+            <feature_rel parent_feature="censhare:usage-rights" child_feature="censhare:description" type="hierarchy" sid="2044" enabled="1"/>
+            <feature_rel parent_feature="censhare:usage-rights" child_feature="censhare:channel" type="hierarchy" sid="2043" enabled="1"/>
+            <feature_rel parent_feature="censhare:usage-rights" child_feature="censhare:selling" type="hierarchy" sid="2046" enabled="1"/>
+            <feature_rel parent_feature="censhare:usage-rights" child_feature="svtx:usage-rights.transfer.broker" type="hierarchy" sid="2314" enabled="1"/>
+            <feature_rel parent_feature="censhare:usage-rights" child_feature="svtx:usage-rights.transfer.representative" type="hierarchy" sid="2320" enabled="1"/>
+            <feature_rel parent_feature="censhare:usage-rights" child_feature="svtx:usage-rights.use-for-products" type="hierarchy" sid="2321" enabled="1"/>
+            <feature_rel parent_feature="censhare:usage-rights" child_feature="svtx:usage-rights.technical-restriction" type="hierarchy" sid="2322" enabled="1"/>
+            <feature_rel parent_feature="censhare:usage-rights" child_feature="censhare:start-date" type="hierarchy" sid="2325" enabled="1"/>
+            <feature_rel parent_feature="censhare:usage-rights" child_feature="censhare:end-date" type="hierarchy" sid="2324" enabled="1"/>
+            <feature_rel parent_feature="censhare:usage-rights" child_feature="censhare:unlimited" type="hierarchy" sid="2323" enabled="1"/>
+        </feature>
+        <feature key="svtx:usage-rights.transfer.broker" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Broker" name_de="Makler" description="Broker" description_de="Makler" value_type="2" ui_control="0" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1098" enabled="1" has_relevance="0" target_object_type="asset" trait="default" trait_property="transferBroker" trait_property_top_level="0" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.usage-rights.transfer.broker">
+            <feature_value feature="svtx:usage-rights.transfer.broker" domain="root." domain2="root." is_hierarchical="0" value_key="not-allowed" name="Not allowed" name_de="Nicht erlaubt" sorting="20" enabled="1"/>
+            <feature_value feature="svtx:usage-rights.transfer.broker" domain="root." domain2="root." is_hierarchical="0" value_key="allowed" name="Allowed" name_de="Erlaubt" sorting="10" enabled="1"/>
+            <feature_rel parent_feature="svtx:usage-rights.transfer.broker" child_feature="censhare:description" type="hierarchy" sid="2306" enabled="1"/>
+            <feature_rel parent_feature="svtx:usage-rights.transfer.broker" child_feature="censhare:start-date" type="hierarchy" sid="2305" enabled="1"/>
+            <feature_rel parent_feature="svtx:usage-rights.transfer.broker" child_feature="censhare:end-date" type="hierarchy" sid="2304" enabled="1"/>
+            <feature_rel parent_feature="svtx:usage-rights.transfer.broker" child_feature="censhare:region" type="hierarchy" sid="2303" enabled="1"/>
+            <feature_rel parent_feature="svtx:usage-rights.transfer.broker" child_feature="censhare:unlimited" type="hierarchy" sid="2302" enabled="1"/>
+        </feature>
+        <feature key="svtx:usage-rights.transfer.representative" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Representative" name_de="Vertreter" description="Representative" description_de="Vertreter" value_type="2" ui_control="0" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1099" enabled="1" has_relevance="0" target_object_type="asset" trait="default" trait_property="transferRepresentative" trait_property_top_level="0" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.usage-rights.transfer.representative">
+            <feature_value feature="svtx:usage-rights.transfer.representative" domain="root." domain2="root." is_hierarchical="0" value_key="not-allowed" name="Not allowed" name_de="Nicht erlaubt" sorting="20" enabled="1"/>
+            <feature_value feature="svtx:usage-rights.transfer.representative" domain="root." domain2="root." is_hierarchical="0" value_key="allowed" name="Allowed" name_de="Erlaubt" sorting="10" enabled="1"/>
+            <feature_rel parent_feature="svtx:usage-rights.transfer.representative" child_feature="censhare:unlimited" type="hierarchy" sid="2311" enabled="1"/>
+            <feature_rel parent_feature="svtx:usage-rights.transfer.representative" child_feature="censhare:region" type="hierarchy" sid="2310" enabled="1"/>
+            <feature_rel parent_feature="svtx:usage-rights.transfer.representative" child_feature="censhare:end-date" type="hierarchy" sid="2309" enabled="1"/>
+            <feature_rel parent_feature="svtx:usage-rights.transfer.representative" child_feature="censhare:start-date" type="hierarchy" sid="2308" enabled="1"/>
+            <feature_rel parent_feature="svtx:usage-rights.transfer.representative" child_feature="censhare:description" type="hierarchy" sid="2307" enabled="1"/>
+        </feature>
+        <feature key="svtx:usage-rights.technical-restriction" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Technical restriction" name_de="Fachliche Einschränkung" description="Technical restriction" description_de="Fachliche Einschränkung" value_type="4" ui_control="3" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1101" enabled="1" has_relevance="0" target_object_type="asset" trait="default" trait_property="technicalRestriction" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.usage-rights.technical-restriction" source="censhare-Server/work/runtime.master/allianz/masterdata.xml"/>
+        <feature key="svtx:usage-rights.use-for-products" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Use for products" name_de="Nutzung für Produkt " description="Use for products" description_de="Nutzung für Produkt " value_type="10" ui_control="12" ismultivalue="1" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1100" enabled="1" has_relevance="0" target_object_type="asset" trait="default" trait_property="useForProducts" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" value_list_resource_key="svtx:product-chooser" asset_resource_key="svtx:feature.usage-rights.use-for-products" source="censhare-Server/work/runtime.master/allianz/masterdata.xml">
+            <xml_config>
+                <index-configs/>
+            </xml_config>
+            <match_criteria>
+                <entry priority="0">
+                    <child-query xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct">
+                        <condition name="censhare:asset.type" value="product.*"/>
+                    </child-query>
+                </entry>
+            </match_criteria>
+        </feature>
+        <!-- FaQ's -->
+        <!-- hinfällig
+        <feature key="svtx:faq" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="FAQ" name_de="FAQ" value_type="0" ui_control="0" ismultivalue="1" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1079" enabled="1" has_relevance="0" target_object_type="asset" trait="modulFaq" trait_property="modulFaq" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.faq"  >
+            <feature_rel parent_feature="svtx:faq" child_feature="svtx:faq.question" type="hierarchy"  enabled="1"  />
+            <feature_rel parent_feature="svtx:faq" child_feature="svtx:faq.answer" type="hierarchy"  enabled="1"  />
+            <feature_rel parent_feature="svtx:faq" child_feature="svtx:faq.medium" type="hierarchy"  enabled="1"  />
+            <feature_rel parent_feature="svtx:faq" child_feature="svtx:faq.sort" type="hierarchy"  enabled="1"  />
+        </feature>
+       -->
+        <!-- wird ersetzt durch svtx:faq.medium
+        <feature key="svtx:faq.channel" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="FAQ Channel" value_type="2" ui_control="4" ismultivalue="1" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1082" enabled="1" has_relevance="0" target_object_type="asset" trait="modulFaq" trait_property="channel" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.faq.channel"  >
+            <feature_value feature="svtx:faq.channel" domain="root." domain2="root." is_hierarchical="0" value_key="allianz-de" name="allianz.de" sorting="50" enabled="1"  />
+            <feature_value feature="svtx:faq.channel" domain="root." domain2="root." is_hierarchical="0" value_key="Steckbrief" name="Steckbrief" sorting="10" enabled="1"  />
+            <feature_value feature="svtx:faq.channel" domain="root." domain2="root." is_hierarchical="0" value_key="Flyer" name="Flyer" sorting="20" enabled="1"  />
+            <feature_value feature="svtx:faq.channel" domain="root." domain2="root." is_hierarchical="0" value_key="Vertriebsportal" name="Vertriebsportal" sorting="40" enabled="1"  />
+            <feature_value feature="svtx:faq.channel" domain="root." domain2="root." is_hierarchical="0" value_key="PowerPoint" name="PowerPoint" sorting="30" enabled="1"  />
+        </feature>
+        -->
+        <feature key="svtx:faq.medium" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="FAQ Medium Relation" name_de="FAQ Medium Zuordnung" value_type="10" ui_control="12"
+                 ismultivalue="1" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1079" enabled="1" has_relevance="0" target_object_type="asset" trait="modulFaq" trait_property="medium" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" value_list_resource_key="svtx:faq-media-chooser" asset_resource_key="svtx:feature.faq.medium" />
+
+        <feature key="svtx:faq.answer" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="FAQ Answer" name_de="FAQ Antwort" value_type="4" ui_control="3" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1081" enabled="1" has_relevance="0" target_object_type="asset" trait="modulFaq" trait_property="answer" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.faq.answer"/>
+        <feature key="svtx:faq.question" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="FAQ Question" name_de="FAQ Frage" value_type="4" ui_control="3" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1080" enabled="1" has_relevance="0" target_object_type="asset" trait="modulFaq" trait_property="question" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.faq.question"  />
+        <feature key="svtx:faq.sort" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="FAQ Sort" name_de="FAQ Sortierung" value_type="3" ui_control="3" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1084" enabled="1" has_relevance="0" target_object_type="asset" trait="modulFaq" trait_property="sort" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.faq.sort"  />
+
+        <feature key="svtx:image-alignment" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Image Alignment" name_de="Bildausrichtung" value_type="2" ui_control="4" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1107" enabled="1" has_relevance="0" target_object_type="asset" trait="allianzTemplateOptions" trait_property="imageAlignment" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.image-alignment">
+            <feature_value feature="svtx:image-alignment" domain="root." domain2="root." is_hierarchical="0" value_key="image_left" name="Image left" name_de="Bild Links" sorting="1" enabled="1" tcn="0" rowid="1972"/>
+            <feature_value feature="svtx:image-alignment" domain="root." domain2="root." is_hierarchical="0" value_key="image_right" name="Image right" name_de="Bild rechts" sorting="1" enabled="1" tcn="0" rowid="1973"/>
+        </feature>
+        <feature key="svtx:show-cta-link" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Show Link" name_de="Link anzeigen" value_type="6" ui_control="1" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1109" enabled="1" has_relevance="0" target_object_type="asset" trait="allianzTemplateOptions" trait_property="showLink" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.show-cta-link"/>
+        <feature key="svtx:free-module-type" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Freies Modul Typ" name_de="Freies Modul Typ" value_type="2" ui_control="4" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1141" enabled="1" has_relevance="0" target_object_type="asset" trait="allianzTemplateOptions" trait_property="freeModuleType" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.free-module-type">
+            <feature_value feature="svtx:free-module-type" domain="root." domain2="root." is_hierarchical="0" value_key="textandimage" name="Text and Image" name_de="Text und Bild" sorting="0" enabled="1"/>
+            <feature_value feature="svtx:free-module-type" domain="root." domain2="root." is_hierarchical="0" value_key="imageorvideo" name="Image or Video" name_de="Bild oder Video" sorting="0" enabled="1"/>
+            <feature_value feature="svtx:free-module-type" domain="root." domain2="root." is_hierarchical="0" value_key="text" name="Text" sorting="0" enabled="1"/>
+            <feature_value feature="svtx:free-module-type" domain="root." domain2="root." is_hierarchical="0" value_key="flexibletile" name="Flexible tile" name_de="Flexible tile" sorting="0" enabled="1"/>
+        </feature>
+        <!-- output Channels start -->
+        <feature key="censhare:output-channel" type="censhare:intern" storage="0" domain="root." domain2="root."
+                 name="Output channel hierarchy" name_de="Ausgabekanal-Hierarchie" description="Output channel hierarchy"
+                 description_de="Ausgabekanal-Hierarchie" value_type="1" ui_control="0" ismultivalue="1" isassetinfo="0"
+                 assetinfo_sorting="0" issearchable="1" sorting="20" language_type="0" color_type="0" bdb_key="653"
+                 enabled="1" has_relevance="0" target_object_type="asset" trait="publication"
+                 trait_property="outputChannel" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0"
+                 asset_resource_key="censhare:feature.output-channel" tcn="2" rowid="653">
+            <xml_config>
+                <index-configs>
+                    <index-config rebuild-step="1"/>
+                </index-configs>
+            </xml_config>
+            <feature_value feature="censhare:output-channel" domain="root." domain2="root." is_hierarchical="1"
+                           value_key="root." shortname="root" name="Output channel" name_de="Ausgabekanal" sorting="1"
+                           enabled="1"/>
+            <feature_value feature="censhare:output-channel" domain="root." domain2="root." is_hierarchical="1"
+                           value_key="root.web." parent_key="root." shortname="web" name="Web" name_de="Web" sorting="2"
+                           enabled="1"/>
+            <feature_value feature="censhare:output-channel" domain="root." domain2="root." is_hierarchical="1"
+                           value_key="root.web.aem." parent_key="root.web." shortname="aem" name="AEM" name_de="AEM"
+                           sorting="3" enabled="1"/>
+            <feature_value feature="censhare:output-channel" domain="root." domain2="root." is_hierarchical="1"
+                           value_key="root.web.aem.aem-vp." parent_key="root.web.aem." shortname="aem-vp"
+                           name="Vertriebsportal" name_de="Vertriebsportal" sorting="4" enabled="1"/>
+            <feature_value feature="censhare:output-channel" domain="root." domain2="root." is_hierarchical="1"
+                           value_key="root.web.aem.aem-azde." parent_key="root.web.aem." shortname="aem-azde"
+                           name="Allianz.de" name_de="Allianz.de" sorting="4" enabled="1"/>
+
+
+            <feature_value feature="censhare:output-channel" domain="root." domain2="root." is_hierarchical="1"
+                           value_key="root.web.aem.aem-dev." parent_key="root.web.aem." shortname="aem-dev" name="AEM Dev"
+                           name_de="AEM Dev" sorting="4" enabled="0"/>
+
+            <feature_value feature="censhare:output-channel" domain="root." domain2="root." is_hierarchical="1"
+                           value_key="root.web.bs." parent_key="root.web." shortname="bs" name="Beratungssuite"
+                           name_de="Beratungssuite" sorting="2" enabled="1"
+                           source="censhare-Server/work/runtime.master/allianz/masterdata.xml"/>
+            <feature_value feature="censhare:output-channel" domain="root." domain2="root." is_hierarchical="1"
+                           value_key="root.web.bs.bs-dev." parent_key="root.web.bs." shortname="bs-dev"
+                           name="Beratungssuite Dev" name_de="Beratungssuite Dev" sorting="2" enabled="0"
+                           source="censhare-Server/work/runtime.master/allianz/masterdata.xml"/>
+
+
+            <feature_value feature="censhare:output-channel" domain="root." domain2="root." is_hierarchical="1"
+                           value_key="root.customer.portal.live." parent_key="root.customer.portal." shortname="live"
+                           name="Live Portal" name_de="Live Portal" sorting="2" enabled="0"/>
+            <feature_value feature="censhare:output-channel" domain="root." domain2="root." is_hierarchical="1"
+                           value_key="root.customer.portal.staging." parent_key="root.customer.portal."
+                           shortname="staging"
+                           name="Staging Portal" name_de="Staging Portal" sorting="1" enabled="0"/>
+            <feature_value feature="censhare:output-channel" domain="root." domain2="root." is_hierarchical="1"
+                           value_key="root.customer.portal." parent_key="root.customer." shortname="portal" name="Portal"
+                           name_de="Portal" sorting="1" enabled="0"/>
+            <feature_value feature="censhare:output-channel" domain="root." domain2="root." is_hierarchical="1"
+                           value_key="root.customer." parent_key="root." shortname="customer" name="Customer"
+                           name_de="Kunde" sorting="3" enabled="0"/>
+            <feature_value feature="censhare:output-channel" domain="root." domain2="root." is_hierarchical="1" value_key="root.web.meineallianz.sicherungsvermoegen." parent_key="root.web.meineallianz." shortname="sicherungsvermoegen" name="Sicherungsvermögen" name_de="Sicherungsvermögen" sorting="4" enabled="1"/>
+            <feature_value feature="censhare:output-channel" domain="root." domain2="root." is_hierarchical="1" value_key="root.web.meineallianz." parent_key="root.web." shortname="meineallianz" name="Meine Allianz" name_de="Meine Allianz" sorting="3" enabled="1"/>
+        </feature>
+        <!-- output Channels end -->
+
+        <feature key="svtx:show-text" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Text anzeigen" name_de="Text anzeigen" value_type="6" ui_control="1" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1142" enabled="1" has_relevance="0" target_object_type="asset" trait="allianzTemplateOptions" trait_property="showText" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.show-text"/>
+        <feature key="svtx:flexible-tile-insert-image" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Insert image (Flexible tile)" name_de="Bildeinsatz (Flexible tile)" value_type="2" ui_control="4" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1143" enabled="1" has_relevance="0" target_object_type="asset" trait="allianzTemplateOptions" trait_property="insertImage" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.flexible-tile-insert-image">
+            <feature_value feature="svtx:flexible-tile-insert-image" domain="root." domain2="root." is_hierarchical="0" value_key="icon" name="Icon" name_de="Icon" sorting="0" enabled="1"/>
+            <feature_value feature="svtx:flexible-tile-insert-image" domain="root." domain2="root." is_hierarchical="0" value_key="none" name="No image usage" name_de="Kein Bildeinsatz" sorting="0" enabled="1"/>
+            <feature_value feature="svtx:flexible-tile-insert-image" domain="root." domain2="root." is_hierarchical="0" value_key="image" name="Image" name_de="Bild" sorting="0" enabled="1"/>
+        </feature>
+        <feature key="svtx:flexible-tile-column-count" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Spaltenanzahl (Flexible tile)" name_de="Spaltenanzahl (Flexible tile)" value_type="2" ui_control="4" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1144" enabled="1" has_relevance="0" target_object_type="asset" trait="allianzTemplateOptions" trait_property="columnCount" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.flexible-tile-column-count">
+            <feature_value feature="svtx:flexible-tile-column-count" domain="root." domain2="root." is_hierarchical="0" value_key="3" name="3" name_de="3" sorting="0" enabled="1"/>
+            <feature_value feature="svtx:flexible-tile-column-count" domain="root." domain2="root." is_hierarchical="0" value_key="2" name="2" name_de="2" sorting="0" enabled="1"/>
+            <feature_value feature="svtx:flexible-tile-column-count" domain="root." domain2="root." is_hierarchical="0" value_key="4" name="4" name_de="4" sorting="0" enabled="1"/>
+        </feature>
+        <feature key="svtx:preselected-output-channel" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Preselected output channel "
+                 name_de="Vorgewählter Ausgabekanal" value_type="4" ui_control="3" ismultivalue="1" isassetinfo="0" assetinfo_sorting="1"
+                 issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1092" enabled="1" has_relevance="0" target_object_type="asset" trait="publication" trait_property="preselectedOutputChannel" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0"
+                 value_list_resource_key="svtx:preselected_output_channel-chooser" asset_resource_key="svtx:feature.preselected-output-channel" />
+        <feature key="svtx:recurring-module-of" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Wiederkehrendes Modul von" name_de="Wiederkehrendes Modul von" description="Wiederkehrendes Modul von" description_de="Wiederkehrendes Modul von" value_type="10" ui_control="12" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1149" enabled="1" has_relevance="0" target_object_type="asset" trait="allianz" trait_property="recurringModule" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" label="Wiederkehrendes Modul von" label_de="Wiederkehrendes Modul von" asset_resource_key="svtx:feature.recurring-module-of"/>
+
+        <feature key="svtx:asset.creator" type="censhare:intern" storage="0" domain="root." domain2="root." name="Creator (Asset)" name_de="Ersteller (Asset)" value_type="0" ui_control="0" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1151" enabled="1" has_relevance="0" target_object_type="asset" trait="allianz" trait_property="assetCreator" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.asset.creator">
+            <feature_rel parent_feature="svtx:asset.creator" child_feature="censhare:address.last-name" type="hierarchy" sid="2411" enabled="1"/>
+            <feature_rel parent_feature="svtx:asset.creator" child_feature="censhare:address.first-name" type="hierarchy" sid="2410" enabled="1"/>
+            <feature_rel parent_feature="svtx:asset.creator" child_feature="censhare:address.uri-mailto" type="hierarchy" sid="2413" enabled="1"/>
+        </feature>
+        <feature key="svtx:product-area" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Product segment" name_de="Produktsegment" value_type="2" ui_control="4" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1111" enabled="1" has_relevance="0" target_object_type="asset" trait="svtx" trait_property="productArea" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.product-area" tcn="4" rowid="1111">
+            <feature_value feature="svtx:product-area" domain="root." domain2="root." is_hierarchical="0" value_key="privat" name="Private" name_de="Privat" sorting="1" enabled="1" tcn="0" rowid="2032"/>
+            <feature_value feature="svtx:product-area" domain="root." domain2="root." is_hierarchical="0" value_key="firmen" name="Firmen" name_de="Firmen" sorting="2" enabled="1" tcn="0" rowid="2033"/>
+        </feature>
+        <feature key="svtx:product-branch" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Organisationsbereich" name_de="Organisationsbereich" value_type="2" ui_control="4" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1109" enabled="1" has_relevance="0" target_object_type="asset" trait="svtx" trait_property="productBranch" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.product-branch" tcn="2" rowid="1109">
+            <feature_value feature="svtx:product-branch" domain="root." domain2="root." is_hierarchical="0" value_key="sach" name="Sach" name_de="Sach" sorting="2" enabled="1" tcn="0" rowid="2029"/>
+            <feature_value feature="svtx:product-branch" domain="root." domain2="root." is_hierarchical="0" value_key="leben" name="Leben" name_de="Leben" sorting="1" enabled="1" tcn="0" rowid="2030"/>
+            <feature_value feature="svtx:product-branch" domain="root." domain2="root." is_hierarchical="0" value_key="kranken" name="Kranken" name_de="Kranken" sorting="3" enabled="1" tcn="0" rowid="2031"/>
+        </feature>
+
+        <feature key="svtx:alias-name" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Alias Name" name_de="Sprechender Name" value_type="4" ui_control="3" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1108" enabled="1" has_relevance="0" target_object_type="asset" trait="svtx" trait_property="aliasName" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.alias-name" tcn="1" rowid="1108"/>
+        <feature key="svtx:web-output-area" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Ausgabebereich (Inaktiv)" name_de="Ausgabebereich (Inaktiv)" value_type="2" ui_control="4" ismultivalue="1" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1095" enabled="1" has_relevance="0" target_object_type="asset" trait="allianz" trait_property="webOutputArea" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.web-output-area" tcn="3" rowid="1095">
+            <feature_value feature="svtx:web-output-area" domain="root." domain2="root." is_hierarchical="0" value_key="vertriebsportal" name="Vertriebsportal" name_de="Vertriebsportal" sorting="0" enabled="1" tcn="0" rowid="2007"/>
+            <feature_value feature="svtx:web-output-area" domain="root." domain2="root." is_hierarchical="0" value_key="allianzde" name="AZ.de" name_de="AZ.de" sorting="0" enabled="1" tcn="0" rowid="2008"/>
+            <feature_value feature="svtx:web-output-area" domain="root." domain2="root." is_hierarchical="0" value_key="beratungssuite" name="Beratungssuite" name_de="Beratungssuite" sorting="0" enabled="1" tcn="0" rowid="2009"/>
+        </feature>
+        <feature key="svtx:copy-of" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Copy of" name_de="Kopie von" value_type="10" ui_control="12" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1094" enabled="1" has_relevance="0" target_object_type="asset" trait="allianz" trait_property="copyOf" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.copy-of" tcn="1" rowid="1094"/>
+        <feature key="svtx:product-ref" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Product ref" name_de="Produkt Ref" description="Produkt Ref" description_de="Produkt Ref" value_type="10" ui_control="12" ismultivalue="1" isassetinfo="2" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1097" enabled="1" has_relevance="0" target_object_type="asset" trait="allianz" trait_property="productRef" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" label="Produkt Ref" label_de="Produkt Ref" child_name="Product refs" child_name_de="Products" parent_name="Assigned to" parent_name_de="Zugeordnet an"  asset_resource_key="svtx:feature.product-ref" tcn="4" rowid="1097">
+            <match_criteria>
+                <entry priority="0">
+                    <child-query xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct">
+                        <condition name="censhare:asset-flag" op="ISNULL"/>
+                        <or>
+                            <condition name="censhare:asset.type" partial-load-tree="true" value="product." expanded-nodes="product."/>
+                            <condition name="censhare:asset.type" partial-load-tree="true" value="product.vsk." expanded-nodes="product.|product.vsk."/>
+                        </or>
+                    </child-query>
+                </entry>
+            </match_criteria>
+        </feature>
+        <feature key="svtx:icon-key" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Icon-Key" name_de="Icon-Key" value_type="4" ui_control="0" ismultivalue="0" isassetinfo="0" assetinfo_sorting="0" issearchable="1" sorting="0" language_type="0" color_type="0" bdb_key="1112" enabled="1" has_relevance="0" target_object_type="asset" trait="hcms_image" trait_property="svtx" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.icon-key" tcn="2" rowid="1112"/>
+        <feature key="svtx:inherit-parent-uuid" type="censhare:intern" storage="1" domain="root." domain2="root." name="Parent UUID (calc)" name_de="Parent UUID (calc)" description="Parent UUID (calc)" description_de="Parent UUID (calc)" value_type="4" ui_control="3" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1157" enabled="1" has_relevance="0" target_object_type="asset" trait="svtx" trait_property="inheritParentUuid" trait_property_top_level="1" user_modifiable="0" is_xml_attr="1" label="UUID" label_de="UUID" asset_resource_key="svtx:feature.inherit-parent-uuid" tcn="2" rowid="1157"/>
+         <feature key="svtx:alt-text" type="censhare:intern" storage="0" domain="root." domain2="root." name="Alt Text (localized)" name_de="Alt Text (lokalisiert)" description="Alt Text (localized)" description_de="Alt Text (lokalisiert)" value_type="4" ui_control="8" ismultivalue="1" isassetinfo="0" assetinfo_sorting="0" issearchable="1" sorting="1" language_type="2" color_type="0" bdb_key="1099" enabled="1" has_relevance="0" target_object_type="asset" trait="allianz" trait_property="localizedAltText" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" placeholder_text="Alt Text" placeholder_text_de="Alt Text" asset_resource_key="svtx:feature.alt-text"/>
+        <feature key="svtx:bs-template" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Beratungssuite Template" name_de="Beratungssuite Template" value_type="2" ui_control="4" ismultivalue="0" isassetinfo="1" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1151" enabled="1" has_relevance="0" target_object_type="asset" trait="savotex" trait_property="bsTemplate" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.bs-template" tcn="1" rowid="1151">
+            <feature_value feature="svtx:bs-template" domain="root." domain2="root." is_hierarchical="0" value_key="accordion" name="Accordion" name_de="Accordion" sorting="6" enabled="1" tcn="0" rowid="2048"/>
+            <feature_value feature="svtx:bs-template" domain="root." domain2="root." is_hierarchical="0" value_key="text" name="Text" name_de="Text" sorting="10" enabled="1" tcn="0" rowid="2049"/>
+            <feature_value feature="svtx:bs-template" domain="root." domain2="root." is_hierarchical="0" value_key="table" name="Table" name_de="Tabelle" sorting="8" enabled="1" tcn="0" rowid="2050"/>
+            <feature_value feature="svtx:bs-template" domain="root." domain2="root." is_hierarchical="0" value_key="flexible_tile" name="Flexible tile" name_de="Flexible tile" sorting="1" enabled="1" tcn="0" rowid="2051"/>
+            <feature_value feature="svtx:bs-template" domain="root." domain2="root." is_hierarchical="0" value_key="text_and_image" name="Text and Image" sorting="1" enabled="1" source="/opt/corpus/work/runtime.dev-contenthub/allianz/masterdata.xml" tcn="0" rowid="2052"/>
+            <feature_value feature="svtx:bs-template" domain="root." domain2="root." is_hierarchical="0" value_key="image_or_video" name="Image or Video" name_de="Image or Video" sorting="1" enabled="1" source="/opt/corpus/work/runtime.dev-contenthub/allianz/masterdata.xml" tcn="0" rowid="2053"/>
+            <feature_value feature="svtx:bs-template" domain="root." domain2="root." is_hierarchical="0" value_key="two_column_icon" name="Two Column Icon Container" name_de="Two Column Icon Container" sorting="3" enabled="1" source="/opt/corpus/work/runtime.dev-contenthub/allianz/masterdata.xml" tcn="0" rowid="2054"/>
+            <feature_value feature="svtx:bs-template" domain="root." domain2="root." is_hierarchical="0" value_key="Nachhaltigkeit" name="Nachhaltigkeit" name_de="Nachhaltigkeit" description="Nachhaltigkeit" sorting="10" enabled="1" tcn="0" rowid="2056"/>
+            <feature_value feature="svtx:bs-template" domain="root." domain2="root." is_hierarchical="0" value_key="vorsorgekonzept" name="vorsorgekonzept" name_de="vorsorgekonzept" sorting="20" enabled="1" tcn="0" rowid="2057"/>
+        </feature>
+        <feature key="svtx:product-ref" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Product ref" name_de="Produkt Ref" description="Produkt Ref" description_de="Produkt Ref" value_type="10" ui_control="12" ismultivalue="1" isassetinfo="2" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1097" enabled="1" has_relevance="0" target_object_type="asset" trait="allianz" trait_property="productRef" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" label="Produkt Ref" label_de="Produkt Ref" child_name="Product refs" child_name_de="Products" parent_name="Assigned to" parent_name_de="Zugeordnet an"  asset_resource_key="svtx:feature.product-ref" tcn="4" rowid="1097">
+            <match_criteria>
+                <entry priority="0">
+                    <child-query xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct">
+                        <condition name="censhare:asset-flag" op="ISNULL"/>
+                        <or>
+                            <condition name="censhare:asset.type" partial-load-tree="true" value="product." expanded-nodes="product."/>
+                            <condition name="censhare:asset.type" partial-load-tree="true" value="product.vsk." expanded-nodes="product.|product.vsk."/>
+                        </or>
+                    </child-query>
+                </entry>
+            </match_criteria>
+        </feature>
+        <feature key="allianz:barrier-free-pdf-in-creation" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Barrier free PDF in creation" name_de="Barrierefreies PDF wird erstellt" value_type="6" ui_control="1" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" enabled="1" has_relevance="0" target_object_type="asset" trait="allianz" trait_property="barrierFreePDFinCreation" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="allianz:feature.barrier-free-pdf-in-creation"/>
+        <feature key="svtx:layout-print-number-old" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Print number old" name_de="Druckstück Nr. alt" value_type="4" ui_control="3" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1145" enabled="1" has_relevance="0" target_object_type="asset" trait="allianzLayout" trait_property="printNumberOld" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.layout-print-number-old" tcn="1" rowid="1145"/>
+        <feature key="svtx:bs-template" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Beratungssuite Template" name_de="Beratungssuite Template" value_type="2" ui_control="4" ismultivalue="0" isassetinfo="1" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1151" enabled="1" has_relevance="0" target_object_type="asset" trait="savotex" trait_property="bsTemplate" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.bs-template" tcn="1" rowid="1151">
+            <feature_value feature="svtx:bs-template" domain="root." domain2="root." is_hierarchical="0" value_key="accordion" name="Accordion" name_de="Accordion" sorting="6" enabled="1" tcn="0" rowid="2048"/>
+            <feature_value feature="svtx:bs-template" domain="root." domain2="root." is_hierarchical="0" value_key="text" name="Text" name_de="Text" sorting="10" enabled="1" tcn="0" rowid="2049"/>
+            <feature_value feature="svtx:bs-template" domain="root." domain2="root." is_hierarchical="0" value_key="table" name="Table" name_de="Tabelle" sorting="8" enabled="1" tcn="0" rowid="2050"/>
+            <feature_value feature="svtx:bs-template" domain="root." domain2="root." is_hierarchical="0" value_key="flexible_tile" name="Flexible tile" name_de="Flexible tile" sorting="1" enabled="1" tcn="0" rowid="2051"/>
+            <feature_value feature="svtx:bs-template" domain="root." domain2="root." is_hierarchical="0" value_key="text_and_image" name="Text and Image" sorting="1" enabled="1" source="/opt/corpus/work/runtime.dev-contenthub/allianz/masterdata.xml" tcn="0" rowid="2052"/>
+            <feature_value feature="svtx:bs-template" domain="root." domain2="root." is_hierarchical="0" value_key="image_or_video" name="Image or Video" name_de="Image or Video" sorting="1" enabled="1" source="/opt/corpus/work/runtime.dev-contenthub/allianz/masterdata.xml" tcn="0" rowid="2053"/>
+            <feature_value feature="svtx:bs-template" domain="root." domain2="root." is_hierarchical="0" value_key="two_column_icon" name="Two Column Icon Container" name_de="Two Column Icon Container" sorting="3" enabled="1" source="/opt/corpus/work/runtime.dev-contenthub/allianz/masterdata.xml" tcn="0" rowid="2054"/>
+            <feature_value feature="svtx:bs-template" domain="root." domain2="root." is_hierarchical="0" value_key="Nachhaltigkeit" name="Nachhaltigkeit" name_de="Nachhaltigkeit" description="Nachhaltigkeit" sorting="10" enabled="1" tcn="0" rowid="2056"/>
+            <feature_value feature="svtx:bs-template" domain="root." domain2="root." is_hierarchical="0" value_key="vorsorgekonzept" name="vorsorgekonzept" name_de="vorsorgekonzept" sorting="20" enabled="1" tcn="0" rowid="2057"/>
+        </feature>
+        <feature key="svtx:guarantee-asset.date" type="censhare:intern" storage="0" domain="root." domain2="root." name="Stand" name_de="Stand" description="Date" description_de="Datum" value_type="13" ui_control="0" ismultivalue="0" isassetinfo="0" assetinfo_sorting="0" issearchable="1" sorting="11" language_type="0" color_type="0" bdb_key="1104" enabled="1" has_relevance="0" target_object_type="asset" trait="guaranteeAsset" trait_property="date" trait_property_top_level="1" user_modifiable="1" is_xml_attr="1" asset_resource_key="svtx:feature.guarantee-asset.date"/>
+        <feature key="svtx:guarantee-asset.total-volume" type="censhare:intern" storage="1" domain="root." domain2="root." name="Total volume" name_de="Gesamtvolumen" value_type="4" ui_control="3" ismultivalue="0" isassetinfo="0" assetinfo_sorting="0" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1106" enabled="1" has_relevance="0" target_object_type="asset" trait="guaranteeAsset" trait_property="totalVolume" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.guarantee-asset.total-volume"/>
+        <feature key="svtx:guarantee-asset.headline" type="censhare:intern" storage="1" domain="root." domain2="root." name="Introduction (Headline)" name_de="Einleitung (Headline)" description="Introduction (Headline)" description_de="Einleitung (Headline)" value_type="4" ui_control="0" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1107" enabled="1" has_relevance="0" target_object_type="asset" trait="guaranteeAsset" trait_property="headline" trait_property_top_level="1" user_modifiable="1" is_xml_attr="1" label="Introduction (Headline)" label_de="Einleitung (Headline)" asset_resource_key="svtx:feature.guarantee-asset.headline"/>
+        <feature key="svtx:guarantee-asset.copy" type="censhare:intern" storage="1" domain="root." domain2="root." name="Introduction (Copy)" name_de="Einleitung (Copy)" description="Introduction (Copy)" description_de="Einleitung (Copy)" value_type="4" ui_control="0" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1108" enabled="1" has_relevance="0" target_object_type="asset" trait="guaranteeAsset" trait_property="copy" trait_property_top_level="1" user_modifiable="1" is_xml_attr="1" label="Introduction (Copy)" label_de="Einleitung (Copy)" asset_resource_key="svtx:feature.guarantee-asset.copy"/>
+        <feature key="svtx:guarantee-asset.investment-class.color" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Color" name_de="Farbe" description="Color" description_de="Farbe" value_type="4" ui_control="9" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="0" language_type="0" color_type="0" bdb_key="1117" enabled="1" has_relevance="0" target_object_type="asset" trait="guaranteeAsset" trait_property="color" trait_property_top_level="1" user_modifiable="0" is_xml_attr="1" asset_resource_key="svtx:feature.guarantee-asset.investment-class.color"/>
+        <feature key="svtx:guarantee-asset.investment-class.value" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Investment class" name_de="Anlageklasse" description="Investment class" description_de="Anlageklasse" value_type="4" ui_control="3" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1112" enabled="1" has_relevance="0" target_object_type="asset" trait="guaranteeAsset" trait_property="investmentClassValue" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.guarantee-asset.investment-class.value"/>
+        <feature key="svtx:guarantee-asset.investment-class.percentage" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Percentage" name_de="Anteil" description="Percentage" description_de="Anteil" value_type="3" ui_control="3" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" unit="%" bdb_key="1111" enabled="1" has_relevance="0" target_object_type="asset" trait="guaranteeAsset" trait_property="percentage" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.guarantee-asset.investment-class.percentage"/>
+        <feature key="svtx:guarantee-asset.investment-class.description" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Description" name_de="Beschreibung" description="Description" description_de="Beschreibung" value_type="4" ui_control="3" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1115" enabled="1" has_relevance="0" target_object_type="asset" trait="guaranteeAsset" trait_property="description" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.guarantee-asset.investment-class.description"/>
+        <feature key="svtx:guarantee-asset.investment-class" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Investment Class" name_de="Anlageklasse" description="Investment Class" description_de="Anlageklasse" value_type="0" ui_control="0" ismultivalue="1" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1114" enabled="1" has_relevance="0" target_object_type="asset" trait="guaranteeAsset" trait_property="investmentClass" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0">
+            <feature_rel parent_feature="svtx:guarantee-asset.investment-class" child_feature="svtx:guarantee-asset.investment-class.value" type="hierarchy" sid="2668" enabled="1"/>
+            <feature_rel parent_feature="svtx:guarantee-asset.investment-class" child_feature="svtx:guarantee-asset.investment-class.percentage" type="hierarchy" sid="2669" enabled="1"/>
+            <feature_rel parent_feature="svtx:guarantee-asset.investment-class" child_feature="svtx:guarantee-asset.investment-class.description" type="hierarchy" sid="2672" enabled="1"/>
+        </feature>
+        <feature key="svtx:capital-investment.color" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Color" name_de="Farbe" description="Color" description_de="Farbe" value_type="4" ui_control="9" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="0" language_type="0" color_type="0" bdb_key="1200" enabled="1" has_relevance="0" target_object_type="asset" trait="capitalInvestment" trait_property="color" trait_property_top_level="1" user_modifiable="0" is_xml_attr="1" asset_resource_key="svtx:feature.capital-investment.color"/>
+        <feature key="svtx:capital-investment.name" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Name" name_de="Name" value_type="4" ui_control="3" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1199" enabled="1" has_relevance="0" target_object_type="asset" trait="capitalInvestment" trait_property="name" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.capital-investment.name"/>
+        <feature key="svtx:capital-investment.percentage" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Value" name_de="Wert" description="Value" description_de="Wert" value_type="7" ui_control="0" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" unit="%" bdb_key="1202" enabled="1" has_relevance="0" target_object_type="asset" trait="capitalInvestment" trait_property="percentage" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.capital-investment.percentage"/>
+        <feature key="svtx:capital-investment.description" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Description" name_de="Beschreibung" description="Description" description_de="Beschreibung" value_type="4" ui_control="3" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1201" enabled="1" has_relevance="0" target_object_type="asset" trait="capitalInvestment" trait_property="description" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.capital-investment.description"/>
+        <feature key="svtx:capital-investment.date" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Time" name_de="Zeitpunkt" value_type="13" ui_control="0" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1204" enabled="1" has_relevance="0" target_object_type="asset" trait="capitalInvestment" trait_property="date" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.capital-investment.date" tcn="2" rowid="1204"/>
+        <feature key="svtx:capital-investment.investment-classes" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Investment class" name_de="Anlageklasse" description="Investment class" description_de="Anlageklasse" value_type="0" ui_control="0" ismultivalue="1" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1212" enabled="1" has_relevance="0" target_object_type="asset" trait="capitalInvestment" trait_property="investmentClass" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.capital-investment.investment-classes">
+            <feature_rel parent_feature="svtx:capital-investment.investment-classes" child_feature="svtx:capital-investment.color" type="hierarchy" sid="2433" enabled="1"/>
+            <feature_rel parent_feature="svtx:capital-investment.investment-classes" child_feature="svtx:capital-investment.description" type="hierarchy" sid="2432" enabled="1"/>
+            <feature_rel parent_feature="svtx:capital-investment.investment-classes" child_feature="svtx:capital-investment.percentage" type="hierarchy" sid="2431" enabled="1"/>
+            <feature_rel parent_feature="svtx:capital-investment.investment-classes" child_feature="svtx:capital-investment.name" type="hierarchy" sid="2430" enabled="1"/>
+        </feature>
+        <feature key="svtx:capital-investment.development" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Development" name_de="Entwicklung" description="Development" description_de="Entwicklung" value_type="0" ui_control="0" ismultivalue="1" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1206" enabled="1" has_relevance="0" target_object_type="asset" trait="capitalInvestment" trait_property="development" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.capital-investment.development">
+            <feature_rel parent_feature="svtx:capital-investment.development" child_feature="svtx:capital-investment.date" type="hierarchy" sid="2409" enabled="1"/>
+            <feature_rel parent_feature="svtx:capital-investment.development" child_feature="svtx:capital-investment.percentage" type="hierarchy" sid="2410" enabled="1"/>
+        </feature>
+        <feature key="svtx:capital-investment.regions" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Regions" name_de="Regionen" description="Regions" description_de="Regionen" value_type="0" ui_control="0" ismultivalue="1" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1203" enabled="1" has_relevance="0" target_object_type="asset" trait="capitalInvestment" trait_property="regions" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.capital-investment.regions">
+            <feature_rel parent_feature="svtx:capital-investment.regions" child_feature="svtx:capital-investment.name" type="hierarchy" sid="2399" enabled="1"/>
+            <feature_rel parent_feature="svtx:capital-investment.regions" child_feature="svtx:capital-investment.percentage" type="hierarchy" sid="2398" enabled="1"/>
+            <feature_rel parent_feature="svtx:capital-investment.regions" child_feature="svtx:capital-investment.description" type="hierarchy" sid="2397" enabled="1"/>
+            <feature_rel parent_feature="svtx:capital-investment.regions" child_feature="svtx:capital-investment.color" type="hierarchy" sid="2400" enabled="1"/>
+        </feature>
+        <feature key="svtx:asset-publication-date" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Publication date" name_de="Veröffentlichungsdatum" value_type="5" ui_control="0" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1318" enabled="1" has_relevance="0" target_object_type="asset" trait="allianzMedia" trait_property="publicationDate" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.asset-publication-date"/>
+        <feature key="svtx:asset.id_original" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Asset Id Original" name_de="Asset Id Original" description="Asset Id Original" description_de="Asset Id Original" value_type="3" ui_control="3" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1319" enabled="1" has_relevance="0" target_object_type="asset" trait="svtx" trait_property="assetIdOriginal" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.asset.id_original"/>
+        <feature key="svtx:asset.version" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Version" name_de="Version" description="Version" description_de="Version" value_type="3" ui_control="3" ismultivalue="0" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1320" enabled="1" has_relevance="0" target_object_type="asset" trait="svtx" trait_property="version" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.asset.version"/>
+        <feature key="svtx:pp.merge-info" type="censhare:asset-feature" storage="0" domain="root." domain2="root." name="Merge-info" name_de="Merge-Info" value_type="4" ui_control="3" ismultivalue="1" isassetinfo="0" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1163" enabled="1" has_relevance="0" target_object_type="asset" trait="ppt" trait_property="mergeInfo" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="svtx:feature.pp.merge-info"/>
+    </features>
+    <events>
+        <event event_key="censhare.CustomAssetEvent.flyer-generator-render-pdf" eventsource="CustomAssetEvent" name="flyer-generator-render-pdf" description="Flyer Generator Render PDF" description_de="Flyer Generator Render PDF" param3="0" enabled="1"/>
+        <event event_key="censhare.CustomAssetEvent.svtx-content-update" eventsource="CustomAssetEvent" name="svtx-content-update" description="Savotex Content Update" description_de="Savotex Content Update" param3="0" enabled="1"/>
+        <event event_key="censhare.CustomAssetEvent.svtx-update-pptx-slide" eventsource="CustomAssetEvent" name="svtx-update-pptx-slide" description="Update PPTX Slide" description_de="Update PPTX Slide" param3="0" enabled="1"/>
+        <event event_key="censhare.CustomAssetEvent.druck_PDF_erstellt" eventsource="CustomAssetEvent" name="druck_PDF_erstellt" description="druck_PDF_erstellt" description_de="druck_PDF_erstellt" param3="0" enabled="1"/>
+        <event event_key="censhare.CustomAssetEvent.svtx-text-create-pdf" eventsource="CustomAssetEvent" name="svtx-text-create-pdf" description="Savotex Create PDF" description_de="Savotex Create PDF" param3="0" enabled="1"/>
+        <event event_key="censhare.CustomAssetEvent.svtx-content-update-failed" eventsource="CustomAssetEvent" name="svtx-content-update-failed" description="Savotex Content Update Failed" description_de="Savotex Content Update Failed" param3="0" enabled="1"/>
+        <event event_key="censhare.CustomAssetEvent.svtx-layout-place-article" eventsource="CustomAssetEvent" name="svtx-layout-place-article" description="Svtx Place Article into Layout" description_de="Svtx Place Article into Layout" param3="0" enabled="1"/>
+        <event event_key="censhare.CustomAssetEvent.svtx-init-text-updates" eventsource="CustomAssetEvent" name="svtx-init-text-updates" description="Savotex Init Text Update" description_de="Savotex Init Text Update" param3="0" enabled="1"/>
+        <event event_key="censhare.CustomAssetEvent.svtx-pptx-merge" eventsource="CustomAssetEvent" name="svtx-pptx-merge" description="Savotex PPTX merge" description_de="Savotex PPTX merge" param3="0" enabled="1" tcn="1" rowid="53"/>
+        <event event_key="censhare.CustomAssetEvent.basis_barrierefreies_online_pdf_in_erstellung" eventsource="CustomAssetEvent" name="basis_barrierefreies_online_pdf_in_erstellung" description="basis_barrierefreies_online_pdf_in_erstellung" description_de="basis_barrierefreies_online_pdf_in_erstellung" param3="0" enabled="1"/>
+        <event event_key="censhare.CustomAssetEvent.basis_barrierefreies_online_pdf_erstellt" eventsource="CustomAssetEvent" name="basis_barrierefreies_online_pdf_erstellt" description="basis_barrierefreies_online_pdf_erstellt" description_de="basis_barrierefreies_online_pdf_erstellt" param3="0" enabled="1"/>
+        <event event_key="censhare.CustomAssetEvent.svtx-init-layout-placement" eventsource="CustomAssetEvent" name="svtx-init-layout-placement" description="Savotex Init Layout Placement" description_de="Savotex Init Layout Placement" param3="0" enabled="1"/>
+        <event event_key="censhare.CustomAssetEvent.svtx-regenerate-faq-slide" eventsource="CustomAssetEvent" name="svtx-regenerate-faq-slide" description="Savotex Regenerate FAQ-Slide" description_de="Savotex Regeneriere FAQ-Slide" param3="0" enabled="1"/>
+    </events>
+    <asset_rel_typedefs>
+        <asset_rel_typedef key="user.variant-agent." kind="0" cardinality="1" isversioned="0" is_user_editable="1" name="Text variant agent" name_de="Text Variante Makler" parent_sort="1" child_sort="1" domain="root." domain2="root." enabled="1" >
+            <match_criteria>
+                <entry priority="0">
+                    <parent-query xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct">
+                        <condition name="censhare:asset.type" value="text.*"/>
+                    </parent-query>
+                    <child-query xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct">
+                        <condition name="censhare:asset.type" value="text.*"/>
+                    </child-query>
+                </entry>
+            </match_criteria>
+        </asset_rel_typedef>
+        <asset_rel_typedef key="user.variant-sales."  kind="0" cardinality="1" isversioned="0" is_user_editable="1" name="Text variant sales" name_de="Text Variante Vertrieb" parent_sort="1" child_sort="1" domain="root." domain2="root." enabled="1" >
+            <match_criteria>
+                <entry priority="0">
+                    <parent-query xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct">
+                        <condition name="censhare:asset.type" value="text.*"/>
+                    </parent-query>
+                    <child-query xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct">
+                        <condition name="censhare:asset.type" value="text.*"/>
+                    </child-query>
+                </entry>
+            </match_criteria>
+        </asset_rel_typedef>
+        <asset_rel_typedef key="user.presentation-issue." kind="0" cardinality="0" isversioned="0" is_user_editable="1" name="Assigment Presentation &lt;&gt; Issue" name_de="Zuordnung Präsentation zu Ausgabe" parent_sort="1" child_sort="0" domain="root." domain2="root." enabled="1" >
+            <match_criteria>
+                <entry priority="0">
+                    <parent-query xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val">
+                        <condition name="censhare:asset.type" value="presentation.*"/>
+                    </parent-query>
+                    <child-query xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val">
+                        <condition name="censhare:asset.type" value="presentation.issue.*"/>
+                    </child-query>
+                </entry>
+            </match_criteria>
+        </asset_rel_typedef>
+        <asset_rel_typedef key="user.secondary-picture." kind="0" cardinality="0" isversioned="0" is_user_editable="1" name="Secondary picture" name_de="Zweitbild" parent_name="Secondary image of" parent_name_de="Zweitbild von" child_name="Secondary image" child_name_de="Zweitbild" description="Secondary image relation" description_de="Zweitbild-Verknüpfung" parent_sort="1" child_sort="1" domain="root." domain2="root." enabled="1">
+            <match_criteria>
+                <entry priority="0">
+                    <child-query xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct">
+                        <condition name="censhare:asset.type" value="picture.*"/>
+                    </child-query>
+                </entry>
+            </match_criteria>
+        </asset_rel_typedef>
+        <asset_rel_typedef key="user.article-pos-1." kind="0" cardinality="0" isversioned="0" is_user_editable="1" name="Text position 1" name_de="Textposition 1" parent_sort="1" child_sort="1" domain="root." domain2="root." enabled="1">
+            <match_criteria>
+                <entry priority="0">
+                    <child-query xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct">
+                        <condition name="censhare:asset.type" value="text.*"/>
+                    </child-query>
+                </entry>
+            </match_criteria>
+        </asset_rel_typedef>
+        <asset_rel_typedef key="user.article-pos-2." kind="0" cardinality="0" isversioned="0" is_user_editable="1" name="Text position 2" name_de="Textposition 2" parent_sort="1" child_sort="1" domain="root." domain2="root." enabled="1">
+            <match_criteria>
+                <entry priority="0">
+                    <child-query xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct">
+                        <condition name="censhare:asset.type" value="text.*"/>
+                    </child-query>
+                </entry>
+            </match_criteria>
+        </asset_rel_typedef>
+        <asset_rel_typedef key="user.article-pos-3." kind="0" cardinality="0" isversioned="0" is_user_editable="1" name="Text position 3" name_de="Textposition 3" parent_sort="1" child_sort="1" domain="root." domain2="root." enabled="1">
+            <match_criteria>
+                <entry priority="0">
+                    <child-query xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct">
+                        <condition name="censhare:asset.type" value="text.*"/>
+                    </child-query>
+                </entry>
+            </match_criteria>
+        </asset_rel_typedef>
+        <asset_rel_typedef key="user.basic-skills." kind="0" cardinality="0" isversioned="0" is_user_editable="1" name="Grundfähigkeiten" name_de="Grundfähigkeiten" parent_sort="1" child_sort="1" domain="root." domain2="root." enabled="1">
+            <match_criteria>
+                <entry priority="0">
+                    <parent-query xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct">
+                        <condition name="censhare:asset.type" value="profession.*"/>
+                    </parent-query>
+                    <child-query xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct">
+                        <condition name="censhare:asset.type" value="text.*"/>
+                    </child-query>
+                </entry>
+            </match_criteria>
+        </asset_rel_typedef>
+        <asset_rel_typedef key="user.selectable-protection." kind="0" cardinality="0" isversioned="0" is_user_editable="1" name="Zuwählbarer schutz" name_de="Zuwählbarer schutz" parent_sort="1" child_sort="1" domain="root." domain2="root." enabled="1" tcn="0" rowid="166">
+            <match_criteria>
+                <entry priority="0">
+                    <parent-query xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct">
+                        <condition name="censhare:asset.type" value="profession.*"/>
+                    </parent-query>
+                    <child-query xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct">
+                        <condition name="censhare:asset.type" value="text.*"/>
+                    </child-query>
+                </entry>
+            </match_criteria>
+        </asset_rel_typedef>
+        <asset_rel_typedef key="user.publication." kind="0" cardinality="0" isversioned="0" is_user_editable="1" name="Publication" name_de="Veröffentlichung" parent_sort="1" child_sort="1" domain="root." domain2="root." enabled="1"/>
+
+        <asset_rel_typedef key="user.web-usage." kind="0" cardinality="0" isversioned="0" is_user_editable="1" name="Web-Nutzung" name_de="Web-Nutzung" parent_name="Web-Usage of" parent_name_de="Web-Nutzung zu" child_name="Web-Usage" child_name_de="Web-Usage" parent_sort="1" child_sort="1" domain="root." domain2="root." enabled="1" source="/opt/corpus/work/runtime.dev-contenthub/allianz/masterdata.xml" tcn="139" rowid="168">
+            <match_criteria>
+                <entry priority="0">
+                    <parent-query xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct">
+                        <condition name="censhare:asset.type" value="article.*"/>
+                    </parent-query>
+                    <child-query xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct">
+                        <condition name="censhare:asset.type" value="text.*"/>
+                    </child-query>
+                </entry>
+            </match_criteria>
+        </asset_rel_typedef>
+
+    </asset_rel_typedefs>
+    <workflow_states>
+        <workflow_state id="50" name="Rejected" name_de="Abgelehnt" color="16711680" enabled="1"/>
+    </workflow_states>
+
+    <workflows>
+        <workflow id="10" name="Text Workflow" name_de="Text Workflow" description="Workflow zur Freigabe von Text-Bausteinen" description_de="Workflow zur Freigabe von Text-Bausteinen" domain="root." domain2="root." enabled="1">
+            <workflow_step wf_id="10" wf_step="10" name="Text creation" name_de="Text in Erstellung" wf_state_id="10" color="16711935" completion_percentage="10.0" sorting="10" enabled="1"/>
+            <workflow_step wf_id="10" wf_step="40" name="Text rejected" name_de="Text abgelehnt" wf_state_id="50" color="16711731" completion_percentage="100.0" sorting="25" enabled="1"/>
+            <workflow_step wf_id="10" wf_step="20" name="Text in approval" name_de="Text zur Abstimmung/Freigabe" wf_state_id="20" color="16750848" completion_percentage="50.0" sorting="20" enabled="1"/>
+            <workflow_step wf_id="10" wf_step="30" name="Text freigegeben" name_de="Text freigegeben" wf_state_id="30" color="0" completion_percentage="100.0" sorting="30" enabled="1"/>
+            <workflow_step wf_id="10" wf_step="35" name="Text zur Web-Nutzung freigegeben" name_de="Text zur Web-Nutzung freigegeben" wf_state_id="30" color="0" completion_percentage="100.0" sorting="30" enabled="1"/>
+        </workflow>
+        <workflow id="30" name="Objekt Workflow" name_de="Objekt Workflow" def_step="20" assettype_def="product." domain="root." domain2="root." enabled="1" >
+            <workflow_step wf_id="30" wf_step="20" name="Objekt in Bearbeitung" name_de="Objekt in Bearbeitung" wf_state_id="10" color="52428" completion_percentage="50.0" sorting="20" enabled="1" />
+            <workflow_step wf_id="30" wf_step="80" name="Objekt fertiggestellt" name_de="Objekt fertiggestellt" wf_state_id="30" color="3381504" completion_percentage="100.0" sorting="80" enabled="1" />
+        </workflow>
+        <workflow id="40" name="Modul Workflow" name_de="Modul Workflow" def_step="10" assettype_def="article." domain="root." domain2="root." enabled="1">
+            <workflow_step wf_id="40" wf_step="20" name="Modul fertiggestellt" name_de="Modul fertiggestellt" wf_state_id="30" color="3381504" completion_percentage="100.0" sorting="20" enabled="1" />
+            <workflow_step wf_id="40" wf_step="10" name="Modul in Bearbeitung" name_de="Modul in Bearbeitung" wf_state_id="10" color="52428" completion_percentage="10.0" sorting="10" enabled="1" />
+        </workflow>
+        <workflow id="80" name="Medium Workflow" name_de="Medium Workflow" def_step="10" domain="root." domain2="root." enabled="1" >
+            <workflow_step wf_id="80" wf_step="10" name="Medium in Erstellung" name_de="Medium in Erstellung" wf_state_id="10" color="52428" completion_percentage="10.0" sorting="10" enabled="1" />
+            <workflow_step wf_id="80" wf_step="20" name="Medium zur Freigabe" name_de="Medium zur Freigabe" wf_state_id="20" color="16737792" completion_percentage="20.0" sorting="20" enabled="1" />
+            <workflow_step wf_id="80" wf_step="30" name="Medium freigegeben" name_de="Medium freigegeben" wf_state_id="20" color="3381504" completion_percentage="50.0" sorting="40" enabled="1" />
+            <!--
+            <workflow_step wf_id="80" wf_step="50" name="Medium-Freigabe abgelehnt" wf_state_id="20" color="16724787" completion_percentage="50.0" sorting="50" enabled="1" />
+            <workflow_step wf_id="80" wf_step="55" name="Medium in Aufbereitung" name_de="Medium in Aufbereitung" wf_state_id="20" color="13421772" completion_percentage="60.0" sorting="55" enabled="1" tcn="1" rowid="49"/>
+            -->
+            <workflow_step wf_id="80" wf_step="90" name="Medium zur Nutzung freigegeben" name_de="Medium zur Nutzung freigegeben" wf_state_id="30" color="10066329" completion_percentage="100.0" sorting="100" enabled="1" />
+
+            <!--
+                      <workflow_step wf_id="80" wf_step="60" name="Medium zur Publikation bereit" name_de="Medium zur Publikation bereit" wf_state_id="30" color="10066329" completion_percentage="70.0" sorting="70" enabled="1"/>
+            -->
+            <workflow_step wf_id="80" wf_step="5" name="Medium wird erstellt" name_de="Medium wird erstellt" description="Medium wird erstellt" description_de="Medium wird erstellt" wf_state_id="10" completion_percentage="5.0" sorting="5" enabled="1"/>
+        </workflow>
+
+        <workflow id="100" name="Bild Workflow" name_de="Bild Workflow" def_step="10" assettype_def="picture." domain="root." domain2="root." enabled="1" >
+            <workflow_step wf_id="100" wf_step="10" name="Bild angelegt" name_de="Bild angelegt" wf_state_id="10" color="52428" completion_percentage="10.0" sorting="10" enabled="1"/>
+            <workflow_step wf_id="100" wf_step="20" name="Bild zur Google Analyse" name_de="Bild zur Google Analyse" wf_state_id="10" color="10027212" completion_percentage="20.0" sorting="20" enabled="1" />
+            <workflow_step wf_id="100" wf_step="30" name="Bild durch Google analysiert" name_de="Bild durch Google analysiert" wf_state_id="10" color="10027212" completion_percentage="40.0" sorting="40" enabled="1" />
+            <workflow_step wf_id="100" wf_step="40" name="Bild zur technischen Prüfung" name_de="Bild zur technischen Prüfung" wf_state_id="20" color="16737792" completion_percentage="50.0" sorting="50" enabled="1" />
+            <workflow_step wf_id="100" wf_step="60" name="Bild freigegeben" name_de="Bild freigegeben" wf_state_id="30" color="3381504" completion_percentage="100.0" sorting="70" enabled="1" tcn="1" />
+            <workflow_step wf_id="100" wf_step="70" name="Bild abgelehnt" name_de="Bild abgelehnt" wf_state_id="50" color="16711731" completion_percentage="100.0" sorting="80" enabled="1" tcn="0" />
+            <workflow_step wf_id="100" wf_step="80" name="Bildlizenzen abgelaufen" name_de="Bildlizenzen abgelaufen" wf_state_id="50" color="16711680" completion_percentage="100.0" sorting="80" enabled="1" />
+        </workflow>
+    </workflows>
+
+    <image_crops>
+        <image_crop key="23-9" name="Seitenverhältnis 23:9" name_de="Seitenverhältnis 23:9" aspect_ratio_width="448.0" aspect_ratio_height="175.3" is_fixed_size="0" domain="root." domain2="root." enabled="1" tcn="1"/>
+        <image_crop key="4-5" name="Aspect Ratio 4:5" name_de="Seitenverhältnis 4:5" aspect_ratio_width="400.0" aspect_ratio_height="500.0" is_fixed_size="0" domain="root." domain2="root." enabled="1"/>
+        <image_crop key="25-9" name="Aspect Ratio 25:9" name_de="Seitenverhältnis 25:9" aspect_ratio_width="448.0" aspect_ratio_height="161.28" is_fixed_size="0" domain="root." domain2="root." enabled="1"/>
+        <image_crop key="3-2" name="Aspect Ratio 3:2" name_de="Seitenverhältnis 3:2" aspect_ratio_width="448.0" aspect_ratio_height="298.67" is_fixed_size="0" domain="root." domain2="root." enabled="1"/>
+        <image_crop key="4-1" name="Aspect Ratio 4:1" name_de="Seitenverhältnis 4:1" aspect_ratio_width="400.0" aspect_ratio_height="100.0" is_fixed_size="0" domain="root." domain2="root." enabled="1"/>
+        <image_crop key="171-83" name="Seitenverhältnis 171-83" name_de="Seitenverhältnis 171-83" aspect_ratio_width="400.0" aspect_ratio_height="194.15" is_fixed_size="0" domain="root." domain2="root." enabled="1"/>
+    </image_crops>
+    <permission_keydefs>
+        <permission_keydef key="product_creation_wizard_execution" name="Produkt creation wizard execute" name_de="Produkt-Anlage Assistenten ausführen" description="Allows execute product creation wizard" description_de="Erlaub das Ausführen des Produkt-Anlage Assistenten" enabled="1"/>
+        <permission_keydef key="product_delete" name="Delete products" name_de="Produkte löschen" description="Allows deleting all poducts" description_de="Erlaub das Löschen aller Produkte" enabled="1" />
+        <permission_keydef key="decouple_module" name="Decople modul" name_de="Baustein entkoppeln" description="Allows decople moduls" description_de="Erlaub das Entkoppeln vom Bausteinen" enabled="1" />
+        <permission_keydef key="layout_template_update" name="Layout template update" name_de="Layout-Template aktualisieren" description="Allows updating the layout template" description_de="Erlaub das Aktulisieren des Layout-Templates" enabled="1"/>
+        <permission_keydef key="approval_additional_comment" name="Additional comment at approvals" name_de="Zusätzliches Kommentar bei Freigaben" description="Allows all adding additional comment at approvals" description_de="Erteilt das hinzufügen von zusätzlichem Kommentar bei den Freigaben" enabled="1" tcn="1"/>
+        <permission_keydef key="product_domain_switch" name="Switch product domain" name_de="Produkt-Domäne wechseln" description="Allows switching poduct domain" description_de="Erlaub das Wechseln der Domän eines Produkts" enabled="1"/>
+        <permission_keydef key="delete_makler_vertriebs_text_variant" name="Makler-/Vertriebsvariante löschen" name_de="Makler-/Vertriebsvariante löschen" description="Makler-/Vertriebsvariante löschen" description_de="Makler-/Vertriebsvariante löschen" enabled="1"/>
+    </permission_keydefs>
+</data>

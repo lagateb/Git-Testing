@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmd xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.censhare.com/xml/3.0.0/command.xsd" xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct" xmlns:xe="http://www.censhare.com/xml/3.0.0/xmleditor">
+  <xml-info title="${reg-title-aa-update-asset} - Magenta Texte (Content-Update)" description="${reg-description-aa-update-asset}" localize="true" knowledge-level="2" special-licence="true" feature-help="" version="1" template-name="renderer.aa-update-asset" template-url="file:modules/renderer/aa-update-asset.xml">
+    <property-resources>
+      <base url="file:module"/>
+      <base url="file:../../common/global"/>
+    </property-resources>
+    <history>
+      <entry user="censhare Defaultuser" timestamp="2020-03-11T15:27:26.753Z" comment=""/>
+      <entry user="censhare Defaultuser" timestamp="2020-03-11T15:31:06.815Z" comment=""/>
+      <entry user="[Savotex] Stoklosa, Martin" timestamp="2020-03-12T08:06:16.584Z" comment=""/>
+      <entry user="[Savotex] Stoklosa, Martin" timestamp="2020-03-12T08:08:10.215Z" comment=""/>
+      <entry user="[Savotex] Massenberg, Nico" timestamp="2020-03-12T11:17:30.070Z" comment=""/>
+      <entry user="[Savotex] Massenberg, Nico" timestamp="2020-03-12T11:19:14.738Z" comment=""/>
+      <entry user="[Savotex] Massenberg, Nico" timestamp="2020-03-12T11:20:24.484Z" comment=""/>
+      <entry user="[Savotex] Massenberg, Nico" timestamp="2020-03-12T11:23:22.595Z" comment=""/>
+      <entry user="[Savotex] Massenberg, Nico" timestamp="2020-03-12T11:38:24.628Z" comment=""/>
+      <entry user="[Savotex] Massenberg, Nico" timestamp="2020-03-12T11:38:44.753Z" comment=""/>
+      <entry user="[Savotex] Massenberg, Nico" timestamp="2020-03-12T12:04:35.966Z" comment=""/>
+      <entry user="[Savotex] Massenberg, Nico" timestamp="2020-04-02T13:41:42.110Z" comment=""/>
+      <entry user="[Savotex] Massenberg, Nico" timestamp="2020-04-02T13:57:48.428Z" comment=""/>
+      <entry user="censhare Defaultuser" timestamp="2020-11-16T09:56:20.405Z" comment=""/>
+      <entry user="censhare Defaultuser" timestamp="2020-11-16T15:09:46.543Z" comment=""/>
+      <entry user="censhare Defaultuser" timestamp="2021-04-28T07:02:18.151Z" comment=""/>
+    </history>
+  </xml-info>
+  <cmd-info name="renderer.aa-update-asset-20200311-1628-0" type="auto-execute" enabled="true" mode="loop" ignore-error="true">
+    <error-log module="Renderer" log-cancel="false"/>
+  </cmd-info>
+  <admin-info dialog-id="aa-update-asset-config" dialog-url="file:config-dialog.xml"/>
+  <listen-events xml-queue-size="50" fork-command="false" persistent-events="true" event-count-limit="50" retries-on-error="0">
+    <event target="CustomAssetEvent" param2="0" method="svtx-content-update"/>
+  </listen-events>
+  <commands currentstep="0">
+    <command target="ScriptletManager" scriptlet="modules.renderer.AAUpdateAsset" method="register"/>
+    <command target="EventManager" method="waitevent" key="listen-events"/>
+    <command target="ScriptletManager" scriptlet="modules.renderer.AAUpdateAsset" method="setup"/>
+    <command target="ScriptletManager" scriptlet="modules.renderer.AAUpdateAsset" method="finish"/>
+  </commands>
+  <config perform-checkout="true" use-existing-preview-dpi="true" preview-dpi="72" subcmd-sync-timeout="100" subcmd-max-subcmds="15" subcmd-limit-wait="5" repost-asset-source-finished="censhare.CustomAssetEvent.svtx-init-text-updates">
+    <update-content enabled="true"/>
+    <update-geometry enabled="false"/>
+    <update-auto-client-variants enabled="false"/>
+    <update-placeholders enabled="false" force="false"/>
+    <!-- filter/query assets -->
+    <asset-filter>
+      <query type="asset" limit="50" xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct">
+        <condition name="censhare:asset.currversion" value="0"/>
+        <condition name="censhare:asset.deletion" value="0"/>
+        <condition name="censhare:asset.state" value="0"/>
+        <condition name="censhare:asset.storage_state" value="0"/>
+        <condition name="censhare:asset.type" partial-load-tree="true" value="layout.*" expanded-nodes="layout."/>
+      </query>
+    </asset-filter>
+    <!-- update/checkin assets -->
+    <asset-update/>
+    <scripts enabled="false">
+      <event key="open-done" enabled="true"/>
+      <event key="save" enabled="true"/>
+      <event key="placement-done" enabled="true"/>
+      <event key="update-content-done" enabled="true"/>
+    </scripts>
+  </config>
+  <process-events>
+    <processing in-batches="false"/>
+  </process-events>
+</cmd>

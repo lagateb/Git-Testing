@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmd xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.censhare.com/xml/3.0.0/command.xsd" xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct" xmlns:xe="http://www.censhare.com/xml/3.0.0/xmleditor">
+  <xml-info title="${xslt-execution-title} - Flyer Generator Profession Asset Changed Handler" description="${xslt-execution-description} - Flyer Generator Profession Asset Changed Handler" knowledge-level="3" special-licence="true" feature-help="" localize="true" template-name="transformation.aa-xslt-execution" template-url="file:modules/transformation/aa-xslt-execution.xml">
+    <property-resources>
+      <base url="file:module"/>
+      <base url="file:../../common/global"/>
+    </property-resources>
+    <history>
+      <entry user="censhare Defaultuser" timestamp="2020-07-24T13:07:45.630Z" comment=""/>
+      <entry user="censhare Defaultuser" timestamp="2021-07-09T13:54:35.940Z" comment=""/>
+    </history>
+  </xml-info>
+  <cmd-info name="transformation.aa-xslt-execution-20200724-1332-0" type="auto-execute" enabled="false" mode="loop" ignore-error="true">
+    <error-log module="transformation"/>
+  </cmd-info>
+  <admin-info dialog-id="xslt-execution-config" dialog-url="file:config-dialog.xml"/>
+  <listen-events xml-queue-size="50" fork-command="false" persistent-events="false" event-count-limit="50" retries-on-error="0">
+    <event target="AssetEvent" param2="0" method="checkin"/>
+  </listen-events>
+  <commands currentstep="0">
+    <command target="ScriptletManager" scriptlet="modules.lib.XSLTAssetAutomationScriptlet" method="register"/>
+    <command target="EventManager" method="waitevent" key="listen-events"/>
+    <command target="ScriptletManager" scriptlet="modules.lib.XSLTAssetAutomationScriptlet" method="setup"/>
+    <command target="ScriptletManager" scriptlet="modules.lib.XSLTAssetAutomationScriptlet" method="finish"/>
+  </commands>
+  <!-- stylesheet-url="file:modules/.../test.xsl" transformation-key="resource-key" -->
+  <config perform-checkout="false" transformation-way="asset" perform-update="false" transformation-key="svtx:flyer-generator.profession.changed.handler">
+    <!-- filter/query assets -->
+    <asset-filter>
+      <query type="asset" limit="50" xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct">
+        <condition name="censhare:asset.currversion" value="0"/>
+        <condition name="censhare:asset.deletion" value="0"/>
+        <condition name="censhare:asset.state" value="0"/>
+        <condition name="censhare:asset.domain" partial-load-tree="true" value="root.flyer-generator.*" expanded-nodes="root.|root.flyer-generator."/>
+        <or>
+          <condition name="svtx:profession-pdf-rendering-pending" value="0"/>
+          <condition name="svtx:profession-pdf-rendering-pending" op="ISNULL"/>
+        </or>
+        <condition name="censhare:asset.type" partial-load-tree="true" value="profession." expanded-nodes="profession."/>
+      </query>
+    </asset-filter>
+    <asset-tree/>
+    <!-- update/checkin assets -->
+    <asset-update domain="root." domain2="root."/>
+  </config>
+  <process-events>
+    <processing in-batches="false"/>
+  </process-events>
+</cmd>

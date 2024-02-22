@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset id_org="37597" name="Column: Allianz Outputchannel" type="module.table.column." application="default" domain="root.common-resources." domain2="root.">
+  <asset_feature feature="censhare:name" language="de" value_string="Kanal"/>
+  <asset_feature feature="censhare:name" language="en" value_string="Channel"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="svtx:allianz-table-column.outputchannel"/>
+  <asset_feature feature="censhare:resource-meta">
+    <xmldata>
+      <selection needed="false"/>
+    </xmldata>
+  </asset_feature>
+  <asset_feature feature="censhare:table.column.align-horizontal" value_key="left"/>
+  <asset_feature feature="censhare:table.column.frozen" value_long="1"/>
+  <asset_feature feature="censhare:table.column.key" value_string="outputChannel"/>
+  <asset_feature feature="censhare:table.column.template" value_string="&lt;cs-include-dialog key=&quot;&apos;svtx:metadata.text.remove.channel.action&apos;&quot;&gt;&lt;/cs-include-dialog&gt;"/>
+  <asset_feature feature="censhare:table.column.type" value_key="template"/>
+  <asset_feature feature="censhare:table.column.width-max-pixels" value_long="200"/>
+  <asset_feature feature="censhare:table.column.width-min-pixels" value_long="100"/>
+  <asset_feature feature="censhare:table.column.width-pixels" value_long="100"/>
+</asset>
+

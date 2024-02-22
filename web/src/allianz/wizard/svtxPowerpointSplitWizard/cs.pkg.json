@@ -1,0 +1,52 @@
+{
+  "name": "svtxPowerpointSplitWizard",
+  "since": "2019.2.1",
+  "version": "0.0.1",
+  "filename": "svtx-powerpoint-split-wizard.module",
+  "translations": [
+    "translation"
+  ],
+  "implementations": [
+    {
+      "type": "csWizard",
+      "name": "svtxPowerpointSplitWizard",
+      "properties": {
+        "title": "svtxPowerpointSplitWizard.wizardTitle",
+        "controllerName": "svtxPowerpointSplitWizardController",
+        "application": "com.savotex.api.wizard.powerpointSplit",
+        "steps": [
+            "svtxPowerpointSplitWizardStep1"
+        ]
+      }
+    },
+    {
+      "type": "csBehavior",
+      "name": "svtxPowerpointSplitWizardCreateBehavior",
+      "constructor": "svtxPowerpointSplitWizardCreateBehavior",
+      "properties": {
+        "title": "svtxPowerpointSplitWizard.wizardTitle",
+        "icon": "cs-icon-magic",
+        "filters": {
+          "context": "asset",
+          "csAssetTypePatterns": [
+            {
+              "assettype": "presentation.",
+              "mimetype": "*"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "csWizardStep",
+      "name": "svtxPowerpointSplitWizardStep1",
+      "properties": {
+        "title": "svtxPowerpointSplitWizard.step1Title",
+        "componentName": "svtxPowerpointSplitWizardStep1"
+      }
+    }
+  ],
+  "java": {
+    "sourcepath": "src/java"
+  }
+}

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+  <features>
+    <feature key="msp:alz-mmc.media-provider.index" type="censhare:attribute" storage="3" domain="root." domain2="root." name="Mediendienstleister (Firmenauswahl) (Volltext)" name_de="Mediendienstleister (Firmenauswahl) (Volltext)" value_type="4" ui_control="0" ismultivalue="0" isassetinfo="0" assetinfo_sorting="0" issearchable="1" sorting="0" language_type="0" color_type="0" bdb_key="1153" enabled="1" has_relevance="0" target_object_type="_virtual" trait="full_text_index" trait_property="mediaProvider" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="msp:feature.alz-mmc.media-provider.index" tcn="1" rowid="1153">
+      <xml_config>
+        <index-configs>
+          <index-config is-custom="true" type="fulltext">
+            <fulltext stemming="false" use-frequency="true" strip-diacritics="false" expand-junction-operator="AND_NOT_EMPTY" min-length="4" fuzzy-min-length="4" fuzzy-max-distance="1" max-bitap-errors="1" fuzzy-ngram-length="3" prefix-expansion-limit="1000" infix-expansion-limit="1000" fuzzy-expansion-limit="1000" fuzzy-skip-results="1000" fuzzy-min-alpha="1">
+              <feature key="msp:alz-mmc.media-provider" mode="content"/>
+              <feature key="msp:alz-mmc.media-provider" mode="lookup"/>
+            </fulltext>
+          </index-config>
+        </index-configs>
+      </xml_config>
+    </feature>
+    <feature key="msp:alz-mmc.promotion-article_version-number.index" type="censhare:attribute" storage="3" domain="root." domain2="root." name="Maßnahme Artikel_Version (Volltext)" name_de="Maßnahme Artikel_Version (Volltext)" value_type="4" ui_control="0" ismultivalue="0" isassetinfo="0" assetinfo_sorting="0" issearchable="1" sorting="0" language_type="0" color_type="0" bdb_key="1154" enabled="1" has_relevance="0" target_object_type="_virtual" trait="full_text_index" trait_property="promotionArticleVersionNumber" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="msp:feature.alz-mmc.promotion-article_version-number.index" tcn="2" rowid="1154">
+      <xml_config>
+        <index-configs>
+          <index-config is-custom="true" type="fulltext">
+            <fulltext stemming="false" use-frequency="true" strip-diacritics="false" expand-junction-operator="AND_NOT_EMPTY" min-length="2" fuzzy-min-length="5" fuzzy-max-distance="1" max-bitap-errors="1" fuzzy-ngram-length="3" prefix-expansion-limit="1000" infix-expansion-limit="1000" fuzzy-expansion-limit="1000" fuzzy-skip-results="1000" fuzzy-min-alpha="1">
+              <feature key="msp:alz-mmc.promotion-article-number" mode="content"/>
+              <feature key="msp:alz-mmc.promotion-version-number" mode="content"/>
+              <character-mapping/>
+            </fulltext>
+          </index-config>
+        </index-configs>
+      </xml_config>
+    </feature>
+    <feature key="msp:alz-mmc.promotion-number.index" type="censhare:attribute" storage="3" domain="root." domain2="root." name="Maßnahme Nummer (Volltext)" name_de="Maßnahme Nummer (Volltext)" value_type="4" ui_control="0" ismultivalue="0" isassetinfo="0" assetinfo_sorting="0" issearchable="1" sorting="0" language_type="0" color_type="0" bdb_key="1155" enabled="1" has_relevance="0" target_object_type="_virtual" trait="full_text_index" trait_property="promotionNumber" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" asset_resource_key="msp:feature.alz-mmc.promotion-number.index" tcn="1" rowid="1155">
+      <xml_config>
+        <index-configs>
+          <index-config is-custom="true" type="fulltext">
+            <fulltext stemming="false" use-frequency="true" strip-diacritics="false" expand-junction-operator="AND_NOT_EMPTY" min-length="3" fuzzy-min-length="5" fuzzy-max-distance="1" max-bitap-errors="1" fuzzy-ngram-length="3" prefix-expansion-limit="1000" infix-expansion-limit="1000" fuzzy-expansion-limit="1000" fuzzy-skip-results="1000" fuzzy-min-alpha="1">
+              <feature key="msp:alz-mmc.promotion-number" mode="content"/>
+            </fulltext>
+          </index-config>
+        </index-configs>
+      </xml_config>
+    </feature>
+  </features>
+</data>

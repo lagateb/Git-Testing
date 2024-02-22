@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset name="Fake Document with Resource Key" type="document." application="metadata" domain="root." domain2="root.">
+  <asset_element idx="0" key="actual." isversioned="1"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="msp:alz.fake-release-asset"/>
+  <storage_item element_idx="0" key="text-preview" mimetype="application/xhtml+xml" relpath="file:Fake Document with Resource Key.text-preview.xhtml"/>
+  <storage_item element_idx="0" key="master" mimetype="text/plain" relpath="file:Fake Document with Resource Key.txt"/>
+</asset>

@@ -1,0 +1,1269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar
+        xmlns="http://relaxng.org/ns/structure/1.0"
+        xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+        datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
+
+
+    <a:documentation>
+        Article Schema of the Allianz FunctionGraphp bm
+    </a:documentation>
+
+    <start>
+        <element name="article">
+            <ref name="el_functiongraph-bm"/>
+        </element>
+    </start>
+
+
+    <define name="el_functiongraph-bm">
+        <element name="content">
+            <element name="strapline">
+                <oneOrMore>
+                    <ref name="cont_text"/>
+                </oneOrMore>
+            </element>
+            <element name="headline">
+                <oneOrMore>
+                    <ref name="cont_text_with_footnote" />
+                </oneOrMore>
+            </element>
+            <optional>
+            <element name="subline">
+                <oneOrMore>
+                    <ref name="cont_text" />
+                </oneOrMore>
+            </element>
+            </optional>
+            <element name="picture-q">
+                <ref name="attr_linkSource"/>
+            </element>
+            <element name="picture-l">
+                <ref name="attr_linkSource"/>
+            </element>
+            <element name="description">
+                <oneOrMore>
+                    <ref name="cont_text" />
+                </oneOrMore>
+            </element>
+            <element name="footnote">
+                <oneOrMore>
+                    <ref name="cont_text" />
+                </oneOrMore>
+            </element>
+            <optional>
+                <element name="speakernotes">
+                    <ref name="el_speakernotes"/>
+                </element>
+            </optional>
+        </element>
+    </define>
+    <define name="el_speakernotes">
+        <zeroOrMore>
+            <choice>
+                <ref name="el_paragraph"/>
+
+                <ref name="el_bulletList_speakernotes"/>
+                <ref name="el_enumeration_speakernotes"/>
+            </choice>
+        </zeroOrMore>
+    </define>
+
+
+    <define name="el_bulletList_speakernotes">
+        <element name="bullet-list">
+            <oneOrMore>
+                <element name="item">
+                    <ref name="el_paragraph"/>
+                </element>
+            </oneOrMore>
+        </element>
+    </define>
+
+    <define name="el_enumeration_speakernotes">
+        <element name="enumeration">
+            <oneOrMore>
+                <element name="item">
+                    <ref name="el_paragraph"/>
+                </element>
+            </oneOrMore>
+        </element>
+    </define>
+
+
+
+    <define name="el_content">
+        <element name="content">
+            <optional>
+                <element name="strapline">
+                    <oneOrMore>
+                        <ref name="cont_text"/>
+                    </oneOrMore>
+                </element>
+            </optional>
+            <optional>
+                <element name="title">
+                    <oneOrMore>
+                        <ref name="cont_text"/>
+                    </oneOrMore>
+                </element>
+            </optional>
+            <optional>
+                <element name="subtitle">
+                    <oneOrMore>
+                        <ref name="cont_text"/>
+                    </oneOrMore>
+                </element>
+            </optional>
+            <optional>
+                <element name="text">
+                    <optional>
+                        <element name="intro">
+                            <ref name="attr_styledCommon"/>
+                            <oneOrMore>
+                                <ref name="cont_textRichReferences"/>
+                            </oneOrMore>
+                        </element>
+                    </optional>
+                    <zeroOrMore>
+                        <choice>
+                            <ref name="cont_blockLevel"/>
+                            <ref name="el_group"/>
+                            <ref name="el_conversation"/>
+                            <ref name="el_newPage"/>
+                            <ref name="el_calloutBox"/>
+                            <element name="table-of-contents">
+                                <empty/>
+                            </element>
+                            <element name="section">
+                                <ref name="attr_styledCommon"/>
+                                <optional>
+                                    <attribute name="name">
+                                        <text/>
+                                    </attribute>
+                                </optional>
+                                <zeroOrMore>
+                                    <choice>
+                                        <ref name="el_paragraph"/>
+                                        <ref name="cont_subheadlines"/>
+                                        <ref name="el_imageBox"/>
+                                        <ref name="el_videoBox"/>
+                                        <ref name="el_callToAction"/>
+                                        <ref name="el_enumeration"/>
+                                        <ref name="el_bulletList"/>
+                                        <ref name="el_group"/>
+                                        <ref name="el_callout"/>
+                                        <ref name="el_teaserList"/>
+                                        <ref name="el_table"/>
+                                        <ref name="el_testimonialBox"/>
+                                        <ref name="el_anchor"/>
+                                        <ref name="el_pre"/>
+                                    </choice>
+                                </zeroOrMore>
+                            </element>
+                            <ref name="el_testimonialBox"/>
+                            <element name="game-box">
+                                <element name="game">
+                                    <ref name="attr_linkSource"/>
+                                </element>
+                                <element name="success">
+                                    <oneOrMore>
+                                        <ref name="el_paragraph"/>
+                                    </oneOrMore>
+                                </element>
+                            </element>
+                            <ref name="el_callToAction"/>
+                            <ref name="el_teaserList"/>
+                        </choice>
+                    </zeroOrMore>
+                </element>
+            </optional>
+            <optional>
+                <element name="reference-defs">
+                    <zeroOrMore>
+                        <element name="reference-def">
+                            <optional>
+                                <attribute name="key">
+                                    <data type="string"/>
+                                </attribute>
+                            </optional>
+                            <optional>
+                                <attribute name="type">
+                                    <choice>
+                                        <value>footnote</value>
+                                        <value>literature</value>
+                                    </choice>
+                                </attribute>
+                            </optional>
+                            <ref name="attr_styledCommon"/>
+                            <element name="reference-description">
+                                <optional>
+                                    <attribute name="label">
+                                        <data type="string"/>
+                                    </attribute>
+                                </optional>
+                                <zeroOrMore>
+                                    <choice>
+                                        <ref name="el_paragraph"/>
+                                        <ref name="el_bulletList"/>
+                                        <ref name="el_enumeration"/>
+                                    </choice>
+                                </zeroOrMore>
+                            </element>
+                        </element>
+                    </zeroOrMore>
+                </element>
+            </optional>
+        </element>
+    </define>
+
+
+
+
+
+    <define name="el_teaser">
+        <element name="teaser">
+            <optional>
+                <element name="title">
+                    <oneOrMore>
+                        <ref name="cont_text"/>
+                    </oneOrMore>
+                </element>
+            </optional>
+            <optional>
+                <element name="teaser-text">
+                    <oneOrMore>
+                        <ref name="cont_textRich"/>
+                    </oneOrMore>
+                </element>
+            </optional>
+            <optional>
+                <ref name="el_image"/>
+            </optional>
+            <optional>
+                <element name="teaser-link-label">
+                    <oneOrMore>
+                        <ref name="cont_textMarker"/>
+                    </oneOrMore>
+                </element>
+            </optional>
+            <optional>
+                <ref name="el_slideshow"/>
+            </optional>
+        </element>
+    </define>
+
+    <define name="el_keyVisual">
+        <element name="key-visual">
+            <optional>
+                <ref name="attr_display"/>
+            </optional>
+            <optional>
+                <attribute name="type">
+                    <choice>
+                        <value>none</value>
+                        <value>image</value>
+                        <value>video</value>
+                        <value>audio</value>
+                        <value>slideshow</value>
+                        <value>interactive-element</value>
+                        <value>turntable</value>
+                    </choice>
+                </attribute>
+            </optional>
+            <optional>
+                <choice>
+                    <group>
+                        <choice>
+                            <ref name="el_video"/>
+                            <ref name="el_audio"/>
+                            <ref name="el_slideshow"/>
+                            <ref name="el_interactiveElement"/>
+                            <ref name="el_turntable"/>
+                        </choice>
+                        <optional>
+                            <ref name="el_poster"/>
+                        </optional>
+                    </group>
+                    <ref name="el_image"/>
+                </choice>
+            </optional>
+        </element>
+    </define>
+
+    <define name="el_image">
+        <element name="image">
+            <ref name="attr_linkSource"/>
+            <optional>
+                <ref name="attr_aspectRatio"/>
+            </optional>
+            <optional>
+                <attribute name="seo-title">
+                    <text/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="alt-text">
+                    <text/>
+                </attribute>
+            </optional>
+        </element>
+    </define>
+
+    <define name="el_poster">
+        <element name="poster">
+            <ref name="attr_linkSource"/>
+            <optional>
+                <ref name="attr_aspectRatioNoFlex"/>
+            </optional>
+            <optional>
+                <attribute name="seo-title">
+                    <text/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="alt-text">
+                    <text/>
+                </attribute>
+            </optional>
+        </element>
+    </define>
+
+    <define name="el_caption">
+        <element name="caption">
+            <ref name="attr_styledCommon"></ref>
+            <optional>
+                <element name="title">
+                    <oneOrMore>
+                        <ref name="cont_text"/>
+                    </oneOrMore>
+                </element>
+            </optional>
+            <zeroOrMore>
+                <choice>
+                    <ref name="el_paragraph"/>
+                    <ref name="el_enumeration"/>
+                    <ref name="el_bulletList"/>
+                    <ref name="el_CICArticle"/>
+                </choice>
+            </zeroOrMore>
+        </element>
+    </define>
+
+    <define name="el_paragraph">
+        <element name="paragraph">
+            <oneOrMore>
+                <ref name="cont_textRichReferences"/>
+            </oneOrMore>
+            <ref name="attr_styledCommon"></ref>
+        </element>
+    </define>
+
+    <define name="el_pre">
+        <element name="pre">
+            <ref name="attr_styledCommon"/>
+            <optional>
+                <attribute name="code-type">
+                    <choice>
+                        <value>application/javascript</value>
+                        <value>application/x-freemarker</value>
+                        <value>application/x-java</value>
+                        <value>application/x-perl</value>
+                        <value>application/x-php</value>
+                        <value>application/x-python</value>
+                        <value>application/x-ruby</value>
+                        <value>application/xhtml+xml</value>
+                        <value>application/xslt+xml</value>
+                        <value>image/svg+xml</value>
+                        <value>text/css</value>
+                        <value>text/html</value>
+                        <value>text/plain</value>
+                        <value>text/x-xpress</value>
+                        <value>text/xml</value>
+                    </choice>
+                </attribute>
+            </optional>
+            <oneOrMore>
+                <ref name="cont_textRichReferences"/>
+            </oneOrMore>
+        </element>
+    </define>
+
+    <define name="el_enumeration">
+        <element name="enumeration">
+            <ref name="attr_styledCommon"/>
+            <oneOrMore>
+                <ref name="el_item"/>
+            </oneOrMore>
+        </element>
+    </define>
+
+    <define name="el_bulletList">
+        <element name="bullet-list">
+            <ref name="attr_styledCommon"/>
+            <oneOrMore>
+                <ref name="el_item"/>
+            </oneOrMore>
+        </element>
+    </define>
+
+    <define name="el_item">
+        <element name="item">
+            <oneOrMore>
+                <choice>
+                    <ref name="el_paragraph"/>
+                    <ref name="el_imageBox"/>
+                    <ref name="el_bulletList"/>
+                    <ref name="el_enumeration"/>
+                    <ref name="el_pre"/>
+                    <ref name="el_CICArticle"/>
+                    <ref name="el_group"/>
+                    <ref name="el_anchor"/>
+                </choice>
+            </oneOrMore>
+        </element>
+    </define>
+
+
+
+    <define name="el_group">
+        <element name="group">
+            <ref name="attr_styledCommon"/>
+            <oneOrMore>
+                <choice>
+                    <ref name="cont_blockLevel"/>
+                    <ref name="el_conversation"/>
+                    <ref name="el_callToAction"/>
+                    <element name="additional-content">
+                        <ref name="attr_styledCommon"/>
+                        <ref name="attr_alignedCommon"/>
+                        <oneOrMore>
+                            <!-- cont_blockLevel without pre, table -->
+                            <choice>
+                                <ref name="el_paragraph"/>
+                                <ref name="cont_subheadlines"/>
+                                <ref name="el_bulletList"/>
+                                <ref name="el_enumeration"/>
+                                <ref name="cont_objectBoxes"/>
+                                <ref name="el_callout"/>
+                                <ref name="el_CICArticle"/>
+                                <ref name="el_anchor"/>
+                                <ref name="el_hdivider"/>
+                                <ref name="el_teaserList"/>
+                            </choice>
+                        </oneOrMore>
+                    </element>
+                </choice>
+            </oneOrMore>
+        </element>
+    </define>
+
+    <define name="el_table">
+        <element name="table">
+            <ref name="attr_styledCommon"/>
+            <optional>
+                <attribute name="header-row-count">
+                    <a:documentation>
+                        TODO: change type to nonNegativeInteger
+                    </a:documentation>
+                    <data type="string"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="footer-row-count">
+                    <a:documentation>
+                        TODO: change type to nonNegativeInteger
+                    </a:documentation>
+                    <data type="string"/>
+                </attribute>
+            </optional>
+            <optional>
+                <element name="table-caption">
+                    <ref name="attr_styledCommon"/>
+                    <oneOrMore>
+                        <ref name="cont_textRichReferences"/>
+                    </oneOrMore>
+                </element>
+            </optional>
+            <element name="colspec">
+                <oneOrMore>
+                    <element name="col">
+                        <optional>
+                            <attribute name="width">
+                                <data type="string"/>
+                            </attribute>
+                        </optional>
+                        <ref name="attr_styledCommon"/>
+                    </element>
+                </oneOrMore>
+            </element>
+            <oneOrMore>
+                <element name="row">
+                    <ref name="attr_styledCommon"/>
+                    <oneOrMore>
+                        <element name="cell">
+                            <optional>
+                                <attribute name="colspan">
+                                    <a:documentation>
+                                        TODO: change type to nonNegativeInteger
+                                    </a:documentation>
+                                    <data type="string"/>
+                                </attribute>
+                            </optional>
+                            <optional>
+                                <attribute name="rowspan">
+                                    <a:documentation>
+                                        TODO: change type to nonNegativeInteger
+                                    </a:documentation>
+                                    <data type="string"/>
+                                </attribute>
+                            </optional>
+                            <ref name="attr_styledCommon"/>
+                            <zeroOrMore>
+                                <choice>
+                                    <ref name="cont_blockLevel"/>
+                                    <ref name="el_group"/>
+                                </choice>
+                            </zeroOrMore>
+                        </element>
+                    </oneOrMore>
+                </element>
+            </oneOrMore>
+        </element>
+    </define>
+
+    <define name="el_conversation">
+        <element name="conversation">
+            <optional>
+                <attribute name="type">
+                    <choice>
+                        <value>faq</value>
+                        <value>interview</value>
+                    </choice>
+                </attribute>
+            </optional>
+            <ref name="attr_styledCommon"/>
+            <oneOrMore>
+                <element name="conversation-item">
+                    <element name="question">
+                        <ref name="attr_styledCommon"/>
+                        <optional>
+                            <element name="person">
+                                <text/>
+                            </element>
+                        </optional>
+                        <oneOrMore>
+                            <ref name="el_paragraph"/>
+                        </oneOrMore>
+                    </element>
+                    <oneOrMore>
+                        <element name="answer">
+                            <ref name="attr_styledCommon"/>
+                            <optional>
+                                <element name="person">
+                                    <text/>
+                                </element>
+                            </optional>
+                            <oneOrMore>
+                                <ref name="cont_blockLevel"/>
+                            </oneOrMore>
+                        </element>
+                    </oneOrMore>
+                </element>
+                <zeroOrMore>
+                    <choice>
+                        <ref name="cont_objectBoxes"/>
+                        <ref name="el_callout"/>
+                        <ref name="el_anchor"/>
+                        <ref name="el_hdivider"/>
+                        <ref name="el_newPage"/>
+                        <ref name="el_calloutBox"/>
+                    </choice>
+                </zeroOrMore>
+            </oneOrMore>
+        </element>
+    </define>
+
+    <define name="el_hdivider">
+        <element name="hdivider">
+            <ref name="attr_styledCommon"/>
+        </element>
+    </define>
+
+    <define name="el_newPage">
+        <element name="new-page">
+            <empty/>
+        </element>
+    </define>
+
+    <define name="el_anchor">
+        <element name="anchor">
+            <optional>
+                <attribute name="key">
+                    <data type="string"/>
+                </attribute>
+            </optional>
+        </element>
+    </define>
+
+    <define name="el_callout">
+        <element name="callout">
+            <ref name="attr_styledCommon"/>
+            <oneOrMore>
+                <choice>
+                    <ref name="el_paragraph"/>
+                    <ref name="el_CICArticle"/>
+                </choice>
+            </oneOrMore>
+            <optional>
+                <ref name="el_caption"/>
+            </optional>
+        </element>
+    </define>
+
+    <define name="el_imageBox">
+        <element name="image-box">
+            <ref name="attr_boxCommon"/>
+            <optional>
+                <attribute name="border"><data type="boolean"/></attribute>
+            </optional>
+            <optional>
+                <attribute name="placement-category">
+                    <data type="string"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="sorting">
+                    <data type="string"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="zoom">
+                    <data type="boolean"/>
+                </attribute>
+            </optional>
+            <ref name="el_image"/>
+            <optional>
+                <ref name="el_caption"/>
+            </optional>
+            <optional>
+                <choice>
+                    <ref name="attr_linkSource"/>
+                    <attribute name="link">
+                        <data type="string"/>
+                    </attribute>
+                </choice>
+            </optional>
+            <!-- TODO inline this ref after cleanup @link -->
+            <ref name="attr_linkAttrs"/>
+        </element>
+    </define>
+
+    <define name="el_videoBox">
+        <element name="video-box">
+            <ref name="attr_boxCommon"/>
+            <ref name="attr_display"/>
+            <ref name="el_video"/>
+            <ref name="el_poster"/>
+            <optional>
+                <ref name="el_caption"/>
+            </optional>
+        </element>
+    </define>
+
+    <define name="el_video">
+        <element name="video">
+            <optional>
+                <ref name="attr_aspectRatioNoFlex"/>
+            </optional>
+            <optional>
+                <attribute name="autoplay">
+                    <data type="boolean"/>
+                </attribute>
+            </optional>
+            <ref name="attr_linkSource"/>
+        </element>
+    </define>
+
+    <define name="el_slideshowBox">
+        <element name="slideshow-box">
+            <ref name="attr_boxCommon"/>
+            <ref name="attr_display"/>
+            <ref name="el_slideshow"/>
+            <ref name="el_poster"/>
+            <optional>
+                <ref name="el_caption"/>
+            </optional>
+        </element>
+    </define>
+
+    <define name="el_slideshow">
+        <element name="slideshow">
+            <optional>
+                <ref name="attr_aspectRatioNoFlex"/>
+            </optional>
+            <optional>
+                <attribute name="autoplay">
+                    <data type="boolean"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="start-slide">
+                    <data type="string"/>
+                </attribute>
+            </optional>
+            <ref name="attr_linkSource"/>
+        </element>
+    </define>
+
+    <define name="el_interactiveElementBox">
+        <element name="interactive-element-box">
+            <ref name="attr_boxCommon"/>
+            <ref name="attr_display"/>
+            <ref name="el_interactiveElement"/>
+            <ref name="el_poster"/>
+            <optional>
+                <ref name="el_caption"/>
+            </optional>
+        </element>
+    </define>
+
+    <define name="el_interactiveElement">
+        <element name="interactive-element">
+            <ref name="attr_linkSource"/>
+        </element>
+    </define>
+
+    <define name="el_audioBox">
+        <element name="audio-box">
+            <ref name="attr_boxCommon"/>
+            <ref name="el_audio"/>
+            <ref name="el_poster"/>
+            <optional>
+                <ref name="el_caption"/>
+            </optional>
+        </element>
+    </define>
+
+    <define name="el_audio">
+        <element name="audio">
+            <ref name="attr_linkSource"/>
+            <optional>
+                <attribute name="autoplay">
+                    <data type="boolean"/>
+                </attribute>
+            </optional>
+        </element>
+    </define>
+
+    <define name="el_imageRangeBox">
+        <element name="image-range-box">
+            <ref name="attr_styledCommon"/>
+            <ref name="el_imageRange"/>
+        </element>
+    </define>
+
+    <define name="el_imageRange">
+        <element name="image-range">
+            <ref name="attr_linkSource"/>
+            <ref name="attr_styledCommon"/>
+            <ref name="attr_aspectRatio"/>
+            <optional>
+                <attribute name="display-image-captions">
+                    <data type="boolean"/>
+                </attribute>
+            </optional>
+            <optional>
+                <attribute name="link">
+                    <choice>
+                        <value>none</value>
+                        <value>slideshow</value>
+                        <value>related-content</value>
+                    </choice>
+                </attribute>
+            </optional>
+        </element>
+    </define>
+
+    <define name="el_imageRevealBox">
+        <element name="image-reveal-box">
+            <ref name="attr_boxCommon"/>
+            <ref name="attr_display"/>
+            <ref name="el_imageReveal"/>
+            <ref name="el_poster"/>
+            <optional>
+                <ref name="el_caption"/>
+            </optional>
+        </element>
+    </define>
+
+    <define name="el_imageReveal">
+        <element name="image-reveal">
+            <ref name="attr_linkSource"/>
+            <ref name="attr_aspectRatioNoFlex"/>
+        </element>
+    </define>
+
+    <define name="el_turntableBox">
+        <element name="turntable-box">
+            <ref name="attr_boxCommon"/>
+            <ref name="attr_display"/>
+            <ref name="el_turntable"/>
+            <ref name="el_poster"/>
+            <optional>
+                <ref name="el_caption"/>
+            </optional>
+        </element>
+    </define>
+
+    <define name="el_turntable">
+        <element name="turntable">
+            <ref name="attr_linkSource"/>
+        </element>
+    </define>
+
+    <define name="el_calloutBox">
+        <element name="callout-box">
+            <oneOrMore>
+                <choice>
+                    <ref name="cont_objectBoxes"/>
+                    <ref name="el_imageRangeBox"/>
+                </choice>
+            </oneOrMore>
+            <ref name="attr_styledCommon"/>
+        </element>
+    </define>
+
+    <define name="el_testimonialBox">
+        <element name="testimonial-box">
+            <oneOrMore>
+                <choice>
+                    <ref name="el_imageBox"/>
+                    <ref name="el_videoBox"/>
+                    <ref name="el_audioBox"/>
+                    <ref name="el_callout"/>
+                    <ref name="el_caption"/>
+                    <ref name="el_paragraph"/>
+                    <ref name="el_bulletList"/>
+                    <ref name="el_enumeration"/>
+                    <ref name="cont_subheadlines"/>
+                </choice>
+            </oneOrMore>
+        </element>
+    </define>
+    <define name="el_CICArticle">
+        <element name="article">
+            <attribute name="href" ns="http://www.w3.org/1999/xlink">
+                <a:documentation>
+                    TODO: check for string pattern "censhare:///service/assets/asset.+"
+                </a:documentation>
+                <data type="string"/>
+            </attribute>
+        </element>
+    </define>
+
+    <define name="el_callToAction">
+        <element name="call-to-action">
+            <optional>
+                <element name="label">
+                    <oneOrMore>
+                        <ref name="cont_text"/>
+                    </oneOrMore>
+                </element>
+            </optional>
+            <optional>
+                <ref name="el_image"/>
+            </optional>
+            <ref name="attr_link"/>
+            <ref name="attr_styledCommon"/>
+        </element>
+    </define>
+
+    <define name="cont_blockLevel">
+        <a:documentation>
+            Block building content
+        </a:documentation>
+        <choice>
+            <ref name="el_paragraph"/>
+            <ref name="cont_subheadlines"/>
+            <ref name="el_bulletList"/>
+            <ref name="el_enumeration"/>
+            <ref name="cont_objectBoxes"/>
+            <ref name="el_callout"/>
+            <ref name="el_table"/>
+            <ref name="el_pre"/>
+            <ref name="el_CICArticle"/>
+            <ref name="el_anchor"/>
+            <ref name="el_hdivider"/>
+        </choice>
+    </define>
+
+    <define name="el_teaserList">
+        <element name="teaser-list">
+            <oneOrMore>
+                <element name="teaser-box">
+                    <ref name="attr_link"/>
+                    <oneOrMore>
+                        <choice>
+                            <ref name="el_paragraph"/>
+                            <ref name="el_imageBox"/>
+                            <ref name="el_videoBox"/>
+                            <ref name="cont_subheadlines"/>
+                            <ref name="el_enumeration"/>
+                            <ref name="el_bulletList"/>
+                            <ref name="el_hdivider"/>
+                            <ref name="el_callout"/>
+                            <ref name="el_callToAction"/>
+                        </choice>
+                    </oneOrMore>
+                </element>
+            </oneOrMore>
+        </element>
+    </define>
+
+    <define name="cont_objectBoxes">
+        <a:documentation>
+
+        </a:documentation>
+        <choice>
+            <ref name="el_imageBox"/>
+            <ref name="el_videoBox"/>
+            <ref name="el_audioBox"/>
+            <ref name="el_slideshowBox"/>
+            <ref name="el_imageRevealBox"/>
+            <ref name="el_turntableBox"/>
+            <ref name="el_interactiveElementBox"/>
+        </choice>
+    </define>
+
+    <define name="cont_subheadlines">
+        <choice>
+            <element name="subheadline-1">
+                <ref name="cont_subheadline"/>
+            </element>
+            <element name="subheadline-2">
+                <ref name="cont_subheadline"/>
+            </element>
+            <element name="subheadline-3">
+                <ref name="cont_subheadline"/>
+            </element>
+        </choice>
+    </define>
+
+    <define name="cont_subheadline">
+        <ref name="attr_styledCommon"/>
+        <optional>
+            <attribute name="table-of-contents-exclude">
+                <data type="boolean"/>
+            </attribute>
+        </optional>
+        <oneOrMore>
+            <ref name="cont_textReferences"/>
+        </oneOrMore>
+    </define>
+
+    <define name="cont_textSupSub">
+        <a:documentation>
+            Superscript or subscript content
+        </a:documentation>
+        <choice>
+            <text/>
+            <element name="sup">
+                <text/>
+            </element>
+            <element name="sub">
+                <text/>
+            </element>
+        </choice>
+    </define>
+
+    <define name="cont_textSimple">
+        <a:documentation>
+            Simple textual content
+        </a:documentation>
+        <choice>
+            <ref name="cont_textSupSub"></ref>
+            <element name="underline">
+                <oneOrMore>
+                    <ref name="cont_textSupSub"></ref>
+                </oneOrMore>
+            </element>
+        </choice>
+    </define>
+
+    <define name="cont_text">
+        <choice>
+            <ref name="cont_textSimple"/>
+            <element name="bold">
+                <oneOrMore>
+                    <ref name="cont_textSimple"/>
+                </oneOrMore>
+            </element>
+            <element name="italic">
+                <oneOrMore>
+                    <ref name="cont_textSimple"/>
+                </oneOrMore>
+            </element>
+            <element name="bold-italic">
+                <oneOrMore>
+                    <ref name="cont_textSimple"/>
+                </oneOrMore>
+            </element>
+            <element name="link">
+                <oneOrMore>
+                    <ref name="cont_textSimple"/>
+                </oneOrMore>
+            </element>
+
+        </choice>
+    </define>
+
+    <define name="cont_textMarker">
+        <choice>
+            <ref name="cont_text"/>
+            <!--
+            <element name="marker">
+                <attribute name="semantics">
+                    <choice>
+                        <value>emphasized</value>
+                        <value>small</value>
+                        <value>strong</value>
+                        <value>pre</value>
+                    </choice>
+                </attribute>
+                <oneOrMore>
+                    <ref name="cont_text"/>
+                </oneOrMore>
+            </element>
+            -->
+        </choice>
+    </define>
+
+    <define name="cont_textRich">
+        <choice>
+            <ref name="cont_text"/>
+            <!--
+            <element name="link">
+                <ref name="attr_link"/>
+                <oneOrMore>
+                    <ref name="cont_text"/>
+                </oneOrMore>
+            </element>
+            <element name="marker">
+                <attribute name="semantics">
+                    <choice>
+                        <value>emphasized</value>
+                        <value>small</value>
+                        <value>strong</value>
+                        <value>pre</value>
+                    </choice>
+                </attribute>
+                <oneOrMore>
+                    <ref name="cont_text"/>
+                </oneOrMore>
+            </element>
+            -->
+        </choice>
+    </define>
+
+    <define name="cont_textReferences">
+        <choice>
+            <ref name="cont_text"/>
+            <!--
+            <element name="reference">
+              <optional>
+                <attribute name="key">
+                  <data type="string"/>
+                </attribute>
+              </optional>
+              <optional>
+                <attribute name="label">
+                  <data type="string"/>
+                </attribute>
+              </optional>
+            </element>
+            -->
+            <element name="footnote">
+                <oneOrMore>
+                    <ref name="cont_text"/>
+                </oneOrMore>
+            </element>
+        </choice>
+    </define>
+
+    <define name="cont_textRichReferences">
+        <choice>
+            <ref name="cont_textRich"/>
+            <!--
+            <element name="reference">
+              <optional>
+                <attribute name="key">
+                  <data type="string"/>
+                </attribute>
+              </optional>
+              <optional>
+                <attribute name="label">
+                  <data type="string"/>
+                </attribute>
+              </optional>
+            </element>
+            -->
+            <element name="footnote">
+                <oneOrMore>
+                    <ref name="cont_text"/>
+                </oneOrMore>
+            </element>
+        </choice>
+    </define>
+
+    <define name="attr_styledCommon">
+        <optional>
+            <attribute name="style">
+                <choice>
+                    <value type="string">style-1</value>
+                    <value type="string">style-2</value>
+                    <value type="string">style-3</value>
+                    <value type="string">style-4</value>
+                    <value type="string">style-5</value>
+                    <value type="string">style-6</value>
+                    <value type="string">style-7</value>
+                    <value type="string">style-8</value>
+                    <value type="string">style-9</value>
+                    <value type="string">style-10</value>
+                </choice>
+            </attribute>
+        </optional>
+    </define>
+
+    <define name="attr_alignedCommon">
+        <optional>
+            <attribute name="align">
+                <choice>
+                    <value type="string">left</value>
+                    <value type="string">right</value>
+                    <value type="string">center</value>
+                    <value type="string">sidebar</value>
+                </choice>
+            </attribute>
+        </optional>
+    </define>
+
+    <define name="attr_boxCommon">
+        <ref name="attr_styledCommon"/>
+        <ref name="attr_alignedCommon"/>
+    </define>
+
+    <define name="attr_linkSource">
+        <optional>
+            <attribute name="href" ns="http://www.w3.org/1999/xlink">
+                <a:documentation>
+                    TODO: make attribute mandatory; check for string pattern "censhare:///service/assets/asset.+"
+                </a:documentation>
+                <data type="string"/>
+            </attribute>
+        </optional>
+        <optional>
+            <attribute name="role" ns="http://www.w3.org/1999/xlink">
+                <a:documentation>
+                    TODO: check for string pattern "censhare:///service/masterdata/asset_rel_typedef;key=.+"
+                </a:documentation>
+                <data type="string"/>
+            </attribute>
+        </optional>
+    </define>
+
+    <!-- TODO inline definition after cleanup image-box@link -->
+    <define name="attr_linkAttrs">
+        <optional>
+            <attribute name="url-fragment">
+                <data type="string"/>
+            </attribute>
+        </optional>
+        <optional>
+            <attribute name="target">
+                <choice>
+                    <value>self</value>
+                    <value>new-window</value>
+                </choice>
+            </attribute>
+        </optional>
+        <optional>
+            <attribute name="follow">
+                <choice>
+                    <value>follow</value>
+                    <value>no-follow</value>
+                </choice>
+            </attribute>
+        </optional>
+        <optional>
+            <attribute name="seo-title">
+                <data type="string"/>
+            </attribute>
+        </optional>
+    </define>
+
+    <define name="attr_link">
+        <optional>
+            <choice>
+                <ref name="attr_linkSource"/>
+                <attribute name="url">
+                    <data type="string"/>
+                </attribute>
+            </choice>
+        </optional>
+        <!-- TODO inline this ref after cleanup image-box@link -->
+        <ref name="attr_linkAttrs"/>
+    </define>
+
+    <define name="attr_display">
+        <attribute name="display">
+            <choice>
+                <value>inline</value>
+                <value>fullscreen</value>
+            </choice>
+        </attribute>
+    </define>
+
+    <define name="attr_aspectRatio">
+        <attribute name="aspect-ratio">
+            <ref name="val_aspectRatio"/>
+        </attribute>
+    </define>
+
+    <define name="attr_aspectRatioNoFlex">
+        <attribute name="aspect-ratio">
+            <ref name="val_aspectRatioNoFlex"/>
+        </attribute>
+    </define>
+
+    <define name="val_aspectRatio">
+        <choice>
+            <ref name="val_aspectRatioNoFlex"/>
+            <value>flexible</value>
+        </choice>
+    </define>
+
+    <define name="val_aspectRatioNoFlex">
+        <choice>
+            <value>16-9</value>
+            <value>4-3</value>
+            <value>3-4</value>
+            <value>1-1</value>
+        </choice>
+    </define>
+
+    <define name="cont_text_with_footnote">
+        <a:documentation>
+            Erweiterung footnote
+            Muss dann auch in der UI-Definition als element vorhanden sein, um es auszuwaehlen!
+        </a:documentation>
+        <choice>
+            <ref name="cont_text"/>
+            <element name="footnote">
+                <oneOrMore>
+                    <ref name="cont_textSimple"/>
+                </oneOrMore>
+            </element>
+        </choice>
+    </define>
+</grammar>

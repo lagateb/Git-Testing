@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset name="svtx: Standard Layout Gruppen Konfiguration" type="module.layout-group." application="default" domain="root." domain2="root.">
+  <asset_feature feature="censhare:layout-group.allow-placement-other-assets" value_long="1"/>
+  <asset_feature feature="censhare:layout-group.place-first-result" value_long="1"/>
+  <asset_feature feature="censhare:layout-group.placement-required" value_long="1"/>
+  <asset_feature feature="censhare:layout-group.position-movable" value_long="1"/>
+  <asset_feature feature="censhare:layout-group.removable" value_long="1"/>
+  <asset_feature feature="censhare:layout-group.selectable-in-wizard" value_long="1"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="svtx:default.layout.group.configuration"/>
+  <asset_feature feature="censhare:resource-meta">
+    <xmldata>
+      <selection needed="false"/>
+    </xmldata>
+  </asset_feature>
+</asset>

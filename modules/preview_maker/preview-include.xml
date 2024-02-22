@@ -1,0 +1,188 @@
+<?xml version="1.0" ?>
+<cmd
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="http://www.censhare.com/xml/3.0.0/command.xsd"
+  xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus"
+  xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val"
+  xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct"
+  xmlns:xe="http://www.censhare.com/xml/3.0.0/xmleditor"
+  >
+
+  <xml-info
+    title="${reg-title-aa-preview-include}"
+    description="${reg-description-aa-preview-include}"
+    knowledge-level="2"
+    special-licence="false"
+    feature-help=""
+    localize="true"
+    version="20"
+    >
+    <property-resources>
+      <base url="file:module"/>
+      <base url="file:../client/javaadmin/module"/>
+      <base url="file:../../common/global"/>
+    </property-resources>
+    <history>
+      <entry user="[Savotex] Köppe, Maximilian" timestamp="2020-03-23T11:14:09.095Z" comment=""/>
+    </history>
+  </xml-info>
+  <cmd-info
+    name="preview_maker.preview-include"
+    enabled="true"
+  />
+
+  <admin-info dialog-id="config-preview-include" dialog-url="file:config-dialog.xml"/>
+  <template>
+        <!-- settings for ImageManager operations not available through admin dialogs: -->
+        <!--
+          operation@outJPEGQuality
+          JPEQ Quality, 1 = worst quality, smallest files, 100 = best quality, biggest files
+
+          operation@outICCProfile
+          use of a specific ICC Profile for output
+          profile must be available under modules/preview_maker/iccprofiles/
+
+          operation@rendering-intent
+          rendering intent, see services/image/config.xml for coding
+          values 0 ... 6
+
+          operation@backend
+          can be set by Admin Interface for specific mimetypes, values "IM"|"HELIOS"|"JAI"
+          empty value induces default backend set in ImageService
+        -->
+        <opi>
+            <operation opname="opi" infs="@INFS@" in="@IN" outfs="@OUTFS@" out="@OUT@" outStripped="false"/>
+        </opi>
+        <splitpdf>
+            <operation opname="splitpdf" infs="@INFS@" in="@IN" inmaster="@INMASTER@"/>
+        </splitpdf>
+        <preview>
+            <operation opname="scale" width="@WIDTH@" height="@HEIGHT@" infs="@INFS@" in="@IN" outfs="@OUTFS@" out="@OUT@" outStripped="true"/>
+        </preview>
+        <thumbnail>
+            <operation opname="scale" width="@WIDTH@" height="@HEIGHT@" infs="@INFS@" in="@IN" outfs="@OUTFS@" out="@OUT@" outStripped="true"/>
+        </thumbnail>
+        <video-preview>
+            <operation opname="videoframe" timecode="@FRAME@" infs="@INFS@" in="@IN@" outfs="@OUTFS@" out="@OUT@"/>
+        </video-preview>
+        <office-preview>
+            <document mimetype="@MIMETYPE@" in="@IN@" infs="@INFS" out="@OUT" outfs="@OUTFS"/>
+        </office-preview>
+        <open-office-preview1>
+            <operation opname="convert" in="@IN@" infs="@INFS" out="@OUT" outfs="@OUTFS" backend="Office"/>
+        </open-office-preview1>
+        <open-office-preview2>
+            <operation opname="splitpdf" infs="@INFS@" in="@IN" inmaster="@INMASTER@"/>
+        </open-office-preview2>
+        <xmp-preview>
+            <operation opname="xmp-thumbnail" infs="@INFS@" in="@IN" outfs="@OUTFS@"/>
+        </xmp-preview>
+    </template>
+
+    <!-- TODO: use common configuration with generate-preview.xml -->
+    <form max-file-size="200" max-pixel-size="8000" max-pixel-size-enabled="false" preview-from-opi="false" preview-size="2000" preview-dpi="72" preview-jpeg-quality="90" thumbnail-size="250" thumbnail-dpi="72" thumbnail-jpeg-quality="80" thumbnail-backend="JAI" opi-enabled="false" opi-format="JPEG" opi-color="keep" opi-strip-icc="true" video-preview="false" preview-from-pdf="false" preview-from-xmp="true" opi-extra-mimetypes="false" hires-preview-enabled="false" hires-preview-mime-type="image/jpeg" hires-preview-jpeg-quality="90" hires-preview-max-pixel="5000" hires-preview-dpi="144" hires-preview-strip-icc="true">
+        <!-- list of mimetypes we create opi for -->
+        <mimetype-opi mimetype="application/photoshop"/>
+        <mimetype-opi mimetype="application/photoshop-big"/>
+        <mimetype-opi mimetype="image/jpeg"/>
+        <mimetype-opi mimetype="image/tiff"/>
+        <!-- list of mimetypes we create hires-preview for -->
+        <mimetype-hires backend="" mimetype="application/photoshop"/>
+        <mimetype-hires backend="" mimetype="application/photoshop-big"/>
+        <mimetype-hires backend="" mimetype="image/jpeg"/>
+        <mimetype-hires backend="" mimetype="image/tiff"/>
+        <mimetype-hires backend="" mimetype="application/postscript"/>
+        <!-- list of mimetypes we create previews for -->
+        <mimetype backend="" mimetype="application/photoshop"/>
+        <mimetype backend="" mimetype="application/photoshop-big"/>
+        <mimetype backend="" mimetype="application/postscript"/>
+        <mimetype backend="" mimetype="application/pdf"/>
+        <mimetype backend="" mimetype="application/vnd.adobe.illustrator"/>
+        <mimetype backend="" mimetype="image/gif"/>
+        <mimetype backend="" mimetype="image/jpeg"/>
+        <mimetype backend="" mimetype="image/x-pict"/>
+        <mimetype backend="" mimetype="image/png"/>
+        <mimetype backend="" mimetype="image/svg+xml"/>
+        <mimetype backend="" mimetype="image/tiff"/>
+        <mimetype backend="" mimetype="image/x-emf"/>
+        <mimetype backend="" mimetype="image/x-wmf"/>
+        <mimetype backend="IM" mimetype="image/webp"/>
+        <mimetype backend="IM" mimetype="image/bmp"/>
+        <mimetype backend="Office" mimetype="application/vnd.openxmlformats-officedocument.wordprocessingml.document" keep-pdf="false" keep-pdf-key="pdf"/>
+        <mimetype backend="Office" mimetype="application/vnd.ms-word.document.macroEnabled.12" keep-pdf="false" keep-pdf-key="pdf"/>
+        <mimetype backend="Office" mimetype="application/vnd.ms-word.template.macroEnabled.12" keep-pdf="false" keep-pdf-key="pdf"/>
+        <mimetype backend="Office" mimetype="application/vnd.openxmlformats-officedocument.wordprocessingml.template" keep-pdf="false" keep-pdf-key="pdf"/>
+        <mimetype backend="Office" mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" keep-pdf="false" keep-pdf-key="pdf"/>
+        <mimetype backend="Office" mimetype="application/vnd.ms-excel.sheet.macroEnabled.12" keep-pdf="false" keep-pdf-key="pdf"/>
+        <!-- .pptx -->
+        <mimetype backend="Office" mimetype="application/vnd.openxmlformats-officedocument.presentationml.presentation" keep-pdf="false" keep-pdf-key="pdf"/>
+        <!-- .pptm -->
+        <mimetype backend="Office" mimetype="application/vnd.ms-powerpoint.presentation.macroEnabled.12" keep-pdf="false" keep-pdf-key="pdf"/>
+        <mimetype backend="Office" mimetype="application/msword" keep-pdf="false" keep-pdf-key="pdf"/>
+        <mimetype backend="Office" mimetype="application/msexcel" keep-pdf="false" keep-pdf-key="pdf"/>
+        <mimetype backend="Office" mimetype="application/mspowerpoint" keep-pdf="false" keep-pdf-key="pdf"/>
+        <mimetype backend="Office" mimetype="application/vnd.oasis.opendocument.text" keep-pdf="false" keep-pdf-key="pdf"/>
+        <mimetype backend="Office" mimetype="application/vnd.oasis.opendocument.text-template" keep-pdf="false" keep-pdf-key="pdf"/>
+        <mimetype backend="Office" mimetype="application/vnd.oasis.opendocument.spreadsheet" keep-pdf="false" keep-pdf-key="pdf"/>
+        <mimetype backend="Office" mimetype="application/vnd.oasis.opendocument.spreadsheet-template" keep-pdf="false" keep-pdf-key="pdf"/>
+        <mimetype backend="Office" mimetype="application/vnd.oasis.opendocument.presentation" keep-pdf="false" keep-pdf-key="pdf"/>
+        <mimetype backend="Office" mimetype="application/vnd.oasis.opendocument.presentation-template" keep-pdf="false" keep-pdf-key="pdf"/>
+        <mimetype backend="Office" mimetype="application/vnd.oasis.opendocument.graphics" keep-pdf="false" keep-pdf-key="pdf"/>
+        <mimetype backend="Office" mimetype="application/vnd.oasis.opendocument.graphics-template" keep-pdf="false" keep-pdf-key="pdf"/>
+        <mimetype backend="Office" mimetype="application/vnd.sun.xml.writer" keep-pdf="false" keep-pdf-key="pdf"/>
+        <mimetype backend="Office" mimetype="application/vnd.sun.xml.writer.template" keep-pdf="false" keep-pdf-key="pdf"/>
+        <mimetype backend="Office" mimetype="application/vnd.sun.xml.calc" keep-pdf="false" keep-pdf-key="pdf"/>
+        <mimetype backend="Office" mimetype="application/vnd.sun.xml.calc.template" keep-pdf="false" keep-pdf-key="pdf"/>
+        <mimetype backend="Office" mimetype="application/vnd.sun.xml.impress" keep-pdf="false" keep-pdf-key="pdf"/>
+        <mimetype backend="Office" mimetype="application/vnd.sun.xml.impress.template" keep-pdf="false" keep-pdf-key="pdf"/>
+        <mimetype backend="Office" mimetype="application/vnd.sun.xml.draw" keep-pdf="false" keep-pdf-key="pdf"/>
+        <mimetype backend="Office" mimetype="application/vnd.sun.xml.draw.template" keep-pdf="false" keep-pdf-key="pdf"/>
+        <mimetype backend="Office" mimetype="application/vnd.visio.vst" keep-pdf="false" keep-pdf-key="pdf"/>
+        <mimetype backend="Office" mimetype="application/vnd.visio.vsw" keep-pdf="false" keep-pdf-key="pdf"/>
+        <mimetype backend="Office" mimetype="application/vnd.visio" keep-pdf="false" keep-pdf-key="pdf"/>
+        <mimetype backend="Office" mimetype="application/vnd.visio.vss" keep-pdf="false" keep-pdf-key="pdf"/>
+        <mimetype backend="Office" mimetype="application/vnd.visio.vdx" keep-pdf="false" keep-pdf-key="pdf"/>
+        <mimetype backend="Office" mimetype="application/vnd.visio.vsx" keep-pdf="false" keep-pdf-key="pdf"/>
+        <mimetype backend="Office" mimetype="application/vnd.visio.vtx" keep-pdf="false" keep-pdf-key="pdf"/>
+        <mimetype backend="Office" mimetype="application/vnd.visio.vsl" keep-pdf="false" keep-pdf-key="pdf"/>
+        <mimetype backend="Office" mimetype="application/rtf" keep-pdf="false" keep-pdf-key="pdf"/>
+        <mimetype backend="" mimetype="application/vnd.apple.keynote"/>
+        <mimetype backend="" mimetype="application/vnd.apple.numbers"/>
+        <mimetype backend="" mimetype="application/vnd.apple.pages"/>
+        <mimetype backend="IM" mimetype="image/x-canon-cr2"/>
+        <mimetype backend="IM" mimetype="image/x-canon-crw"/>
+        <mimetype backend="IM" mimetype="image/x-epson-erf"/>
+        <mimetype backend="IM" mimetype="image/x-fuji-raf"/>
+        <mimetype backend="IM" mimetype="image/x-hasselblad-3fr"/>
+        <mimetype backend="IM" mimetype="image/x-kodak-dcr"/>
+        <mimetype backend="IM" mimetype="image/x-kodak-k25"/>
+        <mimetype backend="IM" mimetype="image/x-kodak-kdc"/>
+        <mimetype backend="IM" mimetype="image/x-minolta-mrw"/>
+        <mimetype backend="IM" mimetype="image/x-nikon-nef"/>
+        <mimetype backend="IM" mimetype="image/x-olympus-orf"/>
+        <mimetype backend="IM" mimetype="image/x-pentax-pef"/>
+        <mimetype backend="IM" mimetype="image/x-sigma-x3f"/>
+        <mimetype backend="IM" mimetype="image/x-sony-sr2"/>
+        <mimetype backend="IM" mimetype="image/x-sony-arw"/>
+        <mimetype backend="IM" mimetype="image/x-sony-srf"/>
+        <mimetype backend="IM" mimetype="image/x-adobe-dng"/>
+        <!-- 3D -->
+        <!-- experimental! -->
+        <mimetype backend="blender" mimetype="application/vnd.blender.blend"/>
+        <!-- list of video mimetypes we create previews for -->
+        <mimetype-video mimetype="video/mpeg"/>
+        <mimetype-video mimetype="video/mp4"/>
+        <mimetype-video mimetype="video/quicktime"/>
+        <mimetype-video mimetype="video/x-flv"/>
+        <mimetype-video mimetype="video/x-matroska"/>
+        <mimetype-video mimetype="video/divx"/>
+        <mimetype-video mimetype="video/x-msvideo"/>
+        <mimetype-video mimetype="video/x-ms-wmv"/>
+        <mimetype-video mimetype="video/webm"/>
+        <preview-from-pdf mimetype="application/vnd.framemaker" storage-key="pdf"/>
+        <preview-from-xmp mimetype="application/indesign"/>
+        <preview-from-xmp mimetype="application/vnd.adobe.indesign-idms"/>
+        <preview-from-xmp mimetype="application/vnd.adobe.indesign-idml-package"/>
+        <preview-from-xmp mimetype="application/vnd.adobe.incopy-icml"/>
+    </form>
+</cmd>

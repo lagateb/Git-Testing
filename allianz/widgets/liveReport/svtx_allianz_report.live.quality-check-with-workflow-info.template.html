@@ -1,0 +1,256 @@
+<style>
+    .wrap-line {
+        white-space: pre-wrap !important;
+    }
+
+    .empty-workflow {
+        display: block;
+        height: 120px;
+    }
+</style>
+<!-- workflow -->
+<span
+        ng-if="(data.annotation) || (data.workflow) || (data.workflowStep) || (data.workflowState) || (data.assigned) || (data.deadline)"
+        class="cs-icon cs-icon-circle-arrow-right cs-iconsize-400" style="right:60px;top:-22px;position:fixed;"
+        cs-tooltip="{{'csCommonTranslations.assignToDot' | csTranslate}}" ng-click="addWorkflow()"></span>
+<div
+        ng-if="(data.annotation) || (data.workflow) || (data.workflowStep) || (data.workflowState) || (data.assigned) || (data.deadline)">
+    <!-- <h6 class="csAssetProperties__title ng-scope" style="width: 90%;margin: 0 auto 0.5rem auto;"><span style="vertical-align:sub;">{{'csCommonTranslations.workflow' | csTranslate}}</span>  </h6> -->
+    <ul class="csAssetProperties__list cs-p-h-w ng-scope">
+        <li class="cs-meta-data-row csAssetProperties__list__item cs-m-b-xs" ng-click="workflow = !workflow">
+            <span class="csAssetProperties__list__label csAssetProperties__list__parent_label parent-as-header">
+                <i class="cs-icon cs-iconsize-150"
+                   ng-class="(workflow) ? 'cs-icon-arrow-right' : 'cs-icon-arrow-down'"></i> <span>
+                    {{'csCommonTranslations.workflow' | csTranslate}}</span>
+            </span>
+            <hr class="cs-meta-data-row-hr hr-parent" />
+        </li>
+        <div ng-show="!workflow">
+            <li ng-if="data.workflow" class="cs-meta-data-row csAssetProperties__list__item"><span
+                    class="csAssetProperties__list__label">{{'csCommonTranslations.workflow' | csTranslate}}</span>
+                <div class="csAssetProperties__list__value">{{data.workflow}}</div>
+            </li>
+            <li ng-if="data.workflowStep" class="cs-meta-data-row csAssetProperties__list__item"><span
+                    class="csAssetProperties__list__label">{{'csCommonTranslations.workflowStep02' | csTranslate}}</span>
+                <div class="csAssetProperties__list__value"><span ng-if="data.workflowStepColor"
+                                                                  style="background-color: {{workflowStepColor}}; border-radius: 50%; height: 9px; width: 9px; vertical-align: baseline; margin-right: 4px;"
+                                                                  class="csWorkflow__color cs-ctrl-color" value="{{workflowStepColor}}"></span>
+                    {{data.workflowStep}}</div>
+            </li>
+            <li ng-if="data.workflowState" class="cs-meta-data-row csAssetProperties__list__item"><span
+                    class="csAssetProperties__list__label">{{'csCommonTranslations.workflowState02' | csTranslate}}</span>
+                <div class="csAssetProperties__list__value"><span ng-if="data.workflowStateColor"
+                                                                  style="background-color: {{workflowStateColor}}; border-radius: 50%; height: 9px; width: 9px; vertical-align: baseline; margin-right: 4px;"
+                                                                  class="csWorkflow__color cs-ctrl-color"
+                                                                  value="{{workflowStateColor}}"></span>{{data.workflowState}}</div>
+            </li>
+            <li ng-if="data.assigned" class="cs-meta-data-row csAssetProperties__list__item"><span
+                    class="csAssetProperties__list__label">{{'csCommonTranslations.assignedTo' | csTranslate}}</span>
+                <div class="csAssetProperties__list__value cs-meta-data-row__transclude"><span
+                        class="cs-icon cs-icon-user cs-iconsize-150 ng-scope"></span> {{data.assigned}}</div>
+            </li>
+            <li ng-if="data.deadline" class="cs-meta-data-row csAssetProperties__list__item"><span
+                    class="csAssetProperties__list__label">{{'csCommonTranslations.deadline' | csTranslate}}</span>
+                <div class="csAssetProperties__list__value">{{data.deadline | date:'dd/MM/yyyy'}}</div>
+            </li>
+            <li ng-if="data.annotation" class="cs-meta-data-row csAssetProperties__list__item"><span
+                    class="csAssetProperties__list__label">{{'csCommonTranslations.wfAnnotation' | csTranslate}}</span>
+                <div class="csAssetProperties__list__value">{{data.annotation}}</div>
+            </li>
+        </div>
+    </ul>
+    <div ng-if="!(data.mode)">
+        <cs-empty-state cs-empty-state-icon="'cs-icon-check'">
+            <span class="cs-state-headline" cs-translate="'csCommonTranslations.noQualityGates'"></span>
+        </cs-empty-state>
+    </div>
+</div>
+<!-- quality gates -->
+<div ng-if="(data.mode=='quality-gates') || (data.totalTask > 0)">
+    <div class="empty-workflow"
+         ng-if="!(data.annotation) && !(data.workflow) && !(data.workflowStep) && !(data.workflowState) && !(data.assigned) && !(data.deadline)">
+        <cs-empty-state cs-empty-state-icon="'cs-icon-git-branch'" style="max-height: 120px;">
+            <span class="cs-state-headline" cs-translate="'csCommonTranslations.noWorkflow'"></span>
+            <button class="cs-button-link-01" ng-click="addWorkflow()">
+                <i class="cs-icon cs-icon-circle-plus cs-iconsize-200"></i>&nbsp; <span
+                    ng-bind="'csAssetWorkflowStatusWidget.addWorkflow' | csTranslate"></span>
+            </button>
+        </cs-empty-state>
+    </div>
+    <!-- task -->
+    <div ng-if="data.totalTask > 0">
+        <!-- <h6 class="csAssetProperties__title ng-scope" style="width: 90%;margin: 0 auto 0.5rem auto;">
+            </h6> -->
+        <ul class="csAssetProperties__list cs-p-h-w ng-scope">
+            <li class="cs-meta-data-row csAssetProperties__list__item cs-m-b-xs" ng-click="task = !task">
+                <span class="csAssetProperties__list__label csAssetProperties__list__parent_label parent-as-header">
+                    <i class="cs-icon cs-iconsize-150 "
+                       ng-class="(task) ? 'cs-icon-arrow-right' : 'cs-icon-arrow-down'"></i> <span>
+                        {{'csCommonTranslations.tasks' | csTranslate}}</span>
+                </span>
+                <hr class="cs-meta-data-row-hr hr-parent" />
+            </li>
+            <div ng-show="!task">
+                <cs-progress class="cs-progress-01 cs-m-b-xs" style="padding: 1.5rem 0;" progress="data.taskPercentage"
+                             number="number" />
+                <li class="cs-meta-data-row csAssetProperties__list__item"><span
+                        class="csAssetProperties__list__label">{{'csCommonTranslations.count' | csTranslate}}</span>
+                    <div class="csAssetProperties__list__value">{{data.totalTask - data.completedTask}}
+                        {{'csCommonTranslations.outOf' | csTranslate}} {{data.totalTask}}
+                        {{'csCommonTranslations.tasksOpen' | csTranslate}}</div>
+                </li>
+            </div>
+        </ul>
+    </div>
+    <div ng-if="data.mode=='quality-gates'">
+        <ul class="csAssetProperties__list cs-p-h-w ng-scope">
+            <li class="cs-meta-data-row csAssetProperties__list__item cs-m-b-xs"
+                ng-click="qualityGates = !qualityGates">
+                <span class="csAssetProperties__list__label csAssetProperties__list__parent_label parent-as-header">
+                    <i class="cs-icon cs-iconsize-150 "
+                       ng-class="(qualityGates) ? 'cs-icon-arrow-right' : 'cs-icon-arrow-down'"></i> <span>
+                        {{'csCommonTranslations.qualityGates' | csTranslate}}</span>
+                </span>
+                <hr class="cs-meta-data-row-hr hr-parent" />
+            </li>
+            <!-- <h6 class="csAssetProperties__title ng-scope" style="width: 90%;margin: 0 auto 0.5rem auto;">
+            {{'csCommonTranslations.qualityGates' | csTranslate}}</h6> -->
+            <div ng-show="!qualityGates">
+                <cs-progress class="cs-progress-01 cs-m-b-xs" style="padding: 1.5rem 0;"
+                             progress="data.completeness.qualityGates.percentage" number="number" />
+                <div ng-if="gridHeight != 1">
+                    <table class="cs-table-02 cs-is-full-width">
+                        <thead style="border-bottom: transparent;">
+                        <tr></tr>
+                        </thead>
+                        <tbody ng-repeat="qualityGate in data.qualityGates">
+                        <!-- quality gates -->
+                        <tr style="background-color: transparent; border-top: 1px solid #f2f2f2 !important;">
+                            <td>
+                                    <span ng-if="qualityGate.sequenceCompleted"
+                                          class="cs-icon cs-icon-circle-ok cs-iconsize-400  cs-m-r-xs"
+                                          style="color:green;vertical-align: middle;" />
+                                <span ng-if="!qualityGate.sequenceCompleted"
+                                      class="cs-icon cs-icon-circle-remove cs-iconsize-400  cs-m-r-xs"
+                                      style="color:red;vertical-align: middle;" />
+                                <cs-open-asset-page ng-if="data.userHasAdminPermission"
+                                                    asset-id="{{qualityGate.id}}" class="cs-is-subtle">
+                                    <span class="cs-p-v-s" style="font-weight: 600;">{{qualityGate.name}}</span>
+                                </cs-open-asset-page>
+                                <span ng-if="!data.userHasAdminPermission" class="cs-p-v-s"
+                                      style="font-weight: 600;">{{qualityGate.name}}</span>
+                            </td>
+                            <td style="width: 2rem; padding-left: 0; padding-right: 0;" />
+                            <td style="width: 2rem;" />
+                        </tr>
+                        <!-- completeness checks -->
+                        <tr ng-repeat="completenessCheck in qualityGate.completenessChecks" class="cs-lvl-01"
+                            style="line-height: 2.8rem;">
+                            <td style="padding-left: 4rem; padding-bottom: 0.5rem; width: 100%;" colspan="3">
+                                    <span ng-if="completenessCheck.completed"
+                                          class="cs-icon cs-icon-circle-ok cs-iconsize-400  cs-m-r-xs"
+                                          style="color:green;vertical-align: middle;" />
+                                <span ng-if="!completenessCheck.completed"
+                                      class="cs-icon cs-icon-circle-remove cs-iconsize-400 cs-m-r-xs"
+                                      style="color:red;vertical-align: middle;" />
+                                <cs-open-asset-page ng-if="data.userHasAdminPermission"
+                                                    asset-id="{{completenessCheck.id}}" class="cs-is-subtle">
+                                    {{completenessCheck.name}}
+                                </cs-open-asset-page>
+                                <span ng-if="!data.userHasAdminPermission">{{completenessCheck.name}}</span>
+                            </td>
+                            <td style="width: 2rem; padding-left: 0; padding-right: 0;"></td>
+                            <td style="width: 2rem;">
+                                    <span
+                                            ng-if="(!completenessCheck.completed) && (completenessCheck.description != 'false')"
+                                            class="cs-icon cs-icon-circle-info cs-iconsize-400 cs-color-07"
+                                            style="vertical-align: middle;"
+                                            cs-tooltip="{{completenessCheck.description}}"></span>
+                                <span
+                                        ng-if="(!completenessCheck.completed) && (completenessCheck.description == 'false')"
+                                        class="cs-icon cs-icon-circle-info cs-iconsize-400 cs-color-07"
+                                        style="vertical-align: middle;"
+                                        cs-tooltip="{{'csCommonTranslations.missingDescriptionCompletenessCheck' | csTranslate}}"></span>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </ul>
+    </div>
+    <div ng-if="!(data.mode)">
+        <cs-empty-state cs-empty-state-icon="'cs-icon-check'">
+            <span class="cs-state-headline" cs-translate="'csCommonTranslations.noQualityGates'"></span>
+        </cs-empty-state>
+    </div>
+</div>
+<!-- completeness checks -->
+<div ng-if="data.mode=='completeness-checks'">
+    <div class="empty-workflow"
+         ng-if="!(data.annotation) && !(data.workflow) && !(data.workflowStep) && !(data.workflowState) && !(data.assigned) && !(data.deadline)">
+        <cs-empty-state cs-empty-state-icon="'cs-icon-git-branch'" style="max-height: 120px;">
+            <span class="cs-state-headline" cs-translate="'csCommonTranslations.noWorkflow'"></span>
+        </cs-empty-state>
+    </div>
+    <ul class="csAssetProperties__list cs-p-h-w ng-scope">
+        <li class="cs-meta-data-row csAssetProperties__list__item cs-m-b-xs"
+            ng-click="completenessChecks = !completenessChecks">
+            <span class="csAssetProperties__list__label csAssetProperties__list__parent_label parent-as-header">
+                <i class="cs-icon cs-iconsize-150 "
+                   ng-class="(completenessChecks) ? 'cs-icon-arrow-right' : 'cs-icon-arrow-down'"></i> <span>
+                    {{'csCommonTranslations.completenessCheck' | csTranslate}}</span>
+            </span>
+            <hr class="cs-meta-data-row-hr hr-parent" />
+        </li>
+        <div ng-show="!completenessChecks">
+            <!--
+            <cs-progress class="cs-progress-04 cs-m-b-xs" style="padding: 1.5rem 0;"   progress="data.completeness.completenessChecks.percentage" number="number" />
+            -->
+            <div ng-if="gridHeight != 1">
+                <table class="cs-table-02 cs-is-full-width">
+                    <thead style="border-bottom: transparent;">
+                    <tr></tr>
+                    </thead>
+                    <!-- completeness check groups -->
+                    <tbody ng-repeat="group in data.groups">
+                    <tr style="background-color: transparent; border-top: 1px solid #f2f2f2;">
+                        <td colspan="3">
+                            <h6 class="cs-p-v-s">{{group.name}}</h6>
+                        </td>
+                    </tr>
+                    <!-- completeness checks -->
+                    <tr ng-repeat="completenessCheck in group.completenessChecks" class="cs-lvl-01"
+                        style="line-height: 2.8rem;">
+                        <td>
+                            <cs-open-asset-page ng-if="data.userHasAdminPermission"
+                                                asset-id="{{completenessCheck.id}}" class="cs-is-subtle">{{completenessCheck.name}}
+                            </cs-open-asset-page>
+                            <span ng-if="!data.userHasAdminPermission">{{completenessCheck.name}}</span>
+                        </td>
+                        <td style="width: 2rem; padding-left: 0; padding-right: 0;" />
+                        <td style="width: 2rem;">
+                                <span ng-if="completenessCheck.completed"
+                                      class="cs-icon cs-icon-circle-ok cs-iconsize-400"
+                                      style="color:green; vertical-align: middle;" />
+                            <span ng-if="!completenessCheck.completed"
+                                  class="cs-icon cs-icon-circle-remove cs-iconsize-400 "
+                                  style="color:red;vertical-align: middle;" cs-tooltip="{{completenessCheck.description}}" />
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </ul>
+</div>
+
+<cs-empty-state
+        ng-if="!(data.annotation) && !(data.workflow) && !(data.workflowStep) && !(data.workflowState) && !(data.assigned) && !(data.deadline) && !(data.mode) && !(data.totalTask > 0)"
+        cs-empty-state-icon="'cs-icon-list'">
+    <span class="wrap-line cs-state-headline" cs-translate="'csCommonTranslations.noWorkflowQualityGates'"></span>
+    <button class="cs-button-link-01" ng-click="addWorkflow()">
+        <i class="cs-icon cs-icon-circle-plus cs-iconsize-200"></i>&nbsp; <span
+            ng-bind="'csAssetWorkflowStatusWidget.addWorkflow' | csTranslate"></span>
+    </button>
+</cs-empty-state>

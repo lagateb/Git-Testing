@@ -1,0 +1,31 @@
+<!-- <h5>Wählen sie eine Folie aus</h5> -->
+<div class="cs-toolbar" style="padding-left:0; padding-right:0">
+    <div class="cs-toolbar-slot-1">
+        <div class="cs-toolbar-item">
+            <div class="csLayout_flex_hbox">
+                <!--label class="cs-label cs-is-small csLayout_flex_static_item">Vorlagen</label-->
+                <cs-select-new style="min-width: 30rem" class="cs-is-small cs-is-alt"
+                               model="selectedOption"
+                               label-translate="true"
+                               values="templates"
+                               placeholder="Wählen Sie eine PowerPoint Folie aus"
+                               unerasable="true"
+                               on-change="refresh()"
+                               disable-initial-unerasable="false">
+                </cs-select-new>
+                <button ng-disabled="!selectedOption" cs-tooltip="{{'svtxCommonTranslations.showPreview' | csTranslate}}" ng-click="refresh()" style="margin-left:10px;" type="submit" class="cs-button-alt cs-is-small" role="button" aria-label="abc"><span class="cs-icon-alt cs-icon-refresh"></span></button>
+                <button ng-disabled="!selectedOption" cs-tooltip="{{'svtxCommonTranslations.downloadSlide' | csTranslate}}" ng-click="download()" style="margin-left:10px;" type="submit" class="cs-button-alt cs-is-small" role="button" aria-label="abc"><span class="cs-icon-alt cs-icon-download-alt"></span></button>
+                <span style="display: none" cs-translate="'svtxCommonTranslations.svtx'"></span>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div ng-if="showSpinner">
+    <cs-busy-spinner class="cs-has-light-bg"></cs-busy-spinner>
+</div>
+<div ng-if="showPreview" style="margin-top: 25px; padding: 20px; background-color: #404448">
+    <div>
+        <img src="{{previewUrl}}" style="width: 100%"/>
+    </div>
+</div>

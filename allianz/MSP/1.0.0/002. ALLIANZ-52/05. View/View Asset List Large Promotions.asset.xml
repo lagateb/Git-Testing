@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset id_org="11439" name="View Asset List Large Promotions" type="module.workspace.view." application="default" domain="root." domain2="root.">
+  <asset_element idx="0" key="actual." isversioned="1"/>
+  <asset_feature feature="censhare:asset-type-filter" value_string="promotion.*"/>
+  <asset_feature feature="censhare:mime-type-filter" value_string="*"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="msp:workspace.view.assetListPromotions"/>
+  <asset_feature feature="censhare:workspace.view.priority" value_long="0"/>
+  <asset_feature feature="censhare:workspace.view.slot" value_string2="censhare:resource-key" sorting="1" value_asset_key_ref="censhare:workspace.view.slot.thumbnail.birthdayview.type.person"/>
+  <asset_feature feature="censhare:workspace.view.slot" value_string2="censhare:resource-key" sorting="2" value_asset_key_ref="censhare:workspace.view.slot.title"/>
+  <asset_feature feature="censhare:workspace.view.slot" value_string2="censhare:resource-key" sorting="3" value_asset_key_ref="msp:workspace.view.slot.description.assetListPromotions"/>
+  <asset_feature feature="censhare:workspace.view.slot" value_string2="censhare:resource-key" sorting="4" value_asset_key_ref="msp:workspace.view.slot.extra.assetListPromotions"/>
+  <asset_feature feature="censhare:workspace.view.view-name" value_string="assetListPromotions"/>
+  <storage_item element_idx="0" key="preview" mimetype="image/jpeg" relpath="file:View Asset List Large Promotions.preview.jpg"/>
+  <storage_item element_idx="0" key="thumbnail" mimetype="image/jpeg" relpath="file:View Asset List Large Promotions.thumbnail.jpg"/>
+</asset>

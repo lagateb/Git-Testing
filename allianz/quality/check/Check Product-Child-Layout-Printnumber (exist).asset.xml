@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset id_org="12508" name="Check Product-Child-Layout-Printnumber (exist)" type="module.completeness-check." application="default" domain="root.common-resources." domain2="root." description="Die Druckstücknummer fehlt">
+  <asset_feature feature="censhare:asset-type-filter" value_string="product.*"/>
+  <asset_feature feature="censhare:completeness-check.expression.xpath" value_string="count(cs:child-rel()[@key=&apos;user.&apos;]/.[@type = &apos;layout.&apos;])=count(cs:child-rel()[@key=&apos;user.&apos;]/.[@type = &apos;layout.&apos;]/asset_feature[@feature=&apos;svtx:layout-print-number&apos;]/@value_string)"/>
+  <asset_feature feature="censhare:completeness-check.importance" value_key="required"/>
+  <asset_feature feature="censhare:description" language="de" value_string="Keine Druckstücknummer vorhanden"/>
+  <asset_feature feature="censhare:description" language="en" value_string="No print number  provided"/>
+  <asset_feature feature="censhare:description" language="fr" value_string="No print number  provided"/>
+  <asset_feature feature="censhare:description" language="it" value_string="No print number  provided"/>
+  <asset_feature feature="censhare:name" language="de" value_string="Druckstücknummern vorhanden"/>
+  <asset_feature feature="censhare:name" language="en" value_string="Printnumber"/>
+  <asset_feature feature="censhare:name" language="fr" value_string="Printnumber"/>
+  <asset_feature feature="censhare:name" language="it" value_string="Printnumber"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="svtx:completeness-check.product-layout.printnumber.exists"/>
+  <asset_feature feature="censhare:resource-meta">
+    <xmldata>
+      <selection needed="false"/>
+    </xmldata>
+  </asset_feature>
+</asset>

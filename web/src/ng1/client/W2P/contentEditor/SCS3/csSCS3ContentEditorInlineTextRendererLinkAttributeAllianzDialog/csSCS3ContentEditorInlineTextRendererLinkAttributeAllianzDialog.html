@@ -1,0 +1,130 @@
+<div class="csSCS3ContentEditorInlineTextRendererLinkAttributeDialog">
+
+    <ul class="cs-tabs-02">
+        <li ng-class="{'cs-is-active': currentTabIndex === 'url1'}" ng-click="setCurrentTabIndex('url1')" class="cs-tabs-item">{{ "csSCS3ContentEditorInlineTextRendererLinkAttributeAllianzDialog.urlLink1" | csTranslate }}</li>
+        <li ng-class="{'cs-is-active': currentTabIndex === 'url2'}" ng-click="setCurrentTabIndex('url2')" class="cs-tabs-item">{{ "csSCS3ContentEditorInlineTextRendererLinkAttributeAllianzDialog.urlLink2" | csTranslate }}</li>
+        <li ng-class="{'cs-is-active': currentTabIndex === 'url3'}" ng-click="setCurrentTabIndex('url3')" class="cs-tabs-item">{{ "csSCS3ContentEditorInlineTextRendererLinkAttributeAllianzDialog.urlLink3" | csTranslate }}</li>
+    </ul>
+
+
+    <!-- ************************** 1 ******************************* -->
+    <div ng-show="currentTabIndex === 'url1'" id="csLinkDialogUrlView1" class="csLinkDialogView">
+
+        <dl class="cs-form-01">
+            <dt>
+                <label for="{linkID1}">{{ "csSCS3ContentEditorInlineTextRendererLinkAttributeAllianzDialog.link" | csTranslate }}</label>
+            </dt>
+            <dd>
+                <cs-input id="{linkID1}" ng-model="urlValue1" value="" placeholder="{{ 'csSCS3ContentEditorInlineTextRendererLinkAttributeAllianzDialog.link' | csTranslate }}" />
+            </dd>
+        </dl>
+
+
+        <dl class="cs-form-01">
+            <dt>
+                <label>{{ "csSCS3ContentEditorInlineTextRendererLinkAttributeAllianzDialog.target" | csTranslate }}</label>
+            </dt>
+            <dd>
+                <cs-radio-group layout="horizontal" ng-model="openValue1" options="openInOptions1" selected-option="selectedOpenInOption1"></cs-radio-group>
+            </dd>
+        </dl>
+        <dl class="cs-form-01">
+            <dt>
+                <label for="{titleSeoID1}">{{ "csSCS3ContentEditorInlineTextRendererLinkAttributeAllianzDialog.titleSeo" | csTranslate }}</label>
+            </dt>
+            <dd>
+                <cs-input id="{titleSeoID1}" ng-model="titleSeoValue1" value="" placeholder="{{ 'csSCS3ContentEditorInlineTextRendererLinkAttributeAllianzDialog.titleSeo' | csTranslate }}" />
+            </dd>
+        </dl>
+        <dl class="cs-form-01">
+            <dt>
+                <label>{{ "csSCS3ContentEditorInlineTextRendererLinkAttributeAllianzDialog.follow" | csTranslate }}</label>
+            </dt>
+            <dd>
+                <cs-radio-group layout="horizontal" options="followOptions1" selected-option="selectedFollowOption1"></cs-radio-group>
+            </dd>
+        </dl>
+
+    </div>
+
+    <!-- ************************** 2 ******************************* -->
+    <div ng-show="currentTabIndex === 'url2'" id="csLinkDialogUrlView2" class="csLinkDialogView">
+
+        <dl class="cs-form-01">
+            <dt>
+                <label for="{linkID2}">{{ "csSCS3ContentEditorInlineTextRendererLinkAttributeAllianzDialog.link" | csTranslate }}</label>
+            </dt>
+            <dd>
+                <cs-input id="{linkID2}" ng-model="urlValue2" value="" placeholder="{{ 'csSCS3ContentEditorInlineTextRendererLinkAttributeAllianzDialog.link' | csTranslate }}" />
+            </dd>
+        </dl>
+
+
+        <dl class="cs-form-01">
+            <dt>
+                <label>{{ "csSCS3ContentEditorInlineTextRendererLinkAttributeAllianzDialog.target" | csTranslate }}</label>
+            </dt>
+            <dd>
+                <cs-radio-group layout="horizontal" ng-model="openValue2" options="openInOptions2" selected-option="selectedOpenInOption2"></cs-radio-group>
+            </dd>
+        </dl>
+        <dl class="cs-form-01">
+            <dt>
+                <label for="{titleSeoID2}">{{ "csSCS3ContentEditorInlineTextRendererLinkAttributeAllianzDialog.titleSeo" | csTranslate }}</label>
+            </dt>
+            <dd>
+                <cs-input id="{titleSeoID2}" ng-model="titleSeoValue2" value="" placeholder="{{ 'csSCS3ContentEditorInlineTextRendererLinkAttributeAllianzDialog.titleSeo' | csTranslate }}" />
+            </dd>
+        </dl>
+        <dl class="cs-form-01">
+            <dt>
+                <label>{{ "csSCS3ContentEditorInlineTextRendererLinkAttributeAllianzDialog.follow" | csTranslate }}</label>
+            </dt>
+            <dd>
+                <cs-radio-group layout="horizontal" options="followOptions2" selected-option="selectedFollowOption2"></cs-radio-group>
+            </dd>
+        </dl>
+
+    </div>
+
+    <!-- ************************** 3 ******************************* -->
+    <div ng-show="currentTabIndex === 'url3'" id="csLinkDialogUrlView3" class="csLinkDialogView">
+
+        <dl class="cs-form-01">
+            <dt>
+                <label for="{linkID3}">{{ "csSCS3ContentEditorInlineTextRendererLinkAttributeAllianzDialog.link" | csTranslate }}</label>
+            </dt>
+            <dd>
+                <cs-input id="{linkID3}" ng-model="urlValue3" value="" placeholder="{{ 'csSCS3ContentEditorInlineTextRendererLinkAttributeAllianzDialog.link' | csTranslate }}" />
+            </dd>
+        </dl>
+
+
+        <dl class="cs-form-01">
+            <dt>
+                <label>{{ "csSCS3ContentEditorInlineTextRendererLinkAttributeAllianzDialog.target" | csTranslate }}</label>
+            </dt>
+            <dd>
+                <cs-radio-group layout="horizontal" ng-model="openValue3" options="openInOptions3" selected-option="selectedOpenInOption3"></cs-radio-group>
+            </dd>
+        </dl>
+        <dl class="cs-form-01">
+            <dt>
+                <label for="{titleSeoID3}">{{ "csSCS3ContentEditorInlineTextRendererLinkAttributeAllianzDialog.titleSeo" | csTranslate }}</label>
+            </dt>
+            <dd>
+                <cs-input id="{titleSeoID3}" ng-model="titleSeoValue3" value="" placeholder="{{ 'csSCS3ContentEditorInlineTextRendererLinkAttributeAllianzDialog.titleSeo' | csTranslate }}" />
+            </dd>
+        </dl>
+
+        <dl class="cs-form-01">
+            <dt>
+                <label>{{ "csSCS3ContentEditorInlineTextRendererLinkAttributeAllianzDialog.follow" | csTranslate }}</label>
+            </dt>
+            <dd>
+                <cs-radio-group layout="horizontal" options="followOptions3" selected-option="selectedFollowOption3"></cs-radio-group>
+            </dd>
+        </dl>
+
+    </div>
+</div>

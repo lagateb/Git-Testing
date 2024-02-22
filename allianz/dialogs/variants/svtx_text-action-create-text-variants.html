@@ -1,0 +1,52 @@
+<style type="text/css">
+    .csActionsWidget__frame--browse-images .csActionsWidget__background-image {
+        font-size: 4.5rem;
+        line-height: 6.5rem;
+        color: #f2f2f2;
+        float: right;
+    }
+    .csActionsWidget__frame--browse-images .csActionsWidget__title {
+        font-size: 3.6rem;
+        line-height: 3.6rem;
+    }
+    .cs-button-link-02 {
+        line-height: 1.8rem;
+        height: 11rem;	/* (available content height (23.6rem) minus bottom widget padding (1.5rem) ) / 2 rows */
+        color: #1c1c1c;	/* @color-01 */
+        word-break: break-word;
+    }
+    .myfontsize {
+        font-size: 50%;
+    }
+
+    .variantList h1 {
+        padding-top:10px;
+    }
+</style>
+
+
+<div ng-show="!isVariant && (!disableSales || !disableAgent)">
+    <div ng-show="!disableAgent && disableSales"   class="csActionsWidget__frame--browse-images cs-p-h-w">
+        <button class="cs-button" ng-disabled="disableAgent" ng-click="createAgentVariant()" title="Makler Variante anlegen">
+            Makler Variante anlegen
+        </button>
+    </div>
+    <br/>
+    <div   ng-show="!disableSales" class="csActionsWidget__frame--browse-images cs-p-h-w">
+        <button  class="cs-button"  ng-disabled="disableSales" ng-click="createSalesVariant()" title="Verkaufs Variante anlegen">
+            Vertriebsansprache Variante anlegen
+        </button>
+    </div>
+</div>
+
+<div ng-show="isVariant">
+    <div class="csActionsWidget__frame--browse-images cs-p-h-w">
+        <h1>Varianten von Varianten sind nicht möglich!</h1>
+    </div>
+</div>
+
+
+<div  ng-show="!isVariant && myVariants.length>0" class="variantList">
+    <h1>Varianten bearbeiten</h1>
+    <cs-item-renderer ng-repeat="item in items" flavor="'csAssetListItemRendererWidget1xn'" item="item"></cs-item-renderer>
+</div>

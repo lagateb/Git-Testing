@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</head>
+<body>
+<pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;xsl:stylesheet version=&quot;2.0&quot; xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;xmlns:cs=&quot;http://www.censhare.com/xml/3.0.0/xpath-functions&quot;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;xmlns:corpus=&quot;http://www.censhare.com/xml/3.0.0/corpus&quot;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;xmlns:csc=&quot;http://www.censhare.com/censhare-custom&quot;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;xmlns:msp=&quot;http://www.mspag.com&quot;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;exclude-result-prefixes=&quot;#all&quot;&gt;
+ &nbsp;&lt;!-- toolbar for articles table --&gt;
+ &nbsp;&lt;!-- import --&gt;
+ &nbsp;&lt;xsl:import href=&quot;censhare:///service/assets/asset;censhare:resource-key=censhare:transformation.include/storage/master/file&quot;/&gt;
+ &nbsp;&lt;!-- output --&gt;
+ &nbsp;&lt;xsl:output method=&quot;html&quot; encoding=&quot;UTF-8&quot; omit-xml-declaration=&quot;yes&quot;/&gt;
+ &nbsp;&lt;xsl:variable name=&quot;language&quot; select=&quot;csc:getLoggedInPartyLocale()&quot;/&gt;
+ &nbsp;&lt;!-- root match --&gt;
+ &nbsp;&lt;xsl:template match=&quot;/&quot;&gt;
+ &nbsp; &nbsp;&lt;xsl:variable name=&quot;endDate&quot; select=&quot;format-date(current-date(), '[Y]-[M,2]-[D,2]')&quot;/&gt;
+ &nbsp; &nbsp;&lt;xsl:variable name=&quot;startDate&quot; select=&quot;format-date(current-date() - xs:dayTimeDuration('P12M'), '[Y]-[M,2]-[D,2]')&quot;/&gt;
+ &nbsp; &nbsp;&lt;result&gt;
+ &nbsp; &nbsp; &nbsp;&lt;!-- config contains default values, has to be prepared before, doesn't work if inserted in &lt;defaultValues&gt; because of xsl:value-of --&gt;
+ &nbsp; &nbsp; &nbsp;&lt;xsl:variable name=&quot;defaultValues&quot;&gt;{&quot;myPromotions&quot;: &quot;no&quot;, &quot;stateFilter&quot;: &quot;Freigabe Reinzeichnung&quot;, &quot;sortBy&quot;: &quot;promotionnr&quot;, &quot;sortOrder&quot;: &quot;ascending&quot;, &quot;selection&quot;: &quot;&quot;, &quot;startDate&quot;: &quot;&lt;xsl:value-of select=&quot;$startDate&quot;/&gt;&quot;, &quot;endDate&quot;: &quot;&lt;xsl:value-of select=&quot;$endDate&quot;/&gt;&quot;}&lt;/xsl:variable&gt;
+ &nbsp; &nbsp; &nbsp;&lt;config&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;defaultValues&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsl:value-of select=&quot;$defaultValues&quot;/&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;/defaultValues&gt;
+ &nbsp; &nbsp; &nbsp;&lt;/config&gt;
+ &nbsp; &nbsp; &nbsp;&lt;!-- content expects html snippet that is rendered in the widget --&gt;
+ &nbsp; &nbsp; &nbsp;&lt;content&gt;
+
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;!-- My Promotions --&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsl:variable name=&quot;labelMyPromotions&quot; select=&quot;'Nur meine Maßnahmen'&quot; /&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsl:variable name=&quot;myPromotions&quot; as=&quot;element(assign-to)*&quot;&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;assign-to name=&quot;Ja&quot; value=&quot;yes&quot;/&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;assign-to name=&quot;Nein&quot; value=&quot;no&quot;/&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsl:variable&gt;
+
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;!-- States --&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsl:variable name=&quot;labelState&quot; select=&quot;'Status'&quot; /&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsl:variable name=&quot;stateFilter&quot; as=&quot;element(state)*&quot;&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;state name=&quot;ausgeliefert&quot; value=&quot;ausgeliefert&quot;/&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;state name=&quot;Freigabe Reinzeichnung&quot; value=&quot;Freigabe Reinzeichnung&quot;/&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;state name=&quot;Freigabe Layout&quot; value=&quot;Freigabe Layout&quot;/&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;state name=&quot;geschlossen&quot; value=&quot;geschlossen&quot;/&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsl:variable&gt;
+
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;!-- Date range --&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsl:variable name=&quot;labelDate&quot; select=&quot;'Erstellungsdatum'&quot; /&gt;
+
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;!-- Sorting --&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsl:variable name=&quot;labelSortBy&quot; select=&quot;'Sortiert nach'&quot; /&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsl:variable name=&quot;sortOptions&quot; as=&quot;element(sort)*&quot;&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;sort name=&quot;Name&quot; value=&quot;name&quot;/&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;sort name=&quot;Nummer&quot; value=&quot;promotionnr&quot;/&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;sort name=&quot;Artikelnummer&quot; value=&quot;artnr-and-version&quot;/&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;sort name=&quot;Mediendienstleister&quot; value=&quot;mediaprovider&quot;/&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;sort name=&quot;Erstellungsdatum&quot; value=&quot;creation-date&quot;/&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;!-- This will not work! --&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;!--sort name=&quot;Mit Medien&quot; value=&quot;with-media&quot;/--&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;!-- This will not work! --&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;!--sort name=&quot;Qualität erfüllt&quot; value=&quot;quality&quot;/--&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsl:variable&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp;
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsl:variable name=&quot;labelSortOrder&quot; select=&quot;'Sortiert nach'&quot; /&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsl:variable name=&quot;sortOrders&quot; as=&quot;element(sort)*&quot;&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;sort name=&quot;Aufsteigend&quot; value=&quot;ascending&quot;/&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;sort name=&quot;Absteigend&quot; value=&quot;descending&quot;/&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsl:variable&gt;
+
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;cs-toolbar&quot;&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;cs-toolbar-slot-1&quot;&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;cs-toolbar-item&quot;&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;cs-select class=&quot;cs-is-small cs-is-alt&quot; label=&quot;{$labelMyPromotions}&quot; width=&quot;auto&quot; ng-model=&quot;toolbarData.myPromotions&quot; unerasable=&quot;unerasable&quot;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ng-options=&quot;item.value as item.name for item in [{msp:buildJSArray($myPromotions)}]&quot;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ng-change=&quot;onChange({{ myPromotions: toolbarData.myPromotions }})&quot;&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/cs-select&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;cs-toolbar-item&quot; style=&quot;max-width:240px; width:240px;&quot;&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;cs-select class=&quot;cs-is-small cs-is-alt&quot; label=&quot;{$labelState}&quot; width=&quot;190px; max-width:190px&quot; ng-model=&quot;toolbarData.stateFilter&quot; unerasable=&quot;unerasable&quot;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ng-options=&quot;item.value as item.name for item in [{msp:buildJSArray($stateFilter)}]&quot;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ng-change=&quot;onChange({{ stateFilter: toolbarData.stateFilter }})&quot;&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/cs-select&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;cs-toolbar-item&quot; style=&quot;width:200px;&quot;&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;cs-datepicker class=&quot;cs-is-small cs-is-alt&quot; label=&quot;{$labelDate}&quot; style=&quot;width:120px; display: inline-block; margin-right: 10px;&quot; date-only=&quot;true&quot; required=&quot;true&quot; ng-model=&quot;toolbarData.startDate&quot; ng-change=&quot;onChange({{ stateFilter: toolbarData.startDate }})&quot;&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/cs-datepicker&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;cs-datepicker class=&quot;cs-is-small cs-is-alt&quot; label=&quot;-&quot; style=&quot;width:120px; display: inline-block;&quot; date-only=&quot;true&quot; required=&quot;true&quot; ng-model=&quot;toolbarData.endDate&quot; ng-change=&quot;onChange({{ stateFilter: toolbarData.endDate }})&quot;&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/cs-datepicker&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;cs-toolbar-slot-5&quot;&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;!-- order --&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;cs-toolbar-item cs-m-r-m&quot;&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;cs-select class=&quot;cs-is-small cs-is-alt&quot; label=&quot;{$labelSortOrder}&quot; width=&quot;auto&quot; ng-model=&quot;toolbarData.sortBy&quot; unerasable=&quot;unerasable&quot;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ng-options=&quot;item.value as item.name for item in [{msp:buildJSArray($sortOptions)}]&quot;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ng-change=&quot;onChange({{ sortBy: toolbarData.sortBy }})&quot;&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/cs-select&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;cs-select class=&quot;cs-is-small cs-is-alt&quot; label=&quot;&quot; width=&quot;auto&quot; ng-model=&quot;toolbarData.sortOrder&quot; unerasable=&quot;unerasable&quot;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ng-options=&quot;item.value as item.name for item in [{msp:buildJSArray($sortOrders)}]&quot;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ng-change=&quot;onChange({{ sortOrder: toolbarData.sortOrder }})&quot;&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/cs-select&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;!-- filter asset name --&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;cs-toolbar-item cs-m-r-s&quot;&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;cs-input class=&quot;cs-is-small cs-is-alt&quot; placeholder=&quot;${filterResults}&quot; width=&quot;40pt&quot; ng-model=&quot;toolbarData.selection&quot; ng-change=&quot;onChange({{ selection: toolbarData.selection }})&quot;&gt;&lt;/cs-input&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;
+ &nbsp; &nbsp; &nbsp;&lt;/content&gt;
+ &nbsp; &nbsp;&lt;/result&gt;
+ &nbsp;&lt;/xsl:template&gt;
+
+ &nbsp;&lt;xsl:function name=&quot;msp:buildJSArray&quot;&gt;
+ &nbsp; &nbsp;&lt;xsl:param name=&quot;input&quot; as=&quot;element(*)*&quot; /&gt;
+ &nbsp; &nbsp;&lt;xsl:variable name=&quot;objects&quot; as=&quot;xs:string*&quot;&gt;
+ &nbsp; &nbsp; &nbsp;&lt;xsl:for-each select=&quot;$input&quot;&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsl:variable name=&quot;objMembers&quot; as=&quot;xs:string*&quot;&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsl:for-each select=&quot;@*&quot;&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsl:sequence select=&quot;concat('''', local-name(), '''', ':', '''', current(), '''')&quot; /&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsl:for-each&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;/xsl:variable&gt;
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;xsl:sequence select=&quot;concat('{', string-join($objMembers, ','), '}')&quot; /&gt;
+ &nbsp; &nbsp; &nbsp;&lt;/xsl:for-each&gt;
+ &nbsp; &nbsp;&lt;/xsl:variable&gt;
+ &nbsp; &nbsp;&lt;xsl:sequence select=&quot;string-join($objects, ',')&quot; /&gt;
+ &nbsp;&lt;/xsl:function&gt;
+&lt;/xsl:stylesheet&gt;
+
+</pre>
+</body>
+</html>

@@ -1,0 +1,17 @@
+# Generated file
+# Script 'import-strings.sh' for language fr
+# Mon Jul 25 13:46:26 2016
+
+asset = Asset
+assetLink = Lien vers asset
+follow = Suivre SEO
+followNo = Ne pas suivre
+followYes = Suivre
+link = URL
+linkDialogTitle = Lien
+target = Ouvrir dans
+targetNew = Nouvelle fenêtre
+targetSame = Même fenêtre
+titleSeo = Titre SEO
+urlFragment = Fragment URL
+urlLink = Lien vers URL

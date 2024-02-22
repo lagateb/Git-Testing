@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmd xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.censhare.com/xml/3.0.0/command.xsd" xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct">
+  <xml-info title="${reg-title-hotfolder} MMC Media Import" description="${reg-description-hotfolder}" localize="true" knowledge-level="3" special-licence="false" feature-help="" version="4" template-name="hotfolder.Hotfolder" template-url="file:modules/hotfolder/hotfolder.xml">
+    <property-resources>
+      <base url="file:module"/>
+      <base url="file:../../common/global"/>
+    </property-resources>
+    <history>
+      <entry user="[MSP] Gerdes, Uwe" timestamp="2022-03-31T09:21:57.667Z" comment=""/>
+      <entry user="[MSP] Gerdes, Uwe" timestamp="2022-03-31T11:34:02.083Z" comment=""/>
+      <entry user="[MSP] Gerdes, Uwe" timestamp="2022-03-31T11:47:14.620Z" comment=""/>
+      <entry user="[MSP] Gerdes, Uwe" timestamp="2022-03-31T12:34:55.459Z" comment=""/>
+      <entry user="[MSP] Gerdes, Uwe" timestamp="2022-03-31T12:45:05.642Z" comment=""/>
+      <entry user="[MSP] Gerdes, Uwe" timestamp="2022-03-31T12:55:29.506Z" comment=""/>
+      <entry user="[MSP] Beckmann, Felix" timestamp="2022-04-20T14:59:06.595Z" comment=""/>
+      <entry user="[MSP] Beckmann, Felix" timestamp="2022-04-20T14:59:06.595Z" comment=""/>
+      <entry user="[MSP] Beckmann, Felix" timestamp="2022-04-20T14:59:06.595Z" comment=""/>
+      <entry user="[MSP] Beckmann, Felix" timestamp="2022-04-20T15:18:51.104Z" comment=""/>
+      <entry user="[MSP] Beckmann, Felix" timestamp="2022-04-20T15:18:51.104Z" comment=""/>
+      <entry user="[MSP] Beckmann, Felix" timestamp="2022-04-20T15:18:51.104Z" comment=""/>
+      <entry user="[MSP] Beckmann, Felix" timestamp="2022-04-20T15:22:14.965Z" comment=""/>
+      <entry user="[MSP] Beckmann, Felix" timestamp="2022-04-20T15:22:14.965Z" comment=""/>
+      <entry user="[MSP] Beckmann, Felix" timestamp="2022-04-20T15:35:32.746Z" comment=""/>
+      <entry user="[MSP] Beckmann, Felix" timestamp="2022-04-20T15:35:32.746Z" comment=""/>
+      <entry user="[MSP] Beckmann, Felix" timestamp="2022-04-20T15:37:59.611Z" comment=""/>
+      <entry user="[MSP] Beckmann, Felix" timestamp="2022-04-20T15:37:59.611Z" comment=""/>
+      <entry user="[MSP] Beckmann, Felix" timestamp="2022-04-20T15:56:38.989Z" comment=""/>
+      <entry user="[MSP] Beckmann, Felix" timestamp="2022-04-20T15:56:38.989Z" comment=""/>
+      <entry user="[MSP] Beckmann, Felix" timestamp="2022-04-20T16:02:50.766Z" comment=""/>
+      <entry user="[MSP] Beckmann, Felix" timestamp="2022-04-20T16:02:50.766Z" comment=""/>
+      <entry user="[MSP] Beckmann, Felix" timestamp="2022-04-21T09:42:25.267Z" comment=""/>
+      <entry user="[MSP] Beckmann, Felix" timestamp="2022-04-21T09:44:36.649Z" comment=""/>
+      <entry user="[MSP] Beckmann, Felix" timestamp="2022-04-21T09:51:09.627Z" comment=""/>
+      <entry user="[MSP] Beckmann, Felix" timestamp="2022-04-21T09:51:09.627Z" comment=""/>
+      <entry user="[MSP] Beckmann, Felix" timestamp="2022-04-21T09:55:07.882Z" comment=""/>
+    </history>
+  </xml-info>
+  <cmd-info name="hotfolder.Hotfolder-20220331-1319-0" type="auto-execute" enabled="true" mode="loop" ignore-error="true">
+    <error-log module="hotfolder"/>
+  </cmd-info>
+  <admin-info dialog-id="config" dialog-url="file:config-dialog.xml"/>
+  <params storage-item-creation-external-process-error="${storage-item-creation-external-process-error}"/>
+  <listen-events>
+    <timer delta-sec="30"/>
+  </listen-events>
+  <commands currentstep="0">
+    <command target="EventManager" method="waitevent" key="listen-events"/>
+    <command target="ImportManager" method="scan" key="scan"/>
+    <command target="ImportManager" method="file-group-rollback-transaction" key="import-manager"/>
+    <command target="ScriptletManager" scriptlet="modules.hotfolder.Hotfolder" method="checkinFiles"/>
+  </commands>
+  <scan group-result="true" group-export-key="file-export-group" add-data-node="true" scan-subdirectories="true" fork="true" scan-dir-filesystem="interfaces" scan-dir-relpath="file:MMC_TO_CENSHARE/media/in/" work-dir-filesystem="interfaces" work-dir-relpath="file:MMC_TO_CENSHARE/media/work/" out-filesystem-key="file@filesystem" out-relpath-key="file@url" max-files="200" max-queue-size="12" create-unique-url="true" last-modification-delay-sec="5" include-directory-regex-pattern=".*">
+    <match include-file-regex-pattern=".*\.tif|.*\.eps|.*\.psd|.*\.ai|.*\.jpg|.*\.jpeg|.*\.png|.*\.bmp" exclude-file-regex-pattern="^.*[^0-9].*\..*">
+      <data replace-files="true" checkout-checkin-options="outin" use-duplicate-check="true" perform-update="true" map-metadata="true" type="picture." application="default" create-assets="true">
+        <asset-duplicate-check src-pattern="^(.+)\..+" replacement="$1" key="msp:alz.media.mmc-id"/>
+        <asset-attribute src-pattern="^(.+)\..+" replacement="$1" key="asset_feature[feature=&apos;msp:alz.media.mmc-id&apos;]@value_string"/>
+      </data>
+    </match>
+    <match include-file-regex-pattern=".*\.ind|.*\.indd" exclude-file-regex-pattern="^.*[^0-9].*\..*">
+      <data replace-files="true" checkout-checkin-options="outin" use-duplicate-check="true" match-to-all-check-conditions="false" perform-update="true" map-metadata="false" type="layout." application="default" create-assets="true">
+        <asset-duplicate-check src-pattern="^(.+)\..+" replacement="$1" key="msp:alz.media.mmc-id"/>
+        <asset-attribute src-pattern="^(.+)\..+" replacement="$1" key="asset_feature[feature=&apos;msp:alz.media.mmc-id&apos;]@value_string"/>
+      </data>
+    </match>
+    <match include-file-regex-pattern=".*\.zip" exclude-file-regex-pattern="^.*[^0-9].*\..*">
+      <data replace-files="true" checkout-checkin-options="outin" perform-update="true" map-metadata="false" use-duplicate-check="true" application="default" type="fontzipfile." create-assets="true">
+        <asset-duplicate-check src-pattern="^(.+)\..+" replacement="$1" key="msp:alz.media.mmc-id"/>
+        <asset-attribute src-pattern="^(.+)\..+" replacement="$1" key="asset_feature[feature=&apos;msp:alz.media.mmc-id&apos;]@value_string"/>
+      </data>
+    </match>
+    <match include-file-regex-pattern=".*\.pdf" exclude-file-regex-pattern="^.*[^0-9].*\..*">
+      <data replace-files="true" checkout-checkin-options="outin" use-duplicate-check="true" perform-update="true" map-metadata="true" type="document." application="default" create-assets="true">
+        <asset-duplicate-check src-pattern="^(.+)\..+" replacement="$1" key="msp:alz.media.mmc-id"/>
+        <asset-attribute src-pattern="^(.+)\..+" replacement="$1" key="asset_feature[feature=&apos;msp:alz.media.mmc-id&apos;]@value_string"/>
+      </data>
+    </match>
+    <match include-file-regex-pattern=".*\.qxp|.*\.qxd|.*\.otf|.*\.ait|.*\.idm|.*\.txt|.*\.ppt|.*\.svg|.*\.car|.*\.de-|.*\.dfo" exclude-file-regex-pattern="^.*[^0-9].*\..*">
+      <data replace-files="true" checkout-checkin-options="outin" use-duplicate-check="true" perform-update="true" map-metadata="false" type="other." application="default" create-assets="true">
+        <asset-duplicate-check src-pattern="^(.+)\..+" replacement="$1" key="msp:alz.media.mmc-id"/>
+        <asset-attribute src-pattern="^(.+)\..+" replacement="$1" key="asset_feature[feature=&apos;msp:alz.media.mmc-id&apos;]@value_string"/>
+      </data>
+    </match>
+    <match include-file-regex-pattern=".*\.xls|.*\.xlsx" exclude-file-regex-pattern="^.*[^0-9].*\..*">
+      <data replace-files="true" checkout-checkin-options="outin" use-duplicate-check="true" perform-update="true" map-metadata="false" type="spreadsheet." application="default" create-assets="true">
+        <asset-duplicate-check src-pattern="^(.+)\..+" replacement="$1" key="msp:alz.media.mmc-id"/>
+        <asset-attribute src-pattern="^(.+)\..+" replacement="$1" key="asset_feature[feature=&apos;msp:alz.media.mmc-id&apos;]@value_string"/>
+      </data>
+    </match>
+    <match include-file-regex-pattern=".*\.doc|.*\.docx" exclude-file-regex-pattern="^.*[^0-9].*\..*">
+      <data replace-files="true" checkout-checkin-options="outin" use-duplicate-check="true" perform-update="true" map-metadata="false" type="document." application="default" create-assets="true">
+        <asset-duplicate-check src-pattern="^(.+)\..+" replacement="$1" key="msp:alz.media.mmc-id"/>
+        <asset-attribute src-pattern="^(.+)\..+" replacement="$1" key="asset_feature[feature=&apos;msp:alz.media.mmc-id&apos;]@value_string"/>
+      </data>
+    </match>
+  </scan>
+  <import-manager group-export-key="file-export-group" completed-dir-filesystem="interfaces" completed-dir-relpath="file:MMC_TO_CENSHARE/media/completed/" error-dir-filesystem="interfaces" error-dir-relpath="file:MMC_TO_CENSHARE/media/error/" transaction-group-name="hotfolder-rollback-transaction-group"/>
+  <group-asset-importer/>
+  <!-- will be used as skeleton for the file asset query - may be enhanced with additional conditions -->
+  <qbe-file-sample>
+    <!--  asset currversion="0"/-->
+    <query type="asset">
+      <condition name="censhare:asset.currversion" value="0"/>
+    </query>
+  </qbe-file-sample>
+  <!-- will be used as skeleton for the group asset query - may be enhanced with additional conditions -->
+  <qbe-group-sample>
+    <!--  asset currversion="0"/-->
+    <query type="asset">
+      <condition name="censhare:asset.currversion" value="0"/>
+    </query>
+  </qbe-group-sample>
+  <!-- can be used to set additional asset attributes on checkin -->
+  <asset-sample>
+    <asset/>
+  </asset-sample>
+  <!-- template to create group assets -->
+  <group-template>
+    <asset type="group." application="default" domain="root." domain2="root."/>
+  </group-template>
+</cmd>

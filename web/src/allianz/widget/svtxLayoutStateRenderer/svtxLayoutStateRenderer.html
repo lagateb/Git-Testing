@@ -1,0 +1,23 @@
+<main class="svtxLayoutStateRenderer ">
+    <div ng-if="allowUpdate" style="display: contents;">
+        <div class="svtxLayoutStateRenderer__refreshing" ng-if="childMedia.refreshing">
+            <i class="cs-icon cs-icon-content-update cs-iconsize-400" style="color:darkred;"></i>
+
+            <span>&nbsp;wird aktualisiert...</span>
+        </div>
+        <div class="svtxLayoutStateRenderer__icons" ng-if="!childMedia.refreshing">
+            <i class="cs-icon cs-icon-circle-ok cs-iconsize-400 cs-color-30" ng-if="childMedia.state=='ok'" cs-popover="{content: 'Medium ist auf dem aktuellen Stand des Basis-Templates', trigger: 'hover focus'}"></i>
+            <i class="cs-icon cs-icon-warning-alt cs-iconsize-400 cs-color-33" ng-if="childMedia.state!='ok'" cs-popover="{content: 'Basis-Template hat sich seit der letzten Aktualisierung geändert', trigger: 'hover focus'}"></i>
+
+            <span cs-popover="{content: childMedia.history, trigger: 'hover focus'}" ng-if="childMedia.state !='ok' && childMedia.history" >
+                &nbsp;&nbsp;<i class="cs-icon cs-icon-circle-info cs-iconsize-400"></i>
+            </span>
+        </div>
+        <div class="svtxLayoutStateRenderer__actions" ng-if="!childMedia.refreshing && childMedia.state !='ok'">
+            <button class="cs-button cs-button-cta cs-is-small" ng-disabled="childMedia.refreshing" role="button" ng-click="updateMedia(childMedia)">Aktualisieren</button>
+        </div>
+    </div>
+    <div ng-if="!allowUpdate" style="display: contents;">
+        <i class="cs-icon cs-icon-ban cs-iconsize-400" style="color:grey;"  cs-popover="{content: 'Sie haben nicht die benötigten Rechte, um diese Aktion auszuführen!', trigger: 'hover focus'}"></i>
+    </div>
+</main>

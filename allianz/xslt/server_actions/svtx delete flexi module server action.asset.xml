@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset name="svtx delete flexi module server action" type="module.action.server." application="default" domain="root." domain2="root.">
+  <asset_feature feature="censhare:action.icon" value_string="cs-icon-bin"/>
+  <asset_feature feature="censhare:action.name" value_string="deleteFlexiModuleAndSnippet"/>
+  <asset_feature feature="censhare:action.priority" value_long="2"/>
+  <asset_feature feature="censhare:action.server.command-name" value_string="transformation.aa-xslt-execution-action-delete-flexi-module-and-snippet"/>
+  <asset_feature feature="censhare:enabled" value_long="1"/>
+  <asset_feature feature="censhare:name" language="de" value_string="Modul löschen"/>
+  <asset_feature feature="censhare:name" language="en" value_string="Delete module "/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="svtx:server.action.delete.flexi.and.snippet"/>
+</asset>

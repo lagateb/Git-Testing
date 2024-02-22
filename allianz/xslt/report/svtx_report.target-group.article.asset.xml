@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset name="svtx:report.target-group.article" type="module.transformation." application="texteditor" domain="root." domain2="root.">
+  <asset_element idx="0" key="actual." isversioned="1"/>
+  <asset_feature feature="censhare:module-asset-source" value_string="allianz/xslt/report"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="svtx:report.target-group.article"/>
+  <asset_feature feature="censhare:resource-meta">
+    <xmldata>
+      <selection needed="false"/>
+    </xmldata>
+  </asset_feature>
+  <asset_feature feature="censhare:resource-usage" value_key="censhare:report-transformation"/>
+  <storage_item element_idx="0" key="master" mimetype="application/xslt+xml" relpath="file:svtx_report.target-group.article.xsl"/>
+</asset>

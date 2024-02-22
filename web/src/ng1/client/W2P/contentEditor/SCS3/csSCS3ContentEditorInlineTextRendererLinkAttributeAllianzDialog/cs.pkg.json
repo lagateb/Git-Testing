@@ -1,0 +1,23 @@
+{
+    "name": "csSCS3ContentEditorInlineTextRendererLinkAttributeAllianzDialog",
+    "since": "5.2.0",
+    "version": "0.0.1",
+    "filename": "scs3-content-editor-inline-text-renderer-link-attribute-allianz-dialog.module",
+    "translations": [
+        "translation"
+    ],
+    "implementations": [
+        {
+            "type": "csDialog",
+            "name": "csSCS3ContentEditorInlineTextRendererLinkAttributeAllianzDialog",
+            "properties": {
+                "contentControllerName": "csSCS3ContentEditorInlineTextRendererLinkAttributeAllianzDialogController",
+                "contentTemplateName": "csSCS3ContentEditorInlineTextRendererLinkAttributeAllianzDialog.html"
+            }
+        }, {
+            "type": "csContentEditorInlineTextRendererDialog",
+            "name": "csSCS3ContentEditorInlineTextRendererLinkAttributeAllianzDialog",
+            "constructor": "csSCS3ContentEditorInlineTextRendererLinkAttributeAllianzDialog"
+        }
+    ]
+}

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmd xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.censhare.com/xml/3.0.0/command.xsd" xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct">
+  <xml-info title="${reg-title-aa-assign-preview} - Promotions" description="${reg-description-aa-assign-preview}" localize="true" knowledge-level="2" special-licence="false" feature-help="id/2215056" version="1" template-name="asset.aa-assign-preview" template-url="file:modules/asset/aa-assign-preview.xml">
+    <property-resources>
+      <base url="file:module"/>
+      <base url="file:../../common/global"/>
+    </property-resources>
+    <history>
+      <entry user="[MSP] Beckmann, Felix" timestamp="2022-02-03T13:29:22.653Z" comment=""/>
+      <entry user="[MSP] Beckmann, Felix" timestamp="2022-02-03T13:31:27.969Z" comment=""/>
+      <entry user="[MSP] Beckmann, Felix" timestamp="2022-02-03T13:58:39.420Z" comment=""/>
+    </history>
+  </xml-info>
+  <cmd-info name="asset.aa-assign-preview-20220203-1431-0" type="auto-execute" enabled="true" mode="loop" ignore-error="true">
+    <error-log module="AssetManagement"/>
+  </cmd-info>
+  <admin-info dialog-id="aa-assign-preview-config" dialog-url="file:config-dialog.xml"/>
+  <listen-events event-count-limit="50" xml-queue-size="50" persistent-events="true" retries-on-error="1" fork-command="sync" fork-sync-timeout="900" ignore-remote-events="true">
+    <event target="AssetEvent" method="new-child" param2="0"/>
+  </listen-events>
+  <commands currentstep="0">
+    <command target="ScriptletManager" scriptlet="modules.asset.AAAssignPreview" method="register"/>
+    <command target="EventManager" method="waitevent" key="listen-events"/>
+    <command target="ScriptletManager" scriptlet="modules.asset.AAAssignPreview" method="setup"/>
+    <command target="ScriptletManager" scriptlet="modules.asset.AAAssignPreview" method="finish"/>
+  </commands>
+  <config perform-checkout="true" perform-update="false" perform-tree="false">
+    <!-- filter/query assets -->
+    <asset-filter>
+      <query type="asset" limit="50" xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct">
+        <condition name="censhare:asset.currversion" value="0"/>
+        <condition name="censhare:asset.deletion" value="0"/>
+        <condition name="censhare:asset.state" value="0"/>
+        <not>
+          <condition name="censhare:storage_item.key" op="=" value="master"/>
+        </not>
+        <not>
+          <condition name="censhare:storage_item.key" op="=" value="preview"/>
+        </not>
+        <condition name="censhare:asset.type" partial-load-tree="true" value="promotion.*" expanded-nodes="promotion."/>
+      </query>
+    </asset-filter>
+    <asset-tree/>
+    <!-- update/checkin assets -->
+    <asset-update domain="root." domain2="root."/>
+    <!--
+    <child-rel-filters>
+      <child-rel-filter key="user."/>
+      <child-rel-filter key="target."/>
+    </child-rel-filters>
+    -->
+    <child-rel-filters>
+      <child-rel-filter key="user.media."/>
+      <child-rel-filter key="user.layout."/>
+      <child-rel-filter key="user."/>
+    </child-rel-filters>
+  </config>
+  <process-events>
+    <processing in-batches="false"/>
+  </process-events>
+</cmd>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsl:stylesheet
+        xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+        xmlns:xs="http://www.w3.org/2001/XMLSchema"
+        xmlns:cs="http://www.censhare.com/xml/3.0.0/xpath-functions"
+        xmlns:svtx="http://www.savotex.com"
+        xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus"
+        exclude-result-prefixes="#all"
+        version="2.0">
+    <!-- globals -->
+
+    <xsl:template match="asset">
+
+        <xsl:param name="currentAsset" select="."/>
+
+        <xsl:variable name="altTextGerman" select="$currentAsset/asset_feature[@feature='svtx:alt-text' and @language='de']/@value_string"/>
+        <xsl:variable name="censhareIptcDescription" select="$currentAsset/asset_feature[@feature='censhare:iptc']/asset_feature[@feature='censhare:iptc.content']/asset_feature[@feature='censhare:iptc.description']/@value_string"/>
+
+
+        <xsl:if test="not(exists($altTextGerman)) and exists($censhareIptcDescription)">
+            <xsl:variable name="translatedDescription" select="svtx:translateText('en','de',$censhareIptcDescription)"/>
+
+            <xsl:value-of select="$censhareIptcDescription"/>
+            <xsl:value-of select="$translatedDescription"/>
+
+            <xsl:variable name="checkoutAsset"/>
+            <cs:command name="com.censhare.api.assetmanagement.CheckOut" returning="checkoutAsset">
+                <cs:param name="source">
+                    <xsl:copy-of select="$currentAsset"/>
+                </cs:param>
+            </cs:command>
+
+            <xsl:variable name="resultAssetXml">
+                <asset>
+                    <xsl:copy-of select="$checkoutAsset/@*"/>
+                    <xsl:copy-of select="$checkoutAsset/node()"/>
+
+                    <asset_feature feature="svtx:alt-text" language="de" value_string="{$translatedDescription}"/>
+
+                </asset>
+            </xsl:variable>
+
+            <xsl:variable name="result"/>
+            <cs:command name="com.censhare.api.assetmanagement.CheckIn" returning="result">
+                <cs:param name="source" select="$resultAssetXml"/>
+            </cs:command>
+
+        </xsl:if>
+
+    </xsl:template>
+
+    <!-- Auruf der svtx-Translate Funktion -->
+    <xsl:function name="svtx:translateText" as="xs:string">
+        <xsl:param name="from"/>
+        <xsl:param name="to"/>
+        <xsl:param name="text"/>
+        <xsl:variable name="translatedtext">
+            <cs:command name="modules.com.savotex.translator.Translate.get">
+                <cs:param name="to" select="$to"/>
+                <cs:param name="write_to_buffer">true</cs:param>
+                <cs:param name="only_buffer">false</cs:param>
+                <cs:param name="text" select="$text"/>
+            </cs:command>
+        </xsl:variable>
+        <xsl:copy-of select="$translatedtext"/>
+    </xsl:function>
+
+</xsl:stylesheet>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+  <events>
+    <event event_key="censhare.CustomAssetEvent.mmc-import-finished" eventsource="CustomAssetEvent" name="mmc-import-finished" description="MMC Promotion Import finished" description_de="MMC Promotion Import beendet" param3="0" enabled="1" tcn="0" rowid="56"/>
+  </events>
+</data>

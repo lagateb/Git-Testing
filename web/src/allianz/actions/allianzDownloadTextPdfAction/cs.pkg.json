@@ -1,0 +1,33 @@
+{
+    "name": "allianzDownloadTextPdfAction",
+    "since": "2019.3.1",
+    "version": "0.0.1",
+    "filename": "allianz-download-text-pdf-action.module",
+    "translations": [
+        "translation"
+    ],
+    "assets": {
+        "path": "assets"
+    },
+    "implementations": [
+        {
+            "type": "csBehavior",
+            "name": "allianzDownloadTextPdfBehavior",
+            "constructor": "allianzDownloadTextPdfBehavior",
+            "properties": {
+                "icon": "cs-icon-download-alt",
+                "title": "allianzDownloadTextPdfAction.title",
+                "priority": 550,
+                "filters": {
+                    "context": "asset",
+                    "csAssetTypePatterns": [
+                        {
+                            "assettype": "product.*",
+                            "mimetype": "*"
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

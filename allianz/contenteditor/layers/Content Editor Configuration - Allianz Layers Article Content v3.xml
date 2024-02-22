@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<virtual-node name="root">
+    <!-- svtx_allianz_casestudys Standard Content Structure 3.0 -->
+
+    <!-- node-source ist die Verweis ref aus dem Asset -->
+
+
+        <ref name="el_layers" node-source="svtx:content-editor-allianz-layers-content-node-source-v3" path="article/content"/>
+
+
+
+
+</virtual-node>

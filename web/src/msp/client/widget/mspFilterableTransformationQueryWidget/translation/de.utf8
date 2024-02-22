@@ -1,0 +1,14 @@
+title = Filterbare Assetliste basierend auf einer Transformation (MSP)
+description = Darstellung einer Assetliste basierend auf dem Ergebnis einer Assetabfrage, dass über eine Transformation definiert wird.
+widgetTitle = Transformation Assetliste
+configGroupTitle = Transformation
+configTransformation = Such-Transformation
+configToolbarTransformation = Toolbar-Transformation
+configTransformationPlaceholder = Transformation wählen
+configTransformationLoading = Lade Liste der Transformations-Assets…
+configCustomView = Listen-Ansicht
+showLabel = Transformation
+assetOverflow = Zu viele Ergebnisse, bitte eine striktere Transformation wählen
+noResult = Transformation liefert kein Ergebnis zurück
+missingConfig = Keine Such-Transformation definiert
+missingConfigBtn = Such-Transformation

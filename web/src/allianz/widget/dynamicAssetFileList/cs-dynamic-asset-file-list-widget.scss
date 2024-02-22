@@ -1,0 +1,31 @@
+.csWidget_csDynamicAssetFileListWidget {
+
+    .csAssetListItem {
+        padding-bottom: .4rem;
+        padding-top: .4rem;
+
+        .csAssetListItem__controls {
+            top: .4rem;
+        }
+
+        &.upload {
+
+            .csAssetListItem__value {
+                text-transform: capitalize;
+            }
+        }
+    }
+
+    .cs-progress {
+        margin: 0;
+        width: 75%;
+    }
+
+    .csAssetListItem__controls {
+        display: none;
+    }
+
+    .csAssetListItem:hover .csAssetListItem__controls {
+        display: block;
+    }
+}

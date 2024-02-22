@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset name="Localization - Standard Article / Article v3" type="module.localization." application="default" domain="root." domain2="root." has_master_file="1" description="censhare Standard Content Structure 3.0">
+  <asset_element idx="0" key="actual." isversioned="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="svtx:content-editor-scs-article-localization-v3"/>
+    <!--
+  <asset_feature feature="censhare:uuid" value_string="dbeda448-e9ec-4773-a11c-5500e2c09744"/>
+  -->
+  <storage_item element_idx="0" key="master" mimetype="text/xml" relpath="file:Localization - Allianz Standard Article _ Article v3.xml"/>
+</asset>

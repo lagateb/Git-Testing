@@ -1,0 +1,9 @@
+cancel_confirm_title = Assistenten abbrechen
+cancel_confirm_msg = Assistenten abbrechen und Daten löschen?
+error_store_title = Speichern des Assistenten fehlgeschlagen
+
+messageTitle = Asset erstellt
+messageContent = Das Asset wurde erfolgreich erstellt. 
+messageAction = Öffnen
+
+interruptProcess = Halte laufenden Prozess an...

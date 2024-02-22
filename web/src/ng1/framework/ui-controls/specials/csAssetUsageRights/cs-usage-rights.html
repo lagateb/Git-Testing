@@ -1,0 +1,245 @@
+<!-- usage rights container -->
+<li class="csAssetProperties__list__item" ng-if="$ctrl.usageRights.value[0].value == 'all-rights'">
+    <div class="csAssetProperties__list__label"><i class="cs-icon cs-icon-usage-rights cs-color-30"></i></div>
+    <div class="csAssetProperties__list__value"><strong>{{ 'csCommonTranslations.usageRightsFree' | csTranslate }}</strong></div>
+</li>
+<li class="csAssetProperties__list__item" ng-if="$ctrl.usageRights.value[0].value == 'channels'">
+    <div class="csAssetProperties__list__label"><i class="cs-icon cs-icon-usage-rights cs-color-36"></i></div>
+    <div class="csAssetProperties__list__value"
+         ng-if="$ctrl.usageRights.value[0].channel.value[0].display_value == 'All channels'">
+        <strong>{{ 'csCommonTranslations.usageRightsFreeAllChannels' | csTranslate }}</strong>
+    </div>
+    <div class="csAssetProperties__list__value"
+         ng-if="$ctrl.usageRights.value[0].channel.value[0].display_value != 'All channels'">
+        <strong>{{'csCommonTranslations.usageRightsFreeSpecificChannels' | csTranslate }}</strong>
+    </div>
+</li>
+<li class="csAssetProperties__list__item" ng-if="$ctrl.usageRights.value[0].value == 'internal-use'">
+    <div class="csAssetProperties__list__label"><i class="cs-icon cs-icon-usage-rights cs-color-36"></i></div>
+    <div class="csAssetProperties__list__value">
+        <strong>{{'csCommonTranslations.usageRightsInternalUse' | csTranslate }}</strong>
+    </div>
+</li>
+<li class="csAssetProperties__list__item" ng-if="$ctrl.usageRights.value[0].value == 'prohibited'">
+    <div class="csAssetProperties__list__label"><i class="cs-icon cs-icon-close cs-color-38"></i></div>
+    <div class="csAssetProperties__list__value">
+        <strong>{{'csCommonTranslations.usageRightsProhibited' | csTranslate }}</strong>
+    </div>
+</li>
+<!-- ak: fallback -->
+<li class="csAssetProperties__list__item" ng-if="$ctrl.usageRights.value[0].value && ($ctrl.usageRights.value[0].value != 'all-rights') && ($ctrl.usageRights.value[0].value != 'channels') && ($ctrl.usageRights.value[0].value != 'internal-use') && ($ctrl.usageRights.value[0].value != 'prohibited')">
+    <div class="csAssetProperties__list__label"><i class="cs-icon cs-icon-usage-rights cs-color-36"></i></div>
+    <div class="csAssetProperties__list__value">
+        <strong>{{'csCommonTranslations.usageRightsLimited' | csTranslate }}:</strong> {{$ctrl.usageRights.value[0].display_value}}
+    </div>
+</li>
+
+<!-- description -->
+<cs-metadata-row read property="$ctrl.usageRights.value[0].localizedDescription" ng-if="$ctrl.usageRights.value[0].value"></cs-metadata-row>
+
+<!-- use for products -->
+<!--cs-metadata-row read property="$ctrl.usageRights.value[0].useForProducts" ng-if="$ctrl.usageRights.value[0].value"></cs-metadata-row-->
+
+<div ng-if="$ctrl.products" class="ng-scope ng-isolate-scope">
+    <li class="cs-meta-data-row csAssetProperties__list__item">
+        <span class="csAssetProperties__list__label" ng-class="{'csAssetProperties__list__parent_label': $ctrl.valueType === 'novalue', 'parent-as-header': $ctrl.valueType === 'novalue'}">
+            <span ng-if="!$ctrl.config.rowIcon &amp;&amp; !$ctrl.config.noLabel" class="ng-binding ng-scope">{{$ctrl.usageRights.value[0].useForProducts.label}}</span>
+        </span>
+        <div class="csAssetProperties__list__value cs-meta-data-row__default ng-scope">
+            <div ng-repeat="product in $ctrl.products" ng-if="product" class="ng-scope">
+                <span class="ng-scope">
+                        <div class="cs-meta-data-row-template-loader ng-scope">
+                            <cs-open-asset-page asset-id="{{product.asset.traits.ids.id}}" resource-key="" cs-tooltip="{{product.asset.traits.display.name}}" class="cs-is-subtle ng-scope ng-isolate-scope" data-original-title="" title="">
+                                <span class="ng-binding ng-scope">{{product.asset.traits.display.name}}</span>
+                            </cs-open-asset-page>
+                        </div>
+                </span>
+            </div>
+        </div>
+    </li>
+</div>
+
+<!-- technical restriction -->
+<cs-metadata-row read property="$ctrl.usageRights.value[0].technicalRestriction" ng-if="$ctrl.usageRights.value[0].value"></cs-metadata-row>
+
+<!-- validity date -->
+<li class="cs-meta-data-row csAssetProperties__list__item" ng-if="$ctrl.usageRights.value[0].unlimited.value[0].value || $ctrl.usageRights.value[0].startDate.value[0].value || $ctrl.usageRights.value[0].endDate.value[0].value">
+        <span class="csAssetProperties__list__label">
+            <span>{{'csCommonTranslations.validity' | csTranslate}}</span>
+        </span>
+    <div class="csAssetProperties__list__value cs-meta-data-row__default">
+        <span ng-if="$ctrl.usageRights.value[0].unlimited.value[0].value">{{$ctrl.usageRights.value[0].unlimited.label}}</span>
+        <span ng-if="!$ctrl.usageRights.value[0].unlimited.value[0].value">
+                {{$ctrl.usageRights.value[0].startDate.value[0].value | csDateFormat:'L'}} -
+                {{$ctrl.usageRights.value[0].endDate.value[0].value | csDateFormat:'L'}}
+        </span>
+    </div>
+</li>
+
+<!--
+<li class="cs-meta-data-row csAssetProperties__list__item" ng-if="$ctrl.usageRights.value[0].useForProducts.value[0].value">
+    <span class="csAssetProperties__list__label csAssetProperties__list__parent_label parent-as-header">
+        <span>{{$ctrl.usageRights.value[0].useForProducts.label}}</span>
+    </span>
+    <hr class="cs-meta-data-row-hr"/>
+</li>
+<ul class="csAssetProperties__list" ng-if="$ctrl.usageRights.value[0].useForProducts.value[0].value">
+    <cs-metadata-row read property="$ctrl.usageRights.value[0].useForProducts"></cs-metadata-row>
+</ul>
+-->
+
+<li class="cs-meta-data-row csAssetProperties__list__item" ng-if="$ctrl.usageRights.value[0].channel.value[0].value">
+    <span class="csAssetProperties__list__label csAssetProperties__list__parent_label parent-as-header">
+        <span>{{ 'csCommonTranslations.channels' | csTranslate }}</span>
+    </span>
+    <hr class="cs-meta-data-row-hr"/>
+</li>
+
+
+<div ng-repeat="chan in $ctrl.usageRights.value[0].channel.value" ng-if="chan.value" ng-class="{'cs-m-b-s' : !$last}">
+    <li class="cs-meta-data-row csAssetProperties__list__item" last="$last">
+        <span class="csAssetProperties__list__label csAssetProperties__list__parent_label">{{$ctrl.usageRights.value[0].channel.label}}</span>
+        <span class="csAssetProperties__list__value">
+          <cs-open-asset-page asset-id="{{chan.value}}" class="cs-is-subtle">
+            <span><strong>{{chan.display_value}}</strong></span>
+          </cs-open-asset-page>
+        </span>
+    </li>
+    <li class="cs-meta-data-row csAssetProperties__list__item" ng-if="!$ctrl.hideValidity">
+        <span class="csAssetProperties__list__label">
+            <span>{{'csCommonTranslations.validity' | csTranslate}}</span>
+        </span>
+        <div class="csAssetProperties__list__value cs-meta-data-row__default">
+            <span ng-if="chan.unlimited.value[0].value">{{chan.unlimited.label}}</span>
+            <span ng-if="!chan.unlimited.value[0].value">
+                {{chan.startDate.value[0].value | csDateFormat:'L'}} -
+                {{chan.endDate.value[0].value | csDateFormat:'L'}}
+            </span>
+        </div>
+    </li>
+    <cs-metadata-row read is-nested-child="true" property="chan.region"></cs-metadata-row>
+    <cs-metadata-row read is-nested-child="true" property="chan.localizedDescription"></cs-metadata-row>
+</div>
+
+
+
+
+<!-- editing -->
+<li class="cs-meta-data-row csAssetProperties__list__item" ng-if="$ctrl.usageRights.value[0].editing.value[0].value">
+    <span class="csAssetProperties__list__label csAssetProperties__list__parent_label parent-as-header">
+        <span>{{ 'csCommonTranslations.editing' | csTranslate }}</span>
+    </span>
+    <hr class="cs-meta-data-row-hr"/>
+</li>
+<ul class="csAssetProperties__list" ng-if="$ctrl.usageRights.value[0].editing.value[0].value">
+    <li class="cs-meta-data-row csAssetProperties__list__item" read="true">
+        <span class="csAssetProperties__list__label csAssetProperties__list__parent_label">{{$ctrl.usageRights.value[0].editing.label}}</span>
+        <span class="csAssetProperties__list__value">
+          <span><strong>{{$ctrl.usageRights.value[0].editing.value[0].display_value}}</strong></span>
+        </span>
+    </li>
+    <li class="cs-meta-data-row csAssetProperties__list__item" ng-if="!$ctrl.hideValidity">
+        <span class="csAssetProperties__list__label">
+            <span>{{'csCommonTranslations.validity' | csTranslate}}</span>
+        </span>
+        <div class="csAssetProperties__list__value cs-meta-data-row__default">
+            <span ng-if="$ctrl.usageRights.value[0].editing.value[0].unlimited.value[0].value">{{$ctrl.usageRights.value[0].editing.value[0].unlimited.label}}</span>
+            <span ng-if="!$ctrl.usageRights.value[0].editing.value[0].unlimited.value[0].value">
+                {{$ctrl.usageRights.value[0].editing.value[0].startDate.value[0].value | csDateFormat:'L'}} -
+                {{$ctrl.usageRights.value[0].editing.value[0].endDate.value[0].value | csDateFormat:'L'}}
+            </span>
+        </div>
+    </li>
+    <cs-metadata-row read is-nested-child="true"
+                     property="$ctrl.usageRights.value[0].editing.value[0].region"></cs-metadata-row>
+    <cs-metadata-row read is-nested-child="true"
+                     property="$ctrl.usageRights.value[0].editing.value[0].localizedDescription"></cs-metadata-row>
+</ul>
+
+<!-- selling -->
+<li class="cs-meta-data-row csAssetProperties__list__item" ng-if="$ctrl.usageRights.value[0].selling.value[0].value">
+    <span class="csAssetProperties__list__label csAssetProperties__list__parent_label parent-as-header">
+        <span>{{ 'csCommonTranslations.selling' | csTranslate }}</span>
+    </span>
+    <hr class="cs-meta-data-row-hr"/>
+</li>
+<ul class="csAssetProperties__list" ng-if="$ctrl.usageRights.value[0].selling.value[0].value">
+    <li class="cs-meta-data-row csAssetProperties__list__item" read="true">
+        <span class="csAssetProperties__list__label csAssetProperties__list__parent_label">{{$ctrl.usageRights.value[0].selling.label}}</span>
+        <span class="csAssetProperties__list__value">
+          <span><strong>{{$ctrl.usageRights.value[0].selling.value[0].display_value}}</strong></span>
+        </span>
+    </li>
+    <li class="cs-meta-data-row csAssetProperties__list__item" ng-if="!$ctrl.hideValidity">
+        <span class="csAssetProperties__list__label">
+            <span>{{'csCommonTranslations.validity' | csTranslate}}</span>
+        </span>
+        <div class="csAssetProperties__list__value cs-meta-data-row__default">
+            <span ng-if="$ctrl.usageRights.value[0].selling.value[0].unlimited.value[0].value">{{$ctrl.usageRights.value[0].selling.value[0].unlimited.label}}</span>
+            <span ng-if="!$ctrl.usageRights.value[0].selling.value[0].unlimited.value[0].value">
+                {{$ctrl.usageRights.value[0].selling.value[0].startDate.value[0].value | csDateFormat:'L'}} -
+                {{$ctrl.usageRights.value[0].selling.value[0].endDate.value[0].value | csDateFormat:'L'}}
+            </span>
+        </div>
+    </li>
+    <cs-metadata-row read is-nested-child="true"
+                     property="$ctrl.usageRights.value[0].selling.value[0].region"></cs-metadata-row>
+    <cs-metadata-row read is-nested-child="true"
+                     property="$ctrl.usageRights.value[0].selling.value[0].localizedDescription"></cs-metadata-row>
+</ul>
+
+<!-- transfer -->
+<li class="cs-meta-data-row csAssetProperties__list__item" ng-if="$ctrl.usageRights.value[0].transferBroker.value[0].value || $ctrl.usageRights.value[0].transferRepresentative.value[0].value">
+    <span class="csAssetProperties__list__label csAssetProperties__list__parent_label parent-as-header">
+        <span>Weitergabe</span>
+    </span>
+    <hr class="cs-meta-data-row-hr"/>
+</li>
+<ul class="csAssetProperties__list" ng-if="$ctrl.usageRights.value[0].transferBroker.value[0].value">
+    <li class="cs-meta-data-row csAssetProperties__list__item" read="true">
+        <span class="csAssetProperties__list__label csAssetProperties__list__parent_label">{{$ctrl.usageRights.value[0].transferBroker.label}}</span>
+        <span class="csAssetProperties__list__value">
+          <span><strong>{{$ctrl.usageRights.value[0].transferBroker.value[0].display_value}}</strong></span>
+        </span>
+    </li>
+    <li class="cs-meta-data-row csAssetProperties__list__item" ng-if="!$ctrl.hideValidity">
+        <span class="csAssetProperties__list__label">
+            <span>{{'csCommonTranslations.validity' | csTranslate}}</span>
+        </span>
+        <div class="csAssetProperties__list__value cs-meta-data-row__default">
+            <span ng-if="$ctrl.usageRights.value[0].transferBroker.value[0].unlimited.value[0].value">{{$ctrl.usageRights.value[0].transferBroker.value[0].unlimited.label}}</span>
+            <span ng-if="!$ctrl.usageRights.value[0].transferBroker.value[0].unlimited.value[0].value">
+                {{$ctrl.usageRights.value[0].transferBroker.value[0].startDate.value[0].value | csDateFormat:'L'}} -
+                {{$ctrl.usageRights.value[0].transferBroker.value[0].endDate.value[0].value | csDateFormat:'L'}}
+            </span>
+        </div>
+    </li>
+    <cs-metadata-row read is-nested-child="true"
+                     property="$ctrl.usageRights.value[0].transferBroker.value[0].region"></cs-metadata-row>
+    <cs-metadata-row read is-nested-child="true"
+                     property="$ctrl.usageRights.value[0].transferBroker.value[0].localizedDescription"></cs-metadata-row>
+</ul>
+<ul class="csAssetProperties__list" ng-if="$ctrl.usageRights.value[0].transferRepresentative.value[0].value">
+    <li class="cs-meta-data-row csAssetProperties__list__item" read="true">
+        <span class="csAssetProperties__list__label csAssetProperties__list__parent_label">{{$ctrl.usageRights.value[0].transferRepresentative.label}}</span>
+        <span class="csAssetProperties__list__value">
+          <span><strong>{{$ctrl.usageRights.value[0].transferRepresentative.value[0].display_value}}</strong></span>
+        </span>
+    </li>
+    <li class="cs-meta-data-row csAssetProperties__list__item" ng-if="!$ctrl.hideValidity">
+        <span class="csAssetProperties__list__label">
+            <span>{{'csCommonTranslations.validity' | csTranslate}}</span>
+        </span>
+        <div class="csAssetProperties__list__value cs-meta-data-row__default">
+            <span ng-if="$ctrl.usageRights.value[0].transferRepresentative.value[0].unlimited.value[0].value">{{$ctrl.usageRights.value[0].transferRepresentative.value[0].unlimited.label}}</span>
+            <span ng-if="!$ctrl.usageRights.value[0].transferRepresentative.value[0].unlimited.value[0].value">
+                {{$ctrl.usageRights.value[0].transferRepresentative.value[0].startDate.value[0].value | csDateFormat:'L'}} -
+                {{$ctrl.usageRights.value[0].transferRepresentative.value[0].endDate.value[0].value | csDateFormat:'L'}}
+            </span>
+        </div>
+    </li>
+    <cs-metadata-row read is-nested-child="true"
+                     property="$ctrl.usageRights.value[0].transferRepresentative.value[0].region"></cs-metadata-row>
+    <cs-metadata-row read is-nested-child="true"
+                     property="$ctrl.usageRights.value[0].transferRepresentative.value[0].localizedDescription"></cs-metadata-row>
+</ul>

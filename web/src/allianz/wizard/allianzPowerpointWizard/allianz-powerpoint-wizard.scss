@@ -1,0 +1,87 @@
+.csWizard {
+  .allianzPowerpointWizard__container {
+    margin: 0 auto;
+    max-width: 80rem;
+    // 5 rem because we have only a single select in a big widget. So a little bit more space above looks better
+    padding: 5rem 1.5rem 2rem;
+  }
+
+  .allianzPowerpointWizard__container_large {
+    margin: 0 auto;
+    max-width: 123rem;
+    // 5 rem because we have only a single select in a big widget. So a little bit more space above looks better
+    padding: 5rem 1.5rem 2rem;
+  }
+
+  .pptexCell {
+    height: 100%;
+  }
+  .preview-outer {
+    background-color: #DCDCDC;
+    width: 280px;
+    color: black;
+    font-size: 12pt;
+    font-weight: bold;
+    height: 100%;
+  }
+  .preview-image {
+    height: 150px;
+    color: white;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 5px;
+
+  }
+  .preview-headline {
+    color: #585858;
+    font-weight: bold;
+    font-size: 10pt;
+    margin-top: 2px;
+    padding: 10px 5px 5px 10px;
+    font-family: Helvetica, Arial Black, sans;
+  }
+
+
+  .preview-info {
+    color: #585858;
+    font-weight: normal;
+    font-size: 8pt;
+    margin-top: 0px;
+    padding: 0px 15px 15px 10px;
+    font-family: Helvetica, Arial Black, sans;
+  }
+
+
+  .card-2 {
+    -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    -moz-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    -ms-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    -o-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+
+
+  .wrapper {
+    display: inline;
+    justify-content: left;
+    align-items: center;
+    min-height: 5px;
+
+  }
+
+  .badge {
+    display: inline-block;
+    box-shadow: 0px 0px 0px 2px rgba(0,0,0,0.4);
+    min-width: 1px; /* pixel unit */
+    padding: 12px 12px; /* pixel unit */
+    border-radius: 50%;
+    font-size: 11pt;
+    text-align: center;
+    background: #DCDCDC;
+    color: #585858;
+    font-weight: bold;
+    font-family: Helvetica, Arial Black, sans;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+}

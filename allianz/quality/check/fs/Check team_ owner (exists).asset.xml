@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset name="Check team: owner (exists)" type="module.completeness-check." application="default" domain="root.common-resources." domain2="root." description="You have not provided any responsible owner yet.">
+  <asset_feature feature="censhare:completeness-check.expression.xpath" value_string="exists(asset_feature[@feature=&apos;censhare:team-member&apos;]/asset_feature[@value_asset_key_ref=&apos;censhare:team-role.owner&apos;])"/>
+  <asset_feature feature="censhare:completeness-check.importance" value_key="optional"/>
+    <asset_feature feature="censhare:asset-type-filter" value_string="product1."/>
+  <asset_feature feature="censhare:description" language="de" value_string="Kein Eigentümer vorhanden"/>
+  <asset_feature feature="censhare:description" language="en" value_string="No owner provided"/>
+  <asset_feature feature="censhare:description" language="fr" value_string="Aucun propriétaire présent"/>
+  <asset_feature feature="censhare:description" language="it" value_string="Nessun proprietario fornito"/>
+  <asset_feature feature="censhare:module-asset-source" value_string="required/web/completeness-checks"/>
+  <asset_feature feature="censhare:name" language="de" value_string="Eigentümer"/>
+  <asset_feature feature="censhare:name" language="en" value_string="Owner"/>
+  <asset_feature feature="censhare:name" language="fr" value_string="Propriétaire"/>
+  <asset_feature feature="censhare:name" language="it" value_string="Proprietario"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="censhare:completeness-check.team-owner.exists"/>
+  <asset_feature feature="censhare:resource-meta">
+    <xmldata>
+      <selection needed="false"/>
+    </xmldata>
+  </asset_feature>
+</asset>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset id_org="51567" name="svtx:server.action.delete.makler.vertriebs.variante" type="module.action.server." application="default" domain="root." domain2="root.">
+  <asset_feature feature="censhare:action.icon" value_string="cs-icon-bin"/>
+  <asset_feature feature="censhare:action.name" value_string="deleteMaklerVertriebsVariante"/>
+  <asset_feature feature="censhare:action.priority" value_long="2"/>
+  <asset_feature feature="censhare:action.server.command-name" value_string="transformation.aa-xslt-execution-action-delete-makler-vertriebs-variante"/>
+  <asset_feature feature="censhare:enabled" value_long="1"/>
+  <asset_feature feature="censhare:name" language="de" value_string="Makler- oder Vertriebsvariante löschen"/>
+  <asset_feature feature="censhare:name" language="en" value_string="Makler- oder Vertriebsvariante löschen"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="svtx:server.action.delete.makler.vertriebs.variante"/>
+  <asset_feature feature="censhare:resource-meta">
+    <xmldata>
+      <selection needed="false"/>
+    </xmldata>
+  </asset_feature>
+</asset>

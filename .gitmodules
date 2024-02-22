@@ -1,0 +1,4 @@
+[submodule "modules/savotex/powerpoint"]
+	path = modules/savotex/powerpoint
+	url = https://git.mmccloud.de/ort-it/allianz-pp.git
+	branch = master

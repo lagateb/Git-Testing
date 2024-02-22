@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset name="Allianz Logo - Abstimmungsdokument" type="picture." application="default" domain="root.allianz-leben-ag.imagepool." domain2="root.">
+  <asset_element idx="0" key="actual." isversioned="1" width_mm="141.03" height_mm="34.98"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="svtx:fop.abstimmungsdokument.logo"/>
+  <asset_feature feature="censhare:resource-meta">
+    <xmldata>
+      <selection needed="false"/>
+    </xmldata>
+  </asset_feature>
+  <storage_item element_idx="0" key="master" mimetype="application/postscript" relpath="file:Allianz Logo - Abstimmungsdokument.eps"/>
+</asset>

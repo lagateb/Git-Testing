@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset id_org="44959" name="Wettbewerbsrecht" type="module.feature-item." application="default" domain="root." domain2="root.">
+  <asset_feature feature="censhare:asset-type-filter" value_string="text."/>
+  <asset_feature feature="censhare:asset-type-filter" value_string="text.size-l."/>
+  <asset_feature feature="censhare:asset-type-filter" value_string="text.size-m."/>
+  <asset_feature feature="censhare:asset-type-filter" value_string="text.size-s."/>
+  <asset_feature feature="censhare:asset-type-filter" value_string="text.size-xl."/>
+  <asset_feature feature="censhare:resource-key" value_string="svtx:approval-type.competition"/>
+  <asset_feature feature="censhare:resource-role" value_string="admin"/>
+  <asset_feature feature="censhare:resource-role" value_string="approver_wettbewerbsrecht"/>
+  <asset_feature feature="censhare:resource-role" value_string="marketing_manager"/>
+</asset>

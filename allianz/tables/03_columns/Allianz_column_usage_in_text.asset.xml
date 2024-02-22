@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<asset  name="Allianz Nutzung (text)" type="module.table.column." application="default" domain="root.common-resources." domain2="root.">
+ <!-- Liefert die Medien, in den der text verwendet wird (pptx,flyer etc) Beim Artikel über alle Texte -->
+<asset_feature feature="censhare:macro" value_string2="censhare:resource-key" value_asset_key_ref="svtx:allianz-macro-usage-in-media"/>
+<asset_feature feature="censhare:name" language="de" value_string="Nutzung"/>
+<asset_feature feature="censhare:name" language="en" value_string="Usage"/>
+<asset_feature feature="censhare:name" language="it" value_string="Usage"/>
+<asset_feature feature="censhare:name" language="fr" value_string="Usage"/>
+<asset_feature feature="censhare:resource-enabled" value_long="1"/>
+<asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+<asset_feature feature="censhare:resource-key" value_string="allianz:table-column.asset.usage-in-media"/>
+<asset_feature feature="censhare:resource-meta">
+    <xmldata>
+        <selection needed="false"/>
+    </xmldata>
+</asset_feature>
+<asset_feature feature="censhare:table.column.align-horizontal" value_key="left"/>
+<asset_feature feature="censhare:table.column.key" value_string="usageText"/>
+<asset_feature feature="censhare:table.column.type" value_key="string" value_long="1"/>
+<asset_feature feature="censhare:table.column.width-max-pixels" value_long="150"/>
+<asset_feature feature="censhare:table.column.width-min-pixels" value_long="130"/>
+<asset_feature feature="censhare:table.column.width-pixels" value_long="130"/>
+</asset>

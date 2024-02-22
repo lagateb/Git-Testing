@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset name="Approval type" type="module.feature." application="default" deletion="2" domain="root.common-resources." domain2="root.">
+  <asset_feature feature="censhare:module.feature-item" value_string2="censhare:resource-key" sorting="10" value_asset_key_ref="svtx:approval-media-words"/>
+  <asset_feature feature="censhare:module.feature-item" value_string2="censhare:resource-key" sorting="11" value_asset_key_ref="svtx:approval-media-imageusage"/>
+  <asset_feature feature="censhare:module.feature-item" value_string2="censhare:resource-key" sorting="12" value_asset_key_ref="svtx:approval-type.fvb"/>
+  <asset_feature feature="censhare:module.feature-item" value_string2="censhare:resource-key" sorting="13" value_asset_key_ref="svtx:approval-type.steuer"/>
+  <asset_feature feature="censhare:module.feature-item" value_string2="censhare:resource-key" sorting="2" value_asset_key_ref="svtx:approval-type.productmgmt"/>
+  <asset_feature feature="censhare:module.feature-item" value_string2="censhare:resource-key" sorting="3" value_asset_key_ref="svtx:approval-type.insurance"/>
+  <asset_feature feature="censhare:module.feature-item" value_string2="censhare:resource-key" sorting="4" value_asset_key_ref="svtx:approval-type.socialsecurity"/>
+  <asset_feature feature="censhare:module.feature-item" value_string2="censhare:resource-key" sorting="5" value_asset_key_ref="svtx:approval-type.competition"/>
+  <asset_feature feature="censhare:module.feature-item" value_string2="censhare:resource-key" sorting="6" value_asset_key_ref="svtx:approval-type.fachstab"/>
+  <asset_feature feature="censhare:module.feature-item" value_string2="censhare:resource-key" sorting="7" value_asset_key_ref="svtx:approval-type.sales-abv"/>
+  <asset_feature feature="censhare:module.feature-item" value_string2="censhare:resource-key" sorting="8" value_asset_key_ref="svtx:approval-type.sales-mvzb"/>
+  <asset_feature feature="censhare:module.masterdata-definition" value_string="feature/censhare:approval.type"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="0"/>
+  <asset_feature feature="censhare:resource-key" value_string="censhare:feature.approval.type"/>
+</asset>

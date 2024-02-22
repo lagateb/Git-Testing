@@ -1,0 +1,19 @@
+# Generated file
+# Script 'import-strings.sh' for language fr
+# Mon Jul 25 13:46:26 2016
+
+AddFileBtn = Fichier
+NoFiles = Aucun fichier accroché
+checkout = Ouvrir fichier
+delete = Effacer fichier
+deleteConfirm = Effacer définitivement le fichier ?
+description = Liste des fichiers de l'asset actuellement représenté
+dropNew = Déplacer ici le fichier
+dropNew2 = ou cliquer pour sélectionner le fichier
+dynamicallyGenerated = Généré dynamiquement
+get = Télécharger fichier
+getTransformation = Générer une transformation
+getcheckout = Télécharger et modifier
+replace = Remplacer le fichier
+replaceMaster = Remplacer fichier maître
+title = Fichiers

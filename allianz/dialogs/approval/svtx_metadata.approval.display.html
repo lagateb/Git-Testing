@@ -1,0 +1,323 @@
+<style>
+  .wrap-line {
+    white-space: pre-wrap !important;
+  }
+
+  .empty-workflow {
+    display: block;
+    height: 120px;
+  }
+  .cs-empty-state__content {
+    margin-top: 0px;
+  }
+</style>
+<!-- workflow -->
+<span ng-if="hasRequiredRoll() && ((dataModel.metadata.annotation) || (dataModel.metadata.workflow) || (dataModel.metadata.workflowStep) || (dataModel.metadata.workflowState) || (dataModel.metadata.assigned) || (dataModel.metadata.deadline))"
+        class="cs-icon cs-icon-circle-arrow-right cs-iconsize-400" style="right:60px;top:-22px;position:fixed;"
+        cs-tooltip="{{'csCommonTranslations.assignToDot' | csTranslate}}" ng-click="addWorkflow()"></span>
+<div>
+
+  <ul class="csAssetProperties__list cs-p-h-w ng-scope">
+    <li class="cs-meta-data-row csAssetProperties__list__item cs-m-b-xs" ng-click="workflowShow = !workflowShow">
+            <span class="csAssetProperties__list__label csAssetProperties__list__parent_label parent-as-header">
+                <i class="cs-icon cs-iconsize-150"
+                   ng-class="(workflowShow) ? 'cs-icon-arrow-right' : 'cs-icon-arrow-down'"></i> <span>
+                    {{'csCommonTranslations.workflow' | csTranslate}}</span>
+            </span>
+      <hr class="cs-meta-data-row-hr hr-parent" />
+    </li>
+    <div ng-show="!workflowShow">
+      <cs-progress ng-class="dataModel.workflowInfo.currentstep.progressclass" progress="dataModel.workflowInfo.currentstep.progress"></cs-progress>
+      <cs-progress-tracker steps="dataModel.workflowInfo.steps.step" current-step="dataModel.workflowInfo.currentstep.name"></cs-progress-tracker>
+
+
+        <div style="width: 100%;text-align: right;" ng-if="dataModel.metadata.workflowID == WF_MEDIA  && dataModel.metadata.workflowStepID == 60 && hasRequiredRoll()">
+            <button class="cs-button-alt cs-is-alt cs-is-small" role="button" ng-click="updateWorkflow(dataModel.metadata.workflowID, WF_STEP_MEDIA_PUBLISHED)">Medium zur Nutzung freigeben</button>
+        </div>
+
+
+
+      <div class="empty-workflow"
+      ng-if="!(dataModel.metadata.annotation) && !(dataModel.metadata.workflow) && !(dataModel.metadata.workflowStep) && !(dataModel.metadata.workflowState) && !(dataModel.metadata.assigned) && !(dataModel.metadata.deadline)">
+      <cs-empty-state cs-empty-state-icon="'cs-icon-git-branch'" style="max-height: 120px;position: relative;">
+        <span class="cs-state-headline" cs-translate="'csCommonTranslations.noWorkflow'"></span>
+        <button class="cs-button-link-01" ng-click="addWorkflow()">
+          <i class="cs-icon cs-icon-circle-plus cs-iconsize-200"></i>&nbsp; <span
+                ng-bind="'csAssetWorkflowStatusWidget.addWorkflow' | csTranslate"></span>
+        </button>
+      </cs-empty-state>
+    </div>
+    </div>
+  </ul>
+</div>
+
+<!--- Marktmanagement -->
+
+<ul class="csAssetProperties__list cs-p-h-w ng-scope" ng-if="enableMarkmanagement()">
+    <li class="cs-meta-data-row csAssetProperties__list__item cs-m-b-xs" ng-click="commentShow = !commentShow">
+            <span class="csAssetProperties__list__label csAssetProperties__list__parent_label parent-as-header">
+                <i class="cs-icon cs-iconsize-150"
+                   ng-class="(commentShow) ? 'cs-icon-arrow-right' : 'cs-icon-arrow-down'"></i> <span>Marktmanagement</span>
+            </span>
+        <hr class="cs-meta-data-row-hr hr-parent" />
+    </li>
+
+    <div class="csActionsWidget__frame__approvals" >
+
+        <div class="cs-m-t-xs">
+         <span style="float: left;">
+             <!-- Texte -->
+            <button  ng-if="enableTextToReCreation()"  class="cs-button-cta  cs-is-small" role="button" ng-click="setTextToRecreation()"><span class="cs-icon cs-icon-back-alt"/> Text zur Erstellung</button>
+            <button  ng-if="enableNewVersion()"  class="cs-button-cta cs-is-small" role="button" ng-click="resetTextToCreationState()"><span class="cs-icon cs-icon-rotate-right"/> neue Version anlegen</button>
+            <button   ng-if="enableTextToApprov()" class="cs-button-cta  cs-is-small " role="button" ng-click="setTextToWFApprove()"><span class="cs-icon-forward-alt"/> zur Abstimmung geben</button>
+            <button   ng-if="enableTextToApproved()" class="cs-button-cta  cs-is-small " role="button" ng-click="setTextToWFApproved()"><span class="cs-icon-forward-alt"/> Text freigeben</button>
+
+             <!-- Medien -->
+             <button  ng-if="enableMediaToReCreation()"  class="cs-button-cta  cs-is-small" role="button" ng-click="setMediaToRecreation()"><span class="cs-icon cs-icon-back-alt"/> Medium zur Erstellung</button>
+             <button   ng-if="enableMediaToApprov()" class="cs-button-cta cs-is-small " role="button" ng-click="setMediaToWFApprove()"><span class="cs-icon-forward-alt"/> zur Abstimmung geben</button>
+             <button   ng-if="enableMediaToApproved()" class="cs-button-cta  cs-is-small " role="button" ng-click="setMediaToWFApproved()"><span class="cs-icon-forward-alt"/> Medium freigeben</button>
+
+            <button class="cs-button-alt  cs-is-small cs-bg-color-08" role="button" ng-click="writeAdditionalComment()">{{ 'csCommonTranslations.writeComment' | csTranslate }}</button>
+          </span>
+        </div>
+
+    </div>
+</ul>
+
+<ul class="csAssetProperties__list cs-p-h-w ng-scope" ng-if="enableComment ">
+
+
+    <div class="csActionsWidget__frame__approvals" ng-show="!commentShow">
+        <div ng-if="!formData.addAdditionalComment">
+            <div ng-if="dataModel.metadata.additionalComment">
+                <p style="white-space: pre;">{{dataModel.metadata.additionalComment}}</p>
+            </div>
+            <div ng-if="!(dataModel.metadata.additionalComment)" class="cs-p-v-s cs-color-05" style="margin-top:30px; text-align:center;">
+                Kein Kommentar verfügbar
+            </div>
+            <div class="cs-m-t-xs">
+            </div>
+
+        </div>
+        <div ng-if="formData.addAdditionalComment">
+            <div class="cs-grid-cell ">
+                <cs-input class="cs-is-alt" ng-model="formData.comment" multilines="3" label="{{ 'csCommonTranslations.comment' | csTranslate }}" placeholder="{{ 'csCommonTranslations.writeComment' | csTranslate }}"></cs-input>
+                <div class="cs-m-t-xs">
+          <span style="float: right;">
+            <button class="cs-button cs-is-active cs-is-small" role="button" ng-click="cancel()">{{ 'csCommonTranslations.cancel' | csTranslate }}</button>
+            <button class="cs-button-cta cs-is-active cs-is-small" role="button" ng-click="additionalCommentActionForm()">{{ 'csCommonTranslations.ok' | csTranslate }}</button>
+          </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</ul>
+
+
+
+<!-- Freigaben -- Aufzählung z.B. Vertrieb -->
+<ul class="csAssetProperties__list cs-p-h-w ng-scope">
+  <li class="cs-meta-data-row csAssetProperties__list__item cs-m-b-xs" ng-click="approvalsShow = !approvalsShow">
+            <span class="csAssetProperties__list__label csAssetProperties__list__parent_label parent-as-header">
+                <i class="cs-icon cs-iconsize-150"
+                   ng-class="(approvalsShow) ? 'cs-icon-arrow-right' : 'cs-icon-arrow-down'"></i> <span>
+                    {{'csCommonTranslations.approvals' | csTranslate}}</span>
+            </span>
+    <hr class="cs-meta-data-row-hr hr-parent" />
+  </li>
+
+  <div class="csActionsWidget__frame__approvals" ng-show="!approvalsShow">
+    <div ng-if="formData.addComment==false && formData.createTask==false">
+      <cs-progress class="cs-progress-01 cs-m-b-xs .cs-p-h-w" number="number" progress="progress()"></cs-progress>
+
+      <div ng-if="dataModelLoaded && (dataModel.metadata.workflowID == 10 && dataModel.metadata.workflowStepID == 20) || (dataModel.metadata.workflowID == 80 && dataModel.metadata.workflowStepID == 20)">
+        <div ng-repeat="approval in dataModel.approval" class="cs-m-t-s">
+          <div ng-if="approval.roleShowApproval && (
+              showButton(approval, approvalStatusConfig.start) ||
+              showButton(approval, approvalStatusConfig.approve) ||
+              showButton(approval, approvalStatusConfig.reject)
+            )">
+            <span class="cs-icon cs-icon-circle-info cs-iconsize-200 cs-color-07 cs-m-r-s"
+              style="float:right;"
+              cs-tooltip="{{getApprovalDescription(approval)}}"></span>
+            <h6>{{approval.name}}</h6>
+            <!-- TODO handle if started is enabled and rejected is enebled -->
+            <div ng-if="showButton(approval, approvalStatusConfig.start)">
+              <button class="cs-button-alt cs-is-alt cs-is-small" role="button" style="width:65%;"
+                      ng-click="approvalAction(approval,approvalStatusConfig.start)">{{approvalStatusConfig.start.buttonLabel}}</button>
+              <button class="cs-button-alt cs-is-alt cs-is-small" role="button" style="width:33%;margin-left:5px;"
+                      ng-click="approvalAction(approval,approvalStatusConfig.ignore)">{{approvalStatusConfig.ignore.buttonLabel}}</button>
+            </div>
+            <!-- Both approval and reject buttons -->
+            <div ng-if="showButton(approval, approvalStatusConfig.approve) &&
+            showButton(approval, approvalStatusConfig.reject)">
+              <button
+                class="cs-button-alt cs-is-success cs-is-small" role="button" style="width: 49%;"
+                ng-click="approvalAction(approval, approvalStatusConfig.approve)">{{approvalStatusConfig.approve.buttonLabel}}</button>
+              <button class="cs-button-alt cs-is-error cs-is-small" role="button" style="width: 49%"
+                ng-click="approvalAction(approval,approvalStatusConfig.reject)">{{approvalStatusConfig.reject.buttonLabel}}</button>
+            </div>
+            <!-- Use full width approval button if rejected is disabled or Start approvel is disabled -->
+            <div ng-if="(showButton(approval, approvalStatusConfig.approve) &&
+            !showButton(approval, approvalStatusConfig.reject))">
+              <button
+                class="cs-button-alt cs-is-success cs-is-small" role="button" style="width:100%;"
+                ng-click="approvalAction(approval,approvalStatusConfig.approve)">{{approvalStatusConfig.approve.buttonLabel}}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Ablehnungen anzeigen  -->
+      <div ng-if="showDeclined()">
+          <h6>Ablehnungen</h6>
+          <div ng-if="asset.traits.approval.approvalType.exists==true">
+              <table class="cs-table-02 cs-is-full-width">
+                  <thead style="border-top: transparent;">
+                  <tr></tr>
+                  </thead>
+                  <tbody ng-repeat="assetApproval in asset.traits.approval.approvalType.value">
+                  <!-- Repeat -->
+                  <tr style="background-color: transparent; border-bottom: 1px solid #f2f2f2 !important;" ng-if="formData.addCommentApprovals!==assetApproval.value">
+                      <td style="padding: 3px 0;width: 66%;">
+                          <div>
+                  <span class="cs-icon cs-iconsize-400 cs-m-r-xs " ng-class="statusCss(assetApproval)" style="vertical-align: middle;"
+                        cs-tooltip="{{getStatusDisplayValue(assetApproval, true)}} {{getApprovalDescription(assetApproval.value)}}"
+                  ></span>
+                              <span class="cs-p-v-s" style="font-weight: 600;">
+                    {{assetApproval.display_value}}
+                  </span>
+                          </div>
+                          <style>
+                              dl { display: grid; grid-template-columns: max-content auto;}
+                              dt { grid-column-start: 1;margin-right:6px; line-height:1.2em}
+                              dd{ grid-column-start: 2; line-height:1.2em}
+                          </style>
+                          <dl>
+                              <dt ><span class="cs-p-v-s cs-color-05">{{ 'csCommonTranslations.by' | csTranslate }}</span></dt>
+                              <dd ><span class="cs-p-v-s">{{assetApproval.person.value[0].display_value}}</span></dd>
+                              <dt ><span class="cs-p-v-s cs-color-05">{{ 'csCommonTranslations.date' | csTranslate }}</span></dt>
+                              <dd ><span class="cs-p-v-s">{{assetApproval.date.value[0].value | csDateFormat:'L, LT'}}</span></dd>
+                              <dt ><span class="cs-p-v-s cs-color-05">{{ 'csCommonTranslations.comment' | csTranslate }}</span></dt>
+                              <dd ><span class="cs-p-v-s">{{assetApproval.comment.value[0].value}}</span></dd>
+                          </dl>
+                      </td>
+                      <td style="padding-left: 0px; padding-right: 8px;">
+                          <button class="cs-button-alt cs-is-alt cs-is-small" role="button" style="width:100%;padding-right:5px;" ng-if="enableDeleteButton(assetApproval)"
+                                  ng-click="approvalActionByKey(assetApproval.value, approvalStatusConfig.delete)">{{approvalStatusConfig.delete.buttonLabel}}</button>
+                      </td>
+                  </tr>
+                  <tr style="background-color: transparent; border-bottom: 1px solid #f2f2f2 !important;" ng-if="formData.addCommentApprovals===assetApproval.value">
+                      <td colspan="2">
+                          <div class="cs-grid-cell ">
+                              <cs-input class="cs-is-alt" ng-model="formData.comment" multilines="3" label="{{ 'csCommonTranslations.comment' | csTranslate }}" placeholder="{{ 'csCommonTranslations.writeComment' | csTranslate }}"></cs-input>
+                              <div class="cs-m-t-xs">
+                        <span style="float: right;">
+                          <button class="cs-button cs-is-active cs-is-small" role="button" ng-click="cancel()">{{ 'csCommonTranslations.cancel' | csTranslate }}</button>
+                          <button class="cs-button-cta cs-is-active cs-is-small" role="button" ng-click="approvalActionForm()">{{ 'csCommonTranslations.ok' | csTranslate }}</button>
+                        </span>
+                              </div>
+                          </div>
+                      </td>
+                  </tr>
+                  </tbody>
+              </table>
+          </div>
+
+      </div>
+      <div ng-if="dataModelLoaded && dataModel.metadata.workflowID == 10 && !(dataModel.metadata.workflowStepID == 20 || dataModel.metadata.workflowStepID == 30)">
+        <cs-empty-state cs-empty-state-icon="'cs-icon-ban'" style="position: relative; padding-top: 30px">
+          <span class="cs-state-headline" >Dieser Text steht momentan nicht zur Freigabe</span>
+        </cs-empty-state>
+      </div>
+      <div ng-if="dataModelLoaded &&  dataModel.metadata.workflowID == 80 && !(dataModel.metadata.workflowStepID == 20 || dataModel.metadata.workflowStepID == 30)">
+        <cs-empty-state cs-empty-state-icon="'cs-icon-ban'" style="position: relative; padding-top: 30px">
+          <span class="cs-state-headline" >Dieses Medium steht momentan nicht zur Freigabe</span>
+        </cs-empty-state>
+      </div>
+    </div>
+    <div  class="cs-grid-wrapper" ng-if="formData.addComment!==false">
+      <div class="cs-grid-cell ">
+        <cs-input class="cs-is-alt" ng-model="formData.comment" multilines="3" label="{{ 'csCommonTranslations.comment' | csTranslate }}" placeholder="{{ 'csCommonTranslations.writeComment' | csTranslate }}"></cs-input>
+        <div class="cs-m-t-xs">
+          <span style="float: right;">
+            <button class="cs-button cs-is-active cs-is-small" role="button" ng-click="cancel()">{{ 'csCommonTranslations.cancel' | csTranslate }}</button>
+            <button class="cs-button-cta cs-is-active cs-is-small" role="button"
+            ng-click="approvalActionForm()">{{ 'csCommonTranslations.ok' | csTranslate }}</button>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div  class="cs-grid-wrapper" ng-if="formData.createTask!==false">
+      <div class="cs-grid-cell ">
+        <div>TODO Create task UI</div>
+        <div class="cs-m-t-xs">
+          <span style="float: right;">
+            <button class="cs-button cs-is-active cs-is-small" role="button" ng-click="cancel()">{{ 'csCommonTranslations.cancel' | csTranslate }}</button>
+            <button class="cs-button-cta cs-is-active cs-is-small" role="button" ng-click="approvalActionForm()">{{ 'csCommonTranslations.ok' | csTranslate }}</button>
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div ng-if="assetWFStateIsNotInCreation()">
+      <h6 class="csAssetProperties__category_title" style="margin-top:20px;">{{ 'csCommonTranslations.approvalsState' | csTranslate }}</h6>
+      <div ng-if="asset.traits.approval.approvalType.exists==true">
+        <table class="cs-table-02 cs-is-full-width">
+          <thead style="border-top: transparent;">
+            <tr></tr>
+          </thead>
+          <tbody ng-repeat="assetApproval in asset.traits.approval.approvalType.value">
+            <!-- Repeat -->
+            <tr style="background-color: transparent; border-bottom: 1px solid #f2f2f2 !important;" ng-if="formData.addCommentApprovals!==assetApproval.value">
+              <td style="padding: 3px 0;width: 66%;">
+                <div>
+                  <span class="cs-icon cs-iconsize-400 cs-m-r-xs " ng-class="statusCss(assetApproval)" style="vertical-align: middle;"
+                    cs-tooltip="{{getStatusDisplayValue(assetApproval, true)}} {{getApprovalDescription(assetApproval.value)}}"
+                    ></span>
+                  <span class="cs-p-v-s" style="font-weight: 600;">
+                    {{assetApproval.display_value}}
+                  </span>
+                </div>
+                <style>
+                  dl { display: grid; grid-template-columns: max-content auto;}
+                  dt { grid-column-start: 1;margin-right:6px; line-height:1.2em}
+                  dd{ grid-column-start: 2; line-height:1.2em}
+                </style>
+                <dl>
+                  <dt ><span class="cs-p-v-s cs-color-05">{{ 'csCommonTranslations.by' | csTranslate }}</span></dt>
+                  <dd ><span class="cs-p-v-s">{{assetApproval.person.value[0].display_value}}</span></dd>
+                  <dt ><span class="cs-p-v-s cs-color-05">{{ 'csCommonTranslations.date' | csTranslate }}</span></dt>
+                  <dd ><span class="cs-p-v-s">{{assetApproval.date.value[0].value | csDateFormat:'L, LT'}}</span></dd>
+                  <dt ><span class="cs-p-v-s cs-color-05">{{ 'csCommonTranslations.comment' | csTranslate }}</span></dt>
+                  <dd ><span class="cs-p-v-s">{{assetApproval.comment.value[0].value}}</span></dd>
+                </dl>
+              </td>
+              <td style="padding-left: 0px; padding-right: 8px;">
+                  <button class="cs-button-alt cs-is-alt cs-is-small" role="button" style="width:100%;padding-right:5px;" ng-if="enableDeleteButton(assetApproval)"
+                    ng-click="approvalActionByKey(assetApproval.value, approvalStatusConfig.delete)">{{approvalStatusConfig.delete.buttonLabel}}</button>
+              </td>
+            </tr>
+            <tr style="background-color: transparent; border-bottom: 1px solid #f2f2f2 !important;" ng-if="formData.addCommentApprovals===assetApproval.value">
+              <td colspan="2">
+                <div class="cs-grid-cell ">
+                  <cs-input class="cs-is-alt" ng-model="formData.comment" multilines="3" label="{{ 'csCommonTranslations.comment' | csTranslate }}" placeholder="{{ 'csCommonTranslations.writeComment' | csTranslate }}"></cs-input>
+                  <div class="cs-m-t-xs">
+                        <span style="float: right;">
+                          <button class="cs-button cs-is-active cs-is-small" role="button" ng-click="cancel()">{{ 'csCommonTranslations.cancel' | csTranslate }}</button>
+                          <button class="cs-button-cta cs-is-active cs-is-small" role="button" ng-click="approvalActionForm()">{{ 'csCommonTranslations.ok' | csTranslate }}</button>
+                        </span>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div  ng-if="asset.traits.approval.approvalType.exists==false" class="cs-p-v-s cs-color-05" style="margin-top:30px; text-align:center;">{{ 'csCommonTranslations.noApprovalsAvailable' | csTranslate }}</div>
+    </div>
+  </div>
+</ul>
+
+
+
+

@@ -1,0 +1,1204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+
+    <domains>
+        <domain pathid="root.allianz." parent="root." shortname="allianz" name="allianz" name_de="allianz" sorting="5"
+                enabled="1"  />
+        <domain pathid="root.allianz.media." parent="root.allianz." shortname="media" name="media" name_de="media"
+                sorting="1" enabled="1"  />
+        <domain pathid="root.allianz.media.draft." parent="root.allianz.media." shortname="draft" name="draft"
+                name_de="draft" sorting="1" enabled="1"  />
+        <domain pathid="root.allianz.media.final." parent="root.allianz.media." shortname="final" name="final"
+                name_de="final" sorting="1" enabled="1"  />
+        <domain pathid="root.allianz.promotion." parent="root.allianz." shortname="promotion" name="promotion"
+                name_de="promotion" sorting="5" enabled="1"  />
+        <domain pathid="root.allianz.promotion.draft." parent="root.allianz.promotion." shortname="draft" name="draft"
+                name_de="draft" sorting="5" enabled="1"  />
+        <domain pathid="root.allianz.promotion.draft.old." parent="root.allianz.promotion.draft." shortname="old"
+                name="old" name_de="old" sorting="5" enabled="1"  />
+        <domain pathid="root.allianz.promotion.drescher." parent="root.allianz.promotion." shortname="drescher"
+                name="drescher" name_de="drescher" sorting="5" enabled="1"  />
+        <domain pathid="root.allianz.promotion.ortstudios." parent="root.allianz.promotion." shortname="ortstudios"
+                name="ortstudios" name_de="ortstudios" sorting="5" enabled="1"  />
+        <domain pathid="root.allianz.promotion.serviceplan." parent="root.allianz.promotion." shortname="serviceplan"
+                name="serviceplan" name_de="serviceplan" sorting="5" enabled="1"  />
+        <domain pathid="root.allianz.promotion.testfirma." parent="root.allianz.promotion." shortname="testfirma"
+                name="testfirma" name_de="testfirma" sorting="5" enabled="1"  />
+        <domain pathid="root.allianz.promotion.werbstatt." parent="root.allianz.promotion." shortname="werbstatt"
+                name="werbstatt" name_de="werbstatt" sorting="1" enabled="1"  />
+    </domains>
+    
+    <asset_rel_typedefs>
+        <asset_rel_typedef key="user.media.finaldraw." kind="0" cardinality="0" isversioned="0" is_user_editable="1"
+                           name="final draw" name_de="Finale Reinzeichnung" parent_name="final draw"
+                           parent_name_de="Finale Reinzeichnung von" child_name="final draw"
+                           child_name_de="Finale Reinzeichnung" description_de="Finale Reinzeichnung" parent_sort="1"
+                           child_sort="1" domain="root." domain2="root." enabled="1"  />
+        <asset_rel_typedef key="user.media.onlinefiles." kind="0" cardinality="0" isversioned="0" is_user_editable="1"
+                           name="online files" name_de="Online Dateien" parent_name="online files"
+                           parent_name_de="Online Dateien von" child_name="online files" child_name_de="Online Dateien"
+                           description="online files" description_de="Online Dateien" parent_sort="1" child_sort="1"
+                           domain="root." domain2="root." enabled="1"  />
+        <asset_rel_typedef key="user.media.printdata." kind="0" cardinality="0" isversioned="0" is_user_editable="1"
+                           name="printdata" name_de="Druckdaten" parent_name="printdata from"
+                           parent_name_de="Druckdaten" child_name="printdata" child_name_de="Druckdaten"
+                           description_de="Druckdaten" parent_sort="1" child_sort="1" domain="root." domain2="root."
+                           enabled="1"  />
+    </asset_rel_typedefs>
+    <asset_typedefs>
+        <asset_typedef asset_type="promotion." name="Promotion" name_de="Maßnahme" description="Promotion"
+                       description_de="Maßnahme" def_application="default" hasfiles="1" domain="root." domain2="root."
+                       enabled="1"  />
+        <asset_typedef asset_type="fontzipfile." name="Font as zip" name_de="Schriftart als zip"
+                       description="Font as well as Fonts compressed in a zip file"
+                       description_de="Schfriftart bzw. Schriftarten in einer Zip-Datei verpackt"
+                       def_application="metadata" hasfiles="1" color="16777215" domain="root." domain2="root."
+                       enabled="1" />
+
+    </asset_typedefs>
+    <features>
+        <feature key="msp:alz-mmc.creator" type="censhare:asset-feature" storage="0" domain="root." domain2="root."
+                 name="Ersteller" name_de="Ersteller" value_type="4" ui_control="3" ismultivalue="0" isassetinfo="1"
+                 assetinfo_sorting="10" issearchable="1" sorting="10" language_type="0" color_type="0" bdb_key="1096"
+                 enabled="1" has_relevance="0" target_object_type="asset" trait="product" trait_property="creator"
+                 trait_property_top_level="1" user_modifiable="1" is_xml_attr="0"
+                 asset_resource_key="msp:feature.alz-mmc.creator"  />
+        <feature key="msp:alz-mmc.description-partner" type="censhare:asset-feature" storage="0" domain="root."
+                 domain2="root." name="Beschreibung für Partner" name_de="Beschreibung für Partner" value_type="4"
+                 ui_control="3" ismultivalue="0" isassetinfo="2" assetinfo_sorting="10" issearchable="1" sorting="10"
+                 language_type="0" color_type="0" bdb_key="1098" enabled="1" has_relevance="0"
+                 target_object_type="asset" trait="product" trait_property="descriptionPartner"
+                 trait_property_top_level="1" user_modifiable="1" is_xml_attr="0"
+                 asset_resource_key="msp:feature.alz-mmc.description-partner"  />
+        <feature key="msp:alz-mmc.media-provider" type="censhare:asset-feature" storage="0" domain="root."
+                 domain2="root." name="Mediendienstleister (Firmenauswahl)"
+                 name_de="Mediendienstleister (Firmenauswahl)" value_type="2" ui_control="4" ismultivalue="0"
+                 isassetinfo="2" assetinfo_sorting="10" issearchable="1" sorting="10" language_type="0" color_type="0"
+                 bdb_key="1099" enabled="1" has_relevance="0" target_object_type="asset" trait="product"
+                 trait_property="mediaProvider" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0"
+                 asset_resource_key="msp:feature.alz-mmc.media-provider"  >
+            <xml_config>
+                <index-configs/>
+            </xml_config>
+            <feature_value feature="msp:alz-mmc.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="draft" name="draft" name_de="draft" sorting="1" enabled="1"  />
+            <feature_value feature="msp:alz-mmc.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="drescher" name="Drescher Full-Service Versand GmbH"
+                           name_de="Drescher Full-Service Versand GmbH" description="Drescher Full-Service Versand GmbH"
+                           description_de="Drescher Full-Service Versand GmbH" sorting="2" enabled="1" 
+                           />
+            <feature_value feature="msp:alz-mmc.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="ortstudios" name="ORT Studios GmbH" name_de="ORT Studios GmbH"
+                           description="ORT Studios GmbH" description_de="ORT Studios GmbH" sorting="3" enabled="1"
+                            />
+            <feature_value feature="msp:alz-mmc.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="serviceplan" name="Serviceplan Solutions 1 GmbH &amp; Co. KG"
+                           name_de="Serviceplan Solutions 1 GmbH &amp; Co. KG"
+                           description="Serviceplan Solutions 1 GmbH &amp; Co. KG"
+                           description_de="Serviceplan Solutions 1 GmbH &amp; Co. KG" sorting="5" enabled="1" 
+                           />
+            <feature_value feature="msp:alz-mmc.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="testfirma" name="Partner Testfirma" name_de="Partner Testfirma"
+                           description="Partner Testfirma" description_de="Partner Testfirma" sorting="4" enabled="1"
+                            />
+            <feature_value feature="msp:alz-mmc.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="werbstatt" name="Werbstatt Bierl GbR Inh. Wolfgang Bierl"
+                           name_de="Werbstatt Bierl GbR Inh. Wolfgang Bierl"
+                           description="Werbstatt Bierl GbR Inh. Wolfgang Bierl"
+                           description_de="Werbstatt Bierl GbR Inh. Wolfgang Bierl" sorting="6" enabled="1" 
+                           />
+        </feature>
+        <feature key="msp:alz-mmc.media-provider.index" type="censhare:attribute" storage="3" domain="root."
+                 domain2="root." name="Mediendienstleister (Firmenauswahl) (Volltext)"
+                 name_de="Mediendienstleister (Firmenauswahl) (Volltext)" value_type="4" ui_control="0" ismultivalue="0"
+                 isassetinfo="0" assetinfo_sorting="0" issearchable="1" sorting="0" language_type="0" color_type="0"
+                 bdb_key="1153" enabled="1" has_relevance="0" target_object_type="_virtual" trait="full_text_index"
+                 trait_property="mediaProvider" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0"
+                 asset_resource_key="msp:feature.alz-mmc.media-provider.index"  >
+            <xml_config>
+                <index-configs>
+                    <index-config is-custom="true" type="fulltext">
+                        <fulltext stemming="false" use-frequency="true" strip-diacritics="false"
+                                  expand-junction-operator="AND_NOT_EMPTY" min-length="4" fuzzy-min-length="4"
+                                  fuzzy-max-distance="1" max-bitap-errors="1" fuzzy-ngram-length="3"
+                                  prefix-expansion-limit="1000" infix-expansion-limit="1000"
+                                  fuzzy-expansion-limit="1000" fuzzy-skip-results="1000" fuzzy-min-alpha="1">
+                            <feature key="msp:alz-mmc.media-provider" mode="content"/>
+                            <feature key="msp:alz-mmc.media-provider" mode="lookup"/>
+                        </fulltext>
+                    </index-config>
+                </index-configs>
+            </xml_config>
+        </feature>
+        <feature key="msp:alz-mmc.promotion-article-number" type="censhare:asset-feature" storage="0" domain="root."
+                 domain2="root." name="Maßnahme Artikelnummer" name_de="Maßnahme Artikelnummer" value_type="4"
+                 ui_control="3" ismultivalue="0" isassetinfo="2" assetinfo_sorting="10" issearchable="1" sorting="10"
+                 language_type="0" color_type="0" bdb_key="1097" enabled="1" has_relevance="0"
+                 target_object_type="asset" trait="product" trait_property="promotionArticleNumber"
+                 trait_property_top_level="1" user_modifiable="1" is_xml_attr="0"
+                 asset_resource_key="msp:feature.alz-mmc.promotion-article-number"  >
+            <xml_config>
+                <index-configs/>
+            </xml_config>
+        </feature>
+        <feature key="msp:alz-mmc.promotion-article_version-number.index" type="censhare:attribute" storage="3"
+                 domain="root." domain2="root." name="Maßnahme Artikel_Version (Volltext)"
+                 name_de="Maßnahme Artikel_Version (Volltext)" value_type="4" ui_control="0" ismultivalue="0"
+                 isassetinfo="0" assetinfo_sorting="0" issearchable="1" sorting="0" language_type="0" color_type="0"
+                 bdb_key="1154" enabled="1" has_relevance="0" target_object_type="_virtual" trait="full_text_index"
+                 trait_property="promotionArticleVersionNumber" trait_property_top_level="1" user_modifiable="1"
+                 is_xml_attr="0" asset_resource_key="msp:feature.alz-mmc.promotion-article_version-number.index" 
+                 >
+            <xml_config>
+                <index-configs>
+                    <index-config is-custom="true" type="fulltext">
+                        <fulltext stemming="false" use-frequency="true" strip-diacritics="false"
+                                  expand-junction-operator="AND_NOT_EMPTY" min-length="2" fuzzy-min-length="5"
+                                  fuzzy-max-distance="1" max-bitap-errors="1" fuzzy-ngram-length="3"
+                                  prefix-expansion-limit="1000" infix-expansion-limit="1000"
+                                  fuzzy-expansion-limit="1000" fuzzy-skip-results="1000" fuzzy-min-alpha="1">
+                            <feature key="msp:alz-mmc.promotion-article-number" mode="content"/>
+                            <feature key="msp:alz-mmc.promotion-version-number" mode="content"/>
+                            <character-mapping/>
+                        </fulltext>
+                    </index-config>
+                </index-configs>
+            </xml_config>
+        </feature>
+        <feature key="msp:alz-mmc.promotion-creation-date" type="censhare:asset-feature" storage="0" domain="root."
+                 domain2="root." name="Creation Date (Promotion)" name_de="Erstellungsdatum (Maßnahme)"
+                 description="Date of Creation (Promotion-Asset)" description_de="Erstellungsdatum (Maßnahme-Asset)"
+                 value_type="5" ui_control="0" ismultivalue="0" isassetinfo="2" assetinfo_sorting="0" issearchable="1"
+                 sorting="0" language_type="0" color_type="0" bdb_key="1156" enabled="1" has_relevance="0"
+                 target_object_type="asset" trait="product" trait_property="promotionCreationdate"
+                 trait_property_top_level="1" user_modifiable="1" is_xml_attr="0" label="Creation Date (Promotion)"
+                 label_de="Erstellungsdatum (Maßnahme)" placeholder_text="Date of Creation (Promotion-Asset)"
+                 placeholder_text_de="Erstellungsdatum (Maßnahme)" tooltip="Date of Creation (Promotion-Asset)"
+                 tooltip_de="Erstellungsdatum (Maßnahme)"
+                 asset_resource_key="msp:feature.alz-mmc.promotion-creation-date"  />
+        <feature key="msp:alz-mmc.promotion-deeplink-censhare" type="censhare:asset-feature" storage="0" domain="root."
+                 domain2="root." name="Deeplink-Censhare" name_de="Deeplink-Censhare" value_type="4" ui_control="3"
+                 ismultivalue="0" isassetinfo="2" assetinfo_sorting="10" issearchable="1" sorting="10" language_type="0"
+                 color_type="0" bdb_key="1104" enabled="1" has_relevance="0" target_object_type="asset" trait="product"
+                 trait_property="promotionDeeplinkCenshare" trait_property_top_level="1" user_modifiable="1"
+                 is_xml_attr="0" asset_resource_key="msp:feature.alz-mmc.promotion-deeplink-censhare" 
+                 />
+        <feature key="msp:alz-mmc.promotion-deeplink-mmc" type="censhare:asset-feature" storage="0" domain="root."
+                 domain2="root." name="Deeplink-mmc" name_de="Deeplink-mmc" value_type="4" ui_control="3"
+                 ismultivalue="0" isassetinfo="2" assetinfo_sorting="10" issearchable="1" sorting="10" language_type="0"
+                 color_type="0" bdb_key="1101" enabled="1" has_relevance="0" target_object_type="asset" trait="product"
+                 trait_property="promotionDeeplinkMmc" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0"
+                 asset_resource_key="msp:feature.alz-mmc.promotion-deeplink-mmc"  />
+        <feature key="msp:alz-mmc.promotion-id" type="censhare:asset-feature" storage="0" domain="root." domain2="root."
+                 name="Maßnahme ID" name_de="Maßnahme ID" value_type="4" ui_control="3" ismultivalue="0" isassetinfo="2"
+                 assetinfo_sorting="10" issearchable="1" sorting="10" language_type="0" color_type="0" bdb_key="1102"
+                 enabled="1" has_relevance="0" target_object_type="asset" trait="product" trait_property="promotionId"
+                 trait_property_top_level="1" user_modifiable="1" is_xml_attr="0"
+                 asset_resource_key="msp:feature.alz-mmc.promotion-id"  />
+        <feature key="msp:alz-mmc.promotion-name" type="censhare:asset-feature" storage="0" domain="root."
+                 domain2="root." name="Massnahme (Feature Name DE)" name_de="Massnahme (Feature Name DE)" value_type="4"
+                 ui_control="3" ismultivalue="0" isassetinfo="2" assetinfo_sorting="10" issearchable="1" sorting="10"
+                 language_type="0" color_type="0" bdb_key="1100" enabled="1" has_relevance="0"
+                 target_object_type="asset" trait="product" trait_property="promotionName" trait_property_top_level="1"
+                 user_modifiable="1" is_xml_attr="0" asset_resource_key="msp:feature.alz-mmc.promotion-name" 
+                 />
+        <feature key="msp:alz-mmc.promotion-number" type="censhare:asset-feature" storage="0" domain="root."
+                 domain2="root." name="Maßnahme Nummer" name_de="Maßnahme Nummer" value_type="4" ui_control="3"
+                 ismultivalue="0" isassetinfo="2" assetinfo_sorting="10" issearchable="1" sorting="10" language_type="0"
+                 color_type="0" bdb_key="1103" enabled="1" has_relevance="0" target_object_type="asset" trait="product"
+                 trait_property="promotionNumber" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0"
+                 asset_resource_key="msp:feature.alz-mmc.promotion-number"  >
+            <xml_config>
+                <index-configs/>
+            </xml_config>
+        </feature>
+        <feature key="msp:alz-mmc.promotion-number.index" type="censhare:attribute" storage="3" domain="root."
+                 domain2="root." name="Maßnahme Nummer (Volltext)" name_de="Maßnahme Nummer (Volltext)" value_type="4"
+                 ui_control="0" ismultivalue="0" isassetinfo="0" assetinfo_sorting="0" issearchable="1" sorting="0"
+                 language_type="0" color_type="0" bdb_key="1155" enabled="1" has_relevance="0"
+                 target_object_type="_virtual" trait="full_text_index" trait_property="promotionNumber"
+                 trait_property_top_level="1" user_modifiable="1" is_xml_attr="0"
+                 asset_resource_key="msp:feature.alz-mmc.promotion-number.index"  >
+            <xml_config>
+                <index-configs>
+                    <index-config is-custom="true" type="fulltext">
+                        <fulltext stemming="false" use-frequency="true" strip-diacritics="false"
+                                  expand-junction-operator="AND_NOT_EMPTY" min-length="3" fuzzy-min-length="5"
+                                  fuzzy-max-distance="1" max-bitap-errors="1" fuzzy-ngram-length="3"
+                                  prefix-expansion-limit="1000" infix-expansion-limit="1000"
+                                  fuzzy-expansion-limit="1000" fuzzy-skip-results="1000" fuzzy-min-alpha="1">
+                            <feature key="msp:alz-mmc.promotion-number" mode="content"/>
+                        </fulltext>
+                    </index-config>
+                </index-configs>
+            </xml_config>
+        </feature>
+        <feature key="msp:alz-mmc.promotion-status" type="censhare:asset-feature" storage="0" domain="root."
+                 domain2="root." name="Status (Promotion)" name_de="Status (Maßnahme)" description="Status (Promotion)"
+                 description_de="Status (Maßnahme)" value_type="2" ui_control="4" ismultivalue="0" isassetinfo="2"
+                 assetinfo_sorting="10" issearchable="1" sorting="10" language_type="0" color_type="0" bdb_key="1105"
+                 enabled="1" has_relevance="0" target_object_type="asset" trait="product"
+                 trait_property="promotionStatus" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0"
+                 label="Status (Promotion)" asset_resource_key="msp:feature.alz-mmc.promotion-status" 
+                 >
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="5000002" name="xxxGeplant-10-6" name_de="xxxGeplant-10-6"
+                           description="xxxGeplant-10-6" description_de="xxxGeplant-10-6" sorting="1" enabled="1"
+                            />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="5000001" name="xxxAbgeschlosen-19-21" name_de="xxxAbgeschlosen-19-21"
+                           description="xxxAbgeschlosen-19-21" description_de="xxxAbgeschlosen-19-21" sorting="1"
+                           enabled="1"  />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="5000003" name="xxxLayout-3-1" name_de="xxxLayout-3-1" description="xxxLayout-3-1"
+                           description_de="xxxLayout-3-1" sorting="1" enabled="1"  />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="5000004" name="xxxUnveränderter-Nachdruck-geplant-1-20001"
+                           name_de="xxxUnveränderter-Nachdruck-geplant-1-20001"
+                           description="xxxUnveränderter-Nachdruck-geplant-1-20001"
+                           description_de="xxxUnveränderter-Nachdruck-geplant-1-20001" sorting="1" enabled="1" 
+                           />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="39" name="Print" name_de="Druck" sorting="38" enabled="1"  />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="2021" name="Editing/Post" name_de="Schnitt/Post" sorting="49" enabled="1" 
+                           />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="38" name="Final artwork voting round completed"
+                           name_de="Abstimmrunde Reinzeichnung beendet" sorting="37" enabled="1"  />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="2022" name="Draft Cut/Post" name_de="Entwurf Schnitt/Post" sorting="50"
+                           enabled="1"  />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="2001" name="Treatment" name_de="Treatment" sorting="42" enabled="1" 
+                           />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="2023" name="Correction Cut/Post" name_de="Korrektur Schnitt/Post" sorting="51"
+                           enabled="1"  />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="2002" name="Draft Treatment" name_de="Entwurf Treatment" sorting="43" enabled="1"
+                            />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="2024" name="Release Cut/Post" name_de="Freigabe Schnitt/Post" sorting="52"
+                           enabled="1"  />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="2003" name="Correction Treatment" name_de="Korrektur Treatment" sorting="44"
+                           enabled="1"  />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="2025" name="Voting Cut/Post" name_de="Abstimmung Schnitt/Post" sorting="53"
+                           enabled="1"  />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="10002" name="Consolidation Layout" name_de="Konsolidierung Layout" sorting="56"
+                           enabled="1"  />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="70008" name="Information round consolidated" name_de="Inforunde konsolidiert"
+                           sorting="63" enabled="1"  />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="2004" name="Release Treatment" name_de="Freigabe Treatment" sorting="45"
+                           enabled="1"  />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="2026" name="Voting Cut/Post Completed" name_de="Abstimmung Schnitt/Post beendet"
+                           sorting="54" enabled="1"  />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="10003" name="Consolidation of final artwork"
+                           name_de="Konsolidierung Reinzeichnung" sorting="57" enabled="1"  />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="2005" name="Voting Treatment" name_de="Abstimmung Treatment" sorting="46"
+                           enabled="1"  />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="2027" name="Consolidation Cut/Post" name_de="Konsolidierung Schnitt/Post"
+                           sorting="55" enabled="1"  />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="2006" name="Voting Treatment Completed" name_de="Abstimmung Treatment beendet"
+                           sorting="47" enabled="1"  />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="20003" name="Revoke Release Layout" name_de="Freigabe Layout widerrufen"
+                           sorting="64" enabled="1"  />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="184" name="Aborted" name_de="Abgebrochen" sorting="41" enabled="1" 
+                           />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1" name="Layout" name_de="Layout" sorting="24" enabled="1"  />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="31" name="Voting round layout finished" name_de="Abstimmrunde Layout beendet"
+                           sorting="31" enabled="1"  />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="2007" name="Consolidation Treatment" name_de="Konsolidierung Treatment"
+                           sorting="48" enabled="1"  />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="30" name="Voting Round Layout" name_de="Abstimmrunde Layout" sorting="30"
+                           enabled="1"  />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="33" name="Final artwork" name_de="Reinzeichnung" sorting="32" enabled="1" 
+                           />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="54" name="Delivered" name_de="Ausgeliefert" sorting="39" enabled="1" 
+                           />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="35" name="Final artwork correction" name_de="Korrektur Reinzeichnung" sorting="34"
+                           enabled="1"  />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="34" name="Draft Final Artwork" name_de="Entwurf Reinzeichnung" sorting="33"
+                           enabled="1"  />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="37" name="Final artwork voting round" name_de="Abstimmrunde Reinzeichnung"
+                           sorting="36" enabled="1"  />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="36" name="Release of final artwork" name_de="Freigabe Reinzeichnung" sorting="35"
+                           enabled="1"  />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="28" name="Correction Layout" name_de="Korrektur Layout" sorting="28" enabled="1"
+                            />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="27" name="Design Layout" name_de="Entwurf Layout" sorting="27" enabled="1" 
+                           />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="10010" name="Design Individualization" name_de="Entwurf Individualisierung"
+                           sorting="60" enabled="1"  />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="29" name="Sharing Layout" name_de="Freigabe Layout" sorting="29" enabled="1"
+                            />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="10011" name="Voting round individualization"
+                           name_de="Abstimmrunde Individualisierung" sorting="61" enabled="1"  />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="10012" name="Voting round individualization finished"
+                           name_de="Abstimmrunde Individualisierung beendet" sorting="62" enabled="1" 
+                           />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="6" name="Planned" name_de="Geplant" sorting="25" enabled="1" 
+                           />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="84" name="Archive" name_de="Archiv" sorting="40" enabled="1" 
+                           />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="20001" name="Unchanged reprint planned" name_de="Unveränderter Nachdruck geplant"
+                           sorting="66" enabled="1"  />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="20002" name="Revoke release of final artwork"
+                           name_de="Freigabe Reinzeichnung widerrufen" sorting="65" enabled="1"  />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="10004" name="Information round started" name_de="Inforunde gestartet" sorting="58"
+                           enabled="1"  />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="21" name="Completed" name_de="Abgeschlossen" sorting="26" enabled="1" 
+                           />
+            <feature_value feature="msp:alz-mmc.promotion-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="10005" name="Information round ended" name_de="Inforunde beendet" sorting="59"
+                           enabled="1"  />
+        </feature>
+        <feature key="msp:alz-mmc.promotion-version-number" type="censhare:asset-feature" storage="0" domain="root."
+                 domain2="root." name="Versionsnummer" name_de="Versionsnummer" value_type="4" ui_control="3"
+                 ismultivalue="0" isassetinfo="2" assetinfo_sorting="10" issearchable="1" sorting="10" language_type="0"
+                 color_type="0" bdb_key="1106" enabled="1" has_relevance="0" target_object_type="asset" trait="product"
+                 trait_property="promotionVersionNumber" trait_property_top_level="1" user_modifiable="1"
+                 is_xml_attr="0" asset_resource_key="msp:feature.alz-mmc.promotion-version-number"  >
+            <xml_config>
+                <index-configs>
+                    <index-config is-custom="true" type="fulltext">
+                        <fulltext stemming="false" use-frequency="true" strip-diacritics="false"
+                                  expand-junction-operator="AND_NOT_EMPTY" min-length="2"/>
+                    </index-config>
+                </index-configs>
+            </xml_config>
+        </feature>
+        <feature key="msp:alz-mmc.promotion.media-file" type="censhare:asset-feature" storage="0" domain="root."
+                 domain2="root." name="Promotion media file" name_de="Maßnahme Media file" value_type="4" ui_control="3"
+                 ismultivalue="1" isassetinfo="2" assetinfo_sorting="10" issearchable="1" sorting="10" language_type="0"
+                 color_type="0" bdb_key="1135" enabled="1" has_relevance="0" target_object_type="asset" trait="product"
+                 trait_property="promotionMediaFile" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0"
+                 asset_resource_key="msp:feature.alz-mmc.promotion.media-file"  />
+        <feature key="msp:alz-mmc.promotion.media-file-id" type="censhare:asset-feature" storage="0" domain="root."
+                 domain2="root." name="Promotion media file id" name_de="Maßnahme Media file id" value_type="4"
+                 ui_control="3" ismultivalue="1" isassetinfo="2" assetinfo_sorting="10" issearchable="1" sorting="10"
+                 language_type="0" color_type="0" bdb_key="1136" enabled="1" has_relevance="0"
+                 target_object_type="asset" trait="product" trait_property="promotionMediaFileId"
+                 trait_property_top_level="1" user_modifiable="1" is_xml_attr="0"
+                 asset_resource_key="msp:feature.alz-mmc.promotion.media-file-id"  >
+            <feature_rel parent_feature="msp:alz-mmc.promotion.media-file-id"
+                         child_feature="msp:alz-mmc.promotion.media-relation" type="hierarchy" sid="2421" enabled="1"
+                          />
+            <feature_rel parent_feature="msp:alz-mmc.promotion.media-file-id"
+                         child_feature="msp:alz-mmc.promotion.media-file" type="hierarchy" sid="2420" enabled="1"
+                          />
+        </feature>
+        <feature key="msp:alz-mmc.promotion.media-relation" type="censhare:asset-feature" storage="0" domain="root."
+                 domain2="root." name="Relation (Promotion Asset relation DE)"
+                 name_de="Verknüpfung (Promotion Asset relation DE)" value_type="2" ui_control="4" ismultivalue="1"
+                 isassetinfo="2" assetinfo_sorting="10" issearchable="1" sorting="10" language_type="0" color_type="0"
+                 bdb_key="1133" enabled="1" has_relevance="0" target_object_type="asset" trait="product"
+                 trait_property="promotionRelation" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0"
+                 asset_resource_key="msp:feature.alz-mmc.promotion.media-relation"  >
+            <feature_value feature="msp:alz-mmc.promotion.media-relation" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="onlinefiles" name="Onlinedateien" name_de="Onlinedateien"
+                           description="Onlinedateien" description_de="Onlinedateien" sorting="2" enabled="1" 
+                           />
+            <feature_value feature="msp:alz-mmc.promotion.media-relation" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="printdata" name="Druckdaten" name_de="Druckdaten"
+                           description="Druckdaten" description_de="Druckdaten" sorting="3" enabled="1" 
+                           />
+            <feature_value feature="msp:alz-mmc.promotion.media-relation" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="finaldraw" name="Finale Reinzeichnung"
+                           name_de="Finale Reinzeichnung" description="Finale Reinzeichnung"
+                           description_de="Finale Reinzeichnung" sorting="1" enabled="1"  />
+        </feature>
+        <feature key="msp:alz.bild.groesse" type="censhare:asset-feature" storage="0" domain="root." domain2="root."
+                 name="Size (Image)" name_de="Größe (Bild)" description="Size (Image)" description_de="Größe (Bild)"
+                 value_type="4" ui_control="3" ismultivalue="0" isassetinfo="0" assetinfo_sorting="0" issearchable="1"
+                 sorting="1" language_type="0" color_type="0" bdb_key="1095" enabled="1" has_relevance="0"
+                 target_object_type="asset" trait="exif" trait_property="bildGroesse" trait_property_top_level="0"
+                 user_modifiable="1" is_xml_attr="0" asset_resource_key="msp:feature.alz.bild.groesse" 
+                 />
+        <feature key="msp:alz.bild.kamerahersteller" type="censhare:asset-feature" storage="0" domain="root."
+                 domain2="root." name="Camera Manufacturer (Image)" name_de="Kamerahersteller (Bild)"
+                 description="Camera Manufacturer (Image)" description_de="Kamerhersteller (Bild)" value_type="4"
+                 ui_control="0" ismultivalue="0" isassetinfo="1" assetinfo_sorting="0" issearchable="1" sorting="1"
+                 language_type="0" color_type="0" bdb_key="1094" enabled="1" has_relevance="0"
+                 target_object_type="asset" trait="exif" trait_property="kamerahersteller" trait_property_top_level="0"
+                 user_modifiable="1" is_xml_attr="0" asset_resource_key="msp:feature.alz.bild.kamerahersteller" 
+                 />
+        <feature key="msp:alz.media.company" type="censhare:asset-feature" storage="0" domain="root." domain2="root."
+                 name="company" name_de="Gesellschaft" description="company" description_de="Gesellschaft"
+                 value_type="4" ui_control="3" ismultivalue="0" isassetinfo="1" assetinfo_sorting="0" issearchable="1"
+                 sorting="1" language_type="0" color_type="0" bdb_key="1108" enabled="1" has_relevance="0"
+                 target_object_type="asset" trait="product" trait_property="mediaCompany" trait_property_top_level="0"
+                 user_modifiable="1" is_xml_attr="0" asset_resource_key="msp:feature.alz.media.company" 
+                 />
+        <feature key="msp:alz.media.content" type="censhare:asset-feature" storage="0" domain="root." domain2="root."
+                 name="content" name_de="Inhalt" description="content" description_de="Inhalt" value_type="2"
+                 ui_control="4" ismultivalue="0" isassetinfo="1" assetinfo_sorting="0" issearchable="1" sorting="1"
+                 language_type="0" color_type="0" bdb_key="1110" enabled="1" has_relevance="0"
+                 target_object_type="asset" trait="product" trait_property="mediaContent" trait_property_top_level="0"
+                 user_modifiable="1" is_xml_attr="0" asset_resource_key="msp:feature.alz.media.content" 
+                 >
+            <feature_value feature="msp:alz.media.content" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1588" name="Abstract" name_de="Abstrakt" description="Abstract"
+                           description_de="Abstrakt" sorting="1" enabled="1"  />
+            <feature_value feature="msp:alz.media.content" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1603" name="background &amp; texture" name_de="Hintergründe &amp; Texturen"
+                           description="background &amp; texture" description_de="Hintergründe &amp; Texturen"
+                           sorting="1" enabled="1"  />
+            <feature_value feature="msp:alz.media.content" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1604" name="Landscape" name_de="Landschaft" description="Landscape"
+                           description_de="Landschaft" sorting="1" enabled="1"  />
+            <feature_value feature="msp:alz.media.content" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1605" name="people" name_de="Menschen" description="people"
+                           description_de="Menschen" sorting="1" enabled="1"  />
+            <feature_value feature="msp:alz.media.content" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1606" name="mobility" name_de="Mobilität" description="mobility"
+                           description_de="Mobilität" sorting="1" enabled="1"  />
+            <feature_value feature="msp:alz.media.content" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1608" name="Natur" name_de="Natur" description="Natur" description_de="Natur"
+                           sorting="1" enabled="1"  />
+            <feature_value feature="msp:alz.media.content" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1609" name="productgraphics" name_de="Produktgrafiken"
+                           description="productgraphics" description_de="Produktgrafiken" sorting="1" enabled="1"
+                            />
+            <feature_value feature="msp:alz.media.content" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="3114" name="Symbols &amp; signs" name_de="Symbole &amp; Zeichen"
+                           description="Symbols &amp; signs" description_de="Symbole &amp; Zeichen" sorting="1"
+                           enabled="1"  />
+            <feature_value feature="msp:alz.media.content" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1610" name="Sport" name_de="Sport" description="Sport" description_de="Sport"
+                           sorting="1" enabled="1"  />
+            <feature_value feature="msp:alz.media.content" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1611" name="Symbols &amp; Logos" name_de="Symbole &amp; Logos"
+                           description="Symbols &amp; Logos" description_de="Symbole &amp; Logos" sorting="1"
+                           enabled="1"  />
+            <feature_value feature="msp:alz.media.content" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1601" name="nurture" name_de="Ernährung" description="nurture"
+                           description_de="Ernährung" sorting="1" enabled="1"  />
+            <feature_value feature="msp:alz.media.content" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="2998" name="productgraphic" name_de="Produktgrafik" description="productgraphic"
+                           description_de="Produktgrafik" sorting="1" enabled="1"  />
+            <feature_value feature="msp:alz.media.content" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1612" name="animals" name_de="Tiere" description="animals" description_de="Tiere"
+                           sorting="1" enabled="1"  />
+            <feature_value feature="msp:alz.media.content" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1602" name="object" name_de="Gegenstände" description="Gegenstände"
+                           description_de="Gegenstände" sorting="1" enabled="1"  />
+            <feature_value feature="msp:alz.media.content" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1613" name="Symbols &amp; signposts" name_de="Symbole &amp; Schilder"
+                           description="Symbols &amp; signposts" description_de="Symbole &amp; Schilder" sorting="1"
+                           enabled="1"  />
+            <feature_value feature="msp:alz.media.content" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="3111" name="Symbols" name_de="Symbole" description="Symbols"
+                           description_de="Symbole" sorting="1" enabled="1"  />
+            <feature_value feature="msp:alz.media.content" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1600" name="Architecture" name_de="Architektur" description="Architecture"
+                           description_de="Architektur" sorting="1" enabled="1"  />
+            <feature_value feature="msp:alz.media.content" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1919" name="Symbole" name_de="Symbole" sorting="41" enabled="1" 
+                           />
+        </feature>
+        <feature key="msp:alz.media.copyright" type="censhare:asset-feature" storage="0" domain="root." domain2="root."
+                 name="Copyright" name_de="Copyright" value_type="4" ui_control="3" ismultivalue="1" isassetinfo="1"
+                 assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1141"
+                 enabled="1" has_relevance="0" target_object_type="asset" trait="product" trait_property="copyright"
+                 trait_property_top_level="1" user_modifiable="1" is_xml_attr="0"
+                 asset_resource_key="msp:feature.alz.media.copyright"  >
+            <feature_rel parent_feature="msp:alz.media.copyright" child_feature="msp:alz.media.permitted-types-of-use"
+                         type="hierarchy" sid="2401" enabled="1"  />
+            <feature_rel parent_feature="msp:alz.media.copyright" child_feature="msp:alz.media.licence-type"
+                         type="hierarchy" sid="2400" enabled="1"  />
+            <feature_rel parent_feature="msp:alz.media.copyright" child_feature="msp:alz.media.restriction"
+                         type="hierarchy" sid="2405" enabled="1"  />
+            <feature_rel parent_feature="msp:alz.media.copyright" child_feature="msp:alz.media.rights-original-file"
+                         type="hierarchy" sid="2404" enabled="1"  />
+            <feature_rel parent_feature="msp:alz.media.copyright" child_feature="msp:alz.media.locked" type="hierarchy"
+                         sid="2403" enabled="1"  />
+            <feature_rel parent_feature="msp:alz.media.copyright" child_feature="msp:alz.media.personalization-template"
+                         type="hierarchy" sid="2402" enabled="1"  />
+            <feature_rel parent_feature="msp:alz.media.copyright" child_feature="msp:alz.media.media-provider"
+                         type="hierarchy" sid="2406" enabled="1"  />
+            <feature_rel parent_feature="msp:alz.media.copyright" child_feature="msp:alz.media.copyrights.startdate"
+                         type="hierarchy" sid="2411" enabled="1"  />
+            <feature_rel parent_feature="msp:alz.media.copyright" child_feature="msp:alz.media.copyrights.enddate"
+                         type="hierarchy" sid="2410" enabled="1"  />
+        </feature>
+        <feature key="msp:alz.media.copyrights.enddate" type="censhare:asset-feature" storage="0" domain="root."
+                 domain2="root." name="Enddate" name_de="Enddatum neu" description="Enddate" description_de="Enddatum"
+                 value_type="13" ui_control="0" ismultivalue="0" isassetinfo="1" assetinfo_sorting="1" issearchable="1"
+                 sorting="1" language_type="0" color_type="0" bdb_key="1144" enabled="1" has_relevance="0"
+                 target_object_type="asset" trait="product" trait_property="mediaCopyrightsEnddate"
+                 trait_property_top_level="1" user_modifiable="1" is_xml_attr="0"
+                 asset_resource_key="msp:feature.alz.media.copyrights.enddate"  />
+        <feature key="msp:alz.media.copyrights.startdate" type="censhare:asset-feature" storage="0" domain="root."
+                 domain2="root." name="Startdate" name_de="Startdatum" description="Startdate"
+                 description_de="Startdatum" value_type="13" ui_control="0" ismultivalue="0" isassetinfo="1"
+                 assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1145"
+                 enabled="1" has_relevance="0" target_object_type="asset" trait="product"
+                 trait_property="mediaCopyrightsStartdate" trait_property_top_level="1" user_modifiable="1"
+                 is_xml_attr="0" asset_resource_key="msp:feature.alz.media.copyrights.startdate"  />
+        <feature key="msp:alz.media.filename" type="censhare:asset-feature" storage="0" domain="root." domain2="root."
+                 name="Media Filename" name_de="Medien Dateiname" value_type="4" ui_control="3" ismultivalue="0"
+                 isassetinfo="1" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0"
+                 bdb_key="1139" enabled="1" has_relevance="0" target_object_type="asset" trait="product"
+                 trait_property="mediaFilename" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0"
+                 asset_resource_key="msp:feature.alz.media.filename"  />
+        <feature key="msp:alz.media.keyword" type="censhare:asset-feature" storage="0" domain="root." domain2="root."
+                 name="Keyword" name_de="Keyword" description="Keyword" description_de="Keyword" value_type="4"
+                 ui_control="3" ismultivalue="1" isassetinfo="1" assetinfo_sorting="1" issearchable="1" sorting="1"
+                 language_type="0" color_type="0" bdb_key="1138" enabled="1" has_relevance="0"
+                 target_object_type="asset" trait="product" trait_property="mediaKeyword" trait_property_top_level="1"
+                 user_modifiable="1" is_xml_attr="0" asset_resource_key="msp:feature.alz.media.keyword" 
+                 />
+        <feature key="msp:alz.media.licence-status" type="censhare:asset-feature" storage="0" domain="root."
+                 domain2="root." name="licence status" name_de="Lizenzstatus" description="licence_status"
+                 description_de="Lizenzstatus" value_type="2" ui_control="4" ismultivalue="1" isassetinfo="1"
+                 assetinfo_sorting="0" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1123"
+                 enabled="1" has_relevance="0" target_object_type="asset" trait="product"
+                 trait_property="mediaLicenceStatus" trait_property_top_level="0" user_modifiable="1" is_xml_attr="0"
+                 asset_resource_key="msp:feature.alz.media.licence-status"  >
+            <feature_value feature="msp:alz.media.licence-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="9" name="blocked - use only after consultation with the publisher"
+                           name_de="gesperrt - Verwendung nur nach Rücksprache mit Herausgeber" sorting="32" enabled="1"
+                            />
+            <feature_value feature="msp:alz.media.licence-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="7" name="royalty-free with restrictions" name_de="lizenzfrei mit Einschränkungen"
+                           sorting="30" enabled="1"  />
+            <feature_value feature="msp:alz.media.licence-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="8" name="royalty-free without restrictions"
+                           name_de="lizenzfrei ohne Einschränkungen" sorting="31" enabled="1"  />
+            <feature_value feature="msp:alz.media.licence-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="5" name="to be inquired from the publisher" name_de="bei Herausgeber zu erfragen"
+                           sorting="28" enabled="1"  />
+            <feature_value feature="msp:alz.media.licence-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="6"
+                           name="royalty-free with possible restrictions - to be requested from publishers"
+                           name_de="lizenzfrei mit möglichen Einschränkungen - bei Herausgeber zu erfragen" sorting="29"
+                           enabled="1"  />
+            <feature_value feature="msp:alz.media.licence-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="3" name="Restricted" name_de="Eingeschränkt" sorting="26" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.licence-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="4" name="Unreservedly" name_de="Uneingeschränkt" sorting="27" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.licence-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1" name="In clarification" name_de="In Klärung" sorting="24" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.licence-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="2" name="For internal use only" name_de="Nur für interne Nutzung" sorting="25"
+                           enabled="1"  />
+            <feature_value feature="msp:alz.media.licence-status" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="10" name="subject to licensing" name_de="lizenzpflichtig" sorting="33" enabled="1"
+                            />
+        </feature>
+        <feature key="msp:alz.media.licence-type" type="censhare:asset-feature" storage="0" domain="root."
+                 domain2="root." name="licence_type" name_de="Lizenzart" description="licence_type"
+                 description_de="Lizenzart" value_type="2" ui_control="4" ismultivalue="0" isassetinfo="1"
+                 assetinfo_sorting="0" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1114"
+                 enabled="1" has_relevance="0" target_object_type="asset" trait="product"
+                 trait_property="mediaLicenceType" trait_property_top_level="0" user_modifiable="1" is_xml_attr="0"
+                 asset_resource_key="msp:feature.alz.media.licence-type"  >
+            <feature_value feature="msp:alz.media.licence-type" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1932" name="royalty-free" name_de="Lizenzfrei" sorting="34" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.licence-type" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1933" name="Subject to licensing" name_de="Lizenzpflichtig" sorting="37"
+                           enabled="1"  />
+            <feature_value feature="msp:alz.media.licence-type" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1949" name="to be inquired from the publisher"
+                           name_de="bei Herausgeber zu erfragen" sorting="33" enabled="1"  />
+            <feature_value feature="msp:alz.media.licence-type" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1934" name="Information from the publisher is missing"
+                           name_de="Angaben vom Herausgeber fehlen" sorting="32" enabled="1"  />
+            <feature_value feature="msp:alz.media.licence-type" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1967" name="royalty-free (extended)" name_de="lizenzfrei (erweitert)" sorting="35"
+                           enabled="1"  />
+            <feature_value feature="msp:alz.media.licence-type" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1956" name="royalty-free (default)" name_de="lizenzfrei (Standard)" sorting="36"
+                           enabled="1"  />
+            <feature_value feature="msp:alz.media.licence-type" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1942" name="AZ D &amp; affiliated companies"
+                           name_de="AZ D &amp; verbundene Gesellschaften" sorting="44" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.licence-type" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1977" name="AZ SE &amp; affiliated companies (group license)"
+                           name_de="AZ SE &amp; verbundene Gesellschaften (Konzernlizenz)" sorting="45" enabled="1"
+                            />
+            <feature_value feature="msp:alz.media.licence-type" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1950" name="to be inquired from the publisher"
+                           name_de="bei Herausgeber zu erfragen" sorting="46" enabled="1"  />
+            <feature_value feature="msp:alz.media.licence-type" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1935" name="exclusively procuring unit (no larger than department)"
+                           name_de="ausschließlich beschaffende Einheit (nicht größer als Ressort)" sorting="42"
+                           enabled="1"  />
+            <feature_value feature="msp:alz.media.licence-type" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1957" name="exclusively procuring company"
+                           name_de="ausschließlich beschaffende Gesellschaft" sorting="43" enabled="1" 
+                           />
+        </feature>
+        <feature key="msp:alz.media.locked" type="censhare:asset-feature" storage="0" domain="root." domain2="root."
+                 name="restrictions" name_de="gesperrt" description="locked" description_de="gesperrt" value_type="2"
+                 ui_control="4" ismultivalue="0" isassetinfo="1" assetinfo_sorting="0" issearchable="1" sorting="1"
+                 language_type="0" color_type="0" bdb_key="1119" enabled="1" has_relevance="0"
+                 target_object_type="asset" trait="product" trait_property="mediaLocked" trait_property_top_level="0"
+                 user_modifiable="1" is_xml_attr="0" asset_resource_key="msp:feature.alz.media.locked" 
+                 >
+            <feature_value feature="msp:alz.media.locked" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1912" name="no" name_de="Nein" sorting="3" enabled="1"  />
+            <feature_value feature="msp:alz.media.locked" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1911" name="yes" name_de="Ja" sorting="2" enabled="1"  />
+        </feature>
+        <feature key="msp:alz.media.md5" type="censhare:asset-feature" storage="0" domain="root." domain2="root."
+                 name="hash value" name_de="hash Wert" description="hash value" description_de="hash Wert"
+                 value_type="4" ui_control="3" ismultivalue="0" isassetinfo="1" assetinfo_sorting="0" issearchable="1"
+                 sorting="1" language_type="0" color_type="0" bdb_key="1121" enabled="1" has_relevance="0"
+                 target_object_type="asset" trait="product" trait_property="mediaMd5" trait_property_top_level="0"
+                 user_modifiable="1" is_xml_attr="0" asset_resource_key="msp:feature.alz.media.md5" 
+                 />
+        <feature key="msp:alz.media.media-provider" type="censhare:asset-feature" storage="0" domain="root."
+                 domain2="root." name="Mediendienstleister (Medien-Firmenauswahl)"
+                 name_de="Mediendienstleister (Medien-Firmenauswahl)"
+                 description="Mediendienstleister (Medien-Firmenauswahl)"
+                 description_de="Mediendienstleister (Medien-Firmenauswahl)" value_type="2" ui_control="4"
+                 ismultivalue="0" isassetinfo="2" assetinfo_sorting="10" issearchable="1" sorting="10" language_type="0"
+                 color_type="0" bdb_key="1113" enabled="1" has_relevance="0" target_object_type="asset" trait="product"
+                 trait_property="mediaMediaProvider" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0"
+                 asset_resource_key="msp:feature.alz.media.media-provider"  >
+            <feature_value feature="msp:alz.media.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="draft" name="draft" name_de="draft" sorting="1" enabled="1"  />
+            <feature_value feature="msp:alz.media.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="testfirma" name="Partner Testfirma" name_de="Partner Testfirma"
+                           description="Partner Testfirma" description_de="Partner Testfirma" sorting="4" enabled="1"
+                            />
+            <feature_value feature="msp:alz.media.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="werbstatt" name="Werbstatt Bierl GbR Inh. Wolfgang Bierl"
+                           name_de="Werbstatt Bierl GbR Inh. Wolfgang Bierl"
+                           description="Werbstatt Bierl GbR Inh. Wolfgang Bierl"
+                           description_de="Werbstatt Bierl GbR Inh. Wolfgang Bierl" sorting="6" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="ortstudios" name="ORT Studios GmbH" name_de="ORT Studios GmbH"
+                           description="ORT Studios GmbH" description_de="ORT Studios GmbH" sorting="3" enabled="1"
+                            />
+            <feature_value feature="msp:alz.media.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="drescher" name="Drescher Full-Service Versand GmbH"
+                           name_de="Drescher Full-Service Versand GmbH" description="Drescher Full-Service Versand GmbH"
+                           description_de="Drescher Full-Service Versand GmbH" sorting="2" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="serviceplan" name="Serviceplan Solutions 1 GmbH &amp; Co. KG"
+                           name_de="Serviceplan Solutions 1 GmbH &amp; Co. KG"
+                           description="Serviceplan Solutions 1 GmbH &amp; Co. KG"
+                           description_de="Serviceplan Solutions 1 GmbH &amp; Co. KG" sorting="5" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1980" name="Allianz" name_de="Allianz" sorting="3" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1981" name="Allianz Shooting" name_de="Allianz Shooting" sorting="4" enabled="1"
+                            />
+            <feature_value feature="msp:alz.media.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1982" name="Fotolia" name_de="Fotolia" sorting="13" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="2152" name="Imagepoint" name_de="Imagepoint" sorting="17" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="2153" name="Creatas" name_de="Creatas" sorting="10" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1987" name="Fotograf" name_de="Fotograf" sorting="12" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1988" name="C3 (former Kircher-Burkhardt)" name_de="C3 (ehem. Kircher-Burkhardt)"
+                           sorting="8" enabled="1"  />
+            <feature_value feature="msp:alz.media.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1989" name="Panther Media" name_de="Panther Media" sorting="24" enabled="1"
+                            />
+            <feature_value feature="msp:alz.media.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1983" name="Agentur" name_de="Agentur" sorting="2" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1984" name="GettyImages" name_de="GettyImages" sorting="14" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1985" name="Masterfile" name_de="Masterfile" sorting="22" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1986" name="avance" name_de="avance" sorting="5" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="2001" name="Juice Images" name_de="Juice Images" sorting="19" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1990" name="Klink-Liedig" name_de="Klink-Liedig" sorting="20" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="2002" name="Adobe Stock" name_de="Adobe Stock" sorting="1" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1991" name="GMMP (former CDMP)" name_de="GMMP (ehem. CDMP)" sorting="15"
+                           enabled="1"  />
+            <feature_value feature="msp:alz.media.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1992" name="Shutterstock" name_de="Shutterstock" sorting="28" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1993" name="MSC intern" name_de="MSC intern" sorting="23" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="2000" name="Thinstock" name_de="Thinstock" sorting="29" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1998" name="Serviceplan/Fotograf Gerd George"
+                           name_de="Serviceplan/Fotograf Gerd George" sorting="27" enabled="1"  />
+            <feature_value feature="msp:alz.media.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1999" name="Gruetzmacher Eigenkreation" name_de="Gruetzmacher Eigenkreation"
+                           sorting="16" enabled="1"  />
+            <feature_value feature="msp:alz.media.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1978" name="ask issuer" name_de="bei Herausgeber zu erfragen" sorting="6"
+                           enabled="1"  />
+            <feature_value feature="msp:alz.media.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1979" name="Corbis" name_de="Corbis" sorting="9" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1994" name="iStock" name_de="iStock" sorting="18" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="2148" name="Klondike" name_de="Klondike" sorting="21" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1995" name="F1 online" name_de="F1 online" sorting="11" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="2149" name="Photocase" name_de="Photocase" sorting="25" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1996" name="C.Franke" name_de="C.Franke" sorting="7" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.media-provider" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1997" name="Plainpicture" name_de="Plainpicture" sorting="26" enabled="1" 
+                           />
+        </feature>
+        <feature key="msp:alz.media.mmc-id" type="censhare:asset-feature" storage="0" domain="root." domain2="root."
+                 name="Media MMC Id" name_de="Medien MMC Id" value_type="4" ui_control="3" ismultivalue="0"
+                 isassetinfo="1" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0"
+                 bdb_key="1143" enabled="1" has_relevance="0" target_object_type="asset" trait="product"
+                 trait_property="mediaMmcId" trait_property_top_level="1" user_modifiable="1" is_xml_attr="0"
+                 asset_resource_key="msp:feature.alz.media.mmc-id"  />
+        <feature key="msp:alz.media.name" type="censhare:asset-feature" storage="0" domain="root." domain2="root."
+                 name="Media Name" name_de="Medien Name" value_type="4" ui_control="3" ismultivalue="0" isassetinfo="1"
+                 assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1140"
+                 enabled="1" has_relevance="0" target_object_type="asset" trait="product" trait_property="mediaName"
+                 trait_property_top_level="1" user_modifiable="1" is_xml_attr="0"
+                 asset_resource_key="msp:feature.alz.media.name"  />
+        <feature key="msp:alz.media.permitted-types-of-use" type="censhare:asset-feature" storage="0" domain="root."
+                 domain2="root." name="Permitted types of use" name_de="Erlaubte Nutzungsarten"
+                 description="Permitted types of use" description_de="Erlaubte Nutzungsarten" value_type="2"
+                 ui_control="4" ismultivalue="0" isassetinfo="1" assetinfo_sorting="0" issearchable="1" sorting="1"
+                 language_type="0" color_type="0" bdb_key="1117" enabled="1" has_relevance="0"
+                 target_object_type="asset" trait="product" trait_property="mediaPermittedTypesOfUse"
+                 trait_property_top_level="0" user_modifiable="1" is_xml_attr="0"
+                 asset_resource_key="msp:feature.alz.media.permitted-types-of-use"  >
+            <feature_value feature="msp:alz.media.permitted-types-of-use" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="1938" name="Websites" name_de="Webseiten" sorting="11"
+                           enabled="1"  />
+            <feature_value feature="msp:alz.media.permitted-types-of-use" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="1962" name="Software &amp; Apps" name_de="Software &amp; Apps"
+                           sorting="7" enabled="1"  />
+            <feature_value feature="msp:alz.media.permitted-types-of-use" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="1931" name="exclusively internal"
+                           name_de="ausschließlich intern" sorting="1" enabled="1"  />
+            <feature_value feature="msp:alz.media.permitted-types-of-use" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="1975" name="Broker" name_de="Makler" sorting="6" enabled="1"
+                            />
+            <feature_value feature="msp:alz.media.permitted-types-of-use" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="1964" name="Video &amp; TV" name_de="Video &amp; TV"
+                           sorting="10" enabled="1"  />
+            <feature_value feature="msp:alz.media.permitted-types-of-use" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="1952" name="to be inquired from the publisher"
+                           name_de="bei Herausgeber zu erfragen" sorting="2" enabled="1"  />
+            <feature_value feature="msp:alz.media.permitted-types-of-use" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="1963" name="Social media" name_de="Soziale Medien" sorting="8"
+                           enabled="1"  />
+            <feature_value feature="msp:alz.media.permitted-types-of-use" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="1941" name="Representative" name_de="Vertreter" sorting="9"
+                           enabled="1"  />
+            <feature_value feature="msp:alz.media.permitted-types-of-use" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="1943" name="digital documents" name_de="digitale Dokumente"
+                           sorting="3" enabled="1"  />
+            <feature_value feature="msp:alz.media.permitted-types-of-use" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="1965" name="printed documents" name_de="gedruckte Dokumente"
+                           sorting="5" enabled="1"  />
+            <feature_value feature="msp:alz.media.permitted-types-of-use" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="1976" name="Resale" name_de="Weiterverkauf" sorting="12"
+                           enabled="1"  />
+            <feature_value feature="msp:alz.media.permitted-types-of-use" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="1971" name="Promotional item" name_de="Werbeartikel"
+                           sorting="13" enabled="1"  />
+            <feature_value feature="msp:alz.media.permitted-types-of-use" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="1970" name="Print on demand (POD)"
+                           name_de="Druck auf Abruf (POD)" sorting="4" enabled="1"  />
+        </feature>
+        <feature key="msp:alz.media.personalization-template" type="censhare:asset-feature" storage="0" domain="root."
+                 domain2="root." name="personalization-template" name_de="Personalisierungsvorlage"
+                 description="personalization-template" description_de="Personalisierungsvorlage" value_type="2"
+                 ui_control="4" ismultivalue="0" isassetinfo="1" assetinfo_sorting="0" issearchable="1" sorting="1"
+                 language_type="0" color_type="0" bdb_key="1120" enabled="1" has_relevance="0"
+                 target_object_type="asset" trait="product" trait_property="mediaPersonalizationTemplate"
+                 trait_property_top_level="0" user_modifiable="1" is_xml_attr="0"
+                 asset_resource_key="msp:feature.alz.media.personalization-template"  >
+            <feature_value feature="msp:alz.media.personalization-template" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="14141" name="W2P14" name_de="W2P14" sorting="6" enabled="1"
+                            />
+            <feature_value feature="msp:alz.media.personalization-template" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="14140" name="W2P13" name_de="W2P13" sorting="5" enabled="1"
+                            />
+            <feature_value feature="msp:alz.media.personalization-template" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="14138" name="W2P11" name_de="W2P11" sorting="3" enabled="1"
+                            />
+            <feature_value feature="msp:alz.media.personalization-template" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="14137" name="W2P10" name_de="W2P10" sorting="2" enabled="1"
+                            />
+            <feature_value feature="msp:alz.media.personalization-template" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="14148" name="W2P25" name_de="W2P25" sorting="14" enabled="1"
+                            />
+            <feature_value feature="msp:alz.media.personalization-template" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="2450" name="W2P2" name_de="W2P2" sorting="10" enabled="1"
+                            />
+            <feature_value feature="msp:alz.media.personalization-template" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="14147" name="W2P24" name_de="W2P24" sorting="13" enabled="1"
+                            />
+            <feature_value feature="msp:alz.media.personalization-template" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="14136" name="W2P8" name_de="W2P8" sorting="20" enabled="1"
+                            />
+            <feature_value feature="msp:alz.media.personalization-template" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="14146" name="W2P22" name_de="W2P22" sorting="12" enabled="1"
+                            />
+            <feature_value feature="msp:alz.media.personalization-template" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="14135" name="W2P7" name_de="W2P7" sorting="19" enabled="1"
+                            />
+            <feature_value feature="msp:alz.media.personalization-template" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="14145" name="W2P21" name_de="W2P21" sorting="11" enabled="1"
+                            />
+            <feature_value feature="msp:alz.media.personalization-template" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="14134" name="W2P6" name_de="W2P6" sorting="18" enabled="1"
+                            />
+            <feature_value feature="msp:alz.media.personalization-template" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="14144" name="W2P19" name_de="W2P19" sorting="9" enabled="1"
+                            />
+            <feature_value feature="msp:alz.media.personalization-template" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="14133" name="W2P5" name_de="W2P5" sorting="17" enabled="1"
+                            />
+            <feature_value feature="msp:alz.media.personalization-template" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="14143" name="W2P18" name_de="W2P18" sorting="8" enabled="1"
+                            />
+            <feature_value feature="msp:alz.media.personalization-template" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="14132" name="W2P4" name_de="W2P4" sorting="16" enabled="1"
+                            />
+            <feature_value feature="msp:alz.media.personalization-template" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="14142" name="W2P15" name_de="W2P15" sorting="7" enabled="1"
+                            />
+            <feature_value feature="msp:alz.media.personalization-template" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="14131" name="W2P3" name_de="W2P3" sorting="15" enabled="1"
+                            />
+            <feature_value feature="msp:alz.media.personalization-template" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="2449" name="W2P1" name_de="W2P1" sorting="1" enabled="1"
+                            />
+            <feature_value feature="msp:alz.media.personalization-template" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="14139" name="W2P12" name_de="W2P12" sorting="4" enabled="1"
+                            />
+        </feature>
+        <feature key="msp:alz.media.restriction" type="censhare:asset-feature" storage="0" domain="root."
+                 domain2="root." name="restrictions" name_de="Beschränkungen" description="restrictions"
+                 description_de="Beschränkungen" value_type="2" ui_control="4" ismultivalue="0" isassetinfo="1"
+                 assetinfo_sorting="0" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1118"
+                 enabled="1" has_relevance="0" target_object_type="asset" trait="product"
+                 trait_property="mediaRestriction" trait_property_top_level="0" user_modifiable="1" is_xml_attr="0"
+                 asset_resource_key="msp:feature.alz.media.restrictions"  >
+            <feature_value feature="msp:alz.media.restriction" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1960" name="no use as a template (e.B. web design or presentation template)"
+                           name_de="keine Verwendung als Vorlage (z.B. Webdesign- oder Präsentationsvorlage)"
+                           sorting="20" enabled="1"  />
+            <feature_value feature="msp:alz.media.restriction" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1969" name="without restrictions" name_de="ohne Beschränkungen" sorting="24"
+                           enabled="1"  />
+            <feature_value feature="msp:alz.media.restriction" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1958" name="Social media only up to 999 x 999 pixels and with copyright notice"
+                           name_de="Soziale Medien nur bis 999 x 999 Pixel und mit Urhebervermerk" sorting="25"
+                           enabled="1"  />
+            <feature_value feature="msp:alz.media.restriction" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1937" name="Print/retrieval/range up to 500,000"
+                           name_de="Druck/Abruf/Reichweite bis 500.000" sorting="17" enabled="1"  />
+            <feature_value feature="msp:alz.media.restriction" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="14171" name="no resale/distribution via promotional items (merchandising)"
+                           name_de="kein Weiterverkauf/Verbreitung über Werbeartikel (Merchandising)" sorting="18"
+                           enabled="1"  />
+            <feature_value feature="msp:alz.media.restriction" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1959"
+                           name="no resale/distribution via promotional items or on-demand printing (PoD)"
+                           name_de="kein Weiterverkauf/Verbreitung über Werbeartikel oder Druck auf Abruf (PoD)"
+                           sorting="19" enabled="1"  />
+            <feature_value feature="msp:alz.media.restriction" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1946" name="Distribution not allowed" name_de="Verteilung nicht erlaubt"
+                           sorting="26" enabled="1"  />
+            <feature_value feature="msp:alz.media.restriction" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1961" name="only one backup copy allowed"
+                           name_de="nur eine Sicherungskopie gestattet" sorting="23" enabled="1"  />
+            <feature_value feature="msp:alz.media.restriction" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1951" name="Possible restrictions on use must be requested from the publisher"
+                           name_de="mögliche Nutzungsbeschränkungen sind beim Herausgeber zu erfragen" sorting="22"
+                           enabled="1"  />
+            <feature_value feature="msp:alz.media.restriction" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="2954" name="long-term storage not allowed"
+                           name_de="langfristige Speicherung nicht erlaubt" sorting="21" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.restriction" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1940" name="Druck bis 500.000" name_de="Druck bis 500.000" sorting="1" enabled="1"
+                            />
+        </feature>
+        <feature key="msp:alz.media.rights-original-file" type="censhare:asset-feature" storage="0" domain="root."
+                 domain2="root." name="Right to use original file" name_de="Rechte zur Nutzung der Originaldatei"
+                 description="Right to use original file" description_de="Rechte zur Nutzung der Originaldatei"
+                 value_type="2" ui_control="4" ismultivalue="0" isassetinfo="1" assetinfo_sorting="0" issearchable="1"
+                 sorting="1" language_type="0" color_type="0" bdb_key="1116" enabled="1" has_relevance="0"
+                 target_object_type="asset" trait="product" trait_property="mediaRightsOriginalFile"
+                 trait_property_top_level="0" user_modifiable="1" is_xml_attr="0"
+                 asset_resource_key="msp:feature.alz.media.rights-original-file"  >
+            <feature_value feature="msp:alz.media.rights-original-file" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="1935"
+                           name="exclusively procuring unit (no larger than department)"
+                           name_de="ausschließlich beschaffende Einheit (nicht größer als Ressort)" sorting="42"
+                           enabled="1"  />
+            <feature_value feature="msp:alz.media.rights-original-file" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="1942" name="AZ D &amp; affiliated companies"
+                           name_de="AZ D &amp; verbundene Gesellschaften" sorting="44" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.rights-original-file" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="1950" name="to be inquired from the publisher"
+                           name_de="bei Herausgeber zu erfragen" sorting="46" enabled="1"  />
+            <feature_value feature="msp:alz.media.rights-original-file" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="1957" name="exclusively procuring company"
+                           name_de="ausschließlich beschaffende Gesellschaft" sorting="43" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.rights-original-file" domain="root." domain2="root."
+                           is_hierarchical="0" value_key="1977" name="AZ SE &amp; affiliated companies (group license)"
+                           name_de="AZ SE &amp; verbundene Gesellschaften (Konzernlizenz)" sorting="45" enabled="1"
+                            />
+        </feature>
+        <feature key="msp:alz.media.subject" type="censhare:asset-feature" storage="0" domain="root." domain2="root."
+                 name="subject" name_de="Thema" description="subject" description_de="Thema" value_type="2"
+                 ui_control="4" ismultivalue="0" isassetinfo="1" assetinfo_sorting="0" issearchable="1" sorting="1"
+                 language_type="0" color_type="0" bdb_key="1112" enabled="1" has_relevance="0"
+                 target_object_type="asset" trait="product" trait_property="mediaSubject" trait_property_top_level="0"
+                 user_modifiable="1" is_xml_attr="0" asset_resource_key="msp:feature.alz.media.subject" 
+                 >
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1629" name="Wedding" name_de="Hochzeit" sorting="21" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1628" name="House &amp; Apartment" name_de="Haus &amp; Wohnung" sorting="19"
+                           enabled="1"  />
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1621" name="Shopping" name_de="Einkaufen" sorting="10" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1643" name="Accident" name_de="Unfall" sorting="36" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1620" name="Demographic change" name_de="Demographischer Wandel" sorting="9"
+                           enabled="1"  />
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1642" name="Technology" name_de="Technologie" sorting="35" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1623" name="garden" name_de="Garten" sorting="13" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1920" name="Pets" name_de="Haustiere" sorting="20" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1645" name="urban life" name_de="Urbanes Leben" sorting="37" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1622" name="leisure" name_de="Freizeit" sorting="12" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1922" name="invest money" name_de="Geld anlegen" sorting="14" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1625" name="health" name_de="Gesundheit" sorting="16" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1647" name="Boards" name_de="Vorstände" sorting="41" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1921" name="schooling" name_de="Ausbildung" sorting="4" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1624" name="spend money" name_de="Geld ausgeben" sorting="15" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1646" name="Insurance/Finance" name_de="Versicherung/Finanzen" sorting="38"
+                           enabled="1"  />
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1627" name="craft" name_de="Handwerk" sorting="18" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1626" name="harbor" name_de="Hafen" sorting="17" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1648" name="Goods" name_de="Waren" sorting="42" enabled="1"  />
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1641" name="pregnancy" name_de="Schwangerschaft" sorting="33" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1640" name="retirement" name_de="Rente" sorting="32" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1618" name="profession" name_de="Beruf" sorting="7" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1617" name="build" name_de="Bauen" sorting="6" enabled="1"  />
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1639" name="travel" name_de="Reisen" sorting="31" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1619" name="office" name_de="Büro" sorting="8" enabled="1"  />
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1918" name="Family" name_de="Familie" sorting="11" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1632" name="children" name_de="Kinder" sorting="24" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1631" name="Career" name_de="Karriere" sorting="23" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1634" name="illness" name_de="Krankheit" sorting="26" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1633" name="climate change" name_de="Klimawandel" sorting="25" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1614" name="Allianz" name_de="Allianz" sorting="2" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1636" name="Medicine" name_de="Medizin" sorting="28" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1635" name="culture" name_de="Kultur" sorting="27" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1616" name="car" name_de="Auto" sorting="5" enabled="1"  />
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1638" name="law" name_de="Recht" sorting="30" enabled="1"  />
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1615" name="age" name_de="Alter" sorting="3" enabled="1"  />
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1637" name="partnership" name_de="Partnerschaft" sorting="29" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="3110" name="Insurance/Financing" name_de="Versicherung/Finanzierung" sorting="40"
+                           enabled="1"  />
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="3115" name="sport" name_de="Sport" sorting="34" enabled="1"  />
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="1630" name="Industry" name_de="Industrie" sorting="22" enabled="1" 
+                           />
+            <feature_value feature="msp:alz.media.subject" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="3112" name="Insurance/Finance, Investing Money"
+                           name_de="Versicherung/Finanzen, Geld anlegen" sorting="39" enabled="1"  />
+        </feature>
+        <feature key="msp:alz.media.title" type="censhare:asset-feature" storage="0" domain="root." domain2="root."
+                 name="title (media)" name_de="Titel (media)" description="title (media)" description_de="Titel (media)"
+                 value_type="4" ui_control="3" ismultivalue="0" isassetinfo="1" assetinfo_sorting="0" issearchable="1"
+                 sorting="1" language_type="0" color_type="0" bdb_key="1109" enabled="1" has_relevance="0"
+                 target_object_type="asset" trait="product" trait_property="mediaTitle" trait_property_top_level="0"
+                 user_modifiable="1" is_xml_attr="0" asset_resource_key="msp:feature.alz.media.title" 
+                 />
+        <feature key="msp:alz.media.usertype" type="censhare:asset-feature" storage="0" domain="root." domain2="root."
+                 name="Usertype" name_de="Usertype" description="Usertype" description_de="Usertype" value_type="2"
+                 ui_control="4" ismultivalue="1" isassetinfo="1" assetinfo_sorting="0" issearchable="1" sorting="1"
+                 language_type="0" color_type="0" bdb_key="1131" enabled="1" has_relevance="0"
+                 target_object_type="asset" trait="product" trait_property="usertype" trait_property_top_level="0"
+                 user_modifiable="1" is_xml_attr="0" asset_resource_key="msp:feature.alz.media.usertype" 
+                 >
+            <feature_value feature="msp:alz.media.usertype" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="ResponsibleMember" name="ResponsibleMember" name_de="Verantwortlicher Nutzer"
+                           description="Responsible Member" description_de="Verantwortlicher Nutzer" sorting="1"
+                           enabled="1"  />
+            <feature_value feature="msp:alz.media.usertype" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="Uploader" name="Uploader" name_de="Uploader" description="Uploader"
+                           description_de="Uploader" sorting="1" enabled="1"  />
+            <feature_rel parent_feature="msp:alz.media.usertype" child_feature="msp:alz.media.usertype.lastname"
+                         type="hierarchy" sid="2383" enabled="1"  />
+            <feature_rel parent_feature="msp:alz.media.usertype" child_feature="msp:alz.media.usertype.firstname"
+                         type="hierarchy" sid="2382" enabled="1"  />
+            <feature_rel parent_feature="msp:alz.media.usertype" child_feature="msp:alz.media.usertype.company_name"
+                         type="hierarchy" sid="2381" enabled="1"  />
+            <feature_rel parent_feature="msp:alz.media.usertype" child_feature="msp:alz.media.usertype.company_id"
+                         type="hierarchy" sid="2380" enabled="1"  />
+        </feature>
+        <feature key="msp:alz.media.usertype.company_id" type="censhare:asset-feature" storage="0" domain="root."
+                 domain2="root." name="Company_id" name_de="Company_id" description="Company_id"
+                 description_de="Company_id" value_type="4" ui_control="3" ismultivalue="0" isassetinfo="1"
+                 assetinfo_sorting="0" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1129"
+                 enabled="1" has_relevance="0" target_object_type="asset" trait="product"
+                 trait_property="usertypeCompanyId" trait_property_top_level="0" user_modifiable="1" is_xml_attr="0"
+                 asset_resource_key="msp:feature.alz.media.usertype.company_id"  />
+        <feature key="msp:alz.media.usertype.company_name" type="censhare:asset-feature" storage="0" domain="root."
+                 domain2="root." name="Company_name" name_de="Company_name" description="Company_name"
+                 description_de="Company_name" value_type="4" ui_control="3" ismultivalue="0" isassetinfo="1"
+                 assetinfo_sorting="0" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1130"
+                 enabled="1" has_relevance="0" target_object_type="asset" trait="product"
+                 trait_property="usertypeCompanyName" trait_property_top_level="0" user_modifiable="1" is_xml_attr="0"
+                 asset_resource_key="msp:feature.alz.media.usertype.company_name"  />
+        <feature key="msp:alz.media.usertype.firstname" type="censhare:asset-feature" storage="0" domain="root."
+                 domain2="root." name="Firstname (usertype)" name_de="Vorname (usertype)" description="Firstname"
+                 description_de="Vorname" value_type="4" ui_control="3" ismultivalue="0" isassetinfo="1"
+                 assetinfo_sorting="0" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1126"
+                 enabled="1" has_relevance="0" target_object_type="asset" trait="product"
+                 trait_property="usertypeFirstname" trait_property_top_level="0" user_modifiable="1" is_xml_attr="0"
+                 asset_resource_key="msp:feature.alz.media.usertype.firstname"  />
+        <feature key="msp:alz.media.usertype.lastname" type="censhare:asset-feature" storage="0" domain="root."
+                 domain2="root." name="Lastname (usertype)" name_de="Nachname (usertype)" description="Lastname"
+                 description_de="Nachname" value_type="4" ui_control="3" ismultivalue="0" isassetinfo="1"
+                 assetinfo_sorting="0" issearchable="1" sorting="1" language_type="0" color_type="0" bdb_key="1128"
+                 enabled="1" has_relevance="0" target_object_type="asset" trait="product"
+                 trait_property="usertypeLastname" trait_property_top_level="0" user_modifiable="1" is_xml_attr="0"
+                 asset_resource_key="msp:feature.alz.media.usertype.lastname"  />
+    </features>
+</data>

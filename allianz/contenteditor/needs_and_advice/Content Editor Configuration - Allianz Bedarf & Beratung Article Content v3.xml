@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><virtual-node name="root">
+    <!-- svtx_allianz_casestudys Standard Content Structure 3.0 -->
+
+    <!-- node-source ist die Verweis ref aus dem Asset -->
+
+
+        <ref name="content" node-source="svtx:content-editor-allianz-bedarf_und_beratung-content-node-source-v3" path="article/content"/>
+
+
+
+
+    <!--
+   <ref name="content" node-source="svtx:content-editor-allianz-header-content-node-source-v3" path="article/content"/>
+    <ref name="subheadline" node-source="svtx:content-editor-allianz-header-content-node-source-v3" path="article/subheadline"/>
+    <ref name="content" node-source="svtx:content-editor-allianz-header-content-node-source-v3" path="article/content"/>
+        <virtual-node name="online">
+            <ref name="content" node-source="svtx:content-editor-allianz-header-content-node-source-v3" path="article/content"/>
+        </virtual-node>
+        -->
+        <!--
+    <ref name="content" node-source="svtx:content-editor-allianz-header-content-node-source-v3" path="article/content"/>
+
+    <ref name="headline" node-source="svtx:content-editor-allianz-header-content-node-source-v3" path="article/content/headline"/>
+            <ref name="strapline" node-source="svtx:content-editor-allianz-header-content-node-source-v3" path="article/strapline"/>
+        <ref name="headline" node-source="svtx:content-editor-allianz-header-content-node-source-v3" path="article/headline"/>
+        <ref name="subline" node-source="svtx:content-editor-allianz-header-content-node-source-v3" path="article/subline"/>
+        <ref name="calltoaction" node-source="svtx:content-editor-allianz-header-content-node-source-v3" path="article/calltoaction"/>
+
+        <ref name="strapline" node-source="censhare:content-editor-scs-content-node-source-v3" path="article/content/strapline"/>
+        <ref name="headline" node-source="censhare:content-editor-scs-content-node-source-v3" path="article/headline"/>
+        <ref name="subline" node-source="censhare:content-editor-scs-content-node-source-v3" path="article/subline"/>
+        <ref name="calltoaction" node-source="censhare:content-editor-scs-content-node-source-v3" path="article/calltoaction"/>
+
+
+        -->
+
+
+    <!-- zZ keine Metadaten etc
+     <virtual-node name="online">
+      <ref name="teaser" node-source="censhare:content-editor-scs-content-node-source-v3" path="article/website/teaser"/>
+      <ref name="key-visual" node-source="censhare:content-editor-scs-content-node-source-v3" path="article/website/key-visual"/>
+      <ref namespace="cs-meta-trait" name="seo" node-source="censhare:content-editor-scs-meta-node-source-v3" path="traits/seo"/>
+      <ref namespace="cs-meta-trait" name="counting" node-source="censhare:content-editor-scs-meta-node-source-v3" path="traits/counting"/>
+      <ref namespace="cs-meta-trait" name="metadata-online" node-source="censhare:content-editor-scs-meta-node-source-v3" path="traits/metadata-online"/>
+      <ref namespace="cs-meta-trait" name="community-1" node-source="censhare:content-editor-scs-meta-node-source-v3" path="traits/community"/>
+      <ref namespace="cs-meta-trait" name="advertising" node-source="censhare:content-editor-scs-meta-node-source-v3" path="traits/advertising"/>
+    </virtual-node>
+    <virtual-node name="print">
+      <ref name="teaser" node-source="censhare:content-editor-scs-content-node-source-v3" path="article/print/teaser"/>
+      <ref name="key-visual" node-source="censhare:content-editor-scs-content-node-source-v3" path="article/print/key-visual"/>
+      <ref name="images" node-source="censhare:content-editor-scs-content-node-source-v3" path="article/print/images"/>
+    </virtual-node>
+    <virtual-node name="general">
+      <ref namespace="cs-meta-trait" name="workflow" node-source="censhare:content-editor-scs-meta-node-source-v3" path="traits/workflow"/>
+    </virtual-node>
+    -->
+</virtual-node>

@@ -1,0 +1,51 @@
+{
+  "name": "allianzRecurringModulesAction",
+  "since": "2019.3.1",
+  "version": "0.0.1",
+  "filename": "allianz-recurring-modules-action.module",
+  "translations": [
+    "translation"
+  ],
+  "assets": {
+    "path": "assets"
+  },
+  "implementations": [
+    {
+      "type": "csBehavior",
+      "name": "allianzRecurringModulesBehavior",
+      "constructor": "allianzRecurringModulesBehavior",
+      "properties": {
+        "icon": "cs-icon-change-template",
+        "title": "allianzRecurringModulesAction.title",
+        "priority": 650,
+        "filters": {
+          "context": "asset",
+          "csAssetTypePatterns": [
+            {
+              "assettype": "product.*",
+              "mimetype": "*"
+            },
+            {
+              "assettype": "text.*",
+              "mimetype": "*"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "csDialog",
+      "name": "allianzRecurringModulesDialog",
+      "properties": {
+        "contentComponentName": "allianzRecurringModulesDialogComponent"
+      }
+    },
+    {
+      "type": "csDialog",
+      "name": "allianzRecurringModulesUpdateDialog",
+      "properties": {
+        "contentComponentName": "allianzRecurringModulesUpdateDialogComponent"
+      }
+    }
+  ]
+}

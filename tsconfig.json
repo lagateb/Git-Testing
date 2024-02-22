@@ -1,0 +1,19 @@
+{
+    "extends": "../../../censhare-Client5/web/tsconfig.json",
+    "compilerOptions": {
+        "baseUrl": "./",
+        "paths": {
+            "@cs/*": ["./../../../censhare-Client5/web/src/ng1/*"],
+            "censhare": ["./../../../censhare-Client5/web/src/bootstrap.ts"],
+            "*": ["./../../../censhare-Client5/web/node_modules/*"]
+        }
+    },
+    "include": [
+        "**/*.ts",
+        "./../../../censhare-Client5/web/**/*.ts"
+    ],
+    "exclude": [
+        "**/java",
+        "**/translation"
+    ]
+}

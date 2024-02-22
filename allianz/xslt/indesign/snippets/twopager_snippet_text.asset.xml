@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset name="twopager_snippet_text" type="layout.snippet." application="default" domain="root." domain2="root.">
+  <asset_element idx="0" key="actual." isversioned="1" width_mm="182.999999999968" height_mm="52.1318634970659"/>
+  <asset_feature feature="censhare:uuid" value_string="3cbe1080-b6e0-11ea-8179-6ef66b679a66"/>
+  <storage_item element_idx="0" key="master" mimetype="application/vnd.adobe.indesign-idms" relpath="file:twopager_snippet_text.idms"/>
+</asset>

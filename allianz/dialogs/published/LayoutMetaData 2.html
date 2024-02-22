@@ -1,0 +1,13 @@
+<ul class="csAssetProperties__list">
+  <cs-metadata-row read property="asset.traits.allianzLayout.printNumber"></cs-metadata-row>
+  <!--<cs-metadata-row read property="asset.traits.allianzMedia.validFrom"></cs-metadata-row>
+  <cs-metadata-row read property="asset.traits.allianzMedia.validUntil"></cs-metadata-row>-->
+  <ul class="csAssetProperties__list" ng-if="asset.traits.allianzLayout.printNumberOld.value[0].value">
+    <li class="csAssetProperties__list__item">
+      <span class="csAssetProperties__list__label cs-color-38">{{asset.traits.allianzLayout.printNumberOld.label}}</span>
+      <div class="csAssetProperties__list__value cs-color-38">
+        <span>{{asset.traits.allianzLayout.printNumberOld.value[0].value}}</span>
+      </div>
+    </li>
+  </ul>
+</ul>

@@ -1,0 +1,227 @@
+<cs-dialog-group group-label="{{ 'csCommonTranslations.usageRights' | csTranslate }}">
+    <ul>
+        <!-- usage rights container -->
+        <cs-metadata-row property="asset.traits.usage_rights.usageRights" validate-selected="true">
+            <cs-select-new model="property.value[0].value" values="genOps" placeholder="{{ 'csCommonTranslations.usageRights' | csTranslate }}" options-generator="{ id:'feature_value/feature/censhare:usage-rights/value_key;domains=root.,root.', name: 'genOps', eager: true}"></cs-select-new>
+            <!-- description -->
+            <cs-metadata-row class="cs-meta-data-row-child" property="$ctrl.property.value[0].localizedDescription" cs-disabled="$ctrl.isChildrenDisabled($ctrl.property.value[0])"></cs-metadata-row>
+            <!-- use for products -->
+            <cs-metadata-row class="cs-meta-data-row-child" property="$ctrl.property.value[0].useForProducts" cs-disabled="$ctrl.isChildrenDisabled($ctrl.property.value[0])"></cs-metadata-row>
+            <!-- technical restriction -->
+            <cs-metadata-row class="cs-meta-data-row-child" property="$ctrl.property.value[0].technicalRestriction" cs-disabled="$ctrl.isChildrenDisabled($ctrl.property.value[0])"></cs-metadata-row>
+
+            <!-- validity date -->
+            <div class="cs-meta-data-row-child">
+                <li class="cs-meta-data-row csDialogForm__row">
+                    <div class="cs-meta-data-row__default ng-scope" >
+                        <div class="csDialogForm__cell-label">
+                            <span class="cs-label">{{ 'csCommonTranslations.validity' | csTranslate }}</span>
+                        </div>
+                        <div class="csDialogForm__cell">
+                            <div class="cs-grid-wrapper">
+                                <div class="cs-grid-cell cs-p-r-xs">
+                                    <cs-datepicker ng-class="{'cs-is-disabled' : $ctrl.property.value[0].unlimited.value[0].value || $ctrl.isChildrenDisabled($ctrl.property.value[0])}" ng-model="$ctrl.property.value[0].startDate.value[0].value" placeholder="{{ 'csCommonTranslations.startDate' | csTranslate }}" enable-reset></cs-datepicker>
+                                </div>
+                                <div class="cs-grid-cell">
+                                    <cs-datepicker ng-class="{'cs-is-disabled' : $ctrl.property.value[0].unlimited.value[0].value || $ctrl.isChildrenDisabled($ctrl.property.value[0])}" ng-model="$ctrl.property.value[0].endDate.value[0].value" placeholder="{{ 'csCommonTranslations.endDate' | csTranslate }}" enable-reset></cs-datepicker>
+                                </div>
+                                <div class="cs-grid-cell">
+                                    <cs-checkbox label="{{$ctrl.property.value[0].unlimited.label}}" ng-class="{'cs-is-disabled' : $ctrl.isChildrenDisabled($ctrl.property.value[0])}" ng-model="$ctrl.property.value[0].unlimited.value[0].value" cs-disabled="$ctrl.isChildrenDisabled($ctrl.property.value[0])">
+                                    </cs-checkbox>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </div>
+        </cs-metadata-row>
+    </ul>
+</cs-dialog-group>
+
+<cs-dialog-group group-label="{{ 'csCommonTranslations.channels' | csTranslate }}" ng-if="asset.traits.usage_rights.usageRights.value[0].value == 'channels'">
+    <ul>
+        <!-- channels -->
+        <cs-repeat property="asset.traits.usage_rights.usageRights.value[0].channel" force-enable-label="true">
+            <cs-select-new model="property.value" values="channels" placeholder="{{ 'csCommonTranslations.channels' | csTranslate }}" options-generator="::{id:'resource-key/censhare:value-list.channels/censhare:channel', name: 'channels', eager: true}"></cs-select-new>
+            <!-- channel selected -->
+            <div class="cs-meta-data-row-child" ng-if="property.value">
+                <li class="cs-meta-data-row csDialogForm__row" ng-if="isNotURSSet">
+                    <div class="csDialogForm__cell-label">
+                        <span class="cs-label">{{ 'csCommonTranslations.validity' | csTranslate }}</span>
+                    </div>
+                    <div class="csDialogForm__cell">
+                        <div class="cs-grid-wrapper">
+                            <div class="cs-grid-cell cs-p-r-xs">
+                                <cs-datepicker ng-class="{'cs-is-disabled' : property.unlimited.value[0].value}" ng-model="property.startDate.value[0].value" placeholder="{{ 'csCommonTranslations.startDate' | csTranslate }}" enable-reset></cs-datepicker>
+                            </div>
+                            <div class="cs-grid-cell">
+                                <cs-datepicker ng-class="{'cs-is-disabled' : property.unlimited.value[0].value}" ng-model="property.endDate.value[0].value" placeholder="{{ 'csCommonTranslations.endDate' | csTranslate }}" enable-reset></cs-datepicker>
+                            </div>
+                            <div class="cs-grid-cell">
+                                <cs-checkbox label="{{property.unlimited.label}}" ng-model="property.unlimited.value[0].value">
+                                </cs-checkbox>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <cs-metadata-row class="cs-meta-data-row-child" property="property.region"></cs-metadata-row>
+                <cs-metadata-row class="cs-meta-data-row-child" property="property.localizedDescription"></cs-metadata-row>
+            </div>
+        </cs-repeat>
+    </ul>
+</cs-dialog-group>
+
+<cs-dialog-group group-label="{{ 'csCommonTranslations.editing' | csTranslate }}" ng-if="asset.traits.usage_rights.usageRights.value[0].value">
+    <ul>
+        <cs-repeat property="asset.traits.usage_rights.usageRights.value[0].editing" disable-multivalues="true">
+            <cs-select-new model="property.value" values="genOps" placeholder="{{ 'csCommonTranslations.editing' | csTranslate }}" options-generator="{ id:'feature_value/feature/censhare:editing/value_key;domains=root.,root.', name: 'genOps', eager: true}"></cs-select-new>
+            <!-- editing value -->
+            <div class="cs-meta-data-row-child" ng-if="property.value">
+                <li class="cs-meta-data-row csDialogForm__row" ng-if="isNotURSSet">
+                    <div class="csDialogForm__cell-label">
+                        <span class="cs-label">{{ 'csCommonTranslations.validity' | csTranslate }}</span>
+                    </div>
+                    <div class="csDialogForm__cell">
+                        <div class="cs-grid-wrapper">
+                            <div class="cs-grid-cell cs-p-r-xs">
+                                <cs-datepicker ng-class="{'cs-is-disabled' : property.unlimited.value[0].value}" ng-model="property.startDate.value[0].value" placeholder="{{ 'csCommonTranslations.startDate' | csTranslate }}" enable-reset></cs-datepicker>
+                            </div>
+                            <div class="cs-grid-cell">
+                                <cs-datepicker ng-class="{'cs-is-disabled' : property.unlimited.value[0].value}" ng-model="property.endDate.value[0].value" placeholder="{{ 'csCommonTranslations.endDate' | csTranslate }}" enable-reset></cs-datepicker>
+                            </div>
+                            <div class="cs-grid-cell">
+                                <cs-checkbox label="{{property.unlimited.label}}" ng-model="property.unlimited.value[0].value">
+                                </cs-checkbox>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <cs-metadata-row class="cs-meta-data-row-child" property="property.region"></cs-metadata-row>
+                <cs-metadata-row class="cs-meta-data-row-child" property="property.localizedDescription"></cs-metadata-row>
+            </div>
+        </cs-repeat>
+    </ul>
+</cs-dialog-group>
+
+<cs-dialog-group group-label="{{ 'csCommonTranslations.selling' | csTranslate }}" ng-if="asset.traits.usage_rights.usageRights.value[0].value">
+    <ul>
+        <cs-repeat property="asset.traits.usage_rights.usageRights.value[0].selling" disable-multivalues="true">
+            <cs-select-new model="property.value" values="genOps" placeholder="{{ 'csCommonTranslations.selling' | csTranslate }}" options-generator="{ id:'feature_value/feature/censhare:selling/value_key;domains=root.,root.', name: 'genOps', eager: true}"></cs-select-new>
+            <!-- selling value -->
+            <div class="cs-meta-data-row-child" ng-if="property.value">
+                <li class="cs-meta-data-row csDialogForm__row" ng-if="isNotURSSet">
+                    <div class="csDialogForm__cell-label">
+                        <span class="cs-label">{{ 'csCommonTranslations.validity' | csTranslate }}</span>
+                    </div>
+                    <div class="csDialogForm__cell">
+                        <div class="cs-grid-wrapper">
+                            <div class="cs-grid-cell cs-p-r-xs">
+                                <cs-datepicker ng-class="{'cs-is-disabled' : property.unlimited.value[0].value}" ng-model="property.startDate.value[0].value" placeholder="{{ 'csCommonTranslations.startDate' | csTranslate }}" enable-reset></cs-datepicker>
+                            </div>
+                            <div class="cs-grid-cell">
+                                <cs-datepicker ng-class="{'cs-is-disabled' : property.unlimited.value[0].value}" ng-model="property.endDate.value[0].value" placeholder="{{ 'csCommonTranslations.endDate' | csTranslate }}" enable-reset></cs-datepicker>
+                            </div>
+                            <div class="cs-grid-cell">
+                                <cs-checkbox label="{{property.unlimited.label}}" ng-model="property.unlimited.value[0].value">
+                                </cs-checkbox>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <cs-metadata-row class="cs-meta-data-row-child" property="property.region"></cs-metadata-row>
+                <cs-metadata-row class="cs-meta-data-row-child" property="property.localizedDescription"></cs-metadata-row>
+            </div>
+        </cs-repeat>
+    </ul>
+</cs-dialog-group>
+
+
+<cs-dialog-group group-label="Weitergabe" ng-if="asset.traits.usage_rights.usageRights.value[0].value">
+    <ul>
+        <cs-repeat property="asset.traits.usage_rights.usageRights.value[0].transferBroker" disable-multivalues="true">
+            <cs-select-new model="property.value" values="genOps" placeholder="Makler" options-generator="{ id:'feature_value/feature/svtx:usage-rights.transfer.broker/value_key;domains=root.,root.', name: 'genOps', eager: true}"></cs-select-new>
+            <!-- selling value -->
+            <div class="cs-meta-data-row-child" ng-if="property.value">
+                <li class="cs-meta-data-row csDialogForm__row" ng-if="isNotURSSet">
+                    <div class="csDialogForm__cell-label">
+                        <span class="cs-label">{{ 'csCommonTranslations.validity' | csTranslate }}</span>
+                    </div>
+                    <div class="csDialogForm__cell">
+                        <div class="cs-grid-wrapper">
+                            <div class="cs-grid-cell cs-p-r-xs">
+                                <cs-datepicker ng-class="{'cs-is-disabled' : property.unlimited.value[0].value}" ng-model="property.startDate.value[0].value" placeholder="{{ 'csCommonTranslations.startDate' | csTranslate }}" enable-reset></cs-datepicker>
+                            </div>
+                            <div class="cs-grid-cell">
+                                <cs-datepicker ng-class="{'cs-is-disabled' : property.unlimited.value[0].value}" ng-model="property.endDate.value[0].value" placeholder="{{ 'csCommonTranslations.endDate' | csTranslate }}" enable-reset></cs-datepicker>
+                            </div>
+                            <div class="cs-grid-cell">
+                                <cs-checkbox label="{{property.unlimited.label}}" ng-model="property.unlimited.value[0].value">
+                                </cs-checkbox>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <cs-metadata-row class="cs-meta-data-row-child" property="property.region"></cs-metadata-row>
+                <cs-metadata-row class="cs-meta-data-row-child" property="property.localizedDescription"></cs-metadata-row>
+            </div>
+        </cs-repeat>
+    </ul>
+    <ul>
+        <cs-repeat property="asset.traits.usage_rights.usageRights.value[0].transferRepresentative" disable-multivalues="true">
+            <cs-select-new model="property.value" values="genOps" placeholder="Vertreter" options-generator="{ id:'feature_value/feature/svtx:usage-rights.transfer.representative/value_key;domains=root.,root.', name: 'genOps', eager: true}"></cs-select-new>
+            <!-- selling value -->
+            <div class="cs-meta-data-row-child" ng-if="property.value">
+                <li class="cs-meta-data-row csDialogForm__row" ng-if="isNotURSSet">
+                    <div class="csDialogForm__cell-label">
+                        <span class="cs-label">{{ 'csCommonTranslations.validity' | csTranslate }}</span>
+                    </div>
+                    <div class="csDialogForm__cell">
+                        <div class="cs-grid-wrapper">
+                            <div class="cs-grid-cell cs-p-r-xs">
+                                <cs-datepicker ng-class="{'cs-is-disabled' : property.unlimited.value[0].value}" ng-model="property.startDate.value[0].value" placeholder="{{ 'csCommonTranslations.startDate' | csTranslate }}" enable-reset></cs-datepicker>
+                            </div>
+                            <div class="cs-grid-cell">
+                                <cs-datepicker ng-class="{'cs-is-disabled' : property.unlimited.value[0].value}" ng-model="property.endDate.value[0].value" placeholder="{{ 'csCommonTranslations.endDate' | csTranslate }}" enable-reset></cs-datepicker>
+                            </div>
+                            <div class="cs-grid-cell">
+                                <cs-checkbox label="{{property.unlimited.label}}" ng-model="property.unlimited.value[0].value">
+                                </cs-checkbox>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <cs-metadata-row class="cs-meta-data-row-child" property="property.region"></cs-metadata-row>
+                <cs-metadata-row class="cs-meta-data-row-child" property="property.localizedDescription"></cs-metadata-row>
+            </div>
+        </cs-repeat>
+    </ul>
+</cs-dialog-group>
+
+<cs-dialog-group group-label="{{ 'csCommonTranslations.usageRightsSets' | csTranslate }}" ng-if="isNotURSSet"></cs-dialog-group>
+<ul ng-if="isNotURSSet">
+    <cs-repeat property="::asset.traits.usage_rights.set" force-enable-label="true">
+        <cs-asset-ref-picker base-asset-id="asset.traits.ids.id.value[0].value" ng-model="property.value" relation-type="user.usage-rights-set." asset-type="usage-rights-set." direction="child" flavor="'csAssetListItemRendererWidgetmxn_1rows'">
+        </cs-asset-ref-picker>
+        <div class="cs-meta-data-row-child" ng-if="property.value">
+            <li class="cs-meta-data-row csDialogForm__row">
+                <div class="csDialogForm__cell-label">
+                    <span class="cs-label">{{ 'csCommonTranslations.validity' | csTranslate }}</span>
+                </div>
+                <div class="csDialogForm__cell">
+                    <div class="cs-grid-wrapper">
+                        <div class="cs-grid-cell cs-p-r-xs">
+                            <cs-datepicker ng-class="{'cs-is-disabled' : property.unlimited.value[0].value}" ng-model="property.startDate.value[0].value" placeholder="{{ 'csCommonTranslations.startDate' | csTranslate }}" enable-reset></cs-datepicker>
+                        </div>
+                        <div class="cs-grid-cell">
+                            <cs-datepicker ng-class="{'cs-is-disabled' : property.unlimited.value[0].value}" ng-model="property.endDate.value[0].value" placeholder="{{ 'csCommonTranslations.endDate' | csTranslate }}" enable-reset></cs-datepicker>
+                        </div>
+                        <div class="cs-grid-cell">
+                            <cs-checkbox label="{{property.unlimited.label}}" ng-model="property.unlimited.value[0].value">
+                            </cs-checkbox>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </div>
+    </cs-repeat>
+</ul>

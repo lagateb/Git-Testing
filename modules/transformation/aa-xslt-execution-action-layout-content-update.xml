@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmd xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.censhare.com/xml/3.0.0/command.xsd" xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct" xmlns:xe="http://www.censhare.com/xml/3.0.0/xmleditor">
+  <xml-info title="${xslt-execution-action-title} - Content-Update durchführen" description="${xslt-execution-action-description} - Content-Update durchführen" knowledge-level="3" special-licence="true" feature-help="" localize="true" template-name="transformation.aa-xslt-execution-action" template-url="file:modules/transformation/aa-xslt-execution-action.xml">
+    <property-resources>
+      <base url="file:module"/>
+      <base url="file:../../common/global"/>
+    </property-resources>
+    <history>
+      <entry user="censhare Defaultuser" timestamp="2021-04-22T08:53:52.624Z" comment=""/>
+      <entry user="censhare Defaultuser" timestamp="2021-04-22T08:56:16.479Z" comment=""/>
+      <entry user="censhare Defaultuser" timestamp="2021-04-22T08:56:16.479Z" comment=""/>
+      <entry user="censhare Defaultuser" timestamp="2021-04-22T08:58:05.816Z" comment=""/>
+    </history>
+  </xml-info>
+  <cmd-info name="transformation.aa-xslt-execution-action-20210422-1055-0" type="server-action" enabled="true">
+    <error-log module="transformation"/>
+    <server-action>
+      <clients>
+        <client type="javaclient"/>
+        <client type="webclient"/>
+      </clients>
+      <filter multi-selection="false">
+        <asset corpus:starts-with-type="layout."/>
+      </filter>
+    </server-action>
+  </cmd-info>
+  <admin-info dialog-id="xslt-execution-action-config" dialog-url="file:config-dialog.xml"/>
+  <commands currentstep="0">
+    <command target="ScriptletManager" scriptlet="modules.lib.XSLTAssetAutomationScriptlet" method="serverActionSetup"/>
+    <command target="ScriptletManager" scriptlet="modules.lib.XSLTAssetAutomationScriptlet" method="finish"/>
+    <command target="ScriptletManager" scriptlet="modules.lib.XSLTAssetAutomationScriptlet" method="serverActionFinish"/>
+  </commands>
+  <!-- stylesheet-url="file:modules/.../test.xsl" transformation-key="resource-key" -->
+  <config perform-checkout="false" transformation-way="asset" perform-update="false" transformation-key="svtx:automation.indesign.replace.product"/>
+</cmd>

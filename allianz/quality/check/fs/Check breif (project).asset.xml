@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset name="Check breif (project)" type="module.completeness-check." application="default" domain="root.common-resources." domain2="root." description="No breif has been provided.">
+  <asset_feature feature="censhare:completeness-check.expression.xpath" value_string="exists(@description)"/>
+    <asset_feature feature="censhare:asset-type-filter" value_string="product1."/>
+  <asset_feature feature="censhare:description" language="de" value_string="Kein Briefing erstellt"/>
+  <asset_feature feature="censhare:description" language="en" value_string="No briefing provided."/>
+  <asset_feature feature="censhare:description" language="fr" value_string="Aucun briefing réalisé"/>
+  <asset_feature feature="censhare:description" language="it" value_string="Nessun briefing creato"/>
+  <asset_feature feature="censhare:module-asset-source" value_string="required/web/completeness-checks"/>
+  <asset_feature feature="censhare:name" language="de" value_string="Letter"/>
+  <asset_feature feature="censhare:name" language="en" value_string="Brief"/>
+  <asset_feature feature="censhare:name" language="fr" value_string="Letter"/>
+  <asset_feature feature="censhare:name" language="it" value_string="Lettera"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="censhare:completeness-check.project.brief"/>
+  <asset_feature feature="censhare:resource-meta">
+    <xmldata>
+      <selection needed="false"/>
+    </xmldata>
+  </asset_feature>
+</asset>

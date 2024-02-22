@@ -1,0 +1,76 @@
+{
+  "name": "allianzTargetGroupWizard",
+  "since": "2019.3.1",
+  "version": "1.0",
+  "filename": "target-group-wizard.module",
+  "implementations": [
+    {
+      "type": "csBehavior",
+      "name": "allianzTargetGroupWizardCreateBehavior",
+      "constructor": "allianzTargetGroupWizardCreateBehavior",
+      "properties": {
+        "title": "allianzTargetGroupWizard.title",
+        "icon": "cs-icon-group",
+        "priority": 600,
+        "filters": {
+          "context": "asset",
+          "csAssetTypePatterns": [
+            {
+              "assettype": "product.*",
+              "mimetype": "*"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "csWizard",
+      "name": "allianzTargetGroupWizard",
+      "properties": {
+        "title": "allianzTargetGroupWizard.title",
+        "application": "com.allianz.target.group.wizard",
+        "controllerName": "allianzTargetGroupWizardController",
+        "steps": [
+          "chooseTargetGroup",
+          "chooseMedia",
+          "chooseArticle"
+        ]
+      }
+    },
+    {
+      "type": "csWizardStep",
+      "name": "chooseTargetGroup",
+      "properties": {
+        "title": "allianzTargetGroupWizard.step1Title",
+        "componentName": "chooseTargetGroup"
+      }
+    },
+    {
+      "type": "csWizardStep",
+      "name": "chooseMedia",
+      "properties": {
+        "title": "allianzTargetGroupWizard.step2Title",
+        "extend": "csAssetChooserWizardStep",
+        "config": {
+          "required": true,
+          "singleSelect": false,
+          "filter": "{\"sortorders\":{\"order\": [{\"by\": \"censhare:asset.name\"}]},\"condition\":[{\"name\": \"censhare:asset.id\",\"op\": \"IN\",\"value\": \"{{$step[chooseTargetGroup].id}}\"}]}"
+        }
+      }
+    },
+    {
+      "type": "csWizardStep",
+      "name": "chooseArticle",
+      "properties": {
+        "title": "allianzTargetGroupWizard.step3Title",
+        "componentName": "chooseArticle"
+      }
+    }
+  ],
+  "java": {
+    "sourcepath": "src/java"
+  },
+  "translations": [
+    "translation"
+  ]
+}

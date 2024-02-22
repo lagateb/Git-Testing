@@ -1,0 +1,140 @@
+<div ng-if="asset.traits.web2print.boxFittingOption.value[0].value || asset.traits.display.description.value[0].value || asset.traits.type.category.value[0].value || asset.traits.content.language.value[0].value">
+    <h6 class="csAssetProperties__category_title">{{'csCommonTranslations.general' | csTranslate }}</h6>
+    <ul class="csAssetProperties__list">
+        <cs-metadata-row read property="asset.traits.display.description"></cs-metadata-row>
+        <cs-metadata-row read property="asset.traits.type.category"></cs-metadata-row>
+        <cs-metadata-row read property="asset.traits.content.language"></cs-metadata-row>
+        <cs-metadata-row read property="asset.traits.content.additionalLanguage"></cs-metadata-row>
+        <cs-metadata-row read property="asset.traits.allianz.localizedAltText"></cs-metadata-row>
+        <cs-metadata-row read property="asset.traits.web2print.boxFittingOption"></cs-metadata-row>
+    </ul>
+</div>
+
+<div ng-if="masterStorageItem">
+  <h6 class="csAssetProperties__category_title">{{'csCommonTranslations.file' | translate}}</h6>
+  <ul class="csAssetProperties__list">
+    <li read ng-if="mimetype" class="csAssetProperties__list__item">
+      <span class="csAssetProperties__list__label">{{'csCommonTranslations.mimeType' | translate}}</span>
+      <span class="csAssetProperties__list__value">{{mimetype}}</span>
+    </li>
+    <li read ng-if="fileLength" class="csAssetProperties__list__item">
+      <span class="csAssetProperties__list__label">{{'csCommonTranslations.fileSize' | translate}}</span>
+      <span class="csAssetProperties__list__value">{{fileLength | bytes}}</span>
+    </li>
+    <li read ng-if="widthPixel && heightPixel" class="csAssetProperties__list__item">
+      <span class="csAssetProperties__list__label">{{'csCommonTranslations.imageSize' | translate}}</span>
+      <span class="csAssetProperties__list__value">{{widthPixel | csNumberFormat:0}}x{{heightPixel | csNumberFormat:0}} {{'csAssetSnippets.pixel' | translate}}</span>
+    </li>
+    <li read ng-if="widthMm && heightMm" class="csAssetProperties__list__item">
+      <span class="csAssetProperties__list__label">{{'csCommonTranslations.imageSize' | translate}}</span>
+      <span class="csAssetProperties__list__value">{{widthMm | csNumberFormat:0}}x{{heightMm | csNumberFormat:0}} mm</span>
+    </li>
+    <li read ng-if="dpi" class="csAssetProperties__list__item">
+      <span class="csAssetProperties__list__label">{{'csCommonTranslations.resolution' | translate}}</span>
+      <span class="csAssetProperties__list__value">{{dpi}} {{'csCommonTranslations.dpi' | translate}}</span>
+    </li>
+    <li read ng-if="colorModel" class="csAssetProperties__list__item">
+      <span class="csAssetProperties__list__label">{{'csCommonTranslations.colorSpace' | translate}}</span>
+      <span class="csAssetProperties__list__value">{{'csAssetSnippets.colorspace.' + colorModel | translate}}</span>
+    </li>
+    <cs-metadata-row read property="asset.traits.images.imageOrientation"></cs-metadata-row>
+    <li read ng-if="pageCount" class="csAssetProperties__list__item">
+      <span class="csAssetProperties__list__label">{{pageCount == '1' ? ('csCommonTranslations.page' | translate) : ('csCommonTranslations.pages' | translate)}}</span>
+      <span class="csAssetProperties__list__value">{{pageCount}}</span>
+    </li>
+  </ul>
+</div>
+
+<div ng-if="asset.traits.exif.exif.exists">
+  <h6 class="csAssetProperties__category_title">EXIF</h6>
+  <ul class="csAssetProperties__list">
+    <cs-metadata-row read row-icon="cs-icon-exif-model" property="asset.traits.exif.exif.value[0].model"></cs-metadata-row>
+    <cs-metadata-row read row-icon="cs-icon-exif-iso" property="asset.traits.exif.exif.value[0].iso"></cs-metadata-row>
+    <cs-metadata-row read row-icon="cs-icon-exif-aperture" property="asset.traits.exif.exif.value[0].aperture"></cs-metadata-row>
+    <cs-metadata-row read row-icon="cs-icon-exif-focal-length" property="asset.traits.exif.exif.value[0].focalLength"></cs-metadata-row>
+    <cs-metadata-row read row-icon="cs-icon-exif-lens" property="asset.traits.exif.exif.value[0].lens"></cs-metadata-row>
+    <cs-metadata-row read row-icon="cs-icon-exif-metering-mode" property="asset.traits.exif.exif.value[0].meteringMode"></cs-metadata-row>
+    <cs-metadata-row read row-icon="cs-icon-exif-shutter-speed" property="asset.traits.exif.exif.value[0].shutterSpeed"></cs-metadata-row>
+    <cs-metadata-row read row-icon="cs-icon-exif-white-balance" property="asset.traits.exif.exif.value[0].whiteBalance"></cs-metadata-row>
+    <cs-metadata-row read row-icon="cs-icon-exif-exposure-compensation" property="asset.traits.exif.exif.value[0].exposureCompensation"></cs-metadata-row>
+    <cs-metadata-row read row-icon="cs-icon-exif-flash" property="asset.traits.exif.exif.value[0].flash"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.exif.exif.value[0].creationDate" filter="csDateFormat:'L'"></cs-metadata-row>
+  </ul>
+</div>
+
+<div ng-if="asset.traits.iptc.iptc.exists">
+  <h6 class="csAssetProperties__category_title">IPTC</h6>
+
+  <h6 class="csAssetProperties__title" ng-if="asset.traits.iptc.iptc.value[0].image.exists">{{asset.traits.iptc.iptc.value[0].image.label}}</h6>
+  <ul class="csAssetProperties__list" ng-if="asset.traits.iptc.iptc.value[0].image.exists">
+    <cs-metadata-row read property="asset.traits.iptc.iptc.value[0].image.value[0].countryCode"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.iptc.iptc.value[0].image.value[0].genre"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.iptc.iptc.value[0].image.value[0].region"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.iptc.iptc.value[0].image.value[0].country"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.iptc.iptc.value[0].image.value[0].city"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.iptc.iptc.value[0].image.value[0].sceneCode"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.iptc.iptc.value[0].image.value[0].additional"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.iptc.iptc.value[0].image.value[0].dateCreated" filter="csDateFormat:'L'"></cs-metadata-row>
+  </ul>
+
+  <h6 class="csAssetProperties__title" ng-if="asset.traits.iptc.iptc.value[0].status.exists">{{asset.traits.iptc.iptc.value[0].status.label}}</h6>
+  <ul class="csAssetProperties__list" ng-if="asset.traits.iptc.iptc.value[0].status.exists">
+    <cs-metadata-row read property="asset.traits.iptc.iptc.value[0].status.value[0].credit"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.iptc.iptc.value[0].status.value[0].source"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.iptc.iptc.value[0].status.value[0].jobId"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.iptc.iptc.value[0].status.value[0].instructions"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.iptc.iptc.value[0].status.value[0].usageTerms"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.iptc.iptc.value[0].status.value[0].title"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.iptc.iptc.value[0].status.value[0].copyrightNotice"></cs-metadata-row>
+  </ul>
+
+  <h6 class="csAssetProperties__title" ng-if="asset.traits.iptc.iptc.value[0].contact.exists">{{asset.traits.iptc.iptc.value[0].contact.label}}</h6>
+  <ul class="csAssetProperties__list" ng-if="asset.traits.iptc.iptc.value[0].contact.exists">
+    <cs-metadata-row read property="asset.traits.iptc.iptc.value[0].contact.value[0].zipCode"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.iptc.iptc.value[0].contact.value[0].street"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.iptc.iptc.value[0].contact.value[0].creator"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.iptc.iptc.value[0].contact.value[0].function"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.iptc.iptc.value[0].contact.value[0].uriTel"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.iptc.iptc.value[0].contact.value[0].uriMailTo"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.iptc.iptc.value[0].contact.value[0].region"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.iptc.iptc.value[0].contact.value[0].city"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.iptc.iptc.value[0].contact.value[0].country"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.iptc.iptc.value[0].category"></cs-metadata-row>
+  </ul>
+
+  <h6 class="csAssetProperties__title" ng-if="asset.traits.iptc.iptc.value[0].content.exists">{{asset.traits.iptc.iptc.value[0].content.label}}</h6>
+  <ul class="csAssetProperties__list" ng-if="asset.traits.iptc.iptc.value[0].content.exists">
+    <cs-metadata-row read property="asset.traits.iptc.iptc.value[0].content.value[0].subjectCode"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.iptc.iptc.value[0].content.value[0].description"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.iptc.iptc.value[0].content.value[0].keywords"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.iptc.iptc.value[0].content.value[0].headline"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.iptc.iptc.value[0].content.value[0].writerEditor"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.iptc.iptc.value[0].subCategory"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.iptc.iptc.value[0].fixtureId"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.iptc.iptc.value[0].urgency"></cs-metadata-row>
+  </ul>
+</div>
+
+<div ng-if="asset.traits.xmp.xmp.exists">
+  <h6 class="csAssetProperties__category_title">XMP</h6>
+  <ul class="csAssetProperties__list">
+    <cs-metadata-row read property="asset.traits.xmp.xmp.value[0].colorMode"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.xmp.xmp.value[0].copyrightFlag"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.xmp.xmp.value[0].creatorTool"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.xmp.xmp.value[0].iccProfile"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.xmp.xmp.value[0].modifyDate" filter="csDateFormat:'L'"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.xmp.xmp.value[0].party"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.xmp.xmp.value[0].rating"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.xmp.xmp.value[0].self"></cs-metadata-row>
+    <cs-metadata-row read property="asset.traits.xmp.xmp.value[0].timestamp" filter="csDateFormat:'L'"></cs-metadata-row>
+  </ul>
+</div>
+
+<cs-empty-state ng-if="!asset.traits.web2print.boxFittingOption.exists &&
+        !masterStorageItem &&
+        !asset.traits.exif.exif.exists &&
+        !asset.traits.iptc.iptc.exists &&
+        !asset.traits.xmp.xmp.exists &&
+        !asset.traits.display.description.value[0].value" cs-empty-state-icon="'cs-icon-tag-alt'">
+  <span class="cs-state-headline">{{'csCommonTranslations.noMetadata' | csTranslate }}</span>
+</cs-empty-state>

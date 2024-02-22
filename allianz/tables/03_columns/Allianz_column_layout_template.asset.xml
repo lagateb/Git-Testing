@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset name="Layout Vorlage (asset)" type="module.table.column." application="default" domain="root.common-resources." domain2="root.">
+  <asset_feature feature="censhare:macro" value_string2="censhare:resource-key" sorting="1" value_asset_key_ref="allianz:macro.asset.layout-template"/>
+  <asset_feature feature="censhare:name" language="de" value_string="Layout Vorlage"/>
+  <asset_feature feature="censhare:name" language="en" value_string="Layout template"/>
+  <asset_feature feature="censhare:name" language="fr" value_string="Layout template"/>
+  <asset_feature feature="censhare:name" language="it" value_string="Layout template"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="allianz:table-column.asset-layout-template"/>
+  <asset_feature feature="censhare:table.column.align-horizontal" value_key="left"/>
+  <asset_feature feature="censhare:table.column.key" value_string="assetLayoutTemplate"/>
+  <asset_feature feature="censhare:table.column.template" value_string="&lt;span ng-repeat=&quot;value in cell.data.source&quot;&gt;&lt;cs-open-asset-page asset-id=&quot;{{value.id}}&quot; class=&quot;cs-is-subtle&quot;&gt;{{value.name}}{{$first || $last ? &apos;&apos; : &apos;, &apos;}}&lt;/cs-open-asset-page&gt;&lt;/span&gt;"/>
+  <asset_feature feature="censhare:table.column.type" value_key="template"/>
+  <asset_feature feature="censhare:table.column.width-max-pixels" value_long="300"/>
+  <asset_feature feature="censhare:table.column.width-min-pixels" value_long="100"/>
+  <asset_feature feature="censhare:table.column.width-pixels" value_long="200"/>
+</asset>

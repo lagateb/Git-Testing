@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset name="svtx:metadata.action.download.storage_item" type="module.dialog." application="default" domain="root." domain2="root.">
+  <asset_element idx="0" key="actual." isversioned="1"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="0"/>
+  <asset_feature feature="censhare:resource-key" value_string="svtx:metadata.action.download.storage_item"/>
+  <asset_feature feature="censhare:resource-usage" value_key="censhare:meta-data-view-definition"/>
+  <child_asset_rel child_asset_ref_file="svtx_metadata.action.download.storage_item Controller.asset.xml" key="user.javascript-controller."/>
+  <storage_item element_idx="0" key="master" mimetype="text/html" relpath="file:svtx_metadata.action.download.storage_item.html"/>
+</asset>

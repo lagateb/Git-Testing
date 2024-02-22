@@ -1,0 +1,36 @@
+<div class="csAssetListItemRendererWidget2xn cs-add-list-hor-widget-padding cs-widget-content-padding-top" ng-repeat="childMedia in medias">
+    <ul class="csAssetListItem">
+        <li class="csAssetListItem__preview" style="width:2rem;height:3rem;background:transparent;">
+                <i class="cs-icon cs-icon-circle-ok cs-iconsize-400" style="color:green;line-height:1;" ng-if="!childMedia.refreshing && childMedia.state=='ok'"></i>
+                <i class="cs-icon cs-icon-warning-alt cs-iconsize-400" style="color:gold;line-height:1;" ng-if="!childMedia.refreshing && childMedia.state!='ok'"></i>
+                <i class="cs-icon cs-icon-content-update cs-iconsize-600" style="color:darkred;line-height:1;" ng-if="childMedia.refreshing"></i>
+        </li>
+        <li class="csAssetListItem__title">
+            {{childMedia.name}}
+        </li>
+        <li class="csAssetListItem__value">
+            <span ng-if="childMedia.state =='new-template'">
+                Template ersetzt am {{childMedia.template.modificationdate}} &nbsp;
+            </span>
+            <span ng-if="childMedia.state =='updated-template'">
+                Template zuletzt geändert am {{childMedia.template.modificationdate}} &nbsp;
+            </span>
+
+            <span ng-if="childMedia.refreshing">
+                wird aktualisiert...
+                <cs-busy-spinner class="cs-has-light-bg"></cs-busy-spinner>
+            </span>
+
+            <i class="cs-icon cs-icon-circle-info cs-iconsize-200" ng-if="childMedia.state !='ok' && childMedia.template.history" ng-click="toggleHistory(childMedia)"></i>
+
+        </li>
+        <li class="csAssetListItem__value" ng-if="childMedia.showHistory" ng-repeat="historyEntry in childMedia.history.historyEntry" style="padding-left: 3rem;">
+            <strong>{{historyEntry.date}}</strong>: <em>{{historyEntry.note}}</em>
+        </li>
+
+        <li class="csAssetListItem__controls" ng-if="childMedia.state !='ok'">
+            <button class="cs-button cs-button-cta cs-is-small" ng-disabled="childMedia.refreshing" role="button" ng-click="updateMedia(childMedia)">Aktualisieren</button>
+        </li>
+
+    </ul>
+</div>

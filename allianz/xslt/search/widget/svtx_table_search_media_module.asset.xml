@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Sucht für ein Medium die zugehörigen Module. Also dessen Artikel Asset (Oder machen wir direkt Text Asset) -->
+<asset name="svtx_table_search_media_module" type="module.search.transformation." application="texteditor" domain="root." domain2="root.">
+  <asset_element idx="0" key="actual." isversioned="1"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="svtx:table_search_media_module"/>
+  <asset_feature feature="censhare:resource-meta">
+    <xmldata>
+      <selection needed="true"/>
+    </xmldata>
+  </asset_feature>
+  <storage_item element_idx="0" key="master" mimetype="application/xslt+xml" relpath="file:svtx_table_search_media_module.xsl"/>
+</asset>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset name="Allianz: Standard" type="module.workspace." application="default" domain="root." domain2="root.">
+  <asset_element idx="0" key="actual." isversioned="1"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="svtx:workspace.template.allianz.standard"/>
+  <asset_feature feature="censhare:resource-usage" value_key="censhare:workspace-template"/>
+  <parent_asset_rel parent_asset_ref_resource_key="censhare:workspace.template.standard" key="variant.resource.replace."/>
+  <storage_item element_idx="0" key="master" mimetype="text/xml" relpath="file:svtx_workspace.template.allianz.standard.xml"/>
+</asset>

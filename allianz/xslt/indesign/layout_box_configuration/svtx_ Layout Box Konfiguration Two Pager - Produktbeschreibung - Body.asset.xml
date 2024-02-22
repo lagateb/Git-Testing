@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset id_org="15262" name="svtx: Layout Box Konfiguration Two Pager - Produktbeschreibung - Body" type="module.layout-box." application="default" domain="root." domain2="root.">
+  <asset_feature feature="censhare:layout-box.asset-query" value_string2="censhare:resource-key" value_asset_key_ref="svtx:xsl.indesign.search.main-content.text-s"/>
+  <asset_feature feature="censhare:layout-box.content-editable" value_long="1"/>
+  <asset_feature feature="censhare:layout-box.content-transformation" value_string2="censhare:resource-key" value_asset_key_ref="svtx:xsl.indesign.twopager.produktbeschreibung.body.text.icml"/>
+  <asset_feature feature="censhare:layout-box.placement-changeable" value_long="1"/>
+  <asset_feature feature="censhare:layout-box.type" value_key="text"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="svtx:layout.box.configuration.twopager.produktbeschreibung.body"/>
+  <asset_feature feature="censhare:resource-meta">
+    <xmldata>
+      <selection needed="false"/>
+    </xmldata>
+  </asset_feature>
+</asset>
+

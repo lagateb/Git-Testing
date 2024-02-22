@@ -1,0 +1,8 @@
+.csWizard {
+  .svtxPowerpointSplitWizard__container {
+    margin: 0 auto;
+    max-width: 80rem;
+    // 5 rem because we have only a single select in a big widget. So a little bit more space above looks better
+    padding: 5rem 1.5rem 2rem;
+  }
+}

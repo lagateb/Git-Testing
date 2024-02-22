@@ -1,0 +1,39 @@
+<div class="csWidget__header_title cs-widget-header-title"
+     ng-if="!$ctrl.titleIsHidden && !$ctrl.showMultiSelectedActions"
+     data-cs-grid-handler>
+
+  <div class="csWidget__sign"
+       ng-if="$ctrl.icon"
+       data-cs-grid-handler>
+
+    <i class="cs-icon {{$ctrl.icon }}"></i>
+  </div>
+
+  <div class="csWidget__label"
+       data-cs-grid-handler
+       cs-translate="{ title: $ctrl.title }">
+
+    <span ng-show="!$ctrl.title || $ctrl.title === 'null'" cs-translate="'csWidgetBorder.quickSearch'"></span>
+    <span ng-show="$ctrl.title && $ctrl.title !== 'null'" cs-translate="$ctrl.title"></span>
+  </div>
+
+  <div class="csWidget__count"
+       ng-if="$ctrl.counter > 0">
+
+    {{ $ctrl.counter }}
+  </div>
+</div>
+<div class="csWidget__header_title csNoHoverTitle" ng-if="$ctrl.showMultiSelectedActions">
+  <div class="csWidget__label">
+        <span class="csWidget__noHeader cs-count-selected">
+            {{ $ctrl.showSelectedCount }} <i
+            cs-translate="{ title: 'csRelatedAssetWidget.relationCancel' }"
+            class="cs-icon cs-icon-close-cross cs-iconsize-400 cs-selection-remove"></i>
+        </span>
+  </div>
+</div>
+<div class="csWidget__ctrl" ng-class="{'csNoHover': $ctrl.showMultiSelectedActions}">
+  <cs-action-view ng-if="$ctrl.actions && !$ctrl.showMultiSelectedActions" action="$ctrl.actions" view="$ctrl.actionView"></cs-action-view>
+  <cs-action-view ng-if="$ctrl.multiActionsGroup && $ctrl.showMultiSelectedActions" action="$ctrl.multiActionsGroup"
+                  view="$ctrl.actionView"></cs-action-view>
+</div>

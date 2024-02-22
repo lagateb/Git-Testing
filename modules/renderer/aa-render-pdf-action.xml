@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmd xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.censhare.com/xml/3.0.0/command.xsd" xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct" xmlns:xe="http://www.censhare.com/xml/3.0.0/xmleditor">
+  <xml-info title="${reg-title-aa-render-pdf-action}" description="${reg-description-aa-render-pdf-action}" knowledge-level="2" special-licence="true" feature-help="" version="2" localize="true">
+    <property-resources>
+      <base url="file:module"/>
+      <base url="file:../../common/global"/>
+    </property-resources>
+    <history>
+      <entry user="[Savotex] Köppe, Maximilian" timestamp="2019-12-11T09:27:56.326Z" comment=""/>
+      <entry user="[Savotex] Massenberg, Nico" timestamp="2019-12-18T16:40:48.477Z" comment=""/>
+    </history>
+  </xml-info>
+  <cmd-info name="renderer.aa-render-pdf-action" type="server-action" enabled="true">
+    <error-log module="Renderer" log-cancel="false"/>
+    <server-action>
+      <clients>
+        <client type="javaclient"/>
+        <client type="webclient"/>
+      </clients>
+      <filter multi-selection="true">
+        <asset application="indesign" has_master_file="1" storage_state="0"/>
+        <asset application="xpress" has_master_file="1" storage_state="0"/>
+      </filter>
+    </server-action>
+  </cmd-info>
+  <admin-info dialog-id="aa-render-pdf-action-config" dialog-url="file:config-dialog.xml"/>
+  <commands currentstep="0">
+    <command target="CommandManager" method="insert" template="renderer.render-dialogs-common"/>
+    <command target="CommandManager" method="insert" template="renderer.render-pdf-include"/>
+    <command target="ScriptletManager" scriptlet="modules.renderer.AARenderPDF" method="checkElementSelection"/>
+    <command target="client" method="showdialog" key="pdf-profile-selection-export"/>
+    <command target="ScriptletManager" scriptlet="modules.renderer.AARenderPDF" method="serverActionSetup"/>
+    <command target="ScriptletManager" scriptlet="modules.renderer.AARenderPDF" method="finish"/>
+    <command target="ScriptletManager" scriptlet="modules.renderer.AARenderPDF" method="serverActionFinish"/>
+  </commands>
+  <config perform-checkout="false" subcmd-sync-timeout="1000" subcmd-max-subcmds="5" subcmd-limit-wait="60"/>
+  <!-- profile-selection dialog for 2.6.x clients -->
+  <item key="profile-selection" align="down">
+    <item widgettype="group" caption="${reg-title-render-pdf}" captionbold="true" align="down">
+      <item widgettype="popupmenu2" label="${generate-setting}" source="param@setting" labelwidth="200" width="150" optionssource="param.setting" optionssourcetype="refpath" optionslabelsource="@name" optionsvaluesource="@id"/>
+    </item>
+    <item widgettype="checkbox" caption="${recreate}" source="form@recreate"/>
+  </item>
+  <form visible="false" use-selection="false" restore-old-storages="false" check-missing-fonts="true" check-missing-links="true">
+    <!--restore-storage key=""/-->
+  </form>
+</cmd>

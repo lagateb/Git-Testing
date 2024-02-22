@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset id_org="11493" name="Promotion creation date (MSP)" type="module.table.column." application="default" domain="root." domain2="root.">
+  <asset_feature feature="censhare:macro" value_string2="censhare:resource-key" sorting="1" value_asset_key_ref="msp:macro.promotion.creationDate"/>
+  <asset_feature feature="censhare:name" language="de" value_string="Erstellungsdatum"/>
+  <asset_feature feature="censhare:name" language="en" value_string="Created at"/>
+  <asset_feature feature="censhare:name" language="fr" value_string="Créer un rendez-vous"/>
+  <asset_feature feature="censhare:name" language="it" value_string="Creare la data"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="0"/>
+  <asset_feature feature="censhare:resource-key" value_string="msp:table-column.promotion-creation-date"/>
+  <asset_feature feature="censhare:table.column.align-horizontal" value_key="left"/>
+  <asset_feature feature="censhare:table.column.key" value_string="promotionCreationDate"/>
+  <asset_feature feature="censhare:table.column.sort-key" value_string="msp:alz-mmc.promotion-creation-date"/>
+  <asset_feature feature="censhare:table.column.template" value_string="&lt;span&gt;{{cell.value}}&lt;/span&gt;"/>
+  <asset_feature feature="censhare:table.column.type" value_key="string"/>
+  <asset_feature feature="censhare:table.column.width-max-pixels" value_long="450"/>
+  <asset_feature feature="censhare:table.column.width-min-pixels" value_long="150"/>
+  <asset_feature feature="censhare:table.column.width-pixels" value_long="200"/>
+</asset>

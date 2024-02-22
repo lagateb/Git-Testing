@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset id_org="46338" name="Sichtprüfung Bildeinsatz" type="module.feature-item." application="default" domain="root." domain2="root.">
+  <asset_feature feature="censhare:asset-type-filter" value_string="layout."/>
+  <asset_feature feature="censhare:resource-key" value_string="svtx:approval-media-imageusage"/>
+  <asset_feature feature="censhare:resource-role" value_string="admin"/>
+  <asset_feature feature="censhare:resource-role" value_string="agency_write"/>
+  <asset_feature feature="censhare:resource-role" value_string="marketing_manager"/>
+</asset>

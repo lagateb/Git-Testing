@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset name="Check EAN (product)" type="module.completeness-check." application="default" domain="root.common-resources." domain2="root." description="No EAN is defined. Please define it in the product property widget.">
+  <asset_feature feature="censhare:asset-type-filter" value_string="product1."/>
+  <asset_feature feature="censhare:completeness-check.expression.xpath" value_string="exists(asset_feature[@feature=&apos;censhare:product.ean&apos;])"/>
+  <asset_feature feature="censhare:description" language="de" value_string="EAN ist nicht definiert. Bitte im Produkt-Eigenschaften-Widget definieren."/>
+  <asset_feature feature="censhare:description" language="en" value_string="EAN not defined. Please add it in the Product property widget."/>
+  <asset_feature feature="censhare:description" language="fr" value_string="EAN non défini. Définir dans le widget des métadonnées du produit."/>
+  <asset_feature feature="censhare:description" language="it" value_string="EAN non è definito. Definire nel widget dei metadati del prodotto."/>
+  <asset_feature feature="censhare:module-asset-source" value_string="required/web/completeness-checks"/>
+  <asset_feature feature="censhare:name" language="de" value_string="EAN"/>
+  <asset_feature feature="censhare:name" language="en" value_string="EAN"/>
+  <asset_feature feature="censhare:name" language="fr" value_string="EAN"/>
+  <asset_feature feature="censhare:name" language="it" value_string="EAN"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="censhare:completeness-check.product.ean"/>
+  <asset_feature feature="censhare:resource-meta">
+    <xmldata>
+      <selection needed="false"/>
+    </xmldata>
+  </asset_feature>
+</asset>

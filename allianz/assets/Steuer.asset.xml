@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset name="Steuer" type="module.feature-item." application="default" domain="root.common-resources." domain2="root.">
+  <asset_feature feature="censhare:resource-key" value_string="svtx:approval-type.steuer"/>
+</asset>

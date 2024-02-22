@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset name="UI Definition - Standard Article / Article Stamparea v3" type="module.content.ui-definitions."
+       application="default" domain="root." domain2="root." has_master_file="1"
+       description="censhare Standard Content Structure 3.0">
+    <asset_element idx="0" key="actual." isversioned="1"/>
+    <asset_feature feature="censhare:resource-key"
+                   value_string="svtx:content-editor-allianz-article-stamparea-ui-definitions-v3"/>
+    <!--
+  <asset_feature feature="censhare:uuid" value_string="838cec1a-525a-425f-a459-da6c9d6cb996"/>
+  -->
+    <storage_item element_idx="0" key="master" mimetype="text/xml"
+                  relpath="file:UI Definition - Standard Allianz _ Stamparea Content v3.xml"/>
+</asset>

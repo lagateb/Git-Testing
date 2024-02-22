@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmd xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.censhare.com/xml/3.0.0/command.xsd" xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct" xmlns:xe="http://www.censhare.com/xml/3.0.0/xmleditor">
+  <xml-info title="CS-Export Promotion Deeplink" description="${content-export2-description}" knowledge-level="3" special-licence="true" feature-help="" localize="true" template-name="content_export2.aa-content-export2" template-url="file:modules/content_export2/aa-content-export2.xml">
+    <property-resources>
+      <base url="file:module"/>
+      <base url="file:../../common/global"/>
+    </property-resources>
+    <history>
+      <entry user="[MSP] Gerdes, Uwe" timestamp="2021-11-09T10:38:23.802Z" comment=""/>
+      <entry user="[MSP] Gerdes, Uwe" timestamp="2021-11-09T15:49:16.641Z" comment=""/>
+      <entry user="[MSP] Gerdes, Uwe" timestamp="2021-11-09T15:49:35.656Z" comment=""/>
+      <entry user="[MSP] Gerdes, Uwe" timestamp="2021-11-09T15:53:20.354Z" comment=""/>
+      <entry user="[MSP] Gerdes, Uwe" timestamp="2021-11-09T16:00:50.318Z" comment=""/>
+      <entry user="[MSP] Gerdes, Uwe" timestamp="2021-11-10T07:56:04.363Z" comment=""/>
+    </history>
+  </xml-info>
+  <cmd-info name="content_export2.aa-content-export2-20211109-1143-0" type="auto-execute" enabled="true" mode="loop" ignore-error="true">
+    <error-log module="Content Export"/>
+  </cmd-info>
+  <admin-info dialog-id="content-export2-config" dialog-url="file:config-dialog.xml"/>
+  <commands currentstep="0">
+    <command target="ScriptletManager" scriptlet="modules.content_export2.AAContentExport2" method="register"/>
+    <command target="EventManager" method="waitevent" key="listen-events"/>
+    <command target="ScriptletManager" scriptlet="modules.content_export2.AAContentExport2" method="setup"/>
+    <if condition="=$$.config@export = &apos;download&apos;">
+      <command target="client" method="download" key="download" select_folder="false" caption="Save"/>
+    </if>
+    <command target="ScriptletManager" scriptlet="modules.content_export2.AAContentExport2" method="finish"/>
+  </commands>
+  <config perform-checkout="false" export="directory" transformation-way="asset" export-filesystem="interfaces" export-dir-relpath="file:CENSHARE_TO_MMC/promotion_deeplink/in/" perform-update="false" transformation-key="msp:contentexport2-cs-export-promotion-deeplink">
+    <!-- filter/query assets -->
+    <asset-filter>
+      <query type="asset" limit="50" xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct">
+        <condition name="censhare:asset.currversion" value="0"/>
+        <condition name="censhare:asset.deletion" value="0"/>
+        <condition name="censhare:asset.state" value="0"/>
+        <condition name="censhare:asset.type" value="promotion.*" partial-load-tree="true" expanded-nodes="promotion."/>
+      </query>
+    </asset-filter>
+    <asset-tree/>
+    <!-- update/checkin assets -->
+    <asset-update domain="root." domain2="root."/>
+  </config>
+  <listen-events xml-queue-size="1" event-count-limit="10" retries-on-error="0" fork-command="sync" fork-sync-timeout="3500" persistent-events="true" ignore-remote-events="true">
+    <event target="CustomAssetEvent" param2="0" method="mmc-import-finished"/>
+  </listen-events>
+  <process-events>
+    <processing in-batches="false"/>
+  </process-events>
+</cmd>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset name="svtx:faq-media-metadata.template Controller" type="module.script." application="texteditor" domain="root." domain2="root.">
+  <asset_element idx="0" key="actual." isversioned="1"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="0"/>
+  <asset_feature feature="censhare:resource-key" value_string="svtx:faq-media-metadata.template.controller"/>
+  <asset_feature feature="censhare:resource-usage" value_key="censhare:script-controller"/>
+  <parent_asset_rel parent_asset_ref_file="svtx_faq-media-metadata.template.asset.xml" key="user.javascript-controller."/>
+    <storage_item element_idx="0" key="master" mimetype="application/javascript" relpath="file:svtx_faq-media-metadata.template Controller.js"/>
+</asset>

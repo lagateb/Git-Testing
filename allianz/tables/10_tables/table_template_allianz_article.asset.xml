@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset id_org="12401" name="table_template_allianz_article" type="module.table." application="default" domain="root." domain2="root.">
+    <asset_feature feature="censhare:name" language="de" value_string="Tabellen Vorlage Allianz Artikel Texte"/>
+    <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+    <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+    <asset_feature feature="censhare:resource-key" value_string="svtx:table_template_allianz_article"/>
+    <asset_feature feature="censhare:resource-meta">
+        <xmldata>
+            <selection needed="false" />
+        </xmldata>
+    </asset_feature>
+    <asset_feature feature="censhare:table.column" value_string2="censhare:resource-key" sorting="1" value_asset_key_ref="svtx:allianz-table-column.text.asset.item"/>
+    <asset_feature feature="censhare:table.column" value_string2="censhare:resource-key" sorting="2" value_asset_key_ref="censhare:table-column.asset-type"/>
+    <asset_feature feature="censhare:table.column" value_string2="censhare:resource-key" sorting="3" value_asset_key_ref="censhare:table-column.asset.wf-step.icon"/>
+    <asset_feature feature="censhare:table.column" value_string2="censhare:resource-key" sorting="4" value_asset_key_ref="svtx:allianz-table-column.variant.speech"/>
+    <asset_feature feature="censhare:table.column" value_string2="censhare:resource-key" sorting="5" value_asset_key_ref="allianz:table-column.asset.targetgroup"/>
+
+
+</asset>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmd xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.censhare.com/xml/3.0.0/command.xsd" xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct" xmlns:xe="http://www.censhare.com/xml/3.0.0/xmleditor">
+  <xml-info title="${xslt-execution-title} - Picture IPTC Description to Picture Alt Text - Deprecated" description="${xslt-execution-description}" knowledge-level="3" special-licence="true" feature-help="" localize="true" template-name="transformation.aa-xslt-execution" template-url="file:modules/transformation/aa-xslt-execution.xml">
+    <property-resources>
+      <base url="file:module"/>
+      <base url="file:../../common/global"/>
+    </property-resources>
+    <history>
+      <entry user="censhare Defaultuser" timestamp="2022-02-04T18:42:28.841Z" comment=""/>
+      <entry user="censhare Defaultuser" timestamp="2022-02-04T18:45:06.647Z" comment=""/>
+      <entry user="censhare Defaultuser" timestamp="2022-02-04T18:45:30.071Z" comment=""/>
+      <entry user="censhare Defaultuser" timestamp="2022-02-05T06:18:28.461Z" comment=""/>
+      <entry user="censhare Defaultuser" timestamp="2022-02-05T06:19:27.995Z" comment=""/>
+      <entry user="censhare Defaultuser" timestamp="2022-02-05T06:20:59.957Z" comment=""/>
+      <entry user="censhare Defaultuser" timestamp="2022-02-07T07:51:39.186Z" comment=""/>
+    </history>
+  </xml-info>
+  <cmd-info name="transformation.aa-xslt-execution-20220205-0719-0" type="auto-execute" enabled="false" mode="loop" ignore-error="true">
+    <error-log module="transformation"/>
+  </cmd-info>
+  <admin-info dialog-id="xslt-execution-config" dialog-url="file:config-dialog.xml"/>
+  <listen-events xml-queue-size="50" fork-command="false" persistent-events="false" event-count-limit="50" retries-on-error="0">
+    <event target="AssetEvent" param2="0" method="checkin"/>
+    <event target="AssetEvent" param2="0" method="new-master-file"/>
+  </listen-events>
+  <commands currentstep="0">
+    <command target="ScriptletManager" scriptlet="modules.lib.XSLTAssetAutomationScriptlet" method="register"/>
+    <command target="EventManager" method="waitevent" key="listen-events"/>
+    <command target="ScriptletManager" scriptlet="modules.lib.XSLTAssetAutomationScriptlet" method="setup"/>
+    <command target="ScriptletManager" scriptlet="modules.lib.XSLTAssetAutomationScriptlet" method="finish"/>
+  </commands>
+  <!-- stylesheet-url="file:modules/.../test.xsl" transformation-key="resource-key" -->
+  <config perform-checkout="false" transformation-way="asset" perform-update="false" transformation-key="svtx:translate.PictureIPTCDescritionToGermanAltText">
+    <!-- filter/query assets -->
+    <asset-filter>
+      <query type="asset" limit="50" xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct">
+        <condition name="censhare:asset.currversion" value="0"/>
+        <condition name="censhare:asset.deletion" value="0"/>
+        <condition name="censhare:asset.state" value="0"/>
+        <condition name="censhare:asset.type" value="picture."/>
+      </query>
+    </asset-filter>
+    <asset-tree/>
+    <!-- update/checkin assets -->
+    <asset-update domain="root." domain2="root."/>
+  </config>
+  <process-events>
+    <processing in-batches="false"/>
+  </process-events>
+</cmd>

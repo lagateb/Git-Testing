@@ -1,0 +1,87 @@
+{
+  "cs:asset.type": [
+    "picture.",
+    "picture.icon."
+  ],
+  "title": "image",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "cs:feature.key": "censhare:asset.name"
+    },
+    "type": {
+      "type": "string",
+      "cs:feature.key": "censhare:asset.type"
+    },
+    "id": {
+      "type": "integer",
+      "cs:feature.key": "censhare:asset.id"
+    },
+    "dynamicImages": {
+      "cs:media": {
+        "1-1": {
+          "aspectRatio": "1:1",
+          "cropKey": "1-1",
+          "type": "dynamic_image",
+          "width": 448
+        },
+        "3-4": {
+          "aspectRatio": "3:4",
+          "cropKey": "3-4",
+          "type": "dynamic_image",
+          "width": 448
+        },
+        "4-3": {
+          "aspectRatio": "4:3",
+          "cropKey": "4-3",
+          "type": "dynamic_image",
+          "width": 448
+        },
+        "16-9": {
+          "aspectRatio": "16:9",
+          "cropKey": "16-9",
+          "type": "dynamic_image",
+          "width": 448
+        },
+        "flexible": {
+          "aspectRatio": "flexible",
+          "cropKey": "flexible",
+          "type": "dynamic_image",
+          "width": 448
+        }
+      },
+      "type": "string"
+    },
+    "master": {
+      "properties": {
+        "link": {
+          "cs:link": "link",
+          "cs:storage.item": "master",
+          "type": "string"
+        },
+        "mimeType": {
+          "cs:storage.$attribute": "mimetype",
+          "cs:storage.item": "master",
+          "type": "string"
+        },
+        "size": {
+          "properties": {
+            "height": {
+              "cs:storage.$attribute": "height_px",
+              "cs:storage.item": "master",
+              "type": "integer"
+            },
+            "width": {
+              "cs:storage.$attribute": "width_px",
+              "cs:storage.item": "master",
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    }
+  }
+}

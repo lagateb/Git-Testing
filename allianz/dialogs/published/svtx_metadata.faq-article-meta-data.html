@@ -1,0 +1,46 @@
+
+<style type="text/css">
+    .csMediaAssignment.ng-scope {
+        /* width: 300px;*/
+
+    }
+
+
+    .csMediaAssignment .cs-label {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 250px;
+        display: inline-block;
+        height: 27px;
+        padding-top: 6px;
+    }
+
+    .csMediaAssignment  .cs-dropdown  {
+        width:200px;
+    }
+
+</style>
+
+<div>
+
+
+    <div class="csMediaAssignment" ng-repeat="option in webAssignments track by $index">
+        <h2>{{option.display_value  }}</h2>
+        <hr/>
+        <cs-datepicker label="Ausgabe beginnt am"  ng-model="option.validFrom" enable-reset></cs-datepicker>
+        <cs-datepicker label="Ausgabe endet am"  ng-model="option.validUntil" enable-reset></cs-datepicker>
+        <br/><br/>
+    </div>
+
+
+    <br/>
+    <div class="cs-form-02" ng-if="hasChanged()">
+        <div>
+            <div class="cs-form-row">
+                <button class="cs-button-cta cs-is-small" role="button" ng-click="saveData()">Änderung Speichern</button>
+            </div>
+        </div>
+    </div>
+
+
+</div>

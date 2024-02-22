@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset name="twopager_snippet_text_image_2" type="layout.snippet." application="default" domain="root." domain2="root.">
+  <asset_element idx="0" key="actual." isversioned="1" width_mm="182.999999999968" height_mm="52.1318634970662"/>
+  <asset_feature feature="censhare:iptc">
+    <asset_feature feature="censhare:iptc.contact">
+      <asset_feature feature="censhare:iptc.creator" value_string="Florian Mair"/>
+    </asset_feature>
+    <asset_feature feature="censhare:iptc.status">
+      <asset_feature feature="censhare:iptc.title" value_string="Hausrat_Page3_desktop_Illustration"/>
+    </asset_feature>
+  </asset_feature>
+  <asset_feature feature="censhare:uuid" value_string="5371c2b0-bb7a-11ea-80d8-2aa513a9fc30"/>
+  <asset_feature feature="censhare:xmp">
+    <asset_feature feature="censhare:xmp.color-mode" value_key="rgb"/>
+    <asset_feature feature="censhare:xmp.copyright-flag" value_string="false"/>
+    <asset_feature feature="censhare:xmp.creator-tool" value_string="Adobe Illustrator CC 23.0 (Macintosh)"/>
+    <asset_feature feature="censhare:xmp.document-id" value_string="xmp.did:818ac5b7-738f-4dfe-9ae7-dc57911a1ccd"/>
+    <asset_feature feature="censhare:xmp.modify-date" value_timestamp="2019-04-05T13:21:59Z"/>
+  </asset_feature>
+  <storage_item element_idx="0" key="master" mimetype="application/vnd.adobe.indesign-idms" relpath="file:twopager_snippet_text_image_2.idms"/>
+</asset>

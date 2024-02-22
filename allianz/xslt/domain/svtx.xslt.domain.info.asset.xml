@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset application="default" name="svtx:xslt.domain.info" type="module.transformation." domain="root." domain2="root.">
+    <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+    <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+    <asset_feature feature="censhare:resource-key" value_string="svtx:xslt.domain.info"/>
+    <asset_element key="actual." idx="0"/>
+    <storage_item element_idx="0" key="master" mimetype="application/xslt+xml" relpath="file:svtx.xslt.domain.info.xsl"/>
+</asset>
+
+

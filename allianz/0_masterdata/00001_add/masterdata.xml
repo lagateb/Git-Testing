@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data>
+    <features>
+        <feature key="svtx:aem-template" type="censhare:asset-feature" storage="0" domain="root." domain2="root."
+                 name="AEM Template" name_de="AEM Template" value_type="2" ui_control="4" ismultivalue="0"
+                 isassetinfo="1" assetinfo_sorting="1" issearchable="1" sorting="1" language_type="0" color_type="0"
+                 enabled="1" has_relevance="0" target_object_type="asset" trait="savotex" trait_property="aemTemplate"
+                 trait_property_top_level="1" user_modifiable="1" is_xml_attr="0"
+                 asset_resource_key="svtx:feature.aem-template">
+            <feature_value feature="svtx:aem-template" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="text_and_image" name="Text and Image" sorting="1" enabled="1"/>
+            <feature_value feature="svtx:aem-template" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="image_or_video" name="Image or Video" name_de="Image or Video" sorting="1"
+                           enabled="1"/>
+            <feature_value feature="svtx:aem-template" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="two_column_icon" name="Two Column Icon Container"
+                           name_de="Two Column Icon Container" sorting="3" enabled="1"/>
+            <feature_value feature="svtx:aem-template" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="flexible_tile" name="Flexible tile" name_de="Flexible tile" sorting="1"
+                           enabled="1"/>
+            <feature_value feature="svtx:aem-template" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="accordion" name="Accordion" name_de="Accordion" sorting="6" enabled="1"/>
+            <feature_value feature="svtx:aem-template" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="table" name="Table" name_de="Tabelle" sorting="8" enabled="1"/>
+            <feature_value feature="svtx:aem-template" domain="root." domain2="root." is_hierarchical="0"
+                           value_key="text" name="Text" name_de="Text" sorting="10" enabled="1"/>
+        </feature>
+    </features>
+</data>

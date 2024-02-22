@@ -1,0 +1,33 @@
+{
+    "name": "allianzDeleteProductAction",
+    "since": "5.4.0",
+    "version": "0.0.1",
+    "filename": "allianz-delete-product-action.module",
+    "translations": [
+        "translation"
+    ],
+    "implementations": [
+        {
+            "type": "csBehavior",
+            "name": "allianzDeleteProductBehavior",
+            "constructor": "allianzDeleteProductBehavior",
+            "properties": {
+                "icon": "cs-icon-bin",
+                "title": "allianzDeleteProductAction.title",
+                "priority": 550,
+                "filters": {
+                    "context": "asset",
+                    "csAssetTypePatterns": [
+                        {
+                            "assettype": "product.*",
+                            "mimetype": "*"
+                        }
+                    ],
+                    "csAssetPermissions": [
+                        "product_delete"
+                    ]
+                }
+            }
+        }
+    ]
+}

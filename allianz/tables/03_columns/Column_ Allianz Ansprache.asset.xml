@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset id_org="37597" name="Column: Allianz Ansprache" type="module.table.column." application="default" domain="root.common-resources." domain2="root.">
+  <asset_feature feature="censhare:macro" value_string="description" value_string2="censhare:resource-key" value_asset_key_ref="svtx:allianz-macro-text-variant-speech"/>
+  <asset_feature feature="censhare:name" language="de" value_string="Ansprache"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="0"/>
+  <asset_feature feature="censhare:resource-key" value_string="svtx:allianz-table-column.variant.speech"/>
+  <asset_feature feature="censhare:resource-meta">
+    <xmldata>
+      <selection needed="false"/>
+    </xmldata>
+  </asset_feature>
+  <asset_feature feature="censhare:table.column.align-horizontal" value_key="left"/>
+  <asset_feature feature="censhare:table.column.key" value_string="varinatspeech"/>
+  <asset_feature feature="censhare:table.column.template" value_string="&lt;span class=&quot;varinatspeech&quot;&gt;{{cell.value}}&lt;/span&gt;"/>
+  <asset_feature feature="censhare:table.column.type" value_key="string"/>
+  <asset_feature feature="censhare:table.column.width-max-pixels" value_long="200"/>
+  <asset_feature feature="censhare:table.column.width-min-pixels" value_long="100"/>
+  <asset_feature feature="censhare:table.column.width-pixels" value_long="100"/>
+</asset>

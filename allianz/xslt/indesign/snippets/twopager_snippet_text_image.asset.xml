@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset name="twopager_snippet_text_image" type="layout.snippet." application="default" domain="root." domain2="root.">
+  <asset_element idx="0" key="actual." isversioned="1" width_mm="182.999999999968" height_mm="52.1318634970659"/>
+  <asset_feature feature="censhare:iptc">
+    <asset_feature feature="censhare:iptc.contact">
+      <asset_feature feature="censhare:iptc.creator" value_string="Florian Mair"/>
+    </asset_feature>
+    <asset_feature feature="censhare:iptc.status">
+      <asset_feature feature="censhare:iptc.title" value_string="Life_CareInsurance_B"/>
+    </asset_feature>
+  </asset_feature>
+  <asset_feature feature="censhare:uuid" value_string="e0c7ca50-b6e4-11ea-a42a-6ef66b679a66"/>
+  <asset_feature feature="censhare:xmp">
+    <asset_feature feature="censhare:xmp.creator-tool" value_string="Adobe Illustrator CC 23.0 (Macintosh)"/>
+    <asset_feature feature="censhare:xmp.document-id" value_string="xmp.did:4bb95607-7d01-4e52-b912-a77b28f62a37"/>
+    <asset_feature feature="censhare:xmp.modify-date" value_timestamp="2019-04-09T07:44:52Z"/>
+  </asset_feature>
+  <storage_item element_idx="0" key="master" mimetype="application/vnd.adobe.indesign-idms" relpath="file:twopager_snippet_text_image.idms"/>
+</asset>

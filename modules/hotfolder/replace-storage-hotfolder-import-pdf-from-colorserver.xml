@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmd xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.censhare.com/xml/3.0.0/command.xsd" xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct">
+  <xml-info title="${reg-title-replace-storage-hotfolder} Import Druck-PDF vom colorserver" description="${reg-description-replace-storage-hotfolder}" localize="true" knowledge-level="3" special-licence="false" feature-help="" version="3" template-name="hotfolder.replace-storage-hotfolder" template-url="file:modules/hotfolder/replace-storage-hotfolder.xml">
+    <property-resources>
+      <base url="file:module"/>
+      <base url="file:../../common/global"/>
+    </property-resources>
+    <history>
+    </history>
+  </xml-info>
+  <cmd-info name="hotfolder.replace-storage-hotfolder-import-pdf-from-colorserver" type="auto-execute" enabled="true" mode="loop" ignore-error="true">
+    <error-log module="hotfolder"/>
+  </cmd-info>
+  <admin-info dialog-id="config" dialog-url="file:config-dialog.xml"/>
+  <params storage-item-creation-external-process-error="${storage-item-creation-external-process-error}"/>
+  <listen-events>
+    <timer delta-sec="30"/>
+  </listen-events>
+  <commands currentstep="0">
+    <command target="EventManager" method="waitevent" key="listen-events"/>
+    <command target="ImportManager" method="scan" key="scan"/>
+    <command target="ImportManager" method="file-group-rollback-transaction" key="import-manager"/>
+    <command target="ScriptletManager" scriptlet="modules.hotfolder.Hotfolder" method="checkinFiles"/>
+  </commands>
+  <scan group-result="true" group-export-key="file-export-group" add-data-node="true" scan-subdirectories="false" fork="true" scan-dir-filesystem="colorserver_ALL" scan-dir-relpath="file:Allianz_PSO_Uncoated_47L/Output/" work-dir-filesystem="colorserver_ALL" work-dir-relpath="file:Allianz_PSO_Uncoated_47L/cs_work/" out-filesystem-key="file@filesystem" out-relpath-key="file@url" max-files="200" max-queue-size="12" create-unique-url="true" last-modification-delay-sec="5" include-directory-regex-pattern=".*" ignore-non-matching-files="false">
+    <match include-file-regex-pattern=".*\.PDF|.*\.pdf" exclude-file-regex-pattern="^\._*|\..*|.*/\.rsrc$|.*/CVS$">
+      <data use-duplicate-check="false" checkout-checkin-options="outin" replace-files="true" create-assets="false" use-storage-items="true" perform-update="true" map-metadata="false" wf_id="80" wf_step="60" detect-asset-id-storage-item="^(\d+)_(.+)$" clean-existing-assets="false" more-then-one-hit="false">
+        <asset-duplicate-check key="@id" replacement="$1" src-pattern="^(\d+)_(.+)\$"/>
+        <storage_item tempfilesupdate="true" config-storage-key-in="pdf-drbk-x4" tempfilescreate="true" mimetype="application/pdf">
+          <storage-item value="^\d+_(\d+)_.+$" error="false"/>
+        </storage_item>
+      </data>
+    </match>
+  </scan>
+  <import-manager group-export-key="file-export-group" completed-dir-filesystem="colorserver_ALL" completed-dir-relpath="file:Allianz_PSO_Uncoated_47L/cs_completed/" error-dir-filesystem="colorserver_ALL" error-dir-relpath="file:Allianz_PSO_Uncoated_47L/cs_error/" transaction-group-name="hotfolder-rollback-transaction-group"/>
+  <group-asset-importer/>
+  <!-- will be used as skeleton for the file asset query - may be enhanced with additional conditions -->
+  <qbe-file-sample>
+    <!--  asset currversion="0"/-->
+    <query type="asset">
+      <condition name="censhare:asset.currversion" value="0"/>
+    </query>
+  </qbe-file-sample>
+  <!-- will be used as skeleton for the group asset query - may be enhanced with additional conditions -->
+  <qbe-group-sample>
+    <!--  asset currversion="0"/-->
+    <query type="asset">
+      <condition name="censhare:asset.currversion" value="0"/>
+    </query>
+  </qbe-group-sample>
+  <!-- can be used to set additional asset attributes on checkin -->
+  <asset-sample>
+    <asset/>
+  </asset-sample>
+  <!-- template to create group assets -->
+  <group-template>
+    <asset type="group." application="default" domain="root." domain2="root."/>
+  </group-template>
+  <config activate-storage-item-events="false"/>
+</cmd>

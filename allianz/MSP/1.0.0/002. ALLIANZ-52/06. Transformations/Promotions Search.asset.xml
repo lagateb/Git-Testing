@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset id_org="14730" name="Promotions Search" type="module.search.transformation." application="texteditor" domain="root." domain2="root.">
+  <asset_element idx="0" key="actual." isversioned="1"/>
+  <asset_feature feature="censhare:name" language="de" value_string="Maßnahmen"/>
+  <asset_feature feature="censhare:name" language="en" value_string="Promotions"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="msp:search-table-promotions"/>
+  <asset_feature feature="censhare:resource-meta">
+    <xmldata>
+      <selection needed="false"/>
+    </xmldata>
+  </asset_feature>
+  <parent_asset_rel parent_asset_ref_resource_key="censhare:search.table.hero-product" key="user."/>
+  <storage_item element_idx="0" key="master" mimetype="application/xslt+xml" relpath="file:Promotions Search.xsl"/>
+</asset>

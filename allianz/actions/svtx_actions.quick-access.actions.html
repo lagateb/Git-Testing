@@ -1,0 +1,80 @@
+<style type="text/css">
+    .csActionsWidget__frame__quick { overflow: hidden; }
+    .csActionsWidget__frame__quick cs-widget-action { display: block; }
+    .csActionsWidget__frame__quick .cs-widget-action {
+        text-align: center;
+        font-size: 1.4rem;
+    }
+    .csActionsWidget__frame__quick .cs-button-link-02 {
+        line-height: 1.8rem;
+        height: 11rem;	/* (available content height (23.6rem) minus bottom widget padding (1.5rem) ) / 2 rows */
+        color: #1c1c1c;	/* @color-01 */
+        word-break: break-word;
+    }
+    .cs-has-no-header .csActionsWidget__frame__quick .cs-button-link-02 {
+        height: 12.5rem;	/* (available content height (26rem) without header minus bottom padding (1rem) ) / 2 rows */
+    }
+    /* borders */
+    .csActionsWidget__frame__quick .cs-grid-wrapper .cs-grid-cell {
+        border-bottom: 0.1rem solid #f2f2f2; /* @color-09 */
+        border-right: 0.1rem solid #f2f2f2; /* @color-09 */
+    }
+    .csActionsWidget__frame__quick .cs-grid-wrapper .cs-grid-cell:hover { background-color: #f7f7f7;	/* lighten(@color-09, 2%) */ }
+    .csActionsWidget__frame__quick .cs-grid-cell:last-child {
+        border-right: none;
+    }
+    .csActionsWidget__frame__quick .cs-grid-wrapper:last-child .cs-grid-cell {
+        border-bottom: none;
+    }
+
+    /* small state overwrites */
+    .csActionsWidget__frame__quick .cs-small-state .cs-button-link-02 {
+        line-height: 1.4rem;
+        height: 7.6rem;		/* rem height of the widget content with 1 row height (9.1rem) minus widget padding bottom (1.5rem) */
+    }
+    .cs-has-no-header .csActionsWidget__frame__quick .cs-small-state .cs-button-link-02 {
+        height: 10.5rem;		/* rem height of the widget content without header with 1 row height (11.5rem) minus padding bottom (1rem) */
+    }
+</style>
+
+<div class="csActionsWidget__frame__quick cs-p-h-w">
+    <!-- default screen case: widget has a height of at least 2 rows -->
+    <div class="cs-min-height-widget-row-2">
+        <div class="cs-grid-wrapper cs-has-no-grid-gaps">
+            <div class="cs-grid-cell cs-p-h-s">
+                <cs-widget-action type="wizard" param="'allianzProductWizard'">
+                    <button class="cs-button-link-02" title="Neues Produkt anlegen">
+                        <span class="cs-icon cs-icon-circle-plus cs-iconsize-1600 cs-m-b-s"></span><br/>
+                        Neues Produkt anlegen
+                    </button>
+                </cs-widget-action>
+            </div>
+            <div class="cs-grid-cell cs-p-h-s">
+                <cs-widget-action type="wizard" param="'allianzPowerpointWizard'">
+                    <button class="cs-button-link-02" title="PowerPoint generieren">
+                        <span class="cs-icon cs-icon-slideshow-alt cs-iconsize-1600 cs-m-b-s"></span><br/>
+                        PowerPoint generieren
+                    </button>
+                </cs-widget-action>
+            </div>
+        </div>
+        <div class="cs-grid-wrapper cs-has-no-grid-gaps">
+            <div class="cs-grid-cell cs-p-h-s">
+                <cs-widget-action type="wizard" param="'allianzProductWizard'">
+                    <button class="cs-button-link-02" title="Aktion">
+                        <span class="cs-icon cs-icon-share-alt cs-iconsize-1600 cs-m-b-s"></span><br/>
+                        Aktion
+                    </button>
+                </cs-widget-action>
+            </div>
+            <div class="cs-grid-cell cs-p-h-s">
+                <cs-widget-action type="wizard" param="'allianzPowerpointWizard'">
+                    <button class="cs-button-link-02" title="Aktion">
+                        <span class="cs-icon cs-icon-export cs-iconsize-1600 cs-m-b-s"></span><br/>
+                        Aktion
+                    </button>
+                </cs-widget-action>
+            </div>
+        </div>
+    </div>
+</div>

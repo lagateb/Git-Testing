@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module-info>
+    <xml-info
+            title="${module-title}"
+            description="${module-description}"
+            localize="true"
+    />
+
+    <localization>
+        <properties locale="">
+            <entry key="module-title">Savotex</entry>
+            <entry key="module-description">Savotex</entry>
+        </properties>
+
+        <properties locale="de">
+            <entry key="module-title">Savotex</entry>
+            <entry key="module-description">Savotex</entry>
+        </properties>
+    </localization>
+
+</module-info>

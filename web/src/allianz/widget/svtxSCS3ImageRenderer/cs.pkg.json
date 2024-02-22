@@ -1,0 +1,39 @@
+
+{
+  "name": "svtxSCS3ImageRenderer",
+  "since": "5.2.0",
+  "version": "0.0.1",
+  "filename": "svtxscs3-image-renderer.module",
+  "implementations": [
+    {
+      "type": "csContentEditorRenderer",
+      "name": "svtxSCS3ImageRenderer",
+      "constructor": "svtxSCS3ImageRendererHeadlessDataManager",
+      "properties": {
+        "slices": [
+          {
+            "name": "sliceElementTplName",
+            "template": ["csSCS3Renderer", "csContentEditorElementNameSlice.html"]
+          },
+          {
+            "name": "sliceImageSvtxTopTplName",
+            "template": "svtxSCS3_imageTop.html"
+          },
+          {
+            "name": "sliceImageSvtxBottomTplName",
+            "template": "svtxSCS3_imageBottom.html"
+          }
+        ],
+        "customElementRendering": [{"name": "picture", "namespace": ""}],
+        "customAttributeRendering": true,
+        "inspectorAttributeRendering": true,
+        "prettyLayout": {
+          "hasSolidSelectionLine": true
+        },
+        "featureMap": {
+          "UNDO": true
+        }
+      }
+    }
+  ]
+}

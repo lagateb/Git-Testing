@@ -1,0 +1,19 @@
+.csSCS3ContentEditorInlineTextRendererLinkAttributeAllianzDialog {
+    margin: -#{$space-default};
+
+    .csAssetReference {
+        // hide default clear button
+        button {
+            display: none;
+        }
+    }
+
+    .csLinkDialogView {
+        margin: $space-default auto;
+        width: 80%;
+    }
+
+    .cs-form-01 {
+        margin-bottom: $space-small;
+    }
+}

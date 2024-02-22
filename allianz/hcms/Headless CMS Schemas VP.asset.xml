@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset name="Headless CMS Schemas VP" type="module." application="default" domain="root." domain2="root.">
+  <asset_element idx="0" key="actual." isversioned="1"/>
+  <asset_feature feature="censhare:module-asset-source" value_string="allianz/hcms"/>
+  <asset_feature feature="censhare:output-channel" value_key="root.web.aem.aem-vp."/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="0"/>
+  <asset_feature feature="censhare:resource-key" value_string="schema-allianz-vp"/>
+  <storage_item element_idx="0" key="master" mimetype="application/json" relpath="file:Headless CMS Schemas VP"/>
+</asset>

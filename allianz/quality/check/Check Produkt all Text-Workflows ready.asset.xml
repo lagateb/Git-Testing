@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset id_org="12507" name="Check Produkt all Text-Workflows ready" type="module.completeness-check." application="texteditor" domain="root.common-resources." domain2="root." description="The asset has not yet passed all necessary steps to be considered ready to be published.">
+  <asset_element idx="0" key="actual." isversioned="1"/>
+  <asset_feature feature="censhare:asset-type-filter" value_string="product."/>
+  <asset_feature feature="censhare:completeness-check.importance" value_key="required"/>
+  <asset_feature feature="censhare:description" language="de" value_string="Das Asset hat noch nicht alle notwendigen Schritte durchlaufen und ist noch nicht bereit zur Veröffentlichung"/>
+  <asset_feature feature="censhare:description" language="en" value_string="The asset has not yet passed all required steps and is not ready to be published"/>
+  <asset_feature feature="censhare:description" language="fr" value_string="L&apos;actif n&apos;a pas encore franchi toutes les étapes nécessaires et n&apos;est pas encore prêt à être publié."/>
+  <asset_feature feature="censhare:description" language="it" value_string="L’asset non ha ancora percorso tutti i passi necessari e non è ancora pronto alla pubblicazione"/>
+  <asset_feature feature="censhare:name" language="de" value_string="Texte sind alle freigegeben"/>
+  <asset_feature feature="censhare:name" language="en" value_string="Ready to publish"/>
+  <asset_feature feature="censhare:name" language="fr" value_string="Prêt pour publication"/>
+  <asset_feature feature="censhare:name" language="it" value_string="Pronto alla pubblicazione"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="svtx:completeness-check.product-text.worfkow.ready"/>
+  <asset_feature feature="censhare:resource-meta">
+    <xmldata>
+      <selection needed="false"/>
+    </xmldata>
+  </asset_feature>
+  <storage_item element_idx="0" key="master" mimetype="application/xslt+xml" relpath="file:Check Produkt all Text-Workflows ready.xsl"/>
+  </asset>

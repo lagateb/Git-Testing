@@ -1,0 +1,755 @@
+/* ------------------------------
+censhare Web LESS variables
+copyright: censhare AG
+
+Table of content
+1. Colors
+    1.1 Color definitions
+        1.1.1 Interface colors
+        1.1.2 Brand colors
+        1.1.3 Information colors
+        1.1.4 Application colors
+    1.2 Nonsemantic naming
+    1.3 Functional naming
+        1.3.1 Page colors
+        1.3.2 Side navigation colors
+        1.3.3 Top navigation colors
+        1.3.4 Dialog colors
+        1.3.5 Other functional colors
+2. Sizes
+3. Fonts
+4. Others
+    4.1 z-indexes
+    4.2 Page content
+  ------------------------------- */
+
+/* ------------------------------
+1. Colors
+  ------------------------------- */
+// 1.1 Color definitions
+// DO NOT use these color variables - use 1.2 Nonsemantic naming
+
+// 1.1.1 Interface colors
+$color-grey-00: #000;
+$color-grey-01: #1c1c1c;
+$color-grey-02: #404448;
+$color-grey-03: #777;
+$color-grey-04: #9c9c9c;
+$color-grey-05: #b2b2b2;
+$color-grey-06: #c7c7c7;
+$color-grey-07: #d9d9d9;
+$color-grey-08: #e6e6e6;
+$color-grey-09: #f2f2f2;
+$color-grey-10: #fff;
+$color-grey-11: #e7e7e7;
+
+// 1.1.2 Brand colors (can be overwritten in _brandingVars.scss)
+$color-blue-00: #365bf4;
+$color-blue-01: #4366f5;
+$color-blue-02: #6380f7;
+$color-blue-03: #a4b5fa;
+$color-blue-04: #1e54c3;
+
+// 1.1.2.1 Static blue colors (not to be overwritten)
+$color-static-blue-00: #5eabcf;
+$color-static-blue-01: #66b6dc;
+$color-static-blue-02: #69bee6;
+$color-static-blue-03: #b5dff2;
+
+// 1.1.3 Information colors
+$color-green-00: #b4e068;
+$color-green-01: #d1ff8f;
+$color-yellow-00: #ffef5c;
+$color-yellow-01: #fff6a0;
+$color-red-00: #ff4e4f;
+$color-red-01: #ffa3a3;
+$color-orange-00: #ffaf31;
+$color-orange-01: #ffdda8;
+
+// 1.1.4 Application colors
+$color-editor-01: #f90084;
+$color-editor-02: #51ddf4;
+$color-editor-03: #fffbbd;
+
+// 1.2 Nonsemantic naming
+// Interface scale
+$color-00: $color-grey-00;
+$color-01: $color-grey-01;
+$color-02: $color-grey-02;
+$color-03: $color-grey-03;
+$color-04: $color-grey-04;
+$color-05: $color-grey-05;
+$color-06: $color-grey-06;
+$color-07: $color-grey-07;
+$color-08: $color-grey-08;
+$color-09: $color-grey-09;
+$color-10: $color-grey-10;
+$color-11: $color-blue-04;
+
+// Brand colors (can be overwritten in _brandingVars.scss based on Branding asset)
+$color-20: $color-blue-00 !default;
+$color-21: $color-blue-01 !default;
+$color-22: $color-blue-02 !default;
+$color-23: $color-blue-03 !default;
+
+// Information colors
+$color-30: $color-green-00;
+$color-31: $color-green-01;
+$color-33: $color-yellow-00;
+$color-34: $color-yellow-01;
+$color-36: $color-orange-00;
+$color-37: $color-orange-01;
+$color-38: $color-red-00;
+$color-39: $color-red-01;
+
+$color-success-00: $color-green-00;
+$color-success-01: $color-green-01;
+$color-info-00: $color-yellow-00;
+$color-info-01: $color-yellow-01;
+$color-warning-00: $color-orange-00;
+$color-warning-01: $color-orange-01;
+$color-error-00: $color-red-00;
+$color-error-01: $color-red-01;
+
+$color-valid: $color-green-00;
+$color-info: $color-yellow-00;
+$color-required: $color-orange-00;
+$color-invalid: $color-red-00;
+
+$color-prio-low: $color-green-00;
+$color-prio-medium: $color-yellow-00;
+$color-prio-high: $color-orange-00;
+
+// Application colors
+$color-40: $color-editor-01;
+$color-41: $color-editor-02;
+$color-42: $color-editor-03;
+
+// 1.3 Functional naming
+// 1.3.1 Page colors
+// Magic color
+$color-default-page-bg: #eaeaea;
+$color-default-page-text: $color-01;
+
+// 1.3.2 Side navigation colors
+$color-default-nav-bg: $color-02;
+// ~ color-05 on black. For an animation, we need an rgba value of the animation color (here: $color-default-nav-hover-text)
+$color-default-nav-text: rgba($color-10, 0.52);
+$color-default-nav-icon-color: rgba($color-10, 0.52);
+// rgba value for hover animation
+$color-default-nav-hover-bg: rgba(0, 0, 0, 0.2);
+$color-default-divider-color: lighten($color-02, 7%);
+$color-default-nav-hover-text: $color-10;
+
+// 1.3.3 Top navigation colors
+$color-default-header-bg: $color-22;
+$color-default-header-hover-bg: shade($color-default-header-bg, 6%);
+$color-default-header-search-bg: lighten($color-default-header-bg, 8%);
+$color-default-header-search-hover-bg: darken(
+    $color-default-header-search-bg,
+    3%
+);
+$color-default-header-logo-bg: shade($color-default-header-bg, 30%);
+$color-default-header-text: $color-10;
+
+// 1.3.4 Dialog colors
+$color-default-dialog-bg: $color-09;
+$color-default-dialog-header-bg: $color-22;
+$color-default-widget-bg: $color-10;
+
+// 1.3.5 Other functional colors
+$color-default-pinboard-bg: rgba($color-22, 0.85);
+$color-default-pinboard-text: rgba(255, 255, 255, 0.9);
+
+// cs-lines, hr, border-bottoms
+$color-cs-line-01: $color-07;
+// cs-lines, hr, border-bottoms on white background
+$color-cs-line-02: $color-08;
+// asset list background color
+$color-preview-bg: $color-07;
+// editor background color
+$color-editor-bg: $color-02;
+// editor grid
+$color-editor-grid: $color-40;
+// editor guides
+$color-editor-guides: $color-41;
+
+/* ------------------------------
+2. Sizes
+  ------------------------------- */
+// rem units / 1rem = 10px; see $rem-ratio
+$space-xsmall: 0.5rem;
+$space-small: 1rem;
+$space-medium: 1.5rem;
+$space-default: 2rem;
+$space-large: 4rem;
+
+$widget-padding: 1.5rem;
+$page-padding-bottom: 5.3rem;
+
+$forms-height-default: 3rem;
+$forms-height-small: 2.4rem;
+
+$borderradius-default: 0;
+
+// Content space in the page header = $forms-height-default
+$header-nav-height-wo-padding: $forms-height-default;
+$header-nav-padding: 0.8rem;
+$header-nav-height: $header-nav-height-wo-padding + (2 * $header-nav-padding);
+
+// Navigation sidebar on the left
+$sidebar-nav-width: 25rem;
+$sidebar-nav-collapsed-width: 5.5rem;
+// Information sidebar on the right
+$sidebar-info-width: 25%;
+
+// The breakpoint of the screen width where we switch from desktop navigation to small screen navigation
+$navbar-small-screen-switch-size: 800px;
+
+/* ------------------------------
+3. Fonts
+  ------------------------------- */
+// $font-family-default: "SourceSansPro", "Arial", sans-serif;
+// $font-family-code: "SourceCodePro", "Arial", sans-serif;
+$font-family-default: SourceSansPro, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "AllianzNeo";
+$font-family-code: "Menlo", "DejaVu Sans Mono", "Liberation Mono", "Consolas",
+    "Ubuntu Mono", "Courier New", "andale mono", "lucida console", monospace;
+
+$font-size-default: 1.4rem;
+// ~12px
+$font-size-code: $font-size-default * strip-unit(1.2 / $font-size-default);
+// ~12px
+$font-size-50: $font-size-default * strip-unit(1.2 / $font-size-default);
+//  14px
+$font-size-100: $font-size-default;
+// ~16px
+$font-size-200: $font-size-default * strip-unit(1.6 / $font-size-default);
+// ~22px
+$font-size-400: $font-size-default * strip-unit(2.2 / $font-size-default);
+// ~26px
+$font-size-800: $font-size-default * strip-unit(2.6 / $font-size-default);
+
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+$line-height-base: 1.2;
+$line-height-computed: floor($font-size-200 * $line-height-base);
+
+/* Source Sans Pro Regular */
+@font-face {
+    font-family: "SourceSansPro";
+    font-style: normal;
+    font-weight: $font-weight-normal;
+    src: url("assets/fonts/SourceSansPro-Regular.ttf.woff") format("woff");
+}
+
+/* Source Sans Pro Regular - Italic */
+@font-face {
+    font-family: "SourceSansPro";
+    font-style: italic;
+    font-weight: $font-weight-normal;
+    src: url("assets/fonts/SourceSansPro-It.ttf.woff") format("woff");
+}
+
+/* Source Sans Pro Semibold */
+@font-face {
+    font-family: "SourceSansPro";
+    font-style: normal;
+    font-weight: $font-weight-semibold;
+    src: url("assets/fonts/SourceSansPro-Semibold.ttf.woff") format("woff");
+}
+
+/* Source Sans Pro Bold */
+@font-face {
+    font-family: "SourceSansPro";
+    font-style: normal;
+    font-weight: $font-weight-bold;
+    src: url("assets/fonts/SourceSansPro-Bold.ttf.woff") format("woff");
+}
+
+/* Source Sans Pro Bold - Italic */
+@font-face {
+    font-family: "SourceSansPro";
+    font-style: italic;
+    font-weight: $font-weight-bold;
+    src: url("assets/fonts/SourceSansPro-BoldIt.ttf.woff") format("woff");
+}
+@font-face {
+    font-family: "AllianzNeo";
+    font-style: normal;
+    font-weight: $font-weight-normal;
+    src: url("assets/fonts/AllianzNeoW04-Regular.woff2") format("woff2");
+}
+@font-face {
+    font-family: "AllianzNeo";
+    font-style: normal;
+    font-weight: $font-weight-normal;
+    src: url("assets/fonts/Allianz-Icons.woff2") format("woff2");
+}
+@font-face {
+    font-family: "AllianzNeo";
+    font-style: normal;
+    font-weight: $font-weight-light;
+    src: url("assets/fonts/AllianzNeoW04-Light.woff2") format("woff2");
+}
+
+/* ------------------------------
+4. Others
+  ------------------------------- */
+// 4.1 z-indexes
+// 20k  - pinboard layer - Workaround - ToDo: Should be above content dialogs and under page dialogs => split dialogs layer
+$z-index-pinboard: 20000;
+// 25k  - navigation layer
+$z-index-navigation: 25000;
+// 26k  - ak-edit: header must have higher z-index to display the top navi shadow correctly ToDo: Is this high number really needed?
+$z-index-header: 26000;
+// 30k  - page overlay layer - for everything above the default content layer (dropdowns, tooltips etc.) ToDo: no need for separations in the new Action Registry, but needed for old csControlMenu
+$z-index-csControl-overlays: 30000;
+// 40k  - dialogs layer - dialogs should appear above the dropdowns, tooltips etc.
+$z-index-dialogs: 40000;
+// 50k  - dialog overlay layer - for everything that is triggered in the dialogs and should appear above that level  ToDo: no need for separations in the new Action Registry, but needed for old csControlMenu
+$z-index-csControl-dialog-overlays: 50000;
+// 60k  - tooltips and popovers
+$z-index-tooltip: 60000;
+// 70k  - notifications layer
+$z-index-notifications: 70000;
+// 100k - new action dropdowns (made with popovers) should be above all and should close immediately if not needed
+$z-index-overlays: 100000;
+
+// 4.2 Page content
+$shadow-default: 0 0.1rem 0.2rem rgba(0, 0, 0, 0.2);
+$blur-default: 0.12rem;
+
+// ToDo: The em to px ratio. For calculations in the normalize mixin: 1em = 16px, the font size of the document. Needed in the future for breakpoints.
+$em-ratio: 14;
+// The rem to px ratio. For calculations in the normalize mixin: 1rem = 10px.
+$rem-ratio: 10;
+
+$animation-default-time: 150ms;
+$animation-default-ease: ease-in-out;
+
+// relative iconsize in rem next to a text in default size (@font-size-100, 1.4rem) - used for calculations
+$icon-relative-50-font-size: 0.8rem;
+// = default icon font size
+$icon-relative-100-font-size: 1rem;
+// = default icon font size
+$icon-relative-150-font-size: 1.4rem;
+$icon-relative-200-font-size: 1.6rem;
+$icon-relative-400-font-size: 2rem;
+$icon-relative-800-font-size: 2.4rem;
+$icon-relative-1600-font-size: 3.2rem;
+// 12px is the default font size of small btns, icons should be 20% smaller than the original => 16 - 3.2 = 13,8
+$cs-button-small-icon-size: 1.38rem;
+
+$csDialog_width: 90%;
+$csDialog_max-width: 110rem;
+$csDialog_height: 85%;
+$csDialog_max-height: 100rem;
+$csDialog_z-index: $z-index-dialogs;
+$csDialog_z-index_bg: $z-index-dialogs - 100;
+
+$csDialog_header-height-wo-padding: $header-nav-height-wo-padding;
+$csDialog_header-padding: $header-nav-padding;
+$csDialog_header-height: $csDialog_header-height-wo-padding +
+    (2 * $csDialog_header-padding);
+
+$csDialog_footer-height-wo-padding: $forms-height-default;
+$csDialog_footer-padding: $header-nav-padding;
+$csDialog_footer-height: (2 * $csDialog_footer-padding) +
+    $csDialog_footer-height-wo-padding;
+
+$csDialogForm__row_width: 96%;
+$csDialogForm_label_width: 13%;
+$csDialogForm_cell_width: 85.5%;
+$csDialogForm_label_line-height: 1.6rem;
+$csDialogForm_label_padding-top: (
+        $forms-height-default - $csDialogForm_label_line-height
+    ) / 2;
+
+$headBackground: $color-07;
+$headerCellHoverBackground: $color-06;
+$rowEvenColor: $color-09;
+$rowOddColor: $color-10;
+$rowBorderColor: $color-08;
+$headBorderColor: $color-00;
+
+$rowSelectionBackgroundColor: $color-22;
+$rowSelectionBorder: $color-22;
+$rowAlsoSelectionBackgroundColor: $color-31;
+$rowAlsoSelectionBorder: $color-30;
+
+$rowHoverColor: $color-09;
+$rowHoverBorder: $color-07;
+
+$resizeHandleBorder: $color-10;
+
+$noChevronSpace: $space-medium;
+$chevronWidth: $space-medium * 2;
+$chevronSize: $icon-relative-100-font-size;
+
+// Equivalent to TS variable CELL_PADDING in cs-asset-table-control-row.ts. Change both!
+$cellPadding: $space-small;
+
+// taken from `_forms.scss`
+
+// formula variables
+// an integer number from 1 - 100, used similar to a % value (without unit)
+$cs-form-01-label-width: 20;
+// min width of the label (dt), smaller sizes are not next to each other, they use a full line.
+$cs-form-01-label-min-width: 15rem;
+// min width of the content (dd), smaller sizes are not next to each other, they use a full line.
+$cs-form-01-content-min-width: 30rem;
+
+// common form element variables
+$color-form-border: $color-07;
+$color-form-focus-border: $color-06;
+$color-form-focus-border-blue: $color-11;
+$color-form-focus-outline-blue: $color-11;
+$color-form-focus-bg: $color-10;
+$color-checkbox-border: $color-06;
+$color-checkbox-focus-border: $color-05;
+$focus-outline: 1px solid $color-form-focus-outline-blue;
+
+// valid
+// Default styling
+$color-form-border-valid: $color-07;
+$color-form-focus-border-valid: $color-06;
+
+// invalid
+$color-form-border-invalid: $color-invalid;
+$color-form-focus-border-invalid: darken($color-form-border-invalid, 15%);
+
+// required
+$color-form-border-required: $color-required;
+$color-form-focus-border-required: darken($color-form-border-required, 10%);
+
+// info (ToDo: delete)
+$color-form-border-info: $color-info;
+$color-form-focus-border-info: darken($color-form-border-info, 15%);
+
+// priority low
+$color-form-border-prio-low: $color-prio-low;
+$color-form-focus-border-prio-low: darken($color-form-border-prio-low, 15%);
+
+// priority medium (and info)
+$color-form-border-prio-medium: $color-prio-medium;
+$color-form-focus-border-prio-medium: darken(
+    $color-form-border-prio-medium,
+    15%
+);
+
+// priority high
+$color-form-border-prio-high: $color-prio-high;
+$color-form-focus-border-prio-high: darken($color-form-border-prio-high, 15%);
+
+// icon
+$color-form-icon: $color-07;
+$color-form-hover-icon: $color-06;
+
+// checkbox variables
+$cs-checkbox-size: 1.6rem;
+$cs-checkbox-margin: 0.3rem;
+$cs-checkbox-animation-time: 0.08s;
+
+// radio variables
+$cs-radio-size: 1.6rem;
+$cs-radio-margin: 0.5rem;
+$cs-radio-animation-time: 0.08s;
+
+// taken from `_buttons.scss`
+
+$buttons-vertical-padding: 1rem;
+$buttons-letter-spacing: 0.18rem;
+$buttons-letter-spacing-small: 0.14rem;
+
+// taken from `_progressbar.scss`
+
+$cs-progressbar-bg: $color-08;
+$cs-progressbar-value-color: $color-22;
+$cs-progressbar-height: 0.8rem;
+// also defined in the directive file ('csProgress.js') => keep in sync with options.stroke
+$cs-progressbar-radial-stroke-width: $space-small;
+
+// taken from `_others.scss`
+
+$tag-height-default: $forms-height-small;
+$tag-height-small: $forms-height-small - 0.8rem;
+
+// Image square size including 1px border
+$csAssetListItem__2xn__previewImgSize: 4.3rem;
+// a very small padding to have only small gaps between the items;
+$csAssetListItem__2xn__height: $csAssetListItem__2xn__previewImgSize + 0.2rem *
+    2;
+
+// a small button should be able to be placed next to the item && at least the icons should be visible in the standard size (1.6rem), plus padding
+$csAssetListItem__mxn2rowsExtra__height: $forms-height-small + 2 * $space-xsmall;
+// Image square size inclusive 1px border
+$csAssetListItem__mxn2rowsExtra__previewImgSize: 3.2rem;
+
+// Image square size inclusive 1px border
+$csAssetListItem__mxn2rows__previewImgSize: 3.2rem;
+$csAssetListItem__mxn2rows__height: $csAssetListItem__mxn2rows__previewImgSize +
+    2 * $space-xsmall;
+
+// a small button should be able to be placed next to the item && at least the icons should be visible in the standard size (1.6rem), plus padding
+$csAssetListItem__mxn1rows__height: $forms-height-small + 2 * $space-xsmall;
+// Image square size (no border here)
+$csAssetListItem__mxn1rows__previewImgSize: 1.6rem;
+
+$notification-width: 30rem;
+// height is calculated similar to the headline on the left plus the additional paddings, width is the same as height.
+$notification-close-size: ($font-size-200 * $line-height-base) +
+    (2 * $space-small);
+
+// fallback color, if no type is selected - practically not used
+$notification-bg-color: $color-04;
+$notification-title-color: $color-10;
+$notification-close-color: $color-10;
+$notification-message-color: $color-10;
+$notification-link-color: $color-10;
+
+$notification-responsive-switch-full-width: 38rem;
+
+$tooltip-max-width: 24rem;
+$tooltip-color: $color-10;
+$tooltip-bg: $color-02;
+$tooltip-border-color: rgba(0, 0, 0, 0.15);
+$tooltip-border-width: 0.1rem;
+
+$tooltip-arrow-width: 0.9rem;
+$tooltip-arrow-color: $color-10;
+$tooltip-arrow-border-width: 0.1rem;
+$tooltip-arrow-border-color: $tooltip-border-color;
+// triangle width a 90° angle: y = sqrt(x² + x²) = x * sqrt(2) || plus 1px tolerance
+$tooltip-arrow-diagonal-width: $tooltip-arrow-width * 1.41421 + 0.1rem;
+$tooltip-arrow-offset: $tooltip-arrow-diagonal-width / 2;
+
+// special vars for tooltips alone
+$tooltip-padding-hor: $space-small;
+$tooltip-padding-vert: $space-xsmall;
+
+// special vars for popovers alone
+$popover-title-bg: rgba(0, 0, 0, 0);
+$popover-padding-hor: $space-small;
+$popover-padding-vert: 0.8rem;
+
+// same as widget paddings
+$toolbar-padding-hor: 1.5rem;
+$toolbar-padding-vertical: $space-xsmall;
+$toolbar-buttons-gap: $space-xsmall;
+$toolbar-border-colors: $color-08;
+
+// filters
+$filters-row-height: 29px;
+$visible-choosen-filters-height: 4 * $filters-row-height;
+
+/* ------ default tabs used in content ------ */
+// the height of one tab element
+$cs-tabs-01-element-height: $forms-height-small;
+// padding between tab and bottom line
+$cs-tabs-01-padding-below: $space-xsmall;
+// margins between tab items; $space-small or $space-default would be better
+$cs-tabs-01-space-between-tabs: 1.5rem;
+// the complete height of the tabs 01
+$cs-tabs-01-height: $cs-tabs-01-element-height + $cs-tabs-01-padding-below;
+
+/* ------ 1st level tabs used in dialogs ------ */
+// the height of one tab element
+$cs-tabs-02-element-height: $forms-height-default;
+// space reserved for empty space above the tabs, same height as dialog header
+$cs-tabs-02-space-above-tabs: $csDialog_header-height - $forms-height-default;
+// height of the complete tab
+$cs-tabs-02-height: $cs-tabs-02-element-height + $cs-tabs-02-space-above-tabs;
+
+/* ------ vertical tabs (used in dialogs) ------ */
+// the height of one tab element, has to be bigger then $forms-height-default
+$cs-tabs-03-element-height: 4.8rem;
+$cs-tabs-03-max-width: 22rem;
+
+// small buttons (or form elements, forms-height-small) should be able to be inserted in the header. Plus padding bottom & top
+$csWidget-header-height: $forms-height-small + (2 * $space-xsmall);
+$csWidget-default-padding-horizontal: $widget-padding;
+
+// also used in the html template for max-height calculation, this number has to be synced
+$navBar-item-height: 3rem;
+
+$scrollbarThickness: 1rem;
+$scrollbarThicknessHover: 1.25rem;
+$scrollbarLength: calc(100% - 1rem);
+$scrollbarThumbBorderOffset: 0.2rem;
+$scrollbarThumbSpace: $scrollbarThumbBorderOffset * 2;
+
+$scrollContainerOffset: 55px;
+
+// old csControl menus vars
+$csControlMenu-dropdown-item-height: $forms-height-default;
+$csControlMenu-item-height: $icon-relative-200-font-size;
+$csControlMenu-icon-size: $icon-relative-200-font-size;
+
+$csActions-dropdown-item-height: $forms-height-default;
+$csActions-item-height: $icon-relative-200-font-size;
+$csActions-icon-size: $icon-relative-200-font-size;
+// Match sub menu chevron size
+$csActions-sub-menu-chevron-size: $font-size-default;
+
+$csDialog__preview-icon-size: 4.5rem;
+
+$second-level-row-margin-depth: 3.7rem;
+$dropzone-line-height: 2.5rem;
+$annotation-info-label-min-width: 8.5rem;
+
+// $mejs-controls-height defined in the video/base.scss
+$csAssetAnnotation-editor-height: 4.8rem;
+
+$csSelectionSideBarWidth: 27rem;
+
+$csAssetProperties__list__item-height: 2rem;
+// should be the default icon size, so you can stick elements with this height in the label/value cols (icons/checkboxes/colors)
+$csAssetProperties__list__item-line-height: 1.6rem;
+$csAssetProperties__list__label-width: 40%;
+// 40% of widget content width at 1 col (24rem * 0.4)
+$csAssetProperties__list__label-min-width: 9.6rem;
+// optical max value
+$csAssetProperties__list__label-max-width: 18rem;
+
+$cs-typeahead-z-index: 10000;
+
+$mejs-controls-width-edit-preview-mode: calc(100% - 10rem);
+$mejs-controls-left-edit-preview-mode: 4rem;
+
+$csAssetSearchList__item_height: 4.4rem;
+
+$csAssetSearchGallery-header-height: 2.4rem;
+
+$csAssetSearchCard-header-height: 2.2rem;
+$csAssetSearchCard-row-height: 1.8rem;
+
+$csAssetVersionsEntry__line_height: $forms-height-default;
+// at least 3 digits wide (~3.6rem)
+$csAssetVersionsEntry__version_width: 4rem;
+
+$space-xxsmall: 0.2rem;
+
+$treeGap: 0.5rem;
+$focus: $color-22;
+$active: $color-22;
+$focusActive: $color-21;
+$ceLineThickness: 0.1rem;
+$ceDefaultColor: $color-04;
+
+$color-ce-selected: $color-22;
+$color-ce-not-select: $color-04;
+
+$border-selected: 0.2rem solid $color-ce-selected;
+$border-not-selected: 0.1rem solid $color-ce-not-select;
+
+$cs-slice-group-background-color: $color-09;
+
+$csContentEditorMetadataGap: 1rem;
+
+/** HEADER CONFIG **/
+$csFlatPlan_max_header_level_to_generate: 5;
+$csFlatPlan_header_height: $space-medium;
+$csFlatPlan_header_border_width: 0.1rem;
+
+/** COLORS **/
+
+// Placement preview border color
+$csFlatPlan_placement_preview_border_color: $color-04;
+// FlatPlan overflow/underflow warning color
+$csFlatPlan__page_warning_color: $color-36;
+// Page overlay color if page is exceeding sheets coverage
+$csFlatPlan_page_overflow_color: rgba($csFlatPlan__page_warning_color, 0.65);
+
+// Drag color
+$csFlatPlan_drag_color: darken($color-22, 35%);
+// Drag color with opacity
+$csFlatPlan_drag_o_color: rgba(darken($color-22, 35%), 0.75);
+// Drag forbidden color
+$csFlatPlan_drag_error_color: $color-38;
+// Drag forbidden color with opacity
+$csFlatPlan_drag_error_o_color: rgba($color-38, 0.5);
+// Drag icon size
+$csFlatPlan_dropzone_icon_fontsize: $icon-relative-800-font-size;
+
+// Dragged placement color
+$csFlatPlan_placement_draged_color: rgba($color-22, 0.75);
+// Selected placement color
+$csFlatPlan_placement_selection_color: rgba($color-22, 0.75);
+// Hovered placement color
+$csFlatPlan_placement_hover_color: rgba($color-22, 0.5);
+// Hovered locked placement color
+$csFlatPlan_placement_hover_locked_color: rgba($color-36, 0.5);
+// Selected locked placement color
+$csFlatPlan_placement_selection_locked_color: rgba($color-36, 0.75);
+
+// Hovered page color
+$csFlatPlan_page_hover_color: $color-20;
+// Selected page color
+$csFlatPlan_page_selection_color: $color-22;
+// Hovered locked page color
+$csFlatPlan_page_hover_locked_color: $color-36;
+// Selected locked page color
+$csFlatPlan_page_selection_locked_color: darken($color-36, 5%);
+
+$csFlatPlan_extra_space: 0.1rem;
+
+$headerNavButton__vertical_padding: 2rem;
+
+$cs-layout-box__indicator-size: 2.6rem;
+// no scaling!
+$cs-layout-box__indicator-font-size: strip-unit(
+        $icon-relative-200-font-size / $font-size-100
+    ) * 1rem;
+
+$mejs-controls-height: 4.8rem;
+$mejs-controls-buttons-size: 3rem;
+$mejs-time-rail-height: 0.5rem;
+
+/* Customizable colors for censhare theme */
+
+// Main container background - Original: black (#000)
+$csMediaElementJS__color-01: $color-editor-bg;
+// Contrast & highlight color - Original: white (#fff)
+$csMediaElementJS__color-02: $color-02;
+// Control bar background color - Original: dark grey (#2a2a2a)
+$csMediaElementJS__color-03: $color-10;
+// Some handles - Original: grey (#a8a8a8)	- maybe not needed?
+$csMediaElementJS__color-04: $color-06;
+// Descent color - Original: light grey (#808080)
+$csMediaElementJS__color-05: $color-03;
+// Active color - Original: blue
+$csMediaElementJS__color-06: $color-22;
+
+$relevance-label-width: 7rem;
+$relevance-symbol-width: 2rem;
+$relevance-control-width: 6.8rem;
+
+$csPageApplicationActions_footer-height: (2 * $header-nav-padding) +
+    $forms-height-default;
+
+$autoSuggest__line_height: 2.8rem;
+$autoSuggest__group_font_size: $font-size-50;
+$autoSuggest__result_font_size: $font-size-100;
+$autoSuggest__spacing_base: $headerNavButton__vertical_padding;
+$autoSuggest__result_color: $color-05;
+$autoSuggest__match_color: $color-01;
+$autoSuggest__background: $color-10;
+$autoSuggest__hover_color: $color-09;
+$autoSuggest__border_thickness: 0.1rem;
+$autoSuggest__border_color: rgba($color-00, 0.2);
+
+$default-bar-height: 0.9rem;
+$full-line-height: $font-size-100;
+$bar-border-radius: 0.5rem;
+
+$csc-container-padding: 1rem $widget-padding;
+
+$cs-dropdown-zindex: 1010;
+$cs-dropdown-link-color: $color-02;
+$cs-dropdown-icon-color: $color-07;
+$cs-dropdown-icon-hover-color: $color-06;

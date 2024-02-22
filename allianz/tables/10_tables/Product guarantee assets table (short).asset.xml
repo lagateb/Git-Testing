@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset id_org="12437" name="Product guarantee assets table (short)" type="module.table." application="default" domain="root." domain2="root.">
+  <asset_feature feature="censhare:name" language="de" value_string="Sicherungsvermögen -Tabelle (kurz)"/>
+  <asset_feature feature="censhare:name" language="en" value_string="Product guarantee assets table (short)"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="svtx:table_guarantee_assets"/>
+  <asset_feature feature="censhare:resource-meta">
+    <xmldata>
+      <selection needed="false"/>
+    </xmldata>
+  </asset_feature>
+  <asset_feature feature="censhare:table.column" value_string2="censhare:resource-key" sorting="1" value_asset_key_ref="censhare:table-column.default.asset.item"/>
+  <asset_feature feature="censhare:table.column" value_string2="censhare:resource-key" sorting="2" value_asset_key_ref="censhare:table-column.default.asset.language"/>
+</asset>

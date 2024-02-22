@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset name="Allianzs_macro_produkt_referat" type="module.macro." application="metadata" domain="root." domain2="root.">
+  <asset_feature feature="censhare:macro.expression.xpath" value_string="cs:master-data('domain')[@pathid=replace(replace(asset/@domain,'.cmf.','.'),'.port-neo.','.')]/@name"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="svtx:allianz.macro.product.asset.domain.new"/>
+  <asset_feature feature="censhare:resource-meta">
+    <xmldata>
+      <selection needed="false"/>
+    </xmldata>
+  </asset_feature>
+</asset>

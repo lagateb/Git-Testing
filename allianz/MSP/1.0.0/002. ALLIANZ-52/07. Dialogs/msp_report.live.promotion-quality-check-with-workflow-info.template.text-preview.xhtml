@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+</head>
+<body>
+&lt;style&gt;<br/>
+ &nbsp; &nbsp;.wrap-line {<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp;white-space: pre-wrap !important;<br/>
+ &nbsp; &nbsp;}<br/>
+<br/>
+ &nbsp; &nbsp;.empty-workflow {<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp;display: block;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp;height: 120px;<br/>
+ &nbsp; &nbsp;}<br/>
+&lt;/style&gt;<br/>
+&lt;!-- workflow --&gt;<br/>
+&lt;span<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp;ng-if=&quot;(data.annotation) || (data.workflow) || (data.workflowStep) || (data.workflowState) || (data.assigned) || (data.deadline)&quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp;class=&quot;cs-icon cs-icon-circle-arrow-right cs-iconsize-400&quot; style=&quot;right:60px;top:-22px;position:fixed;&quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp;cs-tooltip=&quot;{{'csCommonTranslations.assignToDot' | csTranslate}}&quot; ng-click=&quot;addWorkflow()&quot;&gt;&lt;/span&gt;<br/>
+&lt;div<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp;ng-if=&quot;(data.annotation) || (data.workflow) || (data.workflowStep) || (data.workflowState) || (data.assigned) || (data.deadline)&quot;&gt;<br/>
+ &nbsp; &nbsp;&lt;!-- &lt;h6 class=&quot;csAssetProperties__title ng-scope&quot; style=&quot;width: 90%;margin: 0 auto 0.5rem auto;&quot;&gt;&lt;span style=&quot;vertical-align:sub;&quot;&gt;{{'csCommonTranslations.workflow' | csTranslate}}&lt;/span&gt; &nbsp;&lt;/h6&gt; --&gt;<br/>
+ &nbsp; &nbsp;&lt;ul class=&quot;csAssetProperties__list cs-p-h-w ng-scope&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;li class=&quot;cs-meta-data-row csAssetProperties__list__item cs-m-b-xs&quot; ng-click=&quot;workflow = !workflow&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;span class=&quot;csAssetProperties__list__label csAssetProperties__list__parent_label parent-as-header&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;i class=&quot;cs-icon cs-iconsize-150&quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ng-class=&quot;(workflow) ? 'cs-icon-arrow-right' : 'cs-icon-arrow-down'&quot;&gt;&lt;/i&gt; &lt;span&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{{'csCommonTranslations.workflow' | csTranslate}}&lt;/span&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/span&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;hr class=&quot;cs-meta-data-row-hr hr-parent&quot; /&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;/li&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;div ng-show=&quot;!workflow&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;li ng-if=&quot;data.workflow&quot; class=&quot;cs-meta-data-row csAssetProperties__list__item&quot;&gt;&lt;span<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;class=&quot;csAssetProperties__list__label&quot;&gt;{{'csCommonTranslations.workflow' | csTranslate}}&lt;/span&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;csAssetProperties__list__value&quot;&gt;{{data.workflow}}&lt;/div&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/li&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;li ng-if=&quot;data.workflowStep&quot; class=&quot;cs-meta-data-row csAssetProperties__list__item&quot;&gt;&lt;span<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;class=&quot;csAssetProperties__list__label&quot;&gt;{{'csCommonTranslations.workflowStep02' | csTranslate}}&lt;/span&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;csAssetProperties__list__value&quot;&gt;&lt;span ng-if=&quot;data.workflowStepColor&quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;style=&quot;background-color: {{workflowStepColor}}; border-radius: 50%; height: 9px; width: 9px; vertical-align: baseline; margin-right: 4px;&quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;class=&quot;csWorkflow__color cs-ctrl-color&quot; value=&quot;{{workflowStepColor}}&quot;&gt;&lt;/span&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{{data.workflowStep}}&lt;/div&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/li&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;li ng-if=&quot;data.workflowState&quot; class=&quot;cs-meta-data-row csAssetProperties__list__item&quot;&gt;&lt;span<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;class=&quot;csAssetProperties__list__label&quot;&gt;{{'csCommonTranslations.workflowState02' | csTranslate}}&lt;/span&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;csAssetProperties__list__value&quot;&gt;&lt;span ng-if=&quot;data.workflowStateColor&quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;style=&quot;background-color: {{workflowStateColor}}; border-radius: 50%; height: 9px; width: 9px; vertical-align: baseline; margin-right: 4px;&quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;class=&quot;csWorkflow__color cs-ctrl-color&quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;value=&quot;{{workflowStateColor}}&quot;&gt;&lt;/span&gt;{{data.workflowState}}&lt;/div&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/li&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;li ng-if=&quot;data.assigned&quot; class=&quot;cs-meta-data-row csAssetProperties__list__item&quot;&gt;&lt;span<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;class=&quot;csAssetProperties__list__label&quot;&gt;{{'csCommonTranslations.assignedTo' | csTranslate}}&lt;/span&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;csAssetProperties__list__value cs-meta-data-row__transclude&quot;&gt;&lt;span<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;class=&quot;cs-icon cs-icon-user cs-iconsize-150 ng-scope&quot;&gt;&lt;/span&gt; {{data.assigned}}&lt;/div&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/li&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;li ng-if=&quot;data.deadline&quot; class=&quot;cs-meta-data-row csAssetProperties__list__item&quot;&gt;&lt;span<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;class=&quot;csAssetProperties__list__label&quot;&gt;{{'csCommonTranslations.deadline' | csTranslate}}&lt;/span&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;csAssetProperties__list__value&quot;&gt;{{data.deadline | date:'dd/MM/yyyy'}}&lt;/div&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/li&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;li ng-if=&quot;data.annotation&quot; class=&quot;cs-meta-data-row csAssetProperties__list__item&quot;&gt;&lt;span<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;class=&quot;csAssetProperties__list__label&quot;&gt;{{'csCommonTranslations.wfAnnotation' | csTranslate}}&lt;/span&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;csAssetProperties__list__value&quot;&gt;{{data.annotation}}&lt;/div&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/li&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br/>
+ &nbsp; &nbsp;&lt;/ul&gt;<br/>
+ &nbsp; &nbsp;&lt;div ng-if=&quot;!(data.mode)&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;cs-empty-state cs-empty-state-icon=&quot;'cs-icon-check'&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;span class=&quot;cs-state-headline&quot; cs-translate=&quot;'csCommonTranslations.noQualityGates'&quot;&gt;&lt;/span&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;/cs-empty-state&gt;<br/>
+ &nbsp; &nbsp;&lt;/div&gt;<br/>
+&lt;/div&gt;<br/>
+&lt;!-- quality gates --&gt;<br/>
+&lt;div ng-if=&quot;(data.mode=='quality-gates') || (data.totalTask &gt; 0)&quot;&gt;<br/>
+ &nbsp; &nbsp;&lt;div class=&quot;empty-workflow&quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; ng-if=&quot;!(data.annotation) &amp;&amp; !(data.workflow) &amp;&amp; !(data.workflowStep) &amp;&amp; !(data.workflowState) &amp;&amp; !(data.assigned) &amp;&amp; !(data.deadline)&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;cs-empty-state cs-empty-state-icon=&quot;'cs-icon-git-branch'&quot; style=&quot;max-height: 120px;&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;span class=&quot;cs-state-headline&quot; cs-translate=&quot;'csCommonTranslations.noWorkflow'&quot;&gt;&lt;/span&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;button class=&quot;cs-button-link-01&quot; ng-click=&quot;addWorkflow()&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;i class=&quot;cs-icon cs-icon-circle-plus cs-iconsize-200&quot;&gt;&lt;/i&gt;&amp;nbsp; &lt;span<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ng-bind=&quot;'csAssetWorkflowStatusWidget.addWorkflow' | csTranslate&quot;&gt;&lt;/span&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/button&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;/cs-empty-state&gt;<br/>
+ &nbsp; &nbsp;&lt;/div&gt;<br/>
+ &nbsp; &nbsp;&lt;!-- task --&gt;<br/>
+ &nbsp; &nbsp;&lt;div ng-if=&quot;data.totalTask &gt; 0&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;!-- &lt;h6 class=&quot;csAssetProperties__title ng-scope&quot; style=&quot;width: 90%;margin: 0 auto 0.5rem auto;&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/h6&gt; --&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;ul class=&quot;csAssetProperties__list cs-p-h-w ng-scope&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;li class=&quot;cs-meta-data-row csAssetProperties__list__item cs-m-b-xs&quot; ng-click=&quot;task = !task&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;span class=&quot;csAssetProperties__list__label csAssetProperties__list__parent_label parent-as-header&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;i class=&quot;cs-icon cs-iconsize-150 &quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ng-class=&quot;(task) ? 'cs-icon-arrow-right' : 'cs-icon-arrow-down'&quot;&gt;&lt;/i&gt; &lt;span&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{{'csCommonTranslations.tasks' | csTranslate}}&lt;/span&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/span&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;hr class=&quot;cs-meta-data-row-hr hr-parent&quot; /&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/li&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div ng-show=&quot;!task&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;cs-progress class=&quot;cs-progress-01 cs-m-b-xs&quot; style=&quot;padding: 1.5rem 0;&quot; progress=&quot;data.taskPercentage&quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; number=&quot;number&quot; /&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;li class=&quot;cs-meta-data-row csAssetProperties__list__item&quot;&gt;&lt;span<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;class=&quot;csAssetProperties__list__label&quot;&gt;{{'csCommonTranslations.count' | csTranslate}}&lt;/span&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div class=&quot;csAssetProperties__list__value&quot;&gt;{{data.totalTask - data.completedTask}}<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{{'csCommonTranslations.outOf' | csTranslate}} {{data.totalTask}}<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{{'csCommonTranslations.tasksOpen' | csTranslate}}&lt;/div&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/li&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;/ul&gt;<br/>
+ &nbsp; &nbsp;&lt;/div&gt;<br/>
+ &nbsp; &nbsp;&lt;div ng-if=&quot;data.mode=='quality-gates'&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;ul class=&quot;csAssetProperties__list cs-p-h-w ng-scope&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;li class=&quot;cs-meta-data-row csAssetProperties__list__item cs-m-b-xs&quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ng-click=&quot;qualityGates = !qualityGates&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;span class=&quot;csAssetProperties__list__label csAssetProperties__list__parent_label parent-as-header&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;i class=&quot;cs-icon cs-iconsize-150 &quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ng-class=&quot;(qualityGates) ? 'cs-icon-arrow-right' : 'cs-icon-arrow-down'&quot;&gt;&lt;/i&gt; &lt;span&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{{'csCommonTranslations.qualityGates' | csTranslate}}&lt;/span&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/span&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;hr class=&quot;cs-meta-data-row-hr hr-parent&quot; /&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/li&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;!-- &lt;h6 class=&quot;csAssetProperties__title ng-scope&quot; style=&quot;width: 90%;margin: 0 auto 0.5rem auto;&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{{'csCommonTranslations.qualityGates' | csTranslate}}&lt;/h6&gt; --&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div ng-show=&quot;!qualityGates&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;cs-progress class=&quot;cs-progress-01 cs-m-b-xs&quot; style=&quot;padding: 1.5rem 0;&quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; progress=&quot;data.completeness.qualityGates.percentage&quot; number=&quot;number&quot; /&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div ng-if=&quot;gridHeight != 1&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;table class=&quot;cs-table-02 cs-is-full-width&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;thead style=&quot;border-bottom: transparent;&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;tr&gt;&lt;/tr&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/thead&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;tbody ng-repeat=&quot;qualityGate in data.qualityGates&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;!-- quality gates --&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;tr style=&quot;background-color: transparent; border-top: 1px solid #f2f2f2 !important;&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;td&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;span ng-if=&quot;qualityGate.sequenceCompleted&quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;class=&quot;cs-icon cs-icon-circle-ok cs-iconsize-400 cs-color-30 cs-m-r-xs&quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;style=&quot;vertical-align: middle;&quot; /&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;span ng-if=&quot;!qualityGate.sequenceCompleted&quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;class=&quot;cs-icon cs-icon-in-progress cs-iconsize-400 cs-color-36 cs-m-r-xs&quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;style=&quot;vertical-align: middle;&quot; /&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;cs-open-asset-page ng-if=&quot;data.userHasAdminPermission&quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;asset-id=&quot;{{qualityGate.id}}&quot; class=&quot;cs-is-subtle&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;span class=&quot;cs-p-v-s&quot; style=&quot;font-weight: 600;&quot;&gt;{{qualityGate.name}}&lt;/span&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/cs-open-asset-page&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;span ng-if=&quot;!data.userHasAdminPermission&quot; class=&quot;cs-p-v-s&quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;style=&quot;font-weight: 600;&quot;&gt;{{qualityGate.name}}&lt;/span&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/td&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;td style=&quot;width: 2rem; padding-left: 0; padding-right: 0;&quot; /&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;td style=&quot;width: 2rem;&quot; /&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/tr&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;!-- completeness checks --&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;tr ng-repeat=&quot;completenessCheck in qualityGate.completenessChecks&quot; class=&quot;cs-lvl-01&quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;style=&quot;line-height: 2.8rem;&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;td style=&quot;padding-left: 4rem; padding-bottom: 0.5rem; width: 100%;&quot; colspan=&quot;3&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;span ng-if=&quot;completenessCheck.completed&quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;class=&quot;cs-icon cs-icon-circle-ok cs-iconsize-400 cs-color-30 cs-m-r-xs&quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;style=&quot;vertical-align: middle;&quot; /&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;span ng-if=&quot;!completenessCheck.completed&quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;class=&quot;cs-icon cs-icon-in-progress cs-iconsize-400 cs-color-36 cs-m-r-xs&quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;style=&quot;vertical-align: middle;&quot; /&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;cs-open-asset-page ng-if=&quot;data.userHasAdminPermission&quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;asset-id=&quot;{{completenessCheck.id}}&quot; class=&quot;cs-is-subtle&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;{{completenessCheck.name}}<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/cs-open-asset-page&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;span ng-if=&quot;!data.userHasAdminPermission&quot;&gt;{{completenessCheck.name}}&lt;/span&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/td&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;td style=&quot;width: 2rem; padding-left: 0; padding-right: 0;&quot;&gt;&lt;/td&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;td style=&quot;width: 2rem;&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;span<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ng-if=&quot;(!completenessCheck.completed) &amp;&amp; (completenessCheck.description != 'false')&quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;class=&quot;cs-icon cs-icon-circle-info cs-iconsize-400 cs-color-07&quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;style=&quot;vertical-align: middle;&quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;cs-tooltip=&quot;{{completenessCheck.description}}&quot;&gt;&lt;/span&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;span<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ng-if=&quot;(!completenessCheck.completed) &amp;&amp; (completenessCheck.description == 'false')&quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;class=&quot;cs-icon cs-icon-circle-info cs-iconsize-400 cs-color-07&quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;style=&quot;vertical-align: middle;&quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;cs-tooltip=&quot;{{'csCommonTranslations.missingDescriptionCompletenessCheck' | csTranslate}}&quot;&gt;&lt;/span&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/td&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/tr&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/tbody&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/table&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;/ul&gt;<br/>
+ &nbsp; &nbsp;&lt;/div&gt;<br/>
+ &nbsp; &nbsp;&lt;div ng-if=&quot;!(data.mode)&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;cs-empty-state cs-empty-state-icon=&quot;'cs-icon-check'&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;span class=&quot;cs-state-headline&quot; cs-translate=&quot;'csCommonTranslations.noQualityGates'&quot;&gt;&lt;/span&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;/cs-empty-state&gt;<br/>
+ &nbsp; &nbsp;&lt;/div&gt;<br/>
+&lt;/div&gt;<br/>
+&lt;!-- completeness checks --&gt;<br/>
+&lt;div ng-if=&quot;data.mode=='completeness-checks'&quot;&gt;<br/>
+ &nbsp; &nbsp;&lt;div class=&quot;empty-workflow&quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; ng-if=&quot;!(data.annotation) &amp;&amp; !(data.workflow) &amp;&amp; !(data.workflowStep) &amp;&amp; !(data.workflowState) &amp;&amp; !(data.assigned) &amp;&amp; !(data.deadline)&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;cs-empty-state cs-empty-state-icon=&quot;'cs-icon-git-branch'&quot; style=&quot;max-height: 120px;&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;span class=&quot;cs-state-headline&quot; cs-translate=&quot;'csCommonTranslations.noWorkflow'&quot;&gt;&lt;/span&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;/cs-empty-state&gt;<br/>
+ &nbsp; &nbsp;&lt;/div&gt;<br/>
+ &nbsp; &nbsp;&lt;ul class=&quot;csAssetProperties__list cs-p-h-w ng-scope&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;li class=&quot;cs-meta-data-row csAssetProperties__list__item cs-m-b-xs&quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ng-click=&quot;completenessChecks = !completenessChecks&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;span class=&quot;csAssetProperties__list__label csAssetProperties__list__parent_label parent-as-header&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;i class=&quot;cs-icon cs-iconsize-150 &quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ng-class=&quot;(completenessChecks) ? 'cs-icon-arrow-right' : 'cs-icon-arrow-down'&quot;&gt;&lt;/i&gt; &lt;span&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;Mindestanforderung&lt;/span&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/span&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;hr class=&quot;cs-meta-data-row-hr hr-parent&quot; /&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;/li&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;div ng-show=&quot;!completenessChecks&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;cs-progress class=&quot;cs-progress-04 cs-m-b-xs&quot; style=&quot;padding: 1.5rem 0;&quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; progress=&quot;data.completeness.completenessChecks.percentage&quot; number=&quot;number&quot; /&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;div ng-if=&quot;gridHeight != 1&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;table class=&quot;cs-table-02 cs-is-full-width&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;thead style=&quot;border-bottom: transparent;&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;tr&gt;&lt;/tr&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/thead&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;!-- completeness check groups --&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;tbody ng-repeat=&quot;group in data.groups&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;tr style=&quot;background-color: transparent; border-top: 1px solid #f2f2f2;&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;td colspan=&quot;3&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;h6 class=&quot;cs-p-v-s&quot;&gt;{{group.name}}&lt;/h6&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/td&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/tr&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;!-- completeness checks --&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;tr ng-repeat=&quot;completenessCheck in group.completenessChecks&quot; class=&quot;cs-lvl-01&quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;style=&quot;line-height: 2.8rem;&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;td&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;cs-open-asset-page ng-if=&quot;data.userHasAdminPermission&quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;asset-id=&quot;{{completenessCheck.id}}&quot; class=&quot;cs-is-subtle&quot;&gt;{{completenessCheck.name}}<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/cs-open-asset-page&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;span ng-if=&quot;!data.userHasAdminPermission&quot;&gt;{{completenessCheck.name}}&lt;/span&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/td&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;td style=&quot;width: 2rem; padding-left: 0; padding-right: 0;&quot; /&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;td style=&quot;width: 2rem;&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;span ng-if=&quot;completenessCheck.completed&quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;class=&quot;cs-icon cs-icon-circle-ok cs-iconsize-400 cs-color-30&quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;style=&quot;vertical-align: middle;&quot; /&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;span ng-if=&quot;!completenessCheck.completed&quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;class=&quot;cs-icon cs-icon-in-progress cs-iconsize-400 cs-color-36&quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;style=&quot;vertical-align: middle;&quot; cs-tooltip=&quot;{{completenessCheck.description}}&quot; /&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/td&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/tr&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/tbody&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/table&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;/div&gt;<br/>
+ &nbsp; &nbsp;&lt;/ul&gt;<br/>
+&lt;/div&gt;<br/>
+<br/>
+&lt;cs-empty-state<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp;ng-if=&quot;!(data.annotation) &amp;&amp; !(data.workflow) &amp;&amp; !(data.workflowStep) &amp;&amp; !(data.workflowState) &amp;&amp; !(data.assigned) &amp;&amp; !(data.deadline) &amp;&amp; !(data.mode) &amp;&amp; !(data.totalTask &gt; 0)&quot;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp;cs-empty-state-icon=&quot;'cs-icon-list'&quot;&gt;<br/>
+ &nbsp; &nbsp;&lt;span class=&quot;wrap-line cs-state-headline&quot; cs-translate=&quot;'csCommonTranslations.noWorkflowQualityGates'&quot;&gt;&lt;/span&gt;<br/>
+ &nbsp; &nbsp;&lt;button class=&quot;cs-button-link-01&quot; ng-click=&quot;addWorkflow()&quot;&gt;<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp;&lt;i class=&quot;cs-icon cs-icon-circle-plus cs-iconsize-200&quot;&gt;&lt;/i&gt;&amp;nbsp; &lt;span<br/>
+ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;ng-bind=&quot;'csAssetWorkflowStatusWidget.addWorkflow' | csTranslate&quot;&gt;&lt;/span&gt;<br/>
+ &nbsp; &nbsp;&lt;/button&gt;<br/>
+&lt;/cs-empty-state&gt;<br/>
+
+</body>
+</html>

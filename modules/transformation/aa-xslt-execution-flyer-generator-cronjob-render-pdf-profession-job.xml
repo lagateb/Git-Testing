@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmd xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.censhare.com/xml/3.0.0/command.xsd" xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct" xmlns:xe="http://www.censhare.com/xml/3.0.0/xmleditor">
+  <xml-info title="${xslt-execution-title} - Flyer Generator Render V2 - Render PDF&apos;s" description="${xslt-execution-description} - Flyer Generator Render PDF Job" knowledge-level="3" special-licence="true" feature-help="" localize="true" template-name="transformation.aa-xslt-execution" template-url="file:modules/transformation/aa-xslt-execution.xml">
+    <property-resources>
+      <base url="file:module"/>
+      <base url="file:../../common/global"/>
+    </property-resources>
+    <history>
+      <entry user="censhare Defaultuser" timestamp="2020-07-24T13:09:21.436Z" comment=""/>
+      <entry user="censhare Defaultuser" timestamp="2020-07-24T13:14:17.089Z" comment=""/>
+      <entry user="censhare Defaultuser" timestamp="2020-07-24T13:27:49.685Z" comment=""/>
+      <entry user="censhare Defaultuser" timestamp="2020-07-24T14:18:00.672Z" comment=""/>
+      <entry user="censhare Defaultuser" timestamp="2020-08-05T12:36:40.460Z" comment=""/>
+      <entry user="censhare Defaultuser" timestamp="2020-08-06T09:47:45.039Z" comment=""/>
+      <entry user="censhare Defaultuser" timestamp="2020-08-06T09:47:45.039Z" comment=""/>
+      <entry user="censhare Defaultuser" timestamp="2020-08-06T09:47:45.039Z" comment=""/>
+      <entry user="censhare Defaultuser" timestamp="2020-09-23T11:06:23.128Z" comment=""/>
+      <entry user="censhare Defaultuser" timestamp="2021-06-23T08:17:16.754Z" comment=""/>
+      <entry user="censhare Defaultuser" timestamp="2021-07-09T13:54:31.161Z" comment=""/>
+      <entry user="censhare Defaultuser" timestamp="2021-07-09T13:55:05.063Z" comment=""/>
+      <entry user="censhare Defaultuser" timestamp="2021-07-09T14:01:03.044Z" comment=""/>
+    </history>
+  </xml-info>
+  <cmd-info name="transformation.aa-xslt-execution-20200724-1511-0" type="auto-execute" enabled="false" mode="loop" ignore-error="true">
+    <error-log module="transformation"/>
+  </cmd-info>
+  <admin-info dialog-id="xslt-execution-config" dialog-url="file:config-dialog.xml"/>
+  <listen-events xml-queue-size="1" fork-command="true" persistent-events="true" event-count-limit="50" retries-on-error="0" ignore-remote-events="true">
+    <!-- alle 5 minute, von 20 uhr bis 5 uhr morgens-->
+    <event target="CustomAssetEvent" param2="0" method="flyer-generator-render-pdf"/>
+  </listen-events>
+  <commands currentstep="0">
+    <command target="ScriptletManager" scriptlet="modules.lib.XSLTAssetAutomationScriptlet" method="register"/>
+    <command target="EventManager" method="waitevent" key="listen-events"/>
+    <command target="ScriptletManager" scriptlet="modules.lib.XSLTAssetAutomationScriptlet" method="setup"/>
+    <command target="ScriptletManager" scriptlet="modules.lib.XSLTAssetAutomationScriptlet" method="finish"/>
+  </commands>
+  <!-- stylesheet-url="file:modules/.../test.xsl" transformation-key="resource-key" -->
+  <config perform-checkout="false" transformation-way="asset" perform-update="false" transformation-key="svtx:flyer.generator.v2.profession.to.pdf">
+    <!-- filter/query assets -->
+    <asset-filter>
+      <query type="asset" limit="8" xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct">
+        <condition name="censhare:asset.currversion" value="0"/>
+        <condition name="censhare:asset.deletion" value="0"/>
+        <condition name="censhare:asset.state" value="0"/>
+        <condition name="censhare:asset.type" value="profession.*" partial-load-tree="true" expanded-nodes="profession."/>
+        <condition name="censhare:asset.domain" partial-load-tree="true" value="root.flyer-generator.v2.*" expanded-nodes="root.|root.flyer-generator.|root.flyer-generator.v2."/>
+        <condition name="svtx:profession-pdf-rendering-pending" value="1"/>
+      </query>
+    </asset-filter>
+    <asset-tree/>
+    <!-- update/checkin assets -->
+    <asset-update domain="root." domain2="root."/>
+  </config>
+  <process-events>
+    <processing in-batches="false"/>
+  </process-events>
+</cmd>

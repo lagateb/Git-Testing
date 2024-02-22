@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset id_org="56431" name="Snippet Allianz Promotion Article Number and Version" type="module.workspace.view.snippet." application="default" domain="root." domain2="root.">
+  <asset_element idx="0" key="actual." isversioned="1"/>
+  <asset_feature feature="censhare:asset-condition-filter" value_string="data.aspects.macro.promoArticleNumberAndVersion"/>
+  <asset_feature feature="censhare:macro" value_string2="censhare:resource-key" sorting="1" value_asset_key_ref="msp:macro.promotion.ArticleNumberAndVersion"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="msp:workspace.view.snippet.mspAllianzPromotionArticleNumberAndVersionSnippet"/>
+  <asset_feature feature="censhare:resource-meta">
+    <xmldata>
+      <selection needed="false"/>
+    </xmldata>
+  </asset_feature>
+  <asset_feature feature="censhare:workspace.view.snippet-name" value_string="mspAllianzPromotionArticleNumberAndVersionSnippet"/>
+  <storage_item element_idx="0" key="text-preview" mimetype="application/xhtml+xml" relpath="file:Snippet Allianz Promotion Article Number and Version.text-preview.xhtml"/>
+  <storage_item element_idx="0" key="master" mimetype="text/html" relpath="file:Snippet Allianz Promotion Article Number and Version.html"/>
+</asset>

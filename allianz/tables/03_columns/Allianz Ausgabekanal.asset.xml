@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset id_org="15456" name="Allianz Ausgabekanal" type="module.table.column." application="default" domain="root.common-resources." domain2="root.">
+  <asset_feature feature="censhare:macro" value_string2="censhare:resource-key" value_asset_key_ref="svtx:macro.asset.outputchannel"/>
+  <asset_feature feature="censhare:name" language="de" value_string="Kanal"/>
+  <asset_feature feature="censhare:name" language="en" value_string="Kanal"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="allianz:table-column.asset.output-channel"/>
+  <asset_feature feature="censhare:resource-meta">
+    <xmldata>
+      <selection needed="false"/>
+    </xmldata>
+  </asset_feature>
+  <asset_feature feature="censhare:table.column.align-horizontal" value_key="left"/>
+  <asset_feature feature="censhare:table.column.key" value_string="kanal"/>
+  <asset_feature feature="censhare:table.column.type" value_key="string" value_long="1"/>
+  <asset_feature feature="censhare:table.column.width-max-pixels" value_long="80"/>
+  <asset_feature feature="censhare:table.column.width-min-pixels" value_long="50"/>
+  <asset_feature feature="censhare:table.column.width-pixels" value_long="75"/>
+</asset>

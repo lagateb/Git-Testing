@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset name="svtx:set-approvals.extension.workflow" type="module.transformation." application="texteditor" domain="root." domain2="root.">
+  <asset_element idx="0" key="actual." isversioned="1"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="svtx:set-approvals.extension.workflow"/>
+  <asset_feature feature="censhare:resource-meta">
+    <xmldata>
+      <selection needed="false"/>
+    </xmldata>
+  </asset_feature>
+  <parent_asset_rel parent_asset_ref_file="svtx_metadata.approval.display.dialog.controller.asset.xml" key="user."/>
+  <storage_item element_idx="0" key="master" mimetype="application/xslt+xml" relpath="file:svtx_set-approvals.extension.workflow.xsl"/>
+</asset>

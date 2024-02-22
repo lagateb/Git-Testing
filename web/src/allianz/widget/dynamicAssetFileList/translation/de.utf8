@@ -1,0 +1,16 @@
+title = Dateien
+description = Liste der Dateien des aktuell dargestellten Assets
+
+dropNew = Datei hierher ziehen
+dropNew2 = oder klicken, um Datei zu wählen
+get = Datei herunterladen
+replace = Datei ersetzen
+replaceMaster = Masterdatei ersetzen
+delete = Datei löschen
+checkout = Datei öffnen
+getcheckout = Herunterladen und bearbeiten
+deleteConfirm = Soll diese Datei endgültig gelöscht werden?
+getTransformation = Transformation erzeugen
+dynamicallyGenerated = Dynamisch erzeugt
+NoFiles = Keine Datei angehängt
+AddFileBtn = Datei

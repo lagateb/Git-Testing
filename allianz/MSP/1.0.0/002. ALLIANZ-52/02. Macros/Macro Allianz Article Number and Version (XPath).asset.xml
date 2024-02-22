@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset id_org="56436" name="Macro Allianz Article Number and Version (XPath)" type="module.macro." application="texteditor" domain="root." domain2="root.">
+  <asset_element idx="0" key="actual." isversioned="1"/>
+  <asset_feature feature="censhare:macro.expression.xpath" value_string="string-join((asset/asset_feature[@feature=&apos;msp:alz-mmc.promotion-article-number&apos;]/@value_string, asset/asset_feature[@feature=&apos;msp:alz-mmc.promotion-version-number&apos;]/@value_string), &apos;_&apos;)"/>
+  <asset_feature feature="censhare:macro.identifier" value_string="promoArticleNumberAndVersionXPath"/>
+  <asset_feature feature="censhare:macro.type" value_key="xpath"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="msp:macro.promotion.ArticleNumberAndVersionXPath"/>
+  <storage_item element_idx="0" key="text-preview" mimetype="application/xhtml+xml" relpath="file:Macro Allianz Article Number and Version (XPath).text-preview.xhtml"/>
+</asset>

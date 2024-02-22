@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset id_org="11474" name="Macro: Promotion creation date" type="module.macro." application="metadata" domain="root." domain2="root.">
+  <asset_feature feature="censhare:macro.expression.xpath" value_string="for $x in asset/asset_feature[@feature=&apos;msp:alz-mmc.promotion-creation-date&apos;]/@value_timestamp return cs:format-date($x, &apos;dd.MM.yyyy&apos;)"/>
+  <asset_feature feature="censhare:macro.type" value_key="xpath"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="1"/>
+  <asset_feature feature="censhare:resource-key" value_string="msp:macro.promotion.creationDate"/>
+  <asset_feature feature="censhare:resource-meta">
+    <xmldata>
+      <selection needed="false"/>
+    </xmldata>
+  </asset_feature>
+</asset>

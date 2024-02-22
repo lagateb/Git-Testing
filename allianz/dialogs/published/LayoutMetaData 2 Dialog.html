@@ -1,0 +1,27 @@
+<ul class="csAssetProperties__list">
+
+  <li class="csAssetProperties__list__item">
+    <div class="csAssetProperties__list__label">
+      <span style="font-weight: bold;color: #1c1c1c !important">Druckstücknummer</span>
+    </div>
+    <div class="csAssetProperties__list__value">
+        <span style="font-weight: bold">{{asset.traits.allianzLayout.printNumber.value[0].value}}</span>
+    </div>
+  </li>
+
+  <li class="csAssetProperties__list__item">
+    <span class="csAssetProperties__list__label">Artikelnummer (Version) contentoo</span>
+    <div class="csAssetProperties__list__value">
+      <cs-select-new on-change="updatePrintNumber()" model="currentMeasure" values="measureOptions" placeholder="Artikelnummer (Version) Maßnahmenbezeichnung"></cs-select-new>
+    </div>
+  </li>
+
+  <li class="csAssetProperties__list__item">
+    <span class="csAssetProperties__list__label">Auflage/Stand</span>
+    <div class="csAssetProperties__list__value">
+      <div>
+        <cs-input ng-change="updatePrintNumber()" ng-model="printNumberAddition"></cs-input>
+      </div>
+    </div>
+  </li>
+</ul>

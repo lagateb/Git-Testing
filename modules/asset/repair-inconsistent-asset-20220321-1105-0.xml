@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmd xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.censhare.com/xml/3.0.0/command.xsd" xmlns:corpus="http://www.censhare.com/xml/3.0.0/corpus" xmlns:new-val="http://www.censhare.com/xml/3.0.0/new-val" xmlns:new-fct="http://www.censhare.com/xml/3.0.0/new-fct" xmlns:xe="http://www.censhare.com/xml/3.0.0/xmleditor">
+  <xml-info title="${repair-inconsistent-asset-title}" description="${repair-inconsistent-asset-description}" localize="true" knowledge-level="2" special-licence="false" feature-help="" version="1" template-name="asset.repair-inconsistent-asset" template-url="file:modules/asset/repair-inconsistent-asset.xml">
+    <property-resources>
+      <base url="file:module"/>
+      <base url="file:../../common/global"/>
+    </property-resources>
+    <history>
+      <entry user="[MSP] Beckmann, Felix" timestamp="2022-03-21T10:05:29.938Z" comment=""/>
+    </history>
+  </xml-info>
+  <cmd-info name="asset.repair-inconsistent-asset-20220321-1105-0" type="server-action" enabled="true">
+    <error-log module="Asset Change" log-cancel="false"/>
+    <server-action>
+      <clients>
+        <client type="javaclient"/>
+        <client type="webclient"/>
+      </clients>
+      <filter/>
+    </server-action>
+    <roles>
+      <role name="admin"/>
+    </roles>
+  </cmd-info>
+  <admin-info dialog-id="repair-inconsistent-asset-config" dialog-url="file:config-dialog.xml"/>
+  <commands currentstep="0">
+    <command target="client" method="showdialog" key="select"/>
+    <command target="ScriptletManager" method="check" scriptlet="modules.asset.InconsistentAssetRepairer"/>
+    <command target="client" method="showdialog" key="confirm"/>
+    <if condition="=$$.report@fix">
+      <command target="ScriptletManager" method="repair" scriptlet="modules.asset.InconsistentAssetRepairer"/>
+      <command target="client" method="showdialog" key="report"/>
+    </if>
+  </commands>
+  <xe:part id="select" transactional="false">
+    <xe:group align="down" prefwidth="500">
+      <xe:editfield label="${select-asset-to-repair}" label-width="200" label-style="label-default" source="assets.asset@id">
+        <xe:validate regex="\d*"/>
+      </xe:editfield>
+    </xe:group>
+  </xe:part>
+  <xe:part id="confirm" transactional="false">
+    <xe:group align="down" prefwidth="500">
+      <xe:label label="${confirm-report}"/>
+      <xe:edittext weight-x="1" weight-y="1" source="report" readonly="true"/>
+      <xe:label label="${confirm-fixes}" visible="=$$.report@fix"/>
+    </xe:group>
+  </xe:part>
+  <xe:part id="report" transactional="false">
+    <xe:group align="down" prefwidth="500">
+      <xe:label label="${confirm-report-fixed}"/>
+      <xe:edittext weight-x="1" weight-y="1" source="report" readonly="true"/>
+    </xe:group>
+  </xe:part>
+</cmd>

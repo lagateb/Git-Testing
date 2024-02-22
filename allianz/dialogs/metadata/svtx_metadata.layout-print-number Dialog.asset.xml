@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<asset name="svtx:metadata.layout-print-number Dialog" type="module.dialog." application="default" domain="root." domain2="root.">
+  <asset_element idx="0" key="actual." isversioned="1"/>
+  <asset_feature feature="censhare:available-trait" value_string="allianzLayout"/>
+  <asset_feature feature="censhare:resource-enabled" value_long="1"/>
+  <asset_feature feature="censhare:resource-in-cached-tables" value_long="0"/>
+  <asset_feature feature="censhare:resource-key" value_string="svtx:metadata.layout-print-number.dialog"/>
+  <asset_feature feature="censhare:resource-usage" value_key="censhare:meta-data-dialog-definition"/>
+  <child_asset_rel child_asset_ref_resource_key="censhare:metadata.categories.dialog.include" key="user.metadata-dialog-include."/>
+  <parent_asset_rel parent_asset_ref_file="svtx_metadata.layout-print-number.asset.xml" key="user.metadata-dialog."/>
+  <storage_item element_idx="0" key="master" mimetype="text/html" relpath="file:svtx_metadata.layout-print-number Dialog.html"/>
+</asset>

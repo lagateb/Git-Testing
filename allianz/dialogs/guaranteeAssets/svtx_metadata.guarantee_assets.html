@@ -1,0 +1,214 @@
+<style>
+    /*.csMultivalueRepeat__cell {
+        margin-bottom: 2.5rem !important;
+        !*width: 100% !important;*!
+    }*/
+    .remove-btn .add-btn {
+        float: right;
+    }
+</style>
+
+<div ng-if="dataModel">
+    <cs-dialog-tabs tab-style="1">
+        <cs-dialog-tab name="{{ 'csCommonTranslations.properties' | csTranslate }}">
+            <div>
+                <ul class="csDialogForm__row">
+                    <li class="csDialogForm__row">
+                        <div class="csDialogForm__cell-label">
+                            <span class="cs-label">Name</span>
+                        </div>
+                        <div class="csDialogForm__cell">
+                            <span class="cs-value">
+                                <cs-input enable-reset="true" ng-model="dataModel.name"></cs-input>
+                            </span>
+                        </div>
+                    </li>
+                    <li class="csDialogForm__row">
+                        <div class="csDialogForm__cell-label">
+                            <span class="cs-label">Stand</span>
+                        </div>
+                        <div class="csDialogForm__cell">
+                            <span class="cs-value">
+                                <cs-datepicker date-only ng-model="dataModel.date" enable-reset></cs-datepicker>
+                            </span>
+                        </div>
+                    </li>
+                    <!-- nur bei Sicherungsvermögen anzeigen -->
+                    <div ng-if="dataModel.type === 'product.capital-investment.guarantee-asset.'">
+                        <li class="csDialogForm__row">
+                            <div class="csDialogForm__cell-label">
+                                <span class="cs-label">Gesamtvolumen</span>
+                            </div>
+                            <div class="csDialogForm__cell">
+                            <span class="cs-value">
+                                <cs-input enable-reset="true" ng-model="dataModel.totalVolume"></cs-input>
+                            </span>
+                            </div>
+                        </li>
+                        <li class="csDialogForm__row">
+                            <div class="csDialogForm__cell-label">
+                                <span class="cs-label">Headline</span>
+                            </div>
+                            <div class="csDialogForm__cell">
+                            <span class="cs-value">
+                                <cs-input enable-reset="true" ng-model="dataModel.headline"></cs-input>
+                            </span>
+                            </div>
+                        </li>
+                        <li class="csDialogForm__row">
+                            <div class="csDialogForm__cell-label">
+                                <span class="cs-label">Copy</span>
+                            </div>
+                            <div class="csDialogForm__cell">
+                            <span class="cs-value">
+                                <cs-input enable-reset="true" ng-model="dataModel.copy"></cs-input>
+                            </span>
+                            </div>
+                        </li>
+                    </div>
+                </ul>
+            </div>
+        </cs-dialog-tab>
+        <cs-dialog-tab name="Anlageklassen">
+            <div>
+                <ul ng-repeat="investment in dataModel.investments track by $index" class="csDialogForm__row">
+                    <div class="csMultivalueRepeat__cell-button cs-next-to-form" style="float: right">
+                        <span ng-click="remove($index, dataModel.investments)" class="cs-icon cs-icon-circle-minus cs-iconsize-200"></span>
+                    </div>
+                    <li class="csDialogForm__row">
+                        <div class="csDialogForm__cell-label">
+                            <span class="cs-label">Name</span>
+                        </div>
+                        <div class="csDialogForm__cell">
+                            <span class="cs-value">
+                                <cs-input enable-reset="true" ng-model="investment.name"></cs-input>
+                            </span>
+                        </div>
+                    </li>
+                    <li class="csDialogForm__row">
+                        <div class="csDialogForm__cell-label">
+                            <span class="cs-label">Anteil</span>
+                        </div>
+                        <div class="csDialogForm__cell">
+                            <span class="cs-value">
+                                <cs-input enable-reset="true" number ng-model="investment.share"></cs-input>
+                            </span>
+                        </div>
+                    </li>
+                    <li class="csDialogForm__row">
+                        <div class="csDialogForm__cell-label">
+                            <span class="cs-label">Beschreibung</span>
+                        </div>
+                        <div class="csDialogForm__cell">
+                            <span class="cs-value">
+                                <cs-input enable-reset="true" multilines="3"
+                                          ng-model="investment.description"></cs-input>
+                            </span>
+                        </div>
+                    </li>
+                    <li class="csDialogForm__row">
+                        <div class="csDialogForm__cell-label">
+                            <span class="cs-label">Farbe</span>
+                        </div>
+                        <div class="csDialogForm__cell">
+                            <span class="cs-value">
+                                <cs-colorpicker enable-reset="true" palette-model="allianzColors"
+                                                ng-model="investment.color" custom-input="true"></cs-colorpicker>
+                            </span>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="csMultivalueRepeat__cell cs-next-to-form" style="width: 100%;float: left;padding-bottom: 0.7rem;">
+                <span ng-click="addInvestment()" class="cs-icon cs-icon-circle-plus cs-iconsize-800"></span>
+            </div>
+        </cs-dialog-tab>
+        <cs-dialog-tab name="Regionen" ng-if="dataModel.type && dataModel.type === 'product.capital-investment.portfolio.'">
+            <div>
+                <ul ng-repeat="investment in dataModel.regions track by $index" class="csDialogForm__row">
+                    <div class="csMultivalueRepeat__cell-button cs-next-to-form" style="float: right">
+                        <span ng-click="remove($index, dataModel.regions)" class="cs-icon cs-icon-circle-minus cs-iconsize-200"></span>
+                    </div>
+                    <li class="csDialogForm__row">
+                        <div class="csDialogForm__cell-label">
+                            <span class="cs-label">Name</span>
+                        </div>
+                        <div class="csDialogForm__cell">
+                            <span class="cs-value">
+                                <cs-input enable-reset="true" ng-model="investment.name"></cs-input>
+                            </span>
+                        </div>
+                    </li>
+                    <li class="csDialogForm__row">
+                        <div class="csDialogForm__cell-label">
+                            <span class="cs-label">Anteil</span>
+                        </div>
+                        <div class="csDialogForm__cell">
+                            <span class="cs-value">
+                                <cs-input enable-reset="true" number ng-model="investment.share"></cs-input>
+                            </span>
+                        </div>
+                    </li>
+                    <li class="csDialogForm__row">
+                        <div class="csDialogForm__cell-label">
+                            <span class="cs-label">Farbe</span>
+                        </div>
+                        <div class="csDialogForm__cell">
+                            <span class="cs-value">
+                                <cs-colorpicker enable-reset="true" palette-model="allianzColors"
+                                                ng-model="investment.color" custom-input="true"></cs-colorpicker>
+                            </span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="csMultivalueRepeat__cell cs-next-to-form" style="width: 100%;float: left;padding-bottom: 0.7rem;">
+                <span ng-click="addRegion()" class="cs-icon cs-icon-circle-plus cs-iconsize-800"></span>
+            </div>
+        </cs-dialog-tab>
+        <cs-dialog-tab name="Entwicklung" ng-if="dataModel.type &&  dataModel.type === 'product.capital-investment.portfolio.'">
+            <div>
+                <ul ng-repeat="investment in dataModel.developments track by $index" class="csDialogForm__row">
+                    <div class="csMultivalueRepeat__cell-button cs-next-to-form" style="float: right">
+                        <span ng-click="remove($index, dataModel.developments)" class="cs-icon cs-icon-circle-minus cs-iconsize-200"></span>
+                    </div>
+                    <li class="csDialogForm__row">
+                        <div class="csDialogForm__cell-label">
+                            <span class="cs-label">Zeitpunkt</span>
+                        </div>
+                        <div class="csDialogForm__cell">
+                            <span class="cs-value">
+                                <cs-datepicker date-only ng-model="investment.date" enable-reset></cs-datepicker>
+                            </span>
+                        </div>
+                    </li>
+                    <li class="csDialogForm__row">
+                        <div class="csDialogForm__cell-label">
+                            <span class="cs-label">Wert</span>
+                        </div>
+                        <div class="csDialogForm__cell">
+                            <span class="cs-value">
+                                <cs-input enable-reset="true" number ng-model="investment.share"></cs-input>
+                            </span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="csMultivalueRepeat__cell cs-next-to-form" style="width: 100%;float: left;padding-bottom: 0.7rem;">
+                <span ng-click="addDevelopment()" class="cs-icon cs-icon-circle-plus cs-iconsize-800"></span>
+            </div>
+        </cs-dialog-tab>
+    </cs-dialog-tabs>
+</div>
+
+
+<div style="padding: 2rem">
+    <cs-button class="cs-button-cta" ng-click="update()">Änderungen Speichern</cs-button>
+    <cs-button ng-click="publish()" ng-class="{'cs-is-disabled' : isEqual}">Änderungen Publizieren</cs-button>
+</div>
+<!--<div style="padding: 2rem">
+    <cs-button ng-click="log()">Log DataModel</cs-button>
+</div>-->
