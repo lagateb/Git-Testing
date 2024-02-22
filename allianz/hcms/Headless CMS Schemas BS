@@ -1,0 +1,598 @@
+{
+  "image": {
+    "cs:roles.required": {
+      "read": ["bs", "admin"],
+      "create": "admin",
+      "update": "admin",
+      "delete": "admin"
+    },
+    "cs:asset.type": ["picture.", "picture.icon.", "picture.seal."],
+    "title": "image",
+    "type": "object",
+    "properties": {
+      "usage-right-sets": {
+        "type": "array",
+        "items": {
+          "cs:relation.$selection_key": ["id"],
+          "cs:feature.$value_property": "set",
+          "cs:feature.value_type": "ASSET",
+          "cs:feature.$ref_type": "INLINE",
+          "cs:asset.type": "usage-rights-set.",
+          "cs:feature.key": "censhare:usage-rights-set",
+          "type": "object",
+          "properties": {
+            "set": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "cs:feature.key": "censhare:asset.name",
+                  "type": "string"
+                },
+                "id": {
+                  "minValue": 0,
+                  "maxValue": 9007199254740991,
+                  "cs:feature.key": "censhare:asset.id",
+                  "type": "integer"
+                }
+              }
+            },
+            "endDate": {
+              "cs:feature.key": "censhare:end-date",
+              "type": "string"
+            },
+            "startDate": {
+              "cs:feature.key": "censhare:start-date",
+              "type": "string"
+            }
+          }
+        }
+      },
+      "creator": {
+        "additionalProperties": false,
+        "cs:feature.key": "svtx:asset.creator",
+        "type": "object",
+        "properties": {
+          "firstname": {
+            "cs:feature.key": "censhare:address.first-name",
+            "type": "string"
+          },
+          "email": {
+            "cs:feature.key": "censhare:address.uri-mailto",
+            "type": "string"
+          },
+          "lastname": {
+            "cs:feature.key": "censhare:address.last-name",
+            "type": "string"
+          }
+        }
+      },
+      "dynamicImages": {
+        "cs:media": {
+          "1-1": {
+            "width": 1000,
+            "aspectRatio": "1:1",
+            "type": "dynamic_image",
+            "cropKey": "1-1"
+          },
+          "flexible": {
+            "width": 1000,
+            "aspectRatio": "flexible",
+            "type": "dynamic_image",
+            "cropKey": "flexible"
+          },
+          "16-9": {
+            "width": 1000,
+            "aspectRatio": "16:9",
+            "type": "dynamic_image",
+            "cropKey": "16-9"
+          },
+          "171-83": {
+            "width": 1000,
+            "aspectRatio": "171:83",
+            "type": "dynamic_image",
+            "cropKey": "171-83"
+          },
+          "23-9": {
+            "width": 1000,
+            "aspectRatio": "23:9",
+            "type": "dynamic_image",
+            "cropKey": "23-9"
+          },
+          "3-4": {
+            "width": 1000,
+            "aspectRatio": "3:4",
+            "type": "dynamic_image",
+            "cropKey": "3-4"
+          },
+          "4-3": {
+            "width": 1000,
+            "aspectRatio": "4:3",
+            "type": "dynamic_image",
+            "cropKey": "4-3"
+          }
+        },
+        "type": "string"
+      },
+      "dateCreated": {
+        "cs:feature.$faceted": true,
+        "format": "date-time",
+        "cs:feature.key": "censhare:asset.creation_date",
+        "type": "string"
+      },
+      "keywords": {
+        "type": "array",
+        "items": {
+          "cs:feature.$value_property": "keyword",
+          "cs:feature.$ref_type": "link",
+          "cs:feature.$relevance_property": "relevance",
+          "cs:feature.key": "censhare:keyword-ref",
+          "cs:graphql.type": "keyword",
+          "type": "object",
+          "properties": {
+            "keyword": {
+              "type": "string"
+            },
+            "relevance": {
+              "type": "number"
+            }
+          },
+          "required": ["keyword"]
+        }
+      },
+      "iptc": {
+        "additionalProperties": false,
+        "cs:feature.key": "censhare:iptc",
+        "type": "object",
+        "properties": {
+          "image": {
+            "additionalProperties": false,
+            "cs:feature.key": "censhare:iptc.image",
+            "type": "object",
+            "properties": {
+              "country": {
+                "cs:feature.key": "censhare:address.country",
+                "type": "string"
+              },
+              "dateCreated": {
+                "format": "date-time",
+                "cs:feature.key": "censhare:iptc.date-created",
+                "type": "string"
+              },
+              "city": {
+                "cs:feature.key": "censhare:address.city",
+                "type": "string"
+              },
+              "sceneCode": {
+                "cs:feature.key": "censhare:iptc.scene-code",
+                "type": "string"
+              },
+              "countryCode": {
+                "cs:feature.key": "censhare:address.country-code",
+                "type": "string"
+              },
+              "additional": {
+                "cs:feature.key": "censhare:address.additional",
+                "type": "string"
+              },
+              "genre": {
+                "cs:feature.key": "censhare:iptc.genre",
+                "type": "string"
+              },
+              "region": {
+                "cs:feature.key": "censhare:address.region",
+                "type": "string"
+              }
+            }
+          },
+          "urgency": {
+            "cs:feature.key": "censhare:iptc.urgency",
+            "type": "string"
+          },
+          "contact": {
+            "additionalProperties": false,
+            "cs:feature.key": "censhare:iptc.contact",
+            "type": "object",
+            "properties": {
+              "comOtherType": {
+                "cs:feature.$value_property": "type",
+                "additionalProperties": false,
+                "cs:feature.key": "censhare:address.com-other-type",
+                "type": "object",
+                "properties": {
+                  "type": {
+                    "type": "string"
+                  },
+                  "value": {
+                    "cs:feature.key": "censhare:address.uri-generic",
+                    "type": "string"
+                  }
+                }
+              },
+              "country": {
+                "cs:feature.key": "censhare:address.country",
+                "type": "string"
+              },
+              "uriTel": {
+                "cs:feature.key": "censhare:address.uri-tel",
+                "type": "string"
+              },
+              "zipCode": {
+                "cs:feature.key": "censhare:address.zip-code",
+                "type": "string"
+              },
+              "creator": {
+                "cs:feature.key": "censhare:iptc.creator",
+                "type": "string"
+              },
+              "city": {
+                "cs:feature.key": "censhare:address.city",
+                "type": "string"
+              },
+              "street": {
+                "cs:feature.key": "censhare:address.street",
+                "type": "string"
+              },
+              "uriMailto": {
+                "cs:feature.key": "censhare:address.uri-mailto",
+                "type": "string"
+              },
+              "function": {
+                "cs:feature.key": "censhare:address.function",
+                "type": "string"
+              },
+              "region": {
+                "cs:feature.key": "censhare:address.region",
+                "type": "string"
+              }
+            }
+          },
+          "fixtureId": {
+            "cs:feature.key": "censhare:iptc.fixture-id",
+            "type": "string"
+          },
+          "category": {
+            "cs:feature.key": "censhare:iptc.category",
+            "type": "string"
+          },
+          "subcategory": {
+            "cs:feature.key": "censhare:iptc.subcategory",
+            "type": "string"
+          },
+          "content": {
+            "additionalProperties": false,
+            "cs:feature.key": "censhare:iptc.content",
+            "type": "object",
+            "properties": {
+              "keywords": {
+                "cs:feature.key": "censhare:iptc.keywords",
+                "type": "string"
+              },
+              "description": {
+                "cs:feature.key": "censhare:iptc.description",
+                "type": "string"
+              },
+              "writerEditor": {
+                "cs:feature.key": "censhare:iptc.writer-editor",
+                "type": "string"
+              },
+              "headline": {
+                "cs:feature.key": "censhare:iptc.headline",
+                "type": "string"
+              },
+              "subjectCode": {
+                "cs:feature.key": "censhare:iptc.subject-code",
+                "type": "string"
+              }
+            }
+          },
+          "status": {
+            "additionalProperties": false,
+            "cs:feature.key": "censhare:iptc.status",
+            "type": "object",
+            "properties": {
+              "instructions": {
+                "cs:feature.key": "censhare:iptc.instructions",
+                "type": "string"
+              },
+              "jobId": {
+                "cs:feature.key": "censhare:iptc.job-id",
+                "type": "string"
+              },
+              "copyrightNotice": {
+                "cs:feature.key": "censhare:iptc.copyright-notice",
+                "type": "string"
+              },
+              "source": {
+                "cs:feature.key": "censhare:iptc.source",
+                "type": "string"
+              },
+              "credit": {
+                "cs:feature.key": "censhare:iptc.credit",
+                "type": "string"
+              },
+              "title": {
+                "cs:feature.key": "censhare:iptc.title",
+                "type": "string"
+              }
+            }
+          }
+        }
+      },
+      "name": {
+        "cs:feature.key": "censhare:asset.name",
+        "type": "string"
+      },
+      "id": {
+        "cs:feature.key": "censhare:asset.id",
+        "type": "integer"
+      },
+      "type": {
+        "cs:feature.key": "censhare:asset.type",
+        "type": "string"
+      },
+      "web-image-link": {
+        "cs:relation.direction": "child",
+        "cs:relation.$ref_type": "link",
+        "cs:relation.key": "user.channel-content.",
+        "cs:relation.$filter.asset_type": ["picture.*"],
+        "type": "string"
+      },
+      "master": {
+        "type": "object",
+        "properties": {
+          "size": {
+            "type": "object",
+            "properties": {
+              "width": {
+                "cs:storage.$attribute": "width_px",
+                "cs:storage.item": "master",
+                "type": "integer"
+              },
+              "height": {
+                "cs:storage.$attribute": "height_px",
+                "cs:storage.item": "master",
+                "type": "integer"
+              }
+            }
+          },
+          "link": {
+            "cs:storage.item": "master",
+            "type": "string",
+            "cs:link": "link"
+          },
+          "mimeType": {
+            "cs:storage.$attribute": "mimetype",
+            "cs:storage.item": "master",
+            "type": "string"
+          }
+        }
+      },
+      "web-image": {
+        "cs:relation.direction": "child",
+        "cs:relation.key": "user.channel-content.",
+        "cs:relation.$filter.asset_type": ["picture.*"],
+        "type": "object",
+        "properties": {
+          "web-image-id": {
+            "cs:feature.key": "censhare:asset.id",
+            "type": "integer"
+          },
+          "web-image-name": {
+            "cs:feature.key": "censhare:asset.name",
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "fragments": {
+    "cs:roles.required": {
+      "read": ["bs", "admin"],
+      "create": "admin",
+      "update": "admin",
+      "delete": "admin"
+    },
+    "cs:asset.type": ["product.", "product.vsk.", "product.theme."],
+    "type": "object",
+    "properties": {
+      "module": {
+        "type": "array",
+        "items": {
+          "cs:relation.direction": "child",
+          "cs:relation.key": "user.",
+          "cs:relation.$filter.asset_type": ["article.*"],
+          "type": "object",
+          "properties": {
+            "component": {
+              "cs:feature.key": "svtx:bs-template",
+              "type": "string"
+            },
+            "fragment": {
+              "type": "array",
+              "items": {
+                "cs:relation.direction": "child",
+                "cs:$xml": {
+                  "article": {
+                    "initial": "<article></article>",
+                    "processor": "CenshareXLink"
+                  }
+                },
+                "cs:relation.key": "user.main-content.",
+                "type": "object",
+                "properties": {
+                  "image-portrait": {
+                    "cs:storage.$path": "content.picture-l",
+                    "cs:storage.item": "master",
+                    "cs:storage.$xml": "article",
+                    "type": "string",
+                    "cs:$string_type": "xml"
+                  },
+                  "image": {
+                    "cs:storage.$path": "content.picture",
+                    "cs:storage.item": "master",
+                    "cs:storage.$xml": "article",
+                    "type": "string",
+                    "cs:$string_type": "xml"
+                  },
+                  "copytext": {
+                    "cs:storage.$path": "content.body",
+                    "cs:storage.item": "master",
+                    "cs:storage.$xml": "article",
+                    "type": "string",
+                    "cs:$string_type": "xml"
+                  },
+                  "modified_date": {
+                    "cs:feature.key": "censhare:asset.modified_date",
+                    "type": "string"
+                  },
+                  "pro": {
+                    "type": "object",
+                    "properties": {
+                      "bullet-list": {
+                        "cs:storage.$path": "content.body.pro.bullet-list",
+                        "cs:storage.item": "master",
+                        "cs:storage.$xml": "article",
+                        "type": "string",
+                        "cs:$string_type": "xml"
+                      },
+                      "headline": {
+                        "cs:storage.$path": "content.body.pro.headline",
+                        "cs:storage.item": "master",
+                        "cs:storage.$xml": "article",
+                        "type": "string",
+                        "cs:$string_type": "xml"
+                      }
+                    }
+                  },
+                  "type": {
+                    "cs:feature.key": "censhare:asset.type",
+                    "type": "string"
+                  },
+                  "content": {
+                    "cs:storage.$path": "content",
+                    "cs:storage.item": "master",
+                    "cs:storage.$xml": "article",
+                    "type": "string",
+                    "cs:$string_type": "xml"
+                  },
+                  "component": {
+                    "cs:feature.key": "svtx:bs-template",
+                    "type": "string"
+                  },
+                  "subtitle": {
+                    "cs:storage.$path": "content.strapline",
+                    "cs:storage.item": "master",
+                    "cs:storage.$xml": "article",
+                    "type": "string",
+                    "cs:$string_type": "xml"
+                  },
+                  "name": {
+                    "cs:feature.key": "censhare:asset.name",
+                    "type": "string"
+                  },
+                  "id": {
+                    "cs:feature.key": "censhare:asset.id",
+                    "type": "integer"
+                  },
+                  "image-landscape": {
+                    "cs:storage.$path": "content.picture-q",
+                    "cs:storage.item": "master",
+                    "cs:storage.$xml": "article",
+                    "type": "string",
+                    "cs:$string_type": "xml"
+                  },
+                  "headline": {
+                    "cs:storage.$path": "content.headline",
+                    "cs:storage.item": "master",
+                    "cs:storage.$xml": "article",
+                    "type": "string",
+                    "cs:$string_type": "xml"
+                  },
+                  "contra": {
+                    "type": "object",
+                    "properties": {
+                      "bullet-list": {
+                        "cs:storage.$path": "content.body.contra.bullet-list",
+                        "cs:storage.item": "master",
+                        "cs:storage.$xml": "article",
+                        "type": "string",
+                        "cs:$string_type": "xml"
+                      },
+                      "headline": {
+                        "cs:storage.$path": "content.body.contra.headline",
+                        "cs:storage.item": "master",
+                        "cs:storage.$xml": "article",
+                        "type": "string",
+                        "cs:$string_type": "xml"
+                      }
+                    }
+                  },
+                  "table": {
+                    "cs:storage.$path": "content.table",
+                    "cs:storage.item": "master",
+                    "cs:storage.$xml": "article",
+                    "type": "string",
+                    "cs:$string_type": "xml"
+                  },
+                  "subline": {
+                    "cs:storage.$path": "content.subline",
+                    "cs:storage.item": "master",
+                    "cs:storage.$xml": "article",
+                    "type": "string",
+                    "cs:$string_type": "xml"
+                  }
+                }
+              }
+            },
+            "module-type": {
+              "cs:feature.key": "censhare:asset.type",
+              "type": "string"
+            },
+            "name": {
+              "cs:feature.key": "censhare:asset.name",
+              "type": "string"
+            },
+            "id": {
+              "cs:feature.key": "censhare:asset.id",
+              "type": "integer"
+            }
+          }
+        }
+      }
+    }
+  },
+  "$$order": ["image", "fragments", "products"],
+  "products": {
+    "cs:roles.required": {
+      "read": ["bs", "admin"],
+      "create": "admin",
+      "update": "admin",
+      "delete": "admin"
+    },
+    "cs:asset.type": ["product.", "product.vsk.", "product.theme."],
+    "title": "product",
+    "type": "object",
+    "properties": {
+      "area": {
+        "cs:feature.key": "svtx:product-area",
+        "type": "string"
+      },
+      "name": {
+        "cs:feature.key": "censhare:asset.name",
+        "type": "string"
+      },
+      "id": {
+        "cs:feature.key": "censhare:asset.id",
+        "type": "integer"
+      },
+      "type": {
+        "cs:feature.key": "censhare:asset.type",
+        "type": "string"
+      },
+      "branch": {
+        "cs:feature.key": "svtx:product-branch",
+        "type": "string"
+      }
+    }
+  }
+}
