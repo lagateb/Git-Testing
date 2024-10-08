@@ -8,5 +8,5 @@
   <asset_feature feature="censhare:resource-usage" value_key="censhare:script-controller"/>
   <parent_asset_rel parent_asset_ref_file="svtx_actions.add.faq.text.asset.xml" key="user.javascript-controller."/>
   <storage_item element_idx="0" key="master" mimetype="application/javascript" relpath="file:svtx_actions.add.faq.text Controller.js"/>
-<!-- change by Lokesh>
+<!-- change by kamal>
 </asset>
