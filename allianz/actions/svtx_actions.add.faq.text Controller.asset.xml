@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- These are the test changes.>
 <asset name="svtx:actions.add.faq.text Controller" type="module.script." application="texteditor" domain="root." domain2="root.">
   <asset_element idx="0" key="actual." isversioned="1234"/>
   <asset_feature feature="censhare:resource-enabled" value_long="1"/>
